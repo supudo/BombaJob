@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* BombaJobAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BombaJobAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		8A0F137C13C31B730083E9E4 /* MapCoordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F137B13C31B730083E9E4 /* MapCoordinates.m */; };
+		8A0F139413C31BBA0083E9E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */; };
+		8A0F152C13C33B350083E9E4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152A13C33B350083E9E4 /* Icon.png */; };
+		8A0F152D13C33B350083E9E4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152B13C33B350083E9E4 /* Icon@2x.png */; };
+		8A0F154E13C33C440083E9E4 /* OfferMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F154C13C33C440083E9E4 /* OfferMessage.m */; };
+		8A0F154F13C33C440083E9E4 /* OfferMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F154D13C33C440083E9E4 /* OfferMessage.xib */; };
+		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
+		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
+		8AA1CBFF13E04114009B882B /* bg-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CBFE13E04114009B882B /* bg-pattern.png */; };
+		8AA1CC2113E0428C009B882B /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */; };
+		8AA1CC2213E0428C009B882B /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */; };
+		8AA1CC2313E0428C009B882B /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1A13E0428C009B882B /* Ubuntu-Italic.ttf */; };
+		8AA1CC2413E0428C009B882B /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1B13E0428C009B882B /* Ubuntu-Light.ttf */; };
+		8AA1CC2513E0428C009B882B /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1C13E0428C009B882B /* Ubuntu-LightItalic.ttf */; };
+		8AA1CC2613E0428C009B882B /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1D13E0428C009B882B /* Ubuntu-Medium.ttf */; };
+		8AA1CC2713E0428C009B882B /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1E13E0428C009B882B /* Ubuntu-MediumItalic.ttf */; };
+		8AA1CC2813E0428C009B882B /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1F13E0428C009B882B /* Ubuntu-Regular.ttf */; };
+		8AA1CC2913E0428C009B882B /* UFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC2013E0428C009B882B /* UFL.txt */; };
+		8AA691CE13C1A3CB004B4687 /* NewestOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691CC13C1A3CB004B4687 /* NewestOffers.m */; };
+		8AA691CF13C1A3CB004B4687 /* NewestOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */; };
+		8AA691D313C1A3E0004B4687 /* SearchJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691D113C1A3E0004B4687 /* SearchJobs.m */; };
+		8AA691D413C1A3E0004B4687 /* SearchJobs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691D213C1A3E0004B4687 /* SearchJobs.xib */; };
+		8AA691DD13C1A3F9004B4687 /* SearchPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691DB13C1A3F9004B4687 /* SearchPeople.m */; };
+		8AA691DE13C1A3F9004B4687 /* SearchPeople.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691DC13C1A3F9004B4687 /* SearchPeople.xib */; };
+		8AA691E613C1A409004B4687 /* PostOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691E413C1A409004B4687 /* PostOffer.m */; };
+		8AA691E713C1A409004B4687 /* PostOffer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691E513C1A409004B4687 /* PostOffer.xib */; };
+		8AA691FD13C1A47F004B4687 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691FB13C1A47F004B4687 /* Search.m */; };
+		8AA691FE13C1A47F004B4687 /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691FC13C1A47F004B4687 /* Search.xib */; };
+		8AA6920C13C1A599004B4687 /* bSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6920B13C1A599004B4687 /* bSettings.m */; };
+		8AA6921213C1A5F8004B4687 /* URLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6920F13C1A5F8004B4687 /* URLReader.m */; };
+		8AA6921313C1A5F8004B4687 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6921113C1A5F8004B4687 /* Reachability.m */; };
+		8AA6921913C1A609004B4687 /* BlackAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6921813C1A609004B4687 /* BlackAlertView.m */; };
+		8AA6922613C1A650004B4687 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6922513C1A650004B4687 /* SystemConfiguration.framework */; };
+		8AA6924313C1A7E6004B4687 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6924213C1A7E6004B4687 /* CoreData.framework */; };
+		8AA6925013C1A88E004B4687 /* Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6924E13C1A88E004B4687 /* Loading.m */; };
+		8AA6925113C1A88E004B4687 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6924F13C1A88E004B4687 /* Loading.xib */; };
+		8AA6925913C1A8D6004B4687 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6925813C1A8D6004B4687 /* Localizable.strings */; };
+		8AA6925D13C1AA2D004B4687 /* BombaJob.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6925C13C1AA2D004B4687 /* BombaJob.xcdatamodel */; };
+		8AA6926013C1AA52004B4687 /* tb-postoffer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6925F13C1AA52004B4687 /* tb-postoffer.png */; };
+		8AA6926313C1AB68004B4687 /* tb-people.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926213C1AB68004B4687 /* tb-people.png */; };
+		8AA6926513C1ABA3004B4687 /* tb-newest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926413C1ABA3004B4687 /* tb-newest.png */; };
+		8AA6926713C1ABD5004B4687 /* tb-jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926613C1ABD5004B4687 /* tb-jobs.png */; };
+		8AA6926B13C1AC47004B4687 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6926A13C1AC47004B4687 /* WebService.m */; };
+		8AA6927713C1AC81004B4687 /* DBManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6927613C1AC81004B4687 /* DBManagedObjectContext.m */; };
+		8AA6936F13C1BB63004B4687 /* dbJobOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6936C13C1BB63004B4687 /* dbJobOffer.m */; };
+		8AA6937013C1BB63004B4687 /* dbCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6936E13C1BB63004B4687 /* dbCategory.m */; };
+		8AB9646E13CF59A1009252C4 /* CurrentOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9646D13CF59A1009252C4 /* CurrentOffer.m */; };
+		8AB9652013CF6DE1009252C4 /* PostOfferText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9651E13CF6DE1009252C4 /* PostOfferText.m */; };
+		8AB9652113CF6DE1009252C4 /* PostOfferText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9651F13CF6DE1009252C4 /* PostOfferText.xib */; };
+		8AB965D513CF8054009252C4 /* btn-boom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB965D413CF8054009252C4 /* btn-boom.png */; };
+		8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9660813CF8A27009252C4 /* dbSettings.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* BombaJobAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombaJobAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* BombaJobAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombaJobAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* BombaJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BombaJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* BombaJob_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombaJob_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A0F137A13C31B730083E9E4 /* MapCoordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCoordinates.h; sourceTree = "<group>"; };
+		8A0F137B13C31B730083E9E4 /* MapCoordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCoordinates.m; sourceTree = "<group>"; };
+		8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8A0F152A13C33B350083E9E4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8A0F152B13C33B350083E9E4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		8A0F154B13C33C440083E9E4 /* OfferMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferMessage.h; path = ../OfferMessage.h; sourceTree = "<group>"; };
+		8A0F154C13C33C440083E9E4 /* OfferMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferMessage.m; path = ../OfferMessage.m; sourceTree = "<group>"; };
+		8A0F154D13C33C440083E9E4 /* OfferMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferMessage.xib; sourceTree = "<group>"; };
+		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
+		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
+		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
+		8AA1CBFE13E04114009B882B /* bg-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-pattern.png"; sourceTree = "<group>"; };
+		8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8AA1CC1A13E0428C009B882B /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		8AA1CC1B13E0428C009B882B /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		8AA1CC1C13E0428C009B882B /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
+		8AA1CC1D13E0428C009B882B /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		8AA1CC1E13E0428C009B882B /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
+		8AA1CC1F13E0428C009B882B /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		8AA1CC2013E0428C009B882B /* UFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UFL.txt; sourceTree = "<group>"; };
+		8AA691CB13C1A3CB004B4687 /* NewestOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewestOffers.h; path = ../NewestOffers.h; sourceTree = "<group>"; };
+		8AA691CC13C1A3CB004B4687 /* NewestOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewestOffers.m; path = ../NewestOffers.m; sourceTree = "<group>"; };
+		8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewestOffers.xib; sourceTree = "<group>"; };
+		8AA691D013C1A3E0004B4687 /* SearchJobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchJobs.h; path = ../SearchJobs.h; sourceTree = "<group>"; };
+		8AA691D113C1A3E0004B4687 /* SearchJobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchJobs.m; path = ../SearchJobs.m; sourceTree = "<group>"; };
+		8AA691D213C1A3E0004B4687 /* SearchJobs.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchJobs.xib; sourceTree = "<group>"; };
+		8AA691DA13C1A3F9004B4687 /* SearchPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchPeople.h; path = ../SearchPeople.h; sourceTree = "<group>"; };
+		8AA691DB13C1A3F9004B4687 /* SearchPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchPeople.m; path = ../SearchPeople.m; sourceTree = "<group>"; };
+		8AA691DC13C1A3F9004B4687 /* SearchPeople.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPeople.xib; sourceTree = "<group>"; };
+		8AA691E313C1A409004B4687 /* PostOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostOffer.h; path = ../PostOffer.h; sourceTree = "<group>"; };
+		8AA691E413C1A409004B4687 /* PostOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostOffer.m; path = ../PostOffer.m; sourceTree = "<group>"; };
+		8AA691E513C1A409004B4687 /* PostOffer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostOffer.xib; sourceTree = "<group>"; };
+		8AA691FA13C1A47F004B4687 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Search.h; path = ../Search.h; sourceTree = "<group>"; };
+		8AA691FB13C1A47F004B4687 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Search.m; path = ../Search.m; sourceTree = "<group>"; };
+		8AA691FC13C1A47F004B4687 /* Search.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Search.xib; sourceTree = "<group>"; };
+		8AA6920913C1A592004B4687 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		8AA6920A13C1A599004B4687 /* bSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bSettings.h; sourceTree = "<group>"; };
+		8AA6920B13C1A599004B4687 /* bSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bSettings.m; sourceTree = "<group>"; };
+		8AA6920E13C1A5F8004B4687 /* URLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLReader.h; sourceTree = "<group>"; };
+		8AA6920F13C1A5F8004B4687 /* URLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLReader.m; sourceTree = "<group>"; };
+		8AA6921013C1A5F8004B4687 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8AA6921113C1A5F8004B4687 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8AA6921713C1A609004B4687 /* BlackAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackAlertView.h; sourceTree = "<group>"; };
+		8AA6921813C1A609004B4687 /* BlackAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackAlertView.m; sourceTree = "<group>"; };
+		8AA6922513C1A650004B4687 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8AA6924213C1A7E6004B4687 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8AA6924D13C1A88E004B4687 /* Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loading.h; path = ../Loading.h; sourceTree = "<group>"; };
+		8AA6924E13C1A88E004B4687 /* Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loading.m; path = ../Loading.m; sourceTree = "<group>"; };
+		8AA6924F13C1A88E004B4687 /* Loading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
+		8AA6925613C1A8CF004B4687 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AA6925A13C1A9C1004B4687 /* Bulgarian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Bulgarian; path = Bulgarian.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AA6925B13C1A9F8004B4687 /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.markdown; sourceTree = "<group>"; };
+		8AA6925C13C1AA2D004B4687 /* BombaJob.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BombaJob.xcdatamodel; sourceTree = "<group>"; };
+		8AA6925F13C1AA52004B4687 /* tb-postoffer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-postoffer.png"; sourceTree = "<group>"; };
+		8AA6926213C1AB68004B4687 /* tb-people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-people.png"; sourceTree = "<group>"; };
+		8AA6926413C1ABA3004B4687 /* tb-newest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-newest.png"; sourceTree = "<group>"; };
+		8AA6926613C1ABD5004B4687 /* tb-jobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-jobs.png"; sourceTree = "<group>"; };
+		8AA6926913C1AC47004B4687 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
+		8AA6926A13C1AC47004B4687 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
+		8AA6927513C1AC81004B4687 /* DBManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManagedObjectContext.h; sourceTree = "<group>"; };
+		8AA6927613C1AC81004B4687 /* DBManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManagedObjectContext.m; sourceTree = "<group>"; };
+		8AA6936B13C1BB63004B4687 /* dbJobOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbJobOffer.h; sourceTree = "<group>"; };
+		8AA6936C13C1BB63004B4687 /* dbJobOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbJobOffer.m; sourceTree = "<group>"; };
+		8AA6936D13C1BB63004B4687 /* dbCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbCategory.h; sourceTree = "<group>"; };
+		8AA6936E13C1BB63004B4687 /* dbCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbCategory.m; sourceTree = "<group>"; };
+		8AB9646C13CF59A1009252C4 /* CurrentOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentOffer.h; sourceTree = "<group>"; };
+		8AB9646D13CF59A1009252C4 /* CurrentOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentOffer.m; sourceTree = "<group>"; };
+		8AB9651D13CF6DE1009252C4 /* PostOfferText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostOfferText.h; path = ../PostOfferText.h; sourceTree = "<group>"; };
+		8AB9651E13CF6DE1009252C4 /* PostOfferText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostOfferText.m; path = ../PostOfferText.m; sourceTree = "<group>"; };
+		8AB9651F13CF6DE1009252C4 /* PostOfferText.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostOfferText.xib; sourceTree = "<group>"; };
+		8AB965D413CF8054009252C4 /* btn-boom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-boom.png"; sourceTree = "<group>"; };
+		8AB9660713CF8A27009252C4 /* dbSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbSettings.h; sourceTree = "<group>"; };
+		8AB9660813CF8A27009252C4 /* dbSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbSettings.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* BombaJob-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BombaJob-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				8AA6922613C1A650004B4687 /* SystemConfiguration.framework in Frameworks */,
+				8AA6924313C1A7E6004B4687 /* CoreData.framework in Frameworks */,
+				8A0F139413C31BBA0083E9E4 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691B813C1A2E1004B4687 /* Controlers */,
+				1D3623240D0F684500981E51 /* BombaJobAppDelegate.h */,
+				1D3623250D0F684500981E51 /* BombaJobAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* BombaJob.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* BombaJob */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691B613C1A2B7004B4687 /* Utils */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				8AA691B713C1A2BD004B4687 /* PLists */,
+			);
+			name = BombaJob;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* BombaJob_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6924A13C1A872004B4687 /* Assets */,
+				8AA691B913C1A2EE004B4687 /* Controlers */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				8AA6922513C1A650004B4687 /* SystemConfiguration.framework */,
+				8AA6924213C1A7E6004B4687 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A0F137913C31B6B0083E9E4 /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				8A0F137A13C31B730083E9E4 /* MapCoordinates.h */,
+				8A0F137B13C31B730083E9E4 /* MapCoordinates.m */,
+			);
+			name = Extended;
+			sourceTree = "<group>";
+		};
+		8AA1CC0513E041AB009B882B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */,
+				8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */,
+				8AA1CC1A13E0428C009B882B /* Ubuntu-Italic.ttf */,
+				8AA1CC1B13E0428C009B882B /* Ubuntu-Light.ttf */,
+				8AA1CC1C13E0428C009B882B /* Ubuntu-LightItalic.ttf */,
+				8AA1CC1D13E0428C009B882B /* Ubuntu-Medium.ttf */,
+				8AA1CC1E13E0428C009B882B /* Ubuntu-MediumItalic.ttf */,
+				8AA1CC1F13E0428C009B882B /* Ubuntu-Regular.ttf */,
+				8AA1CC2013E0428C009B882B /* UFL.txt */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		8AA691B613C1A2B7004B4687 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A0F137913C31B6B0083E9E4 /* Extended */,
+				8AA6921613C1A602004B4687 /* UI */,
+				8AA6927413C1AC75004B4687 /* DB */,
+				8AA6926813C1AC3C004B4687 /* Services */,
+				8AA6920D13C1A5F0004B4687 /* NET */,
+				8AA6920913C1A592004B4687 /* SynthesizeSingleton.h */,
+				8AA6920A13C1A599004B4687 /* bSettings.h */,
+				8AA6920B13C1A599004B4687 /* bSettings.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		8AA691B713C1A2BD004B4687 /* PLists */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107310486CEB800E47090 /* BombaJob-Info.plist */,
+			);
+			name = PLists;
+			sourceTree = "<group>";
+		};
+		8AA691B813C1A2E1004B4687 /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6924C13C1A886004B4687 /* Loading */,
+				8AA691F413C1A461004B4687 /* Home */,
+				8AA691F313C1A45C004B4687 /* Offers */,
+				8AA691F213C1A458004B4687 /* Post */,
+				8AA691F113C1A454004B4687 /* Search */,
+			);
+			name = Controlers;
+			sourceTree = "<group>";
+		};
+		8AA691B913C1A2EE004B4687 /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6924B13C1A880004B4687 /* Loading */,
+				8AA691EB13C1A413004B4687 /* Home */,
+				8AA691EE13C1A43A004B4687 /* Offers */,
+				8AA691EF13C1A441004B4687 /* Post */,
+				8AA691EC13C1A41A004B4687 /* Search */,
+			);
+			name = Controlers;
+			sourceTree = "<group>";
+		};
+		8AA691EB13C1A413004B4687 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		8AA691EC13C1A41A004B4687 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691FC13C1A47F004B4687 /* Search.xib */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		8AA691EE13C1A43A004B4687 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691D213C1A3E0004B4687 /* SearchJobs.xib */,
+				8AA691DC13C1A3F9004B4687 /* SearchPeople.xib */,
+				8A5D8EFD13C3106B005086C1 /* Offer.xib */,
+				8A0F154D13C33C440083E9E4 /* OfferMessage.xib */,
+			);
+			name = Offers;
+			sourceTree = "<group>";
+		};
+		8AA691EF13C1A441004B4687 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691E513C1A409004B4687 /* PostOffer.xib */,
+				8AB9651F13CF6DE1009252C4 /* PostOfferText.xib */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		8AA691F113C1A454004B4687 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691FA13C1A47F004B4687 /* Search.h */,
+				8AA691FB13C1A47F004B4687 /* Search.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		8AA691F213C1A458004B4687 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691E313C1A409004B4687 /* PostOffer.h */,
+				8AA691E413C1A409004B4687 /* PostOffer.m */,
+				8AB9651D13CF6DE1009252C4 /* PostOfferText.h */,
+				8AB9651E13CF6DE1009252C4 /* PostOfferText.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		8AA691F313C1A45C004B4687 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691D013C1A3E0004B4687 /* SearchJobs.h */,
+				8AA691D113C1A3E0004B4687 /* SearchJobs.m */,
+				8AA691DA13C1A3F9004B4687 /* SearchPeople.h */,
+				8AA691DB13C1A3F9004B4687 /* SearchPeople.m */,
+				8A5D8EFB13C3106B005086C1 /* Offer.h */,
+				8A5D8EFC13C3106B005086C1 /* Offer.m */,
+				8A0F154B13C33C440083E9E4 /* OfferMessage.h */,
+				8A0F154C13C33C440083E9E4 /* OfferMessage.m */,
+			);
+			name = Offers;
+			sourceTree = "<group>";
+		};
+		8AA691F413C1A461004B4687 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8AA691CB13C1A3CB004B4687 /* NewestOffers.h */,
+				8AA691CC13C1A3CB004B4687 /* NewestOffers.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		8AA6920D13C1A5F0004B4687 /* NET */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6920E13C1A5F8004B4687 /* URLReader.h */,
+				8AA6920F13C1A5F8004B4687 /* URLReader.m */,
+				8AA6921013C1A5F8004B4687 /* Reachability.h */,
+				8AA6921113C1A5F8004B4687 /* Reachability.m */,
+			);
+			name = NET;
+			sourceTree = "<group>";
+		};
+		8AA6921613C1A602004B4687 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6921713C1A609004B4687 /* BlackAlertView.h */,
+				8AA6921813C1A609004B4687 /* BlackAlertView.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		8AA6924A13C1A872004B4687 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6925313C1A8B2004B4687 /* Languages */,
+				8AA6925213C1A8A9004B4687 /* Database */,
+				8AA6925413C1A8B9004B4687 /* Images */,
+				8AA1CC0513E041AB009B882B /* Font */,
+				8AA6925B13C1A9F8004B4687 /* Readme.markdown */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		8AA6924B13C1A880004B4687 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6924F13C1A88E004B4687 /* Loading.xib */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
+		8AA6924C13C1A886004B4687 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6924D13C1A88E004B4687 /* Loading.h */,
+				8AA6924E13C1A88E004B4687 /* Loading.m */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
+		8AA6925213C1A8A9004B4687 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6925C13C1AA2D004B4687 /* BombaJob.xcdatamodel */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		8AA6925313C1A8B2004B4687 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6925813C1A8D6004B4687 /* Localizable.strings */,
+			);
+			name = Languages;
+			sourceTree = "<group>";
+		};
+		8AA6925413C1A8B9004B4687 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6925E13C1AA4A004B4687 /* TabBar */,
+				8AA1CBFE13E04114009B882B /* bg-pattern.png */,
+				8A0F152A13C33B350083E9E4 /* Icon.png */,
+				8A0F152B13C33B350083E9E4 /* Icon@2x.png */,
+				8AB965D413CF8054009252C4 /* btn-boom.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		8AA6925E13C1AA4A004B4687 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6926413C1ABA3004B4687 /* tb-newest.png */,
+				8AA6926213C1AB68004B4687 /* tb-people.png */,
+				8AA6926613C1ABD5004B4687 /* tb-jobs.png */,
+				8AA6925F13C1AA52004B4687 /* tb-postoffer.png */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		8AA6926813C1AC3C004B4687 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6926913C1AC47004B4687 /* WebService.h */,
+				8AA6926A13C1AC47004B4687 /* WebService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		8AA6927413C1AC75004B4687 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6933413C1B9DC004B4687 /* Entities */,
+				8AA6927513C1AC81004B4687 /* DBManagedObjectContext.h */,
+				8AA6927613C1AC81004B4687 /* DBManagedObjectContext.m */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		8AA6933413C1B9DC004B4687 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8AB9646C13CF59A1009252C4 /* CurrentOffer.h */,
+				8AB9646D13CF59A1009252C4 /* CurrentOffer.m */,
+				8AA6936D13C1BB63004B4687 /* dbCategory.h */,
+				8AA6936E13C1BB63004B4687 /* dbCategory.m */,
+				8AA6936B13C1BB63004B4687 /* dbJobOffer.h */,
+				8AA6936C13C1BB63004B4687 /* dbJobOffer.m */,
+				8AB9660713CF8A27009252C4 /* dbSettings.h */,
+				8AB9660813CF8A27009252C4 /* dbSettings.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* BombaJob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BombaJob" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BombaJob;
+			productName = BombaJob;
+			productReference = 1D6058910D05DD3D006BFB54 /* BombaJob.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = BombaJob.bg;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BombaJob" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Bulgarian,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* BombaJob */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* BombaJob */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				8AA691CF13C1A3CB004B4687 /* NewestOffers.xib in Resources */,
+				8AA691D413C1A3E0004B4687 /* SearchJobs.xib in Resources */,
+				8AA691DE13C1A3F9004B4687 /* SearchPeople.xib in Resources */,
+				8AA691E713C1A409004B4687 /* PostOffer.xib in Resources */,
+				8AA691FE13C1A47F004B4687 /* Search.xib in Resources */,
+				8AA6925113C1A88E004B4687 /* Loading.xib in Resources */,
+				8AA6925913C1A8D6004B4687 /* Localizable.strings in Resources */,
+				8AA6926013C1AA52004B4687 /* tb-postoffer.png in Resources */,
+				8AA6926313C1AB68004B4687 /* tb-people.png in Resources */,
+				8AA6926513C1ABA3004B4687 /* tb-newest.png in Resources */,
+				8AA6926713C1ABD5004B4687 /* tb-jobs.png in Resources */,
+				8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */,
+				8A0F152C13C33B350083E9E4 /* Icon.png in Resources */,
+				8A0F152D13C33B350083E9E4 /* Icon@2x.png in Resources */,
+				8A0F154F13C33C440083E9E4 /* OfferMessage.xib in Resources */,
+				8AB9652113CF6DE1009252C4 /* PostOfferText.xib in Resources */,
+				8AB965D513CF8054009252C4 /* btn-boom.png in Resources */,
+				8AA1CBFF13E04114009B882B /* bg-pattern.png in Resources */,
+				8AA1CC2113E0428C009B882B /* Ubuntu-Bold.ttf in Resources */,
+				8AA1CC2213E0428C009B882B /* Ubuntu-BoldItalic.ttf in Resources */,
+				8AA1CC2313E0428C009B882B /* Ubuntu-Italic.ttf in Resources */,
+				8AA1CC2413E0428C009B882B /* Ubuntu-Light.ttf in Resources */,
+				8AA1CC2513E0428C009B882B /* Ubuntu-LightItalic.ttf in Resources */,
+				8AA1CC2613E0428C009B882B /* Ubuntu-Medium.ttf in Resources */,
+				8AA1CC2713E0428C009B882B /* Ubuntu-MediumItalic.ttf in Resources */,
+				8AA1CC2813E0428C009B882B /* Ubuntu-Regular.ttf in Resources */,
+				8AA1CC2913E0428C009B882B /* UFL.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* BombaJobAppDelegate.m in Sources */,
+				8AA691CE13C1A3CB004B4687 /* NewestOffers.m in Sources */,
+				8AA691D313C1A3E0004B4687 /* SearchJobs.m in Sources */,
+				8AA691DD13C1A3F9004B4687 /* SearchPeople.m in Sources */,
+				8AA691E613C1A409004B4687 /* PostOffer.m in Sources */,
+				8AA691FD13C1A47F004B4687 /* Search.m in Sources */,
+				8AA6920C13C1A599004B4687 /* bSettings.m in Sources */,
+				8AA6921213C1A5F8004B4687 /* URLReader.m in Sources */,
+				8AA6921313C1A5F8004B4687 /* Reachability.m in Sources */,
+				8AA6921913C1A609004B4687 /* BlackAlertView.m in Sources */,
+				8AA6925013C1A88E004B4687 /* Loading.m in Sources */,
+				8AA6925D13C1AA2D004B4687 /* BombaJob.xcdatamodel in Sources */,
+				8AA6926B13C1AC47004B4687 /* WebService.m in Sources */,
+				8AA6927713C1AC81004B4687 /* DBManagedObjectContext.m in Sources */,
+				8AA6936F13C1BB63004B4687 /* dbJobOffer.m in Sources */,
+				8AA6937013C1BB63004B4687 /* dbCategory.m in Sources */,
+				8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */,
+				8A0F137C13C31B730083E9E4 /* MapCoordinates.m in Sources */,
+				8A0F154E13C33C440083E9E4 /* OfferMessage.m in Sources */,
+				8AB9646E13CF59A1009252C4 /* CurrentOffer.m in Sources */,
+				8AB9652013CF6DE1009252C4 /* PostOfferText.m in Sources */,
+				8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8AA6925813C1A8D6004B4687 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AA6925613C1A8CF004B4687 /* English */,
+				8AA6925A13C1A9C1004B4687 /* Bulgarian */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
+				INFOPLIST_FILE = "BombaJob-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = BombaJob;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
+				INFOPLIST_FILE = "BombaJob-Info.plist";
+				PRODUCT_NAME = BombaJob;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BombaJob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BombaJob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

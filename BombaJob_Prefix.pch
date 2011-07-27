@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'BombaJob' target in the 'BombaJob' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+	#import <CoreData/CoreData.h>
+	#import "BombaJobAppDelegate.h"
+	#import "bSettings.h"
+#endif
