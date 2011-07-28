@@ -39,6 +39,7 @@
 		8AA1CD0C13E17C95009B882B /* tb-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CD0B13E17C95009B882B /* tb-settings.png */; };
 		8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CD0D13E17D0B009B882B /* tb-about.png */; };
 		8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CD4313E17F82009B882B /* dbTextContent.m */; };
+		8AA4FDBA13E19E2900CE8C09 /* tb-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4FDB913E19E2900CE8C09 /* tb-search.png */; };
 		8AA691CE13C1A3CB004B4687 /* NewestOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691CC13C1A3CB004B4687 /* NewestOffers.m */; };
 		8AA691CF13C1A3CB004B4687 /* NewestOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */; };
 		8AA691D313C1A3E0004B4687 /* SearchJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691D113C1A3E0004B4687 /* SearchJobs.m */; };
@@ -117,6 +118,7 @@
 		8AA1CD0D13E17D0B009B882B /* tb-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-about.png"; sourceTree = "<group>"; };
 		8AA1CD4213E17F82009B882B /* dbTextContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbTextContent.h; sourceTree = "<group>"; };
 		8AA1CD4313E17F82009B882B /* dbTextContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbTextContent.m; sourceTree = "<group>"; };
+		8AA4FDB913E19E2900CE8C09 /* tb-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-search.png"; sourceTree = "<group>"; };
 		8AA691CB13C1A3CB004B4687 /* NewestOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewestOffers.h; path = ../NewestOffers.h; sourceTree = "<group>"; };
 		8AA691CC13C1A3CB004B4687 /* NewestOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewestOffers.m; path = ../NewestOffers.m; sourceTree = "<group>"; };
 		8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewestOffers.xib; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				8AA6925F13C1AA52004B4687 /* tb-postoffer.png */,
 				8AA1CD0B13E17C95009B882B /* tb-settings.png */,
 				8AA1CD0D13E17D0B009B882B /* tb-about.png */,
+				8AA4FDB913E19E2900CE8C09 /* tb-search.png */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				8AA1CD0C13E17C95009B882B /* tb-settings.png in Resources */,
 				8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */,
 				8A3B530013E1842B00F9B24E /* About.xib in Resources */,
+				8AA4FDBA13E19E2900CE8C09 /* tb-search.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
