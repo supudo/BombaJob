@@ -49,6 +49,9 @@
 "Settings" = "Настройки";
 "About" = "За BombaJob.bg";
 "ExternalURLWarning" = "Това действие ще затвори текущото приложение и ще отвори Safari.\nСигурни ли сте?";
+"About.PrivateData" = "Запази лични данни";
+"About.Geo" = "Изпращай гео-координати";
+"About.Sync" = "Начална синхронизация";
 
 "Months_Short_1" = "Яну";
 "Months_Short_2" = "Фев";

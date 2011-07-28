@@ -8,11 +8,13 @@
 
 #import "Reachability.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DBManagedObjectContext.h"
+#import "dbSettings.h"
 
 @implementation bSettings
 
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
-@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer;
+@synthesize stPrivateData, stGeoLocation, stInitSync, ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
@@ -36,6 +38,50 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.sdlNewJobs = FALSE;
 		self.sdlJobs = FALSE;
 		self.sdlPeople = FALSE;
+		
+		self.stPrivateData = TRUE;
+		self.stGeoLocation = TRUE;
+		self.stInitSync = TRUE;
+
+		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+		dbSettings *ent;
+		
+		ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"StorePrivateData"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stPrivateData = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"StorePrivateData"];
+			[ent setSValue:@"TRUE"];
+			self.stPrivateData = TRUE;
+		}
+		
+		ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"SendGeo"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stGeoLocation = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"SendGeo"];
+			[ent setSValue:@"TRUE"];
+			self.stGeoLocation = TRUE;
+		}
+		
+		ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"InitSync"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stInitSync = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"InitSync"];
+			[ent setSValue:@"TRUE"];
+			self.stInitSync = TRUE;
+		}
+
+		NSError *error = nil;
+		if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+			[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving the account info: %@", [error userInfo]]];
+			abort();
+		}
+
 		self.doSync = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"BMDoSync"] boolValue];
 		self.ServicesURL = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"BMServicesURL"];
 		self.BuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];

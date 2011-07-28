@@ -30,6 +30,18 @@
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 
 	scrollView.contentSize = CGSizeMake(320, 700);
+	[btnHuman.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
+	[btnCategory.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
+	[btnFreelance.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
+	[btnBoom.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
+	[lblTitle setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[lblEmail setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[lblNeg setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[lblPos setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[txtTitle setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[txtEmail setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[txtPos setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[txtNeg setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[self setUpForm];
 }
 
@@ -93,6 +105,12 @@
 	[btnFreelance setTitle:[NSString stringWithFormat:@"%@ - %@", NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance"), ((poFreelanceYn) ? NSLocalizedString(@"Offer_Freelance_1", @"Offer_Freelance_1") : NSLocalizedString(@"Offer_Freelance_2", @"Offer_Freelance_2"))] forState:UIControlStateNormal];
 	txtEmail.placeholder = NSLocalizedString(@"Offer_PlaceHolder_Human_Email", @"Offer_PlaceHolder_Human_Email");
 	txtTitle.placeholder = NSLocalizedString(@"Offer_PlaceHolder_Human_Title", @"Offer_PlaceHolder_Human_Title");
+	
+	if ([bSettings sharedbSettings].stPrivateData) {
+		dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			txtEmail.text = ent.SValue;
+	}
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -216,19 +234,21 @@
 		[alert release];
 	}
 	else {
-		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
-		dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
-		if (ent != nil)
-			ent.SValue = [bSettings sharedbSettings].currentOffer.Email;
-		else {
-			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
-			[ent setSName:@"Email"];
-			[ent setSValue:[bSettings sharedbSettings].currentOffer.Email];
+		if ([bSettings sharedbSettings].stPrivateData) {
+			DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+			dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
+			if (ent != nil)
+				ent.SValue = [bSettings sharedbSettings].currentOffer.Email;
+			else {
+				ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+				[ent setSName:@"Email"];
+				[ent setSValue:[bSettings sharedbSettings].currentOffer.Email];
 
-			NSError *error = nil;
-			if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-				[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving the account info: %@", [error userInfo]]];
-				abort();
+				NSError *error = nil;
+				if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+					[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving the account info: %@", [error userInfo]]];
+					abort();
+				}
 			}
 		}
 
@@ -266,9 +286,8 @@
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (actionSheet.tag == 1) {
 	}
-	else if (actionSheet.tag == 2) {
+	else if (actionSheet.tag == 2)
 		[[bSettings sharedbSettings] clearPostData];
-	}
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -284,18 +303,25 @@
 		return [dataCategories count];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+	UILabel *retval = (id)view;
+	if (!retval)
+		retval = [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)] autorelease];
 	NSString *lbl;
 	if (pickerView.tag == 1) {
 		lbl = [NSString stringWithFormat:@"Offer_HumanCompany_%i", (row + 1)];
-		return NSLocalizedString(lbl, lbl);
+		lbl = NSLocalizedString(lbl, lbl);
 	}
 	else if (pickerView.tag == 2) {
 		lbl = [NSString stringWithFormat:@"Offer_Freelance_%i", (row + 1)];
-		return NSLocalizedString(lbl, lbl);
+		lbl = NSLocalizedString(lbl, lbl);
 	}
 	else
-		return ((dbCategory *)[dataCategories objectAtIndex:row]).CategoryTitle;
+		lbl = ((dbCategory *)[dataCategories objectAtIndex:row]).CategoryTitle;
+	retval.text = lbl;
+	[retval setFont:[UIFont fontWithName:@"Ubuntu" size:20]];
+	[retval setBackgroundColor:[UIColor clearColor]];
+	return retval;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {

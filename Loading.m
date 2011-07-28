@@ -26,7 +26,7 @@
 }
 
 - (void)startSync {
-	if ([bSettings sharedbSettings].doSync)
+	if ([bSettings sharedbSettings].doSync && [bSettings sharedbSettings].stInitSync)
 		self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(startSyncTimer) userInfo:nil repeats:NO];
 	else
 		[self syncFinished:nil];

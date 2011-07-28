@@ -23,6 +23,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+	[txtDesc setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	if (self.descID == 1) {
 		if ([bSettings sharedbSettings].currentOffer.HumanYn)
 			self.navigationItem.title = NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv");

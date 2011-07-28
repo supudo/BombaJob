@@ -32,6 +32,8 @@
 	[txt appendString:@"</div></body></html>"];
 	[txtAboutText loadHTMLString:txt baseURL:nil];
 	[txt release];
+	[txtAboutText setBackgroundColor:[UIColor clearColor]];
+	[txtAboutText setOpaque:NO];
 }
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
