@@ -12,7 +12,7 @@
 @implementation WebService
 
 @synthesize delegate, urlReader, managedObjectContext, OperationID;
-@synthesize entCategory, entOffer;
+@synthesize entCategory, entOffer, entTextContent;
 
 #pragma mark -
 #pragma mark Services
@@ -173,6 +173,29 @@
 		[delegate getJobsCompanyFinished:self];
 }
 
+- (void)getTextContent {
+	self.OperationID = NLOperationGetTextContents;
+	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
+	[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"TextContent"];
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getTextContent URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getTextContent"]];
+	if (self.urlReader == nil)
+		self.urlReader = [[URLReader alloc] init];
+	[self.urlReader setDelegate:self];
+	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getTextContent"] postData:@"" postMethod:@"GET"];
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getTextContent response = %@", xmlData]];
+	if (xmlData.length > 0) {
+		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
+		[myParser setDelegate:self];
+		[myParser setShouldProcessNamespaces:NO];
+		[myParser setShouldReportNamespacePrefixes:NO];
+		[myParser setShouldResolveExternalEntities:NO];
+		[myParser parse];
+		[myParser release];
+	}
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getTextContentFinished:)])
+		[delegate getTextContentFinished:self];
+}
+
 #pragma mark -
 #pragma mark Events
 
@@ -204,6 +227,10 @@
 		dbCategory *tc = (dbCategory *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Category" predicateString:[NSString stringWithFormat:@"CategoryID = %@", [attributeDict objectForKey:@"cid"]]];
 		[entOffer setCategory:tc];
 	}
+	else if ([elementName isEqualToString:@"tctxt"]) {
+		entTextContent = (dbTextContent *)[NSEntityDescription insertNewObjectForEntityForName:@"TextContent" inManagedObjectContext:managedObjectContext];
+		[entTextContent setCID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"id"] intValue]]];
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
@@ -234,6 +261,11 @@
 			[bSettings sharedbSettings].currentPostOfferResult = [string boolValue];
 			[bSettings sharedbSettings].currentPostOfferResponse = string;
 		}
+		// Text content
+		else if ([currentElement isEqualToString:@"tctitle"])
+			[entTextContent setTitle:string];
+		else if ([currentElement isEqualToString:@"tccontent"])
+			[entTextContent setContent:string];
 	}
 }
 
@@ -274,6 +306,11 @@
 				[delegate getJobsCompanyFinished:self];
 			break;
 		}
+		case NLOperationGetTextContents: {
+			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getTextContentFinished:)])
+				[delegate getTextContentFinished:self];
+			break;
+		}
 		default:
 			break;
 	}
@@ -287,6 +324,7 @@
 	[managedObjectContext release];
 	[entCategory release];
 	[entOffer release];
+	[entTextContent release];
 	[super dealloc];
 }
 

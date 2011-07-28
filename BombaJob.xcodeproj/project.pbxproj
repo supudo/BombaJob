@@ -19,6 +19,8 @@
 		8A0F152D13C33B350083E9E4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152B13C33B350083E9E4 /* Icon@2x.png */; };
 		8A0F154E13C33C440083E9E4 /* OfferMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F154C13C33C440083E9E4 /* OfferMessage.m */; };
 		8A0F154F13C33C440083E9E4 /* OfferMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F154D13C33C440083E9E4 /* OfferMessage.xib */; };
+		8A3B52FF13E1842B00F9B24E /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B52FD13E1842B00F9B24E /* About.m */; };
+		8A3B530013E1842B00F9B24E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B52FE13E1842B00F9B24E /* About.xib */; };
 		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
 		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
 		8AA1CBFF13E04114009B882B /* bg-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CBFE13E04114009B882B /* bg-pattern.png */; };
@@ -31,6 +33,12 @@
 		8AA1CC2713E0428C009B882B /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1E13E0428C009B882B /* Ubuntu-MediumItalic.ttf */; };
 		8AA1CC2813E0428C009B882B /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1F13E0428C009B882B /* Ubuntu-Regular.ttf */; };
 		8AA1CC2913E0428C009B882B /* UFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC2013E0428C009B882B /* UFL.txt */; };
+		8AA1CCE113E04A61009B882B /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CCDF13E04A61009B882B /* Settings.m */; };
+		8AA1CCE213E04A61009B882B /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CCE013E04A61009B882B /* Settings.xib */; };
+		8AA1CCEE13E04C83009B882B /* Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CCED13E04C83009B882B /* Sync.m */; };
+		8AA1CD0C13E17C95009B882B /* tb-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CD0B13E17C95009B882B /* tb-settings.png */; };
+		8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CD0D13E17D0B009B882B /* tb-about.png */; };
+		8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CD4313E17F82009B882B /* dbTextContent.m */; };
 		8AA691CE13C1A3CB004B4687 /* NewestOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691CC13C1A3CB004B4687 /* NewestOffers.m */; };
 		8AA691CF13C1A3CB004B4687 /* NewestOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */; };
 		8AA691D313C1A3E0004B4687 /* SearchJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691D113C1A3E0004B4687 /* SearchJobs.m */; };
@@ -84,6 +92,9 @@
 		8A0F154B13C33C440083E9E4 /* OfferMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferMessage.h; path = ../OfferMessage.h; sourceTree = "<group>"; };
 		8A0F154C13C33C440083E9E4 /* OfferMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferMessage.m; path = ../OfferMessage.m; sourceTree = "<group>"; };
 		8A0F154D13C33C440083E9E4 /* OfferMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferMessage.xib; sourceTree = "<group>"; };
+		8A3B52FC13E1842B00F9B24E /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = About.h; path = ../About.h; sourceTree = "<group>"; };
+		8A3B52FD13E1842B00F9B24E /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = About.m; path = ../About.m; sourceTree = "<group>"; };
+		8A3B52FE13E1842B00F9B24E /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
 		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
 		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
@@ -97,6 +108,15 @@
 		8AA1CC1E13E0428C009B882B /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8AA1CC1F13E0428C009B882B /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
 		8AA1CC2013E0428C009B882B /* UFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UFL.txt; sourceTree = "<group>"; };
+		8AA1CCDE13E04A61009B882B /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = ../Settings.h; sourceTree = "<group>"; };
+		8AA1CCDF13E04A61009B882B /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = ../Settings.m; sourceTree = "<group>"; };
+		8AA1CCE013E04A61009B882B /* Settings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
+		8AA1CCEC13E04C83009B882B /* Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sync.h; sourceTree = "<group>"; };
+		8AA1CCED13E04C83009B882B /* Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sync.m; sourceTree = "<group>"; };
+		8AA1CD0B13E17C95009B882B /* tb-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-settings.png"; sourceTree = "<group>"; };
+		8AA1CD0D13E17D0B009B882B /* tb-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb-about.png"; sourceTree = "<group>"; };
+		8AA1CD4213E17F82009B882B /* dbTextContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbTextContent.h; sourceTree = "<group>"; };
+		8AA1CD4313E17F82009B882B /* dbTextContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbTextContent.m; sourceTree = "<group>"; };
 		8AA691CB13C1A3CB004B4687 /* NewestOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewestOffers.h; path = ../NewestOffers.h; sourceTree = "<group>"; };
 		8AA691CC13C1A3CB004B4687 /* NewestOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewestOffers.m; path = ../NewestOffers.m; sourceTree = "<group>"; };
 		8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewestOffers.xib; sourceTree = "<group>"; };
@@ -259,6 +279,26 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
+		8AA1CCDB13E04A45009B882B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				8AA1CCE013E04A61009B882B /* Settings.xib */,
+				8A3B52FE13E1842B00F9B24E /* About.xib */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		8AA1CCDD13E04A54009B882B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				8AA1CCDE13E04A61009B882B /* Settings.h */,
+				8AA1CCDF13E04A61009B882B /* Settings.m */,
+				8A3B52FC13E1842B00F9B24E /* About.h */,
+				8A3B52FD13E1842B00F9B24E /* About.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
 		8AA691B613C1A2B7004B4687 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +330,7 @@
 				8AA691F313C1A45C004B4687 /* Offers */,
 				8AA691F213C1A458004B4687 /* Post */,
 				8AA691F113C1A454004B4687 /* Search */,
+				8AA1CCDD13E04A54009B882B /* Misc */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -302,6 +343,7 @@
 				8AA691EE13C1A43A004B4687 /* Offers */,
 				8AA691EF13C1A441004B4687 /* Post */,
 				8AA691EC13C1A41A004B4687 /* Search */,
+				8AA1CCDB13E04A45009B882B /* Misc */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -470,6 +512,8 @@
 				8AA6926213C1AB68004B4687 /* tb-people.png */,
 				8AA6926613C1ABD5004B4687 /* tb-jobs.png */,
 				8AA6925F13C1AA52004B4687 /* tb-postoffer.png */,
+				8AA1CD0B13E17C95009B882B /* tb-settings.png */,
+				8AA1CD0D13E17D0B009B882B /* tb-about.png */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -479,6 +523,8 @@
 			children = (
 				8AA6926913C1AC47004B4687 /* WebService.h */,
 				8AA6926A13C1AC47004B4687 /* WebService.m */,
+				8AA1CCEC13E04C83009B882B /* Sync.h */,
+				8AA1CCED13E04C83009B882B /* Sync.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -504,6 +550,8 @@
 				8AA6936C13C1BB63004B4687 /* dbJobOffer.m */,
 				8AB9660713CF8A27009252C4 /* dbSettings.h */,
 				8AB9660813CF8A27009252C4 /* dbSettings.m */,
+				8AA1CD4213E17F82009B882B /* dbTextContent.h */,
+				8AA1CD4313E17F82009B882B /* dbTextContent.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -589,6 +637,10 @@
 				8AA1CC2713E0428C009B882B /* Ubuntu-MediumItalic.ttf in Resources */,
 				8AA1CC2813E0428C009B882B /* Ubuntu-Regular.ttf in Resources */,
 				8AA1CC2913E0428C009B882B /* UFL.txt in Resources */,
+				8AA1CCE213E04A61009B882B /* Settings.xib in Resources */,
+				8AA1CD0C13E17C95009B882B /* tb-settings.png in Resources */,
+				8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */,
+				8A3B530013E1842B00F9B24E /* About.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +674,10 @@
 				8AB9646E13CF59A1009252C4 /* CurrentOffer.m in Sources */,
 				8AB9652013CF6DE1009252C4 /* PostOfferText.m in Sources */,
 				8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */,
+				8AA1CCE113E04A61009B882B /* Settings.m in Sources */,
+				8AA1CCEE13E04C83009B882B /* Sync.m in Sources */,
+				8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */,
+				8A3B52FF13E1842B00F9B24E /* About.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

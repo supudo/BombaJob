@@ -20,7 +20,7 @@ BombaJobAppDelegate *appDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	appDelegate = self;
-
+	
 	if (![bSettings sharedbSettings].inDebugMode) {
 		self.mapCoordinates = [[MapCoordinates alloc] init];
 		[self.mapCoordinates startCoor];

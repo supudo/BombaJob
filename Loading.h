@@ -7,21 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WebService.h"
+#import "Sync.h"
 
-@interface Loading : UIViewController <WebServiceDelegate> {
+@interface Loading : UIViewController <SyncDelegate> {
+	Sync *syncer;
 	NSTimer *timer;
-	WebService *webService;
 	UILabel *lblLoading;
 }
 
+@property (nonatomic, retain) Sync *syncer;
 @property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic, retain) WebService *webService;
 @property (nonatomic, retain) IBOutlet UILabel *lblLoading;
 
 - (void)startSync;
 - (void)startSyncTimer;
-- (void)finishSync;
 - (void)startTabApp;
 
 @end

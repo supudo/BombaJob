@@ -10,6 +10,7 @@
 #import "URLReader.h"
 #import "dbCategory.h"
 #import "dbJobOffer.h"
+#import "dbTextContent.h"
 
 @protocol WebServiceDelegate <NSObject>
 @optional
@@ -20,6 +21,7 @@
 - (void)getNewJobsFinished:(id)sender;
 - (void)getJobsHumanFinished:(id)sender;
 - (void)getJobsCompanyFinished:(id)sender;
+- (void)getTextContentFinished:(id)sender;
 @end
 
 @interface WebService : NSObject <NSXMLParserDelegate, URLReaderDelegate> {
@@ -30,6 +32,7 @@
 	int OperationID;
 	dbCategory *entCategory;
 	dbJobOffer *entOffer;
+	dbTextContent *entTextContent;
 }
 
 @property (assign) id<WebServiceDelegate> delegate;
@@ -38,6 +41,7 @@
 @property int OperationID;
 @property (nonatomic, retain) dbCategory *entCategory;
 @property (nonatomic, retain) dbJobOffer *entOffer;
+@property (nonatomic, retain) dbTextContent *entTextContent;
 
 typedef enum NLServiceOperations {
 	NLOperationPostJob = 0,
@@ -45,7 +49,8 @@ typedef enum NLServiceOperations {
 	NLOperationGetCategories,
 	NLOperationGetNewJobs,
 	NLOperationGetJobsHuman,
-	NLOperationGetJobsCompany
+	NLOperationGetJobsCompany,
+	NLOperationGetTextContents
 } NLServiceOperations;
 
 - (void)postNewJob;
@@ -54,5 +59,6 @@ typedef enum NLServiceOperations {
 - (void)getNewJobs;
 - (void)searchJobs;
 - (void)searchPeople;
+- (void)getTextContent;
 
 @end

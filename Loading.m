@@ -11,7 +11,7 @@
 
 @implementation Loading
 
-@synthesize timer, webService, lblLoading;
+@synthesize timer, syncer, lblLoading;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -29,29 +29,25 @@
 	if ([bSettings sharedbSettings].doSync)
 		self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(startSyncTimer) userInfo:nil repeats:NO];
 	else
-		[self finishSync];
+		[self syncFinished:nil];
 }
 
 - (void)startSyncTimer {
-	if (self.webService == nil)
-		self.webService = [[WebService alloc] init];
-	[self.webService setDelegate:self];
-	[self.webService getCategories];
+	if (self.syncer == nil)
+		self.syncer = [[Sync alloc] init];
+	[self.syncer setDelegate:self];
+	[self.syncer startSync];
 }
 
--(void)finishSync {
+- (void)syncFinished:(id)sender {
 	[self startTabApp];
 }
 
-- (void)serviceError:(id)sender error:(NSString *) errorMessage {
+- (void)syncError:(id)sender error:(NSString *) errorMessage {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SyncError", @"SyncError"), errorMessage] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles: nil];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SyncError", @"SyncError"), errorMessage] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
 	[alert show];
 	[alert release];
-}
-
-- (void)getCategoriesFinished:(id)sender {
-	[self finishSync];
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -72,6 +68,10 @@
 	[UIView setAnimationDuration:.4];
 	tabBarView.alpha = 1;
 	[UIView commitAnimations];
+	
+	UINavigationController *moreController = appDelegate.tabBarController.moreNavigationController;
+	moreController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	appDelegate.tabBarController.customizableViewControllers = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,8 +81,8 @@
 - (void)viewDidUnload {
 	timer = nil;
 	[timer release];
-	webService = nil;
-	[webService release];
+	syncer = nil;
+	[syncer release];
 	lblLoading = nil;
 	[lblLoading release];
     [super viewDidUnload];
@@ -90,7 +90,7 @@
 
 - (void)dealloc {
 	[timer release];
-	[webService release];
+	[syncer release];
 	[lblLoading release];
     [super dealloc];
 }
