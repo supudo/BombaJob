@@ -12,7 +12,7 @@
 @implementation WebService
 
 @synthesize delegate, urlReader, managedObjectContext, OperationID;
-@synthesize entCategory, entOffer, entTextContent;
+@synthesize entCategory, entOffer, entTextContent, searchResults, searchSingle;
 
 #pragma mark -
 #pragma mark Services
@@ -196,6 +196,35 @@
 		[delegate getTextContentFinished:self];
 }
 
+- (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl {
+	self.OperationID = NLOperationSearch;
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchOffers URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchOffers"]];
+	if (self.urlReader == nil)
+		self.urlReader = [[URLReader alloc] init];
+	[self.urlReader setDelegate:self];
+	
+	NSMutableString *postData = [[NSMutableString alloc] init];
+	[postData setString:@""];
+	[postData appendFormat:@"keyword=%@", searchTerm];
+	[postData appendFormat:@"&freelance=%@", ((frl) ? @"true" : @"false")];
+	
+	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchOffers"] postData:postData postMethod:@"POST"];
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchOffers response = %@", xmlData]];
+	if (xmlData.length > 0) {
+		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
+		[myParser setDelegate:self];
+		[myParser setShouldProcessNamespaces:NO];
+		[myParser setShouldReportNamespacePrefixes:NO];
+		[myParser setShouldResolveExternalEntities:NO];
+		[myParser parse];
+		[myParser release];
+	}
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(searchOffersFinished:results:)])
+		[delegate searchOffersFinished:self results:searchResults];
+	
+	[postData release];
+}
+
 #pragma mark -
 #pragma mark Events
 
@@ -231,9 +260,19 @@
 		entTextContent = (dbTextContent *)[NSEntityDescription insertNewObjectForEntityForName:@"TextContent" inManagedObjectContext:managedObjectContext];
 		[entTextContent setCID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"id"] intValue]]];
 	}
+	else if ([elementName isEqualToString:@"sores"]) {
+		searchSingle = [[SearchOffer alloc] init];
+		searchSingle.OfferID = [[attributeDict objectForKey:@"id"] intValue];
+		searchSingle.CategoryID = [[attributeDict objectForKey:@"cid"] intValue];
+		searchSingle.HumanYn = [[attributeDict objectForKey:@"hm"] boolValue];
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+	if ([elementName isEqualToString:@"sores"]) {
+		[self.searchResults addObject:searchSingle];
+		[searchSingle release];
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
@@ -266,11 +305,26 @@
 			[entTextContent setTitle:string];
 		else if ([currentElement isEqualToString:@"tccontent"])
 			[entTextContent setContent:string];
+		// Search
+		else if ([currentElement isEqualToString:@"sottl"])
+			searchSingle.Title = string;
+		else if ([currentElement isEqualToString:@"socat"])
+			searchSingle.CategoryTitle = string;
+		else if ([currentElement isEqualToString:@"sopos"])
+			searchSingle.Positivism = string;
+		else if ([currentElement isEqualToString:@"soneg"])
+			searchSingle.Negativism = string;
+		else if ([currentElement isEqualToString:@"sodt"]) {
+			NSDateFormatter *df = [[NSDateFormatter alloc] init];
+			[df setDateFormat:@"dd-mm-yyyy HH:mm:ss"];
+			searchSingle.PublishDate = [df dateFromString:string];
+			[df release];
+		}
 	}
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-	if (self.OperationID != NLOperationPostJob && self.OperationID != NLOperationPostMessage) {
+	if (self.OperationID != NLOperationPostJob && self.OperationID != NLOperationPostMessage && self.OperationID != NLOperationSearch) {
 		NSError *error = nil;
 		if (![managedObjectContext save:&error])
 			abort();
@@ -311,6 +365,11 @@
 				[delegate getTextContentFinished:self];
 			break;
 		}
+		case NLOperationSearch: {
+			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(searchOffersFinished:results:)])
+				[delegate searchOffersFinished:self results:searchResults];
+			break;
+		}
 		default:
 			break;
 	}
@@ -325,6 +384,8 @@
 	[entCategory release];
 	[entOffer release];
 	[entTextContent release];
+	[searchResults release];
+	[searchSingle release];
 	[super dealloc];
 }
 

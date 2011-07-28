@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		8A3B530013E1842B00F9B24E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B52FE13E1842B00F9B24E /* About.xib */; };
 		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
 		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
+		8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88F89213E1AAA000CC9108 /* SearchOffer.m */; };
 		8AA1CBFF13E04114009B882B /* bg-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CBFE13E04114009B882B /* bg-pattern.png */; };
 		8AA1CC2113E0428C009B882B /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */; };
 		8AA1CC2213E0428C009B882B /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */; };
@@ -99,6 +100,8 @@
 		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
 		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
 		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
+		8A88F89113E1AAA000CC9108 /* SearchOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOffer.h; sourceTree = "<group>"; };
+		8A88F89213E1AAA000CC9108 /* SearchOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOffer.m; sourceTree = "<group>"; };
 		8AA1CBFE13E04114009B882B /* bg-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-pattern.png"; sourceTree = "<group>"; };
 		8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 		8AA6933413C1B9DC004B4687 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				8A88F89113E1AAA000CC9108 /* SearchOffer.h */,
+				8A88F89213E1AAA000CC9108 /* SearchOffer.m */,
 				8AB9646C13CF59A1009252C4 /* CurrentOffer.h */,
 				8AB9646D13CF59A1009252C4 /* CurrentOffer.m */,
 				8AA6936D13C1BB63004B4687 /* dbCategory.h */,
@@ -585,10 +590,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0410;
 				ORGANIZATIONNAME = BombaJob.bg;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BombaJob" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -682,6 +688,7 @@
 				8AA1CCEE13E04C83009B882B /* Sync.m in Sources */,
 				8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */,
 				8A3B52FF13E1842B00F9B24E /* About.m in Sources */,
+				8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +716,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "BombaJob-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
@@ -722,6 +730,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "BombaJob-Info.plist";
 				PRODUCT_NAME = BombaJob;
 				VALIDATE_PRODUCT = YES;
@@ -736,7 +745,6 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -750,7 +758,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Release;

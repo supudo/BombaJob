@@ -14,7 +14,8 @@
 @implementation bSettings
 
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
-@synthesize stPrivateData, stGeoLocation, stInitSync, ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer;
+@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch;
+@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
@@ -42,6 +43,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.stPrivateData = TRUE;
 		self.stGeoLocation = TRUE;
 		self.stInitSync = TRUE;
+		self.stOnlineSearch = TRUE;
 
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;
@@ -74,6 +76,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 			[ent setSName:@"InitSync"];
 			[ent setSValue:@"TRUE"];
 			self.stInitSync = TRUE;
+		}
+		
+		ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"OnlineSearch"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stOnlineSearch = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"OnlineSearch"];
+			[ent setSValue:@"TRUE"];
+			self.stOnlineSearch = TRUE;
 		}
 
 		NSError *error = nil;

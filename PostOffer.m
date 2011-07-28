@@ -252,6 +252,7 @@
 			}
 		}
 
+		[[bSettings sharedbSettings] startLoading:self.view];
 		if (self.webService == nil)
 			self.webService = [[WebService alloc] init];
 		[self.webService setDelegate:self];
@@ -262,6 +263,7 @@
 - (void)postJobFinished:(id)sender {
 	[[bSettings sharedbSettings].currentOffer clearAll];
 	[self setUpForm];
+	[[bSettings sharedbSettings] stopLoading:self.view];
 	NSString *msg = NSLocalizedString(@"Offer_ThankYou", @"Offer_ThankYou");
 	if (![bSettings sharedbSettings].currentPostOfferResult)
 		msg = [NSString stringWithFormat:@"%@!", NSLocalizedString(@"Error", @"Error")];

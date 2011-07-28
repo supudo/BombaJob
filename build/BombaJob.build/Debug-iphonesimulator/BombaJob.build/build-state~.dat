@@ -1,0 +1,1710 @@
+TBombaJob
+v7
+r0
+t333554034.358073
+cCheck dependencies
+cProcessInfoPlistFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Info.plist BombaJob-Info.plist
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.xib
+cCopyStringsFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/English.lproj/Localizable.strings English.lproj/Localizable.strings
+cCopyStringsFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Bulgarian.lproj/Localizable.strings Bulgarian.lproj/Localizable.strings
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-postoffer.png tb-postoffer.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-people.png tb-people.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-newest.png tb-newest.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-jobs.png tb-jobs.png
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.xib
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Icon.png Icon.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Icon@2x.png Icon@2x.png
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.xib
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.xib
+cCpResource build/Debug-iphonesimulator/BombaJob.app/btn-boom.png btn-boom.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/bg-pattern.png bg-pattern.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Bold.ttf Ubuntu-Bold.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-BoldItalic.ttf Ubuntu-BoldItalic.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Italic.ttf Ubuntu-Italic.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Light.ttf Ubuntu-Light.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-LightItalic.ttf Ubuntu-LightItalic.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Medium.ttf Ubuntu-Medium.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-MediumItalic.ttf Ubuntu-MediumItalic.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Regular.ttf Ubuntu-Regular.ttf
+cCpResource build/Debug-iphonesimulator/BombaJob.app/UFL.txt UFL.txt
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.xib
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-settings.png tb-settings.png
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-about.png tb-about.png
+cCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.xib
+cCpResource build/Debug-iphonesimulator/BombaJob.app/tb-search.png tb-search.png
+cProcessPCH /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch.gch BombaJob_Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
+cDataModelCompile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob.mom /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/main.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJobAppDelegate.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/NewestOffers.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchJobs.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchPeople.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOffer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Search.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/bSettings.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/URLReader.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Reachability.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BlackAlertView.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Loading.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/WebService.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/DBManagedObjectContext.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbJobOffer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbCategory.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Offer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/MapCoordinates.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/OfferMessage.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/CurrentOffer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOfferText.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbSettings.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Settings.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Sync.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbTextContent.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/About.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m normal i386 objective-c com.apple.compilers.llvmgcc42
+cLd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob normal i386
+cGenerateDSYMFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app.dSYM /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob
+cTouch /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
+c000000004CC128950000000000000110
+t1287727253
+s272
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004CC122A000000000001D6CE0
+t1287725728
+s1928416
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
+c000000004CC12294000000000000046B
+t1287725716
+s1131
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CoreFoundation.h
+c000000004CC1219F0000000000000AB3
+t1287725471
+s2739
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC12246000000000029B310
+t1287725638
+s2732816
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000004CC127E80000000000074190
+t1287727080
+s475536
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC1226D000000000029D5D0
+t1287725677
+s2741712
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC1225F0000000000001466
+t1287725663
+s5222
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.h
+c000000004CC1294D00000000000002FE
+t1287727437
+s766
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.h
+c000000004CC1233C00000000000000C4
+t1287725884
+s196
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers/SystemConfiguration.h
+c000000004CC121E80000000000001A58
+t1287725544
+s6744
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000004CC121F60000000000068970
+t1287725558
+s428400
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC1281F0000000000000AA1
+t1287727135
+s2721
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC12883000000000074D7B0
+t1287727235
+s7657392
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/arpa/inet.h
+c000000004CB3E46D0000000000001533
+t1286857837
+s5427
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/ifaddrs.h
+c000000004CB3E4770000000000000782
+t1286857847
+s1922
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/netdb.h
+c000000004A4181220000000000003057
+t1245806882
+s12375
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/netinet/in.h
+c000000004CBFACA90000000000005462
+t1287629993
+s21602
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/netinet6/in6.h
+c000000004CBFACA80000000000004F61
+t1287629992
+s20321
+
+N/Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/sys/socket.h
+c000000004CBFACAC0000000000005A69
+t1287629996
+s23145
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.h
+c000000004E3150210000000000000194
+t1311854625
+s404
+i<UIKit/UIKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.xib
+c000000004E314FB50000000000004B5E
+t1311854517
+s19294
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.h
+c000000004E1174EC0000000000000129
+t1309766892
+s297
+i<UIKit/UIKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m
+c000000004E1174EC0000000000000E5E
+t1309766892
+s3678
+i"BlackAlertView.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel
+c000000004E3147F80000000000000088
+t1311852536
+s136
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob_Prefix.pch
+c000000004E11756D000000000000010D
+t1309767021
+s269
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+i<CoreData/CoreData.h>
+i"BombaJobAppDelegate.h"
+i"bSettings.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Bulgarian.lproj/Localizable.strings
+c000000004E3155280000000000000D3F
+t1311855912
+s3391
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m
+c000000004E315C050000000000000A01
+t1311857669
+s2561
+i"About.h"
+i"DBManagedObjectContext.h"
+i"dbTextContent.h"
+i"BlackAlertView.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m
+c000000004E3164020000000000000BA6
+t1311859714
+s2982
+i"Loading.h"
+i"BlackAlertView.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m
+c000000004E315B1D00000000000016DD
+t1311857437
+s5853
+i"NewestOffers.h"
+i"BlackAlertView.h"
+i"DBManagedObjectContext.h"
+i"Offer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m
+c000000004E300C2A000000000000182E
+t1311771690
+s6190
+i"Offer.h"
+i"OfferMessage.h"
+i<QuartzCore/QuartzCore.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m
+c000000004E300C3400000000000008C8
+t1311771700
+s2248
+i"OfferMessage.h"
+i<QuartzCore/QuartzCore.h>
+i"BlackAlertView.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m
+c000000004E3165520000000000004D00
+t1311860050
+s19712
+i"PostOffer.h"
+i"BlackAlertView.h"
+i"DBManagedObjectContext.h"
+i"dbCategory.h"
+i"dbSettings.h"
+i"PostOfferText.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m
+c000000004E31562E0000000000000874
+t1311856174
+s2164
+i"PostOfferText.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m
+c000000004E12CE26000000000000022F
+t1309855270
+s559
+i"Search.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m
+c000000004E300C380000000000001662
+t1311771704
+s5730
+i"SearchJobs.h"
+i"BlackAlertView.h"
+i"DBManagedObjectContext.h"
+i"Offer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m
+c000000004E300C3C000000000000167E
+t1311771708
+s5758
+i"SearchPeople.h"
+i"BlackAlertView.h"
+i"DBManagedObjectContext.h"
+i"Offer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m
+c000000004E3160980000000000000EED
+t1311858840
+s3821
+i"Settings.h"
+i"DBManagedObjectContext.h"
+i"dbSettings.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.h
+c000000004E31678B00000000000002D8
+t1311860619
+s728
+i<UIKit/UIKit.h>
+i"MapCoordinates.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m
+c000000004E31641800000000000003FC
+t1311859736
+s1020
+i"BombaJobAppDelegate.h"
+i"Loading.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.h
+c000000004E1F57AC0000000000000251
+t1310676908
+s593
+i<Foundation/Foundation.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m
+c000000004E1F57C1000000000000036A
+t1310676929
+s874
+i"CurrentOffer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.h
+c000000004E118402000000000000059C
+t1309770754
+s1436
+i<Foundation/Foundation.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m
+c000000004E1F0BC50000000000001CC3
+t1310657477
+s7363
+i"DBManagedObjectContext.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/English.lproj/Localizable.strings
+c000000004E3155250000000000000D3F
+t1311855909
+s3391
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Icon.png
+c000000004E1303A80000000000000F7C
+t1309868968
+s3964
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Icon@2x.png
+c000000004E1303AE0000000000002A18
+t1309868974
+s10776
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.h
+c000000004E31464A00000000000001F2
+t1311852106
+s498
+i<UIKit/UIKit.h>
+i"Sync.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.xib
+c000000004E300CA50000000000005394
+t1311771813
+s21396
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib
+c000000004E3169C0000000000000A7A2
+t1311861184
+s42914
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.h
+c000000004E12E3FA0000000000000185
+t1309860858
+s389
+i<Foundation/Foundation.h>
+i<MapKit/MapKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m
+c000000004E12E4DA000000000000057B
+t1309861082
+s1403
+i"MapCoordinates.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.h
+c000000004E12DDB60000000000000216
+t1309859254
+s534
+i<UIKit/UIKit.h>
+i"WebService.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.xib
+c000000004E12DB0700000000000042AB
+t1309858567
+s17067
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.h
+c000000004E130479000000000000038A
+t1309869177
+s906
+i<UIKit/UIKit.h>
+i"dbJobOffer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.xib
+c000000004E13028E00000000000090ED
+t1309868686
+s37101
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.h
+c000000004E130C8F000000000000021A
+t1309871247
+s538
+i<UIKit/UIKit.h>
+i"dbJobOffer.h"
+i"WebService.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.xib
+c000000004E130CF20000000000004654
+t1309871346
+s18004
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.h
+c000000004E2FFF7200000000000005F7
+t1311768434
+s1527
+i<UIKit/UIKit.h>
+i"WebService.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.xib
+c000000004E2FFD1A000000000000EA0B
+t1311767834
+s59915
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.h
+c000000004E207B24000000000000015C
+t1310751524
+s348
+i<UIKit/UIKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.xib
+c000000004E207B17000000000000473D
+t1310751511
+s18237
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.h
+c000000004E0C8C500000000000000F1A
+t1309445200
+s3866
+i<Foundation/Foundation.h>
+i<SystemConfiguration/SystemConfiguration.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m
+c000000004E0C8C50000000000000239E
+t1309445200
+s9118
+i<sys/socket.h>
+i<netinet/in.h>
+i<netinet6/in6.h>
+i<arpa/inet.h>
+i<ifaddrs.h>
+i<netdb.h>
+i<CoreFoundation/CoreFoundation.h>
+i"Reachability.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.h
+c000000004E116F1F00000000000000C2
+t1309765407
+s194
+i<UIKit/UIKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.xib
+c000000004E116CFF000000000000184D
+t1309764863
+s6221
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.h
+c000000004E12E2540000000000000212
+t1309860436
+s530
+i<UIKit/UIKit.h>
+i"WebService.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.xib
+c000000004E12DB0D00000000000042A4
+t1309858573
+s17060
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.h
+c000000004E12E2560000000000000216
+t1309860438
+s534
+i<UIKit/UIKit.h>
+i"WebService.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.xib
+c000000004E12DB2E00000000000042AB
+t1309858606
+s17067
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.h
+c000000004E315DBF0000000000000236
+t1311858111
+s566
+i<UIKit/UIKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.xib
+c000000004E315DD7000000000000853F
+t1311858135
+s34111
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.h
+c000000004E31479E000000000000023F
+t1311852446
+s575
+i<Foundation/Foundation.h>
+i"WebService.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m
+c000000004E3147B70000000000000415
+t1311852471
+s1045
+i"Sync.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SynthesizeSingleton.h
+c000000004E0C8C5000000000000004FA
+t1309445200
+s1274
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/UFL.txt
+c000000004E2F7CB800000000000012A1
+t1311734968
+s4769
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.h
+c000000004E1174EC0000000000000245
+t1309766892
+s581
+i<Foundation/Foundation.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m
+c000000004E3002BD000000000000077F
+t1311769277
+s1919
+i"URLReader.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Bold.ttf
+c000000004E2F7CB80000000000052D78
+t1311734968
+s339320
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-BoldItalic.ttf
+c000000004E2F7CBA0000000000058920
+t1311734970
+s362784
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Italic.ttf
+c000000004E2F7CB8000000000005F270
+t1311734968
+s389744
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Light.ttf
+c000000004E2F7CB80000000000066D34
+t1311734968
+s421172
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-LightItalic.ttf
+c000000004E2F7CB800000000000656C0
+t1311734968
+s415424
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Medium.ttf
+c000000004E2F7CB80000000000054B3C
+t1311734968
+s346940
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-MediumItalic.ttf
+c000000004E2F7CB8000000000005AFF8
+t1311734968
+s372728
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Regular.ttf
+c000000004E2F7CB80000000000057CF4
+t1311734968
+s359668
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.h
+c000000004E31490400000000000006F3
+t1311852804
+s1779
+i<Foundation/Foundation.h>
+i"URLReader.h"
+i"dbCategory.h"
+i"dbJobOffer.h"
+i"dbTextContent.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m
+c000000004E31497B0000000000003E7D
+t1311852923
+s15997
+i"WebService.h"
+i"DBManagedObjectContext.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.h
+c000000004E315F0C00000000000004F9
+t1311858444
+s1273
+i<Foundation/Foundation.h>
+i"SynthesizeSingleton.h"
+i"CurrentOffer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m
+c000000004E315FF00000000000001894
+t1311858672
+s6292
+i"Reachability.h"
+i<QuartzCore/QuartzCore.h>
+i"DBManagedObjectContext.h"
+i"dbSettings.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bg-pattern.png
+c000000004E3009830000000000013AAC
+t1311771011
+s80556
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/btn-boom.png
+c000000004E1F49350000000000007445
+t1310673205
+s29765
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/About.o
+t1311861233
+s53356
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BlackAlertView.o
+t1311861233
+s49356
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJob.LinkFileList
+c000000004E3169EA0000000000000F13
+t1311861226
+s3859
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJobAppDelegate.o
+t1311861232
+s55988
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/CurrentOffer.o
+t1311861233
+s18352
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/DBManagedObjectContext.o
+t1311861233
+s37096
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Loading.o
+t1311861233
+s61536
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/MapCoordinates.o
+t1311861233
+s13912
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/NewestOffers.o
+t1311861232
+s72400
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Offer.o
+t1311861233
+s74680
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/OfferMessage.o
+t1311861233
+s58504
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOffer.o
+t1311861232
+s147240
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOfferText.o
+t1311861233
+s49156
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Reachability.o
+t1311861232
+s19152
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Search.o
+t1311861232
+s35292
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchJobs.o
+t1311861232
+s71764
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchPeople.o
+t1311861232
+s71944
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Settings.o
+t1311861233
+s57464
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Sync.o
+t1311861233
+s15720
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/URLReader.o
+t1311861232
+s10256
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/WebService.o
+t1311861233
+s69712
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/bSettings.o
+t1311861232
+s80660
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbCategory.o
+t1311861233
+s1664
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbJobOffer.o
+t1311861233
+s1888
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbSettings.o
+t1311861233
+s1552
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbTextContent.o
+t1311861233
+s1616
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/main.o
+t1311861232
+s3188
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app
+t1311861234
+s1360
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app.dSYM
+t1311861234
+s102
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/About.nib
+t1311861230
+s1022
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob
+t1311861234
+s270464
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob.mom
+t1311861232
+s4335
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Bulgarian.lproj/Localizable.strings
+t1311861229
+s3459
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/English.lproj/Localizable.strings
+t1311861228
+s3459
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Icon.png
+t1311861229
+s3964
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Icon@2x.png
+t1311861229
+s10776
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Info.plist
+t1311861226
+s1153
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Loading.nib
+t1311861229
+s1490
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/MainWindow.nib
+t1311861226
+s4146
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/NewestOffers.nib
+t1311861226
+s986
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Offer.nib
+t1311861229
+s2884
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/OfferMessage.nib
+t1311861229
+s1263
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/PkgInfo
+t1311861226
+s8
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/PostOffer.nib
+t1311861228
+s4497
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/PostOfferText.nib
+t1311861230
+s1271
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Search.nib
+t1311861228
+s764
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/SearchJobs.nib
+t1311861227
+s986
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/SearchPeople.nib
+t1311861227
+s986
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Settings.nib
+t1311861230
+s2137
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/UFL.txt
+t1311861229
+s4769
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Bold.ttf
+t1311861229
+s339320
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-BoldItalic.ttf
+t1311861229
+s362784
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Italic.ttf
+t1311861229
+s389744
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Light.ttf
+t1311861229
+s421172
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-LightItalic.ttf
+t1311861229
+s415424
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Medium.ttf
+t1311861229
+s346940
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-MediumItalic.ttf
+t1311861229
+s372728
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Regular.ttf
+t1311861229
+s359668
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/bg-pattern.png
+t1311861229
+s80556
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/btn-boom.png
+t1311861229
+s29765
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-about.png
+t1311861230
+s374
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-jobs.png
+t1311861229
+s371
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-newest.png
+t1311861229
+s284
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-people.png
+t1311861229
+s350
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-postoffer.png
+t1311861229
+s375
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-search.png
+t1311861230
+s388
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/tb-settings.png
+t1311861230
+s375
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.h
+c000000004E11857F0000000000000297
+t1309771135
+s663
+i<CoreData/CoreData.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m
+c000000004E1185880000000000000125
+t1309771144
+s293
+i"dbCategory.h"
+i"dbJobOffer.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.h
+c000000004E1F27E800000000000002F4
+t1310664680
+s756
+i<CoreData/CoreData.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m
+c000000004E1F27EF000000000000019B
+t1310664687
+s411
+i"dbJobOffer.h"
+i"dbCategory.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.h
+c000000004E1F52BF0000000000000138
+t1310675647
+s312
+i<CoreData/CoreData.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m
+c000000004E1F52C000000000000000DC
+t1310675648
+s220
+i"dbSettings.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.h
+c000000004E31480E000000000000016E
+t1311852558
+s366
+i<CoreData/CoreData.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m
+c000000004E31481000000000000000F5
+t1311852560
+s245
+i"dbTextContent.h"
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m
+c000000004E116851000000000000015F
+t1309763665
+s351
+i<UIKit/UIKit.h>
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-about.png
+c000000004E2D16600000000000000176
+t1311577696
+s374
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-jobs.png
+c000000004AA69E7E0000000000000173
+t1252433534
+s371
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-newest.png
+c000000004A3E12D2000000000000011C
+t1245582034
+s284
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-people.png
+c0000000049F3F776000000000000015E
+t1240725366
+s350
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-postoffer.png
+c000000004E0C8C500000000000000177
+t1309445200
+s375
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-search.png
+c000000004971B48E0000000000000184
+t1232188558
+s388
+
+N/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-settings.png
+c000000004971B5180000000000000177
+t1232188696
+s375
+
+N/var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch.gch
+t1311861231
+s13222992
+
+NBombaJob-Info.plist
+c000000004E3169A400000000000006D7
+t1311861156
+s1751
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies333554026#333554026#0(0"0(0#1#0"17239343360#0"0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/About.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.849326
+e333554033.975523
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/About.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@83"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m333554033#333554033#0(0"0(0#0#75"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m4499660432#2307"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../About.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/About.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BlackAlertView.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.889159
+e333554033.019428
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BlackAlertView.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@81"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m333554032#333554033#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m4499660432#2314"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BlackAlertView.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BlackAlertView.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJobAppDelegate.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.103767
+e333554032.247559
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJobAppDelegate.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@94"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m333554032#333554032#0(0"0(0#0#86"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m4499660432#2332"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/BombaJobAppDelegate.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJobAppDelegate.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/CurrentOffer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.498622
+e333554033.591404
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/CurrentOffer.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@79"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m333554033#333554033#0(0"0(0#0#71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m4499660432#2310"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/CurrentOffer.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/CurrentOffer.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/DBManagedObjectContext.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.110477
+e333554033.236015
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/DBManagedObjectContext.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@89"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m333554033#333554033#0(0"0(0#0#81"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m4499660432#2330"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/DBManagedObjectContext.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/DBManagedObjectContext.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Loading.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.962755
+e333554033.110371
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Loading.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@85"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m333554032#333554033#0(0"0(0#0#77"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m4499660432#2311"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Loading.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Loading.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/MapCoordinates.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.323842
+e333554033.398044
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/MapCoordinates.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@81"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m333554033#333554033#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m4499660432#2314"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MapCoordinates.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/MapCoordinates.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/NewestOffers.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.179757
+e333554032.340759
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/NewestOffers.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@90"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m333554032#333554032#0(0"0(0#0#82"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m4499660432#2321"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../NewestOffers.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/NewestOffers.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Offer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.279743
+e333554033.498464
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Offer.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@83"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m333554033#333554033#0(0"0(0#0#75"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m4499660432#2307"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Offer.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Offer.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/OfferMessage.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.398146
+e333554033.546634
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/OfferMessage.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@90"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m333554033#333554033#0(0"0(0#0#82"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m4499660432#2321"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../OfferMessage.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/OfferMessage.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOffer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.428870
+e333554032.833061
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOffer.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@87"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m333554032#333554032#0(0"0(0#0#79"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m4499660432#2315"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOffer.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOffer.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOfferText.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.546742
+e333554033.733129
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOfferText.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@91"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m333554033#333554033#0(0"0(0#0#83"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m4499660432#2323"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../PostOfferText.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/PostOfferText.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Reachability.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.833163
+e333554032.962641
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Reachability.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@79"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m333554032#333554032#0(0"0(0#0#71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m4499660432#2310"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Reachability.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Reachability.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Search.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.492654
+e333554032.603137
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Search.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@84"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m333554032#333554032#0(0"0(0#0#76"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m4499660432#2309"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Search.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Search.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchJobs.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.247659
+e333554032.428761
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchJobs.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@88"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m333554032#333554032#0(0"0(0#0#80"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m4499660432#2317"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchJobs.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchJobs.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchPeople.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.340871
+e333554032.492551
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchPeople.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@90"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m333554032#333554032#0(0"0(0#0#82"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m4499660432#2321"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../SearchPeople.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/SearchPeople.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Settings.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.655764
+e333554033.820676
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Settings.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@86"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m333554033#333554033#0(0"0(0#0#78"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m4499660432#2313"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Classes/../Settings.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Settings.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Sync.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.733230
+e333554033.849218
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Sync.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@71"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m333554033#333554033#0(0"0(0#0#63"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m4499660432#2294"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Sync.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/Sync.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/URLReader.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.809219
+e333554032.889058
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/URLReader.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@76"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m333554032#333554032#0(0"0(0#0#68"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m4499660432#2304"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/URLReader.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/URLReader.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/WebService.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.019531
+e333554033.219520
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/WebService.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@77"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m333554033#333554033#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m4499660432#2306"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/WebService.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/WebService.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/bSettings.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554032.603237
+e333554032.809114
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/bSettings.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@76"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m333554032#333554032#0(0"0(0#0#68"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m4499660432#2304"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bSettings.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/bSettings.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbCategory.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.236121
+e333554033.323732
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbCategory.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@77"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m333554033#333554033#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m4499660432#2306"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbCategory.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbCategory.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbJobOffer.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.219622
+e333554033.279640
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbJobOffer.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@77"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m333554033#333554033#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m4499660432#2306"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbJobOffer.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbJobOffer.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbSettings.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.591511
+e333554033.655662
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbSettings.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@77"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m333554033#333554033#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m4499660432#2306"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbSettings.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbSettings.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbTextContent.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554033.820783
+e333554033.878651
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbTextContent.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@80"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m333554033#333554033#0(0"0(0#0#72"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m4499660432#2312"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/dbTextContent.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/dbTextContent.o0#
+
+CCompileC build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/main.o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554031.963277
+e333554032.179647
+r1
+xCompileC
+xbuild/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/main.o
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@71"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m333554031#333554032#0(0"0(0#0#63"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m4499660432#2294"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -include /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/main.m -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.xib
+s333554030.344202
+e333554030.944057
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.xib
+lSLF07#2@20"CompileXIB About.xib333554030#333554030#0(0"0(0#0#66"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.xib4499660432#681"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/About.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/About.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.xib
+s333554028.531657
+e333554029.053929
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.xib
+lSLF07#2@22"CompileXIB Loading.xib333554028#333554029#0(0"0(0#0#68"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.xib4499660432#685"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Loading.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Loading.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib
+s333554026.331776
+e333554027.023899
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib
+o2011-07-28 16:53:46.604 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o2011-07-28 16:53:46.608 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o2011-07-28 16:53:46.609 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o2011-07-28 16:53:46.610 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o2011-07-28 16:53:46.610 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o2011-07-28 16:53:46.612 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o2011-07-28 16:53:46.613 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+o/* com.apple.ibtool.document.warnings */
+o/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib:3: warning: The 'loadingView' outlet of 'Bomba Job App Delegate' is connected to 'Loading' but 'loadingView' is no longer defined on BombaJobAppDelegate.
+o/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib:3: warning: The 'tabBarController' outlet of 'Bomba Job App Delegate' is connected to 'Tab Bar Controller' but 'tabBarController' is no longer defined on BombaJobAppDelegate.
+o/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib:3: warning: The 'window' outlet of 'Bomba Job App Delegate' is connected to 'Window' but 'window' is no longer defined on BombaJobAppDelegate.
+lSLF07#2@25"CompileXIB MainWindow.xib333554026#333554027#0(2024"2011-07-28 16:53:46.604 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  2011-07-28 16:53:46.608 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  2011-07-28 16:53:46.609 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  2011-07-28 16:53:46.610 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  2011-07-28 16:53:46.610 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  2011-07-28 16:53:46.612 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  2011-07-28 16:53:46.613 ibtool[33795:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  /* com.apple.ibtool.document.warnings *//Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib:3: warning: The 'loadingView' outlet of 'Bomba Job App Delegate' is connected to 'Loading' but 'loadingView' is no longer defined on BombaJobAppDelegate./Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib:3: warning: The 'tabBarController' outlet of 'Bomba Job App Delegate' is connected to 'Tab Bar Controller' but 'tabBarController' is no longer defined on BombaJobAppDelegate./Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib:3: warning: The 'window' outlet of 'Bomba Job App Delegate' is connected to 'Window' but 'window' is no longer defined on BombaJobAppDelegate.3(22@141"The 'loadingView' outlet of 'Bomba Job App Delegate' is connected to 'Loading' but 'loadingView' is no longer defined on BombaJobAppDelegate.333554027#18446744073709551615#0#0(6@71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib333553984#3#0#3#0#0"0(22@162"The 'tabBarController' outlet of 'Bomba Job App Delegate' is connected to 'Tab Bar Controller' but 'tabBarController' is no longer defined on BombaJobAppDelegate.333554027#18446744073709551615#0#0(6@71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib333553984#3#0#3#0#0"0(22@130"The 'window' outlet of 'Bomba Job App Delegate' is connected to 'Window' but 'window' is no longer defined on BombaJobAppDelegate.333554027#18446744073709551615#0#0(6@71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib333553984#3#0#3#0#0"0(0#0#71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib4499660432#691"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/MainWindow.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/MainWindow.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.xib
+s333554026.332943
+e333554027.022410
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.xib
+lSLF07#2@27"CompileXIB NewestOffers.xib333554026#333554027#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.xib4499660432#695"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/NewestOffers.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/NewestOffers.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.xib
+s333554029.060139
+e333554029.793453
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.xib
+lSLF07#2@20"CompileXIB Offer.xib333554029#333554029#0(0"0(0#0#66"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.xib4499660432#681"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Offer.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Offer.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.xib
+s333554029.092730
+e333554029.724499
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.xib
+lSLF07#2@27"CompileXIB OfferMessage.xib333554029#333554029#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.xib4499660432#695"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/OfferMessage.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/OfferMessage.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.xib
+s333554027.872342
+e333554028.664362
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.xib
+o2011-07-28 16:53:48.173 ibtool[33805:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  
+lSLF07#2@24"CompileXIB PostOffer.xib333554027#333554028#0(185"2011-07-28 16:53:48.173 ibtool[33805:70b] -[__NSCFSet unionSet:]: This app appears to be calling this method with a non-set parameter.  Please wait while the system corrects this....  0(0#0#70"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.xib4499660432#689"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/PostOffer.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOffer.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.xib
+s333554029.724620
+e333554030.342821
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.xib
+lSLF07#2@28"CompileXIB PostOfferText.xib333554029#333554030#0(0"0(0#0#74"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.xib4499660432#697"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/PostOfferText.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/PostOfferText.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.xib
+s333554027.873888
+e333554028.531564
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.xib
+lSLF07#2@21"CompileXIB Search.xib333554027#333554028#0(0"0(0#0#67"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.xib4499660432#683"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Search.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Search.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.xib
+s333554027.022502
+e333554027.873807
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.xib
+lSLF07#2@25"CompileXIB SearchJobs.xib333554027#333554027#0(0"0(0#0#71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.xib4499660432#691"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/SearchJobs.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchJobs.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.xib
+s333554027.023973
+e333554027.872193
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.xib
+lSLF07#2@27"CompileXIB SearchPeople.xib333554027#333554027#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.xib4499660432#695"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/SearchPeople.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/SearchPeople.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.xib
+s333554029.870244
+e333554030.587625
+r1
+xCompileXIB
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.xib
+lSLF07#2@23"CompileXIB Settings.xib333554029#333554030#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.xib4499660432#687"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Settings.nib /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Settings.xib --sdk /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCopyStringsFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Bulgarian.lproj/Localizable.strings Bulgarian.lproj/Localizable.strings
+s333554029.014689
+e333554029.062494
+r1
+xCopyStringsFile
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Bulgarian.lproj/Localizable.strings
+xBulgarian.lproj/Localizable.strings
+o/Developer3/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings:125: warning: Insecure world writable dir /usr/local in PATH, mode 040777
+lSLF07#2@40"Copy Bulgarian.lproj/Localizable.strings333554029#333554029#0(164"/Developer3/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings:125: warning: Insecure world writable dir /usr/local in PATH, mode 0407770(0#0#92"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Bulgarian.lproj/Localizable.strings4499660432#601"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding binary Bulgarian.lproj/Localizable.strings --outdir /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Bulgarian.lproj0#
+
+CCopyStringsFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/English.lproj/Localizable.strings English.lproj/Localizable.strings
+s333554028.664479
+e333554029.014585
+r1
+xCopyStringsFile
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/English.lproj/Localizable.strings
+xEnglish.lproj/Localizable.strings
+o/Developer3/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings:125: warning: Insecure world writable dir /usr/local in PATH, mode 040777
+lSLF07#2@38"Copy English.lproj/Localizable.strings333554028#333554029#0(164"/Developer3/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings:125: warning: Insecure world writable dir /usr/local in PATH, mode 0407770(0#0#90"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/English.lproj/Localizable.strings4499660432#597"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding binary English.lproj/Localizable.strings --outdir /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/English.lproj0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Icon.png Icon.png
+s333554029.091453
+e333554029.112375
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Icon.png
+xIcon.png
+lSLF07#2@13"Copy Icon.png333554029#333554029#0(0"0(0#0#65"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Icon.png4499660432#586"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Icon.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Icon@2x.png Icon@2x.png
+s333554029.092194
+e333554029.103573
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Icon@2x.png
+xIcon@2x.png
+lSLF07#2@16"Copy Icon@2x.png333554029#333554029#0(0"0(0#0#68"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Icon@2x.png4499660432#589"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Icon@2x.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/UFL.txt UFL.txt
+s333554029.823499
+e333554029.870154
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/UFL.txt
+xUFL.txt
+lSLF07#2@12"Copy UFL.txt333554029#333554029#0(0"0(0#0#64"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/UFL.txt4499660432#585"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/UFL.txt /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Bold.ttf Ubuntu-Bold.ttf
+s333554029.794922
+e333554029.903972
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-Bold.ttf
+xUbuntu-Bold.ttf
+lSLF07#2@20"Copy Ubuntu-Bold.ttf333554029#333554029#0(0"0(0#0#72"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Bold.ttf4499660432#593"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Bold.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-BoldItalic.ttf Ubuntu-BoldItalic.ttf
+s333554029.795525
+e333554029.934053
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-BoldItalic.ttf
+xUbuntu-BoldItalic.ttf
+lSLF07#2@26"Copy Ubuntu-BoldItalic.ttf333554029#333554029#0(0"0(0#0#78"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-BoldItalic.ttf4499660432#599"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-BoldItalic.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Italic.ttf Ubuntu-Italic.ttf
+s333554029.796154
+e333554029.910267
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-Italic.ttf
+xUbuntu-Italic.ttf
+lSLF07#2@22"Copy Ubuntu-Italic.ttf333554029#333554029#0(0"0(0#0#74"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Italic.ttf4499660432#595"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Italic.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Light.ttf Ubuntu-Light.ttf
+s333554029.796755
+e333554029.933007
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-Light.ttf
+xUbuntu-Light.ttf
+lSLF07#2@21"Copy Ubuntu-Light.ttf333554029#333554029#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Light.ttf4499660432#594"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Light.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-LightItalic.ttf Ubuntu-LightItalic.ttf
+s333554029.798571
+e333554029.944024
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-LightItalic.ttf
+xUbuntu-LightItalic.ttf
+lSLF07#2@27"Copy Ubuntu-LightItalic.ttf333554029#333554029#0(0"0(0#0#79"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-LightItalic.ttf4499660432#600"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-LightItalic.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Medium.ttf Ubuntu-Medium.ttf
+s333554029.800459
+e333554029.934884
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-Medium.ttf
+xUbuntu-Medium.ttf
+lSLF07#2@22"Copy Ubuntu-Medium.ttf333554029#333554029#0(0"0(0#0#74"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Medium.ttf4499660432#595"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Medium.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-MediumItalic.ttf Ubuntu-MediumItalic.ttf
+s333554029.802401
+e333554029.913662
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-MediumItalic.ttf
+xUbuntu-MediumItalic.ttf
+lSLF07#2@28"Copy Ubuntu-MediumItalic.ttf333554029#333554029#0(0"0(0#0#80"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-MediumItalic.ttf4499660432#601"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-MediumItalic.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/Ubuntu-Regular.ttf Ubuntu-Regular.ttf
+s333554029.819203
+e333554029.946361
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/Ubuntu-Regular.ttf
+xUbuntu-Regular.ttf
+lSLF07#2@23"Copy Ubuntu-Regular.ttf333554029#333554029#0(0"0(0#0#75"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Regular.ttf4499660432#596"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/Ubuntu-Regular.ttf /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/bg-pattern.png bg-pattern.png
+s333554029.794310
+e333554029.823388
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/bg-pattern.png
+xbg-pattern.png
+lSLF07#2@19"Copy bg-pattern.png333554029#333554029#0(0"0(0#0#71"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bg-pattern.png4499660432#592"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/bg-pattern.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/btn-boom.png btn-boom.png
+s333554029.793544
+e333554029.819003
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/btn-boom.png
+xbtn-boom.png
+lSLF07#2@17"Copy btn-boom.png333554029#333554029#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/btn-boom.png4499660432#590"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/btn-boom.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-about.png tb-about.png
+s333554030.343632
+e333554030.357899
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-about.png
+xtb-about.png
+lSLF07#2@17"Copy tb-about.png333554030#333554030#0(0"0(0#0#69"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-about.png4499660432#590"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-about.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-jobs.png tb-jobs.png
+s333554029.058517
+e333554029.091367
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-jobs.png
+xtb-jobs.png
+lSLF07#2@16"Copy tb-jobs.png333554029#333554029#0(0"0(0#0#68"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-jobs.png4499660432#589"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-jobs.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-newest.png tb-newest.png
+s333554029.056916
+e333554029.087088
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-newest.png
+xtb-newest.png
+lSLF07#2@18"Copy tb-newest.png333554029#333554029#0(0"0(0#0#70"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-newest.png4499660432#591"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-newest.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-people.png tb-people.png
+s333554029.055378
+e333554029.079179
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-people.png
+xtb-people.png
+lSLF07#2@18"Copy tb-people.png333554029#333554029#0(0"0(0#0#70"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-people.png4499660432#591"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-people.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-postoffer.png tb-postoffer.png
+s333554029.054022
+e333554029.084037
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-postoffer.png
+xtb-postoffer.png
+lSLF07#2@21"Copy tb-postoffer.png333554029#333554029#0(0"0(0#0#73"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-postoffer.png4499660432#594"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-postoffer.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-search.png tb-search.png
+s333554030.587710
+e333554030.597795
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-search.png
+xtb-search.png
+lSLF07#2@18"Copy tb-search.png333554030#333554030#0(0"0(0#0#70"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-search.png4499660432#591"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-search.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CCpResource build/Debug-iphonesimulator/BombaJob.app/tb-settings.png tb-settings.png
+s333554030.342915
+e333554030.355979
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BombaJob.app/tb-settings.png
+xtb-settings.png
+lSLF07#2@20"Copy tb-settings.png333554030#333554030#0(0"0(0#0#72"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-settings.png4499660432#593"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/tb-settings.png /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+
+CDataModelCompile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob.mom /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel
+s333554031.962295
+e333554032.103661
+r1
+xDataModelCompile
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob.mom
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel
+lSLF07#2@85"Compile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel333554031#333554032#0(0"0(0#0#77"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel4499660432#506"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/momc -XD_MOMC_TARGET_VERSION=10.6 /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob.xcdatamodel /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob.mom0#
+
+CGenerateDSYMFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app.dSYM /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob
+s333554034.263511
+e333554034.352968
+r1
+xGenerateDSYMFile
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app.dSYM
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/BombaJob.app.dSYM build/Debug-iphonesimulator/BombaJob.app/BombaJob333554034#333554034#0(0"0(0#0#106"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob4499660432#505"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/usr/bin/dsymutil /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app.dSYM0#
+
+CLd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob normal i386
+s333554033.975623
+e333554034.263411
+r1
+xLd
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob
+xnormal
+xi386
+lSLF07#2@111"Link /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob333554033#333554034#0(0"0(0#0#0"4499660432#1150"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -arch i386 -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -filelist /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/Objects-normal/i386/BombaJob.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework SystemConfiguration -framework CoreData -framework CoreLocation -prebind -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/BombaJob0#
+
+CProcessInfoPlistFile /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Info.plist BombaJob-Info.plist
+s333554026.319821
+e333554026.331693
+r1
+xProcessInfoPlistFile
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Info.plist
+xBombaJob-Info.plist
+lSLF07#2@27"Process BombaJob-Info.plist333554026#333554026#0(0"0(0#0#76"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob-Info.plist17239322368#600"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility BombaJob-Info.plist -genpkginfo /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app/Info.plist0#
+
+CProcessPCH /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch.gch BombaJob_Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
+s333554030.944197
+e333554031.962129
+r1
+xProcessPCH
+x/var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch.gch
+xBombaJob_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF07#2@30"Precompile BombaJob_Prefix.pch333554030#333554031#0(0"0(0#0#76"/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob_Prefix.pch4499660432#2167"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv LANG en_US.US-ASCII    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-generated-files.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-own-target-headers.hmap -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-all-target-headers.hmap -iquote /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/BombaJob-project-headers.hmap -F/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/include -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources/i386 -I/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/BombaJob.build/Debug-iphonesimulator/BombaJob.build/DerivedSources -isysroot /Developer3/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/BombaJob_Prefix.pch -o /var/folders/fr/hsc6npl928s3z7ybs22bzl4h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/BombaJob_Prefix-bfzjstrrjxlftmeanvjdkuwdloyp/BombaJob_Prefix.pch.gch0#
+
+CTouch /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app
+s333554034.353065
+e333554034.357837
+r1
+xTouch
+x/Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app
+lSLF07#2@103"Touch /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app333554034#333554034#0(0"0(0#0#0"4499660432#379"    cd /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob    setenv PATH "/Developer3/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/supudo/_Software/Objective-C/BombaJob.bg/BombaJob/build/Debug-iphonesimulator/BombaJob.app0#
+

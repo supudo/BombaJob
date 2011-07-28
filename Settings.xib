@@ -135,6 +135,35 @@
             <int key="IBUIContentVerticalAlignment">0</int>
             <bool key="IBUIOn">YES</bool>
           </object>
+          <object class="IBUILabel" id="770405503">
+            <reference key="NSNextResponder" ref="191373211"/>
+            <int key="NSvFlags">292</int>
+            <string key="NSFrame">{{20, 144}, {178, 21}}</string>
+            <reference key="NSSuperview" ref="191373211"/>
+            <string key="NSReuseIdentifierKey">_NS:173</string>
+            <bool key="IBUIOpaque">NO</bool>
+            <bool key="IBUIClipsSubviews">YES</bool>
+            <int key="IBUIContentMode">7</int>
+            <bool key="IBUIUserInteractionEnabled">NO</bool>
+            <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+            <string key="IBUIText">Label</string>
+            <reference key="IBUITextColor" ref="1002444385"/>
+            <reference key="IBUIHighlightedColor" ref="872297079"/>
+            <int key="IBUIBaselineAdjustment">1</int>
+            <float key="IBUIMinimumFontSize">10</float>
+          </object>
+          <object class="IBUISwitch" id="675676466">
+            <reference key="NSNextResponder" ref="191373211"/>
+            <int key="NSvFlags">292</int>
+            <string key="NSFrame">{{206, 141}, {94, 27}}</string>
+            <reference key="NSSuperview" ref="191373211"/>
+            <string key="NSReuseIdentifierKey">_NS:536</string>
+            <bool key="IBUIOpaque">NO</bool>
+            <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+            <int key="IBUIContentHorizontalAlignment">0</int>
+            <int key="IBUIContentVerticalAlignment">0</int>
+            <bool key="IBUIOn">YES</bool>
+          </object>
         </object>
         <string key="NSFrameSize">{320, 410}</string>
         <reference key="NSSuperview"/>
@@ -231,6 +260,31 @@
           </object>
           <int key="connectionID">18</int>
         </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchOutletConnection" key="connection">
+            <string key="label">lblSearch</string>
+            <reference key="source" ref="372490531"/>
+            <reference key="destination" ref="770405503"/>
+          </object>
+          <int key="connectionID">22</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchOutletConnection" key="connection">
+            <string key="label">swSearch</string>
+            <reference key="source" ref="372490531"/>
+            <reference key="destination" ref="675676466"/>
+          </object>
+          <int key="connectionID">23</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchEventConnection" key="connection">
+            <string key="label">iboSearch:</string>
+            <reference key="source" ref="675676466"/>
+            <reference key="destination" ref="372490531"/>
+            <int key="IBEventType">13</int>
+          </object>
+          <int key="connectionID">24</int>
+        </object>
       </object>
       <object class="IBMutableOrderedSet" key="objectRecords">
         <object class="NSArray" key="orderedObjects">
@@ -252,6 +306,8 @@
               <reference ref="407909042"/>
               <reference ref="41972195"/>
               <reference ref="103564181"/>
+              <reference ref="770405503"/>
+              <reference ref="675676466"/>
             </object>
             <reference key="parent" ref="0"/>
           </object>
@@ -296,6 +352,16 @@
             <reference key="object" ref="103564181"/>
             <reference key="parent" ref="191373211"/>
           </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">19</int>
+            <reference key="object" ref="770405503"/>
+            <reference key="parent" ref="191373211"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">20</int>
+            <reference key="object" ref="675676466"/>
+            <reference key="parent" ref="191373211"/>
+          </object>
         </object>
       </object>
       <object class="NSMutableDictionary" key="flattenedProperties">
@@ -306,6 +372,10 @@
           <string>-2.CustomClassName</string>
           <string>1.IBEditorWindowLastContentRect</string>
           <string>1.IBPluginDependency</string>
+          <string>19.IBPluginDependency</string>
+          <string>19.IBViewBoundsToFrameTransform</string>
+          <string>20.IBPluginDependency</string>
+          <string>20.IBViewBoundsToFrameTransform</string>
           <string>4.IBPluginDependency</string>
           <string>4.IBViewBoundsToFrameTransform</string>
           <string>5.IBPluginDependency</string>
@@ -327,6 +397,14 @@
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABBoAAAwyAAAA</bytes>
+          </object>
+          <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABDTgAAwyMAAA</bytes>
+          </object>
+          <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
             <bytes key="NSTransformStruct">AUGgAABCHAAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -343,11 +421,11 @@
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">P4AAAL+AAABByAAAwsQAAA</bytes>
+            <bytes key="NSTransformStruct">AUGgAABC2gAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">P4AAAL+AAABDUwAAwsoAAA</bytes>
+            <bytes key="NSTransformStruct">AUNOAABC1AAAA</bytes>
           </object>
         </object>
       </object>
@@ -367,7 +445,7 @@
         </object>
       </object>
       <nil key="sourceID"/>
-      <int key="maxID">18</int>
+      <int key="maxID">24</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -381,10 +459,12 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>iboGeoData:</string>
               <string>iboPrivateData:</string>
+              <string>iboSearch:</string>
               <string>iboSyncData:</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
               <bool key="EncodedWithXMLCoder">YES</bool>
+              <string>id</string>
               <string>id</string>
               <string>id</string>
               <string>id</string>
@@ -396,6 +476,7 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>iboGeoData:</string>
               <string>iboPrivateData:</string>
+              <string>iboSearch:</string>
               <string>iboSyncData:</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
@@ -406,6 +487,10 @@
               </object>
               <object class="IBActionInfo">
                 <string key="name">iboPrivateData:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboSearch:</string>
                 <string key="candidateClassName">id</string>
               </object>
               <object class="IBActionInfo">
@@ -420,9 +505,11 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>lblGeo</string>
               <string>lblPrivateData</string>
+              <string>lblSearch</string>
               <string>lblSync</string>
               <string>swGeo</string>
               <string>swPrivateData</string>
+              <string>swSearch</string>
               <string>swSync</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
@@ -430,6 +517,8 @@
               <string>UILabel</string>
               <string>UILabel</string>
               <string>UILabel</string>
+              <string>UILabel</string>
+              <string>UISwitch</string>
               <string>UISwitch</string>
               <string>UISwitch</string>
               <string>UISwitch</string>
@@ -441,9 +530,11 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>lblGeo</string>
               <string>lblPrivateData</string>
+              <string>lblSearch</string>
               <string>lblSync</string>
               <string>swGeo</string>
               <string>swPrivateData</string>
+              <string>swSearch</string>
               <string>swSync</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
@@ -457,6 +548,10 @@
                 <string key="candidateClassName">UILabel</string>
               </object>
               <object class="IBToOneOutletInfo">
+                <string key="name">lblSearch</string>
+                <string key="candidateClassName">UILabel</string>
+              </object>
+              <object class="IBToOneOutletInfo">
                 <string key="name">lblSync</string>
                 <string key="candidateClassName">UILabel</string>
               </object>
@@ -466,6 +561,10 @@
               </object>
               <object class="IBToOneOutletInfo">
                 <string key="name">swPrivateData</string>
+                <string key="candidateClassName">UISwitch</string>
+              </object>
+              <object class="IBToOneOutletInfo">
+                <string key="name">swSearch</string>
                 <string key="candidateClassName">UISwitch</string>
               </object>
               <object class="IBToOneOutletInfo">

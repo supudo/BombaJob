@@ -22,8 +22,8 @@
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
 	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
 	[request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-	[request setHTTPBody:postData];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getFromURL postData = %@", postData]];
+	[request setHTTPBody:[pData dataUsingEncoding:NSUTF8StringEncoding]];
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getFromURL method = %@, postData = %@", pMethod, pData]];
 	
 	NSError *error = nil;
 	NSURLResponse *response;

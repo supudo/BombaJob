@@ -52,6 +52,9 @@
 "About.PrivateData" = "Запази лични данни";
 "About.Geo" = "Изпращай гео-координати";
 "About.Sync" = "Начална синхронизация";
+"About.Search" = "Онлайн търсене";
+
+"Search.Freelance" = "Проект/Freelance";
 
 "Months_Short_1" = "Яну";
 "Months_Short_2" = "Фев";

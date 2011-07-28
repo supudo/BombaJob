@@ -11,6 +11,7 @@
 #import "dbCategory.h"
 #import "dbJobOffer.h"
 #import "dbTextContent.h"
+#import "SearchOffer.h"
 
 @protocol WebServiceDelegate <NSObject>
 @optional
@@ -22,6 +23,7 @@
 - (void)getJobsHumanFinished:(id)sender;
 - (void)getJobsCompanyFinished:(id)sender;
 - (void)getTextContentFinished:(id)sender;
+- (void)searchOffersFinished:(id)sender results:(NSMutableArray *)offers;
 @end
 
 @interface WebService : NSObject <NSXMLParserDelegate, URLReaderDelegate> {
@@ -33,6 +35,8 @@
 	dbCategory *entCategory;
 	dbJobOffer *entOffer;
 	dbTextContent *entTextContent;
+	NSMutableArray *searchResults;
+	SearchOffer *searchSingle;
 }
 
 @property (assign) id<WebServiceDelegate> delegate;
@@ -42,6 +46,8 @@
 @property (nonatomic, retain) dbCategory *entCategory;
 @property (nonatomic, retain) dbJobOffer *entOffer;
 @property (nonatomic, retain) dbTextContent *entTextContent;
+@property (nonatomic, retain) NSMutableArray *searchResults;
+@property (nonatomic, retain) SearchOffer *searchSingle;
 
 typedef enum NLServiceOperations {
 	NLOperationPostJob = 0,
@@ -50,7 +56,8 @@ typedef enum NLServiceOperations {
 	NLOperationGetNewJobs,
 	NLOperationGetJobsHuman,
 	NLOperationGetJobsCompany,
-	NLOperationGetTextContents
+	NLOperationGetTextContents,
+	NLOperationSearch
 } NLServiceOperations;
 
 - (void)postNewJob;
@@ -60,5 +67,6 @@ typedef enum NLServiceOperations {
 - (void)searchJobs;
 - (void)searchPeople;
 - (void)getTextContent;
+- (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl;
 
 @end

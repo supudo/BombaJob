@@ -9,15 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface Settings : UIViewController {
-	UILabel *lblPrivateData, *lblGeo, *lblSync;
-	UISwitch *swPrivateData, *swGeo, *swSync;
+	UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch;
+	UISwitch *swPrivateData, *swGeo, *swSync, *swSearch;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync;
-@property (nonatomic, retain) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync;
+@property (nonatomic, retain) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch;
+@property (nonatomic, retain) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync, *swSearch;
 
 - (IBAction) iboPrivateData:(id)sender;
 - (IBAction) iboGeoData:(id)sender;
 - (IBAction) iboSyncData:(id)sender;
+- (IBAction) iboSearch:(id)sender;
 
 @end

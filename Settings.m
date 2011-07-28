@@ -25,6 +25,7 @@
 	[lblPrivateData setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[lblGeo setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[lblSync setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[lblSearch setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,9 +33,11 @@
 	lblPrivateData.text = NSLocalizedString(@"About.PrivateData", @"");
 	lblGeo.text = NSLocalizedString(@"About.Geo", @"");
 	lblSync.text = NSLocalizedString(@"About.Sync", @"");
+	lblSearch.text = NSLocalizedString(@"About.Search", @"");
 	[swPrivateData setOn:[bSettings sharedbSettings].stPrivateData];
 	[swGeo setOn:[bSettings sharedbSettings].stGeoLocation];
 	[swSync setOn:[bSettings sharedbSettings].stInitSync];
+	[swSearch setOn:[bSettings sharedbSettings].stOnlineSearch];
 }
 
 - (IBAction) iboPrivateData:(id)sender {
@@ -66,6 +69,18 @@
 	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 	dbSettings *entPD = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"InitSync"]];
 	[entPD setSValue:(([swSync isOn]) ? @"TRUE" : @"FALSE")];
+	NSError *error = nil;
+	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		abort();
+	}
+}
+
+- (IBAction) iboSearch:(id)sender {
+	[bSettings sharedbSettings].stOnlineSearch = [swSearch isOn];
+	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+	dbSettings *entPD = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"OnlineSearch"]];
+	[entPD setSValue:(([swSearch isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
 		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
