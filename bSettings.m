@@ -14,7 +14,7 @@
 @implementation bSettings
 
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
-@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch;
+@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
 @synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
@@ -44,6 +44,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.stGeoLocation = TRUE;
 		self.stInitSync = TRUE;
 		self.stOnlineSearch = TRUE;
+		self.stInAppEmail = FALSE;
 
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;
@@ -86,6 +87,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 			[ent setSName:@"OnlineSearch"];
 			[ent setSValue:@"TRUE"];
 			self.stOnlineSearch = TRUE;
+		}
+		
+		ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"InAppEmail"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stInAppEmail = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"InAppEmail"];
+			[ent setSValue:@"FALSE"];
+			self.stInAppEmail = TRUE;
 		}
 
 		NSError *error = nil;
@@ -137,6 +148,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 	[[control layer] setMasksToBounds:YES];
 	[[control layer] setBorderWidth:1.0f];
 	[[control layer] setBorderColor:[color CGColor]];
+}
+
+- (void)roundButtonCornersTextView:(UITextView *)txtView withColor:(UIColor *)color {
+	[[txtView layer] setCornerRadius:8.0f];
+	[[txtView layer] setMasksToBounds:YES];
+	[[txtView layer] setBorderWidth:1.0f];
+	[[txtView layer] setBorderColor:[color CGColor]];
 }
 
 - (void)clearPostData {

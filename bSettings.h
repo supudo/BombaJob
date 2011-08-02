@@ -12,14 +12,14 @@
 
 @interface bSettings : NSObject {
 	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
-	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch;
+	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
 	NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
-@property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch;
+@property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
 @property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
@@ -29,6 +29,7 @@
 - (NSString *)getOfferDate:(NSDate *)offerDate;
 - (BOOL)validEmail:(NSString *)email sitrictly:(BOOL)stricterFilter;
 - (void)roundButtonCorners:(UIControl *)control withColor:(UIColor *)color;
+- (void)roundButtonCornersTextView:(UITextView *)txtView withColor:(UIColor *)color;
 - (void)clearPostData;
 - (void)startLoading:(UIView *)view;
 - (void)stopLoading:(UIView *)view;

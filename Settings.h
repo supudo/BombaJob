@@ -8,17 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Settings : UIViewController {
-	UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch;
-	UISwitch *swPrivateData, *swGeo, *swSync, *swSearch;
+@interface Settings : UIViewController <UIActionSheetDelegate> {
+	UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch, *lblInAppEmail;
+	UISwitch *swPrivateData, *swGeo, *swSync, *swSearch, *swInAppEmail;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch;
-@property (nonatomic, retain) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync, *swSearch;
+@property (nonatomic, retain) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch, *lblInAppEmail;
+@property (nonatomic, retain) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync, *swSearch, *swInAppEmail;
 
 - (IBAction) iboPrivateData:(id)sender;
 - (IBAction) iboGeoData:(id)sender;
 - (IBAction) iboSyncData:(id)sender;
 - (IBAction) iboSearch:(id)sender;
+- (IBAction) iboInAppEmail:(id)sender;
+- (IBAction) iboHelpPrivateData:(id)sender;
+- (IBAction) iboHelpGeoData:(id)sender;
+- (IBAction) iboHelpSyncData:(id)sender;
+- (IBAction) iboHelpSearch:(id)sender;
+- (IBAction) iboHelpInAppEmail:(id)sender;
+- (void)showHelp:(NSString *)helpTitle withContent:(NSString *)helpContent;
 
 @end

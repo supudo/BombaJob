@@ -9,6 +9,7 @@
 #import "Offer.h"
 #import "OfferMessage.h"
 #import <QuartzCore/QuartzCore.h>
+#import "BlackAlertView.h"
 
 @implementation Offer
 
@@ -86,10 +87,56 @@
 }
 
 - (void)sendMessage {
-	OfferMessage *tvc = [[OfferMessage alloc] initWithNibName:@"OfferMessage" bundle:nil];
-	tvc.entOffer = entOffer;
-	[[self navigationController] pushViewController:tvc animated:YES];
-	[tvc release];
+	if ([bSettings sharedbSettings].stInAppEmail) {
+		if ([MFMailComposeViewController canSendMail]) {
+			MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+			[mailController setMailComposeDelegate:self];
+			NSString *subject = [NSString stringWithFormat:@"%@%i", NSLocalizedString(@"Offer_EmailSubject", @"Offer_EmailSubject"), ((entOffer == nil) ? searchOffer.OfferID : [entOffer.OfferID intValue])];
+			[mailController setSubject:subject];
+			[mailController setToRecipients:[NSArray arrayWithObjects:((entOffer == nil) ? searchOffer.Email : entOffer.Email), nil]];
+			[mailController setCcRecipients:nil];
+			[mailController setBccRecipients:nil];
+			[mailController setMessageBody:[NSString stringWithFormat:@"<br /><br /> Sent from BombaJob ..."] isHTML:YES];
+			[mailController.navigationBar setBarStyle:UIBarStyleBlack];
+			[self presentModalViewController:mailController animated:YES];
+			[mailController release];
+		}
+		else {
+			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Error.InAppEmailCantSend", @"Error.InAppEmailCantSend")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+			alert.tag = 1;
+			[alert show];
+			[alert release];
+		}
+	}
+	else {
+		OfferMessage *tvc = [[OfferMessage alloc] initWithNibName:@"OfferMessage" bundle:nil];
+		tvc.entOffer = entOffer;
+		[[self navigationController] pushViewController:tvc animated:YES];
+		[tvc release];
+	}
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+	switch (result) {
+		case MFMailComposeResultCancelled:
+			break;
+		case MFMailComposeResultSaved:
+			break;
+		case MFMailComposeResultSent:
+			break;
+		case MFMailComposeResultFailed:
+			break;
+		default: {
+			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:@"..." delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+			alert.tag = 1;
+			[alert show];
+			[alert release];
+			break;
+		}
+	}
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)setText:(NSString *)txt control:(UITextView *)txtView {

@@ -291,6 +291,8 @@
 			[entOffer setPositivism:string];
 		else if ([currentElement isEqualToString:@"joneg"])
 			[entOffer setNegativism:string];
+		else if ([currentElement isEqualToString:@"joem"])
+			[entOffer setEmail:string];
 		else if ([currentElement isEqualToString:@"jodt"]) {
 			NSDateFormatter *df = [[NSDateFormatter alloc] init];
 			[df setDateFormat:@"dd-mm-yyyy HH:mm:ss"];
@@ -316,6 +318,8 @@
 			searchSingle.Positivism = string;
 		else if ([currentElement isEqualToString:@"soneg"])
 			searchSingle.Negativism = string;
+		else if ([currentElement isEqualToString:@"soem"])
+			searchSingle.Email = string;
 		else if ([currentElement isEqualToString:@"sodt"]) {
 			NSDateFormatter *df = [[NSDateFormatter alloc] init];
 			[df setDateFormat:@"dd-mm-yyyy HH:mm:ss"];

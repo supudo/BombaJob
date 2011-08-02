@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "dbJobOffer.h"
 #import "SearchOffer.h"
+#import <MessageUI/MessageUI.h>
 
-@interface Offer : UIViewController {
+@interface Offer : UIViewController <MFMailComposeViewControllerDelegate> {
 	dbJobOffer *entOffer;
 	SearchOffer *searchOffer;
 	UIScrollView *scrollView;

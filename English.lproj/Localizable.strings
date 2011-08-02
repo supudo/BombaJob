@@ -42,6 +42,7 @@
 "Offer_PlaceHolder_Human_Title" = "Заглавие на резюмето ви";
 "Offer_PlaceHolder_Company_Email" = "Email за връзка";
 "Offer_PlaceHolder_Company_Title" = "Заглавие на позицията";
+"Offer_EmailSubject" = "BombaJob.bg - съобщение относно обява #";
 
 "PostNewJobError_BlackListed" = "Email was blacklisted...";
 "PostNewJobError_OneOfferFromHuman" = "Съжаляваме, Може да публикувате само една \"човешка\" обява от един email адрес. Не ни се вярва да имате 2 таланта.Ако искате да осъвремените вашата обява, намерете админ мейла, който сме пратили при публикуването и и щракнете на линка за изтриване на вашата стара обява, за да я изтриете и след това да публикувате вашата нова.";
@@ -53,6 +54,7 @@
 "About.Geo" = "Изпращай гео-координати";
 "About.Sync" = "Начална синхронизация";
 "About.Search" = "Онлайн търсене";
+"About.InAppEmail" = "In-App Email";
 
 "Search.Freelance" = "Проект/Freelance";
 
@@ -68,6 +70,8 @@
 "Months_Short_10" = "Окт";
 "Months_Short_11" = "Ное";
 "Months_Short_12" = "Дек";
+
+"Error.InAppEmailCantSend" = "Нямате конфигуриран email акаунт.";
 
 "UI.OK" = "ОК";
 "UI.Retry" = "Опитай пак";

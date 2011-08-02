@@ -24,6 +24,7 @@
 @property (nonatomic, retain) dbCategory * category;
 @property (nonatomic, retain) NSNumber * HumanYn;
 @property (nonatomic, retain) NSNumber * FreelanceYn;
+@property (nonatomic, retain) NSString * Email;
 
 @end
 

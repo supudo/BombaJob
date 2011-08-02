@@ -21,5 +21,6 @@
 @dynamic category;
 @dynamic HumanYn;
 @dynamic FreelanceYn;
+@dynamic Email;
 
 @end

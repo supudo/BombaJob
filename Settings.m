@@ -9,11 +9,13 @@
 #import "Settings.h"
 #import "DBManagedObjectContext.h"
 #import "dbSettings.h"
+#import "dbTextContent.h"
+#import "DBManagedObjectContext.h"
 
 @implementation Settings
 
-@synthesize lblPrivateData, lblGeo, lblSync, lblSearch;
-@synthesize swPrivateData, swGeo, swSync, swSearch;
+@synthesize lblPrivateData, lblGeo, lblSync, lblSearch, lblInAppEmail;
+@synthesize swPrivateData, swGeo, swSync, swSearch, swInAppEmail;
 
 #pragma mark -
 #pragma mark Work
@@ -26,6 +28,7 @@
 	[lblGeo setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[lblSync setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[lblSearch setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[lblInAppEmail setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -34,10 +37,12 @@
 	lblGeo.text = NSLocalizedString(@"About.Geo", @"");
 	lblSync.text = NSLocalizedString(@"About.Sync", @"");
 	lblSearch.text = NSLocalizedString(@"About.Search", @"");
+	lblInAppEmail.text = NSLocalizedString(@"About.InAppEmail", @"");
 	[swPrivateData setOn:[bSettings sharedbSettings].stPrivateData];
 	[swGeo setOn:[bSettings sharedbSettings].stGeoLocation];
 	[swSync setOn:[bSettings sharedbSettings].stInitSync];
 	[swSearch setOn:[bSettings sharedbSettings].stOnlineSearch];
+	[swInAppEmail setOn:[bSettings sharedbSettings].stInAppEmail];
 }
 
 - (IBAction) iboPrivateData:(id)sender {
@@ -88,6 +93,62 @@
 	}
 }
 
+- (IBAction) iboInAppEmail:(id)sender {
+	[bSettings sharedbSettings].stInAppEmail = [swInAppEmail isOn];
+	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+	dbSettings *entPD = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"InAppEmail"]];
+	[entPD setSValue:(([swInAppEmail isOn]) ? @"TRUE" : @"FALSE")];
+	NSError *error = nil;
+	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		abort();
+	}
+}
+
+#pragma mark -
+#pragma mark Help buttons
+
+- (IBAction) iboHelpPrivateData:(id)sender {
+	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"36"]];
+	[self showHelp:NSLocalizedString(@"About.PrivateData", @"About.PrivateData") withContent:tc.Content];
+}
+
+- (IBAction) iboHelpGeoData:(id)sender {
+	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"37"]];
+	[self showHelp:NSLocalizedString(@"About.Geo", @"About.Geo") withContent:tc.Content];
+}
+
+- (IBAction) iboHelpSyncData:(id)sender {
+	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"38"]];
+	[self showHelp:NSLocalizedString(@"About.Sync", @"About.Sync") withContent:tc.Content];
+}
+
+- (IBAction) iboHelpSearch:(id)sender {
+	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"39"]];
+	[self showHelp:NSLocalizedString(@"About.Search", @"About.Search") withContent:tc.Content];
+}
+
+- (IBAction) iboHelpInAppEmail:(id)sender {
+	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"40"]];
+	[self showHelp:NSLocalizedString(@"About.InAppEmail", @"About.InAppEmail") withContent:tc.Content];
+}
+
+- (void)showHelp:(NSString *)helpTitle withContent:(NSString *)helpContent {
+	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:helpTitle delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:nil otherButtonTitles:nil];
+	
+	UITextView *txt = [[UITextView alloc] initWithFrame:CGRectMake(10, 110, 300, 270)];
+	[txt setEditable:NO];
+	[txt setText:helpContent];
+	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[[bSettings sharedbSettings] roundButtonCornersTextView:txt withColor:[UIColor blackColor]];
+	[menu addSubview:txt];
+	[txt release];
+	
+	[menu showFromTabBar:appDelegate.tabBarController.tabBar];
+	[menu setBounds:CGRectMake(0, 0, 320, 700)];
+	[menu release];
+}
+
 #pragma mark -
 #pragma mark System
 
@@ -104,6 +165,8 @@
 	[lblSync release];
 	lblSearch = nil;
 	[lblSearch release];
+	lblInAppEmail = nil;
+	[lblInAppEmail release];
 	swSearch = nil;
 	[swSearch release];
 	swPrivateData = nil;
@@ -112,6 +175,8 @@
 	[swGeo release];
 	swSync = nil;
 	[swSync release];
+	swInAppEmail = nil;
+	[swInAppEmail release];
     [super viewDidUnload];
 }
 
@@ -120,10 +185,12 @@
 	[lblGeo release];
 	[lblSync release];
 	[lblSearch release];
+	[lblInAppEmail release];
 	[swSearch release];
 	[swPrivateData release];
 	[swGeo release];
 	[swSync release];
+	[swInAppEmail release];
     [super dealloc];
 }
 
