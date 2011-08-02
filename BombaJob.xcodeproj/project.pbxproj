@@ -19,6 +19,8 @@
 		8A0F152D13C33B350083E9E4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152B13C33B350083E9E4 /* Icon@2x.png */; };
 		8A0F154E13C33C440083E9E4 /* OfferMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F154C13C33C440083E9E4 /* OfferMessage.m */; };
 		8A0F154F13C33C440083E9E4 /* OfferMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F154D13C33C440083E9E4 /* OfferMessage.xib */; };
+		8A130FF613E7F50A00F0296C /* SearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A130FF413E7F50A00F0296C /* SearchResults.m */; };
+		8A130FF713E7F50A00F0296C /* SearchResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A130FF513E7F50A00F0296C /* SearchResults.xib */; };
 		8A3B52FF13E1842B00F9B24E /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B52FD13E1842B00F9B24E /* About.m */; };
 		8A3B530013E1842B00F9B24E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B52FE13E1842B00F9B24E /* About.xib */; };
 		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
@@ -94,6 +96,9 @@
 		8A0F154B13C33C440083E9E4 /* OfferMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferMessage.h; path = ../OfferMessage.h; sourceTree = "<group>"; };
 		8A0F154C13C33C440083E9E4 /* OfferMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferMessage.m; path = ../OfferMessage.m; sourceTree = "<group>"; };
 		8A0F154D13C33C440083E9E4 /* OfferMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferMessage.xib; sourceTree = "<group>"; };
+		8A130FF313E7F50A00F0296C /* SearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResults.h; path = ../SearchResults.h; sourceTree = "<group>"; };
+		8A130FF413E7F50A00F0296C /* SearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResults.m; path = ../SearchResults.m; sourceTree = "<group>"; };
+		8A130FF513E7F50A00F0296C /* SearchResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResults.xib; sourceTree = "<group>"; };
 		8A3B52FC13E1842B00F9B24E /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = About.h; path = ../About.h; sourceTree = "<group>"; };
 		8A3B52FD13E1842B00F9B24E /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = About.m; path = ../About.m; sourceTree = "<group>"; };
 		8A3B52FE13E1842B00F9B24E /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
@@ -365,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA691FC13C1A47F004B4687 /* Search.xib */,
+				8A130FF513E7F50A00F0296C /* SearchResults.xib */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -394,6 +400,8 @@
 			children = (
 				8AA691FA13C1A47F004B4687 /* Search.h */,
 				8AA691FB13C1A47F004B4687 /* Search.m */,
+				8A130FF313E7F50A00F0296C /* SearchResults.h */,
+				8A130FF413E7F50A00F0296C /* SearchResults.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -651,6 +659,7 @@
 				8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */,
 				8A3B530013E1842B00F9B24E /* About.xib in Resources */,
 				8AA4FDBA13E19E2900CE8C09 /* tb-search.png in Resources */,
+				8A130FF713E7F50A00F0296C /* SearchResults.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +698,7 @@
 				8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */,
 				8A3B52FF13E1842B00F9B24E /* About.m in Sources */,
 				8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */,
+				8A130FF613E7F50A00F0296C /* SearchResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,9 +31,6 @@ BombaJobAppDelegate *appDelegate;
     return YES;
 }
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-}
-
 - (void)dealloc {
     [tabBarController release];
     [window release];

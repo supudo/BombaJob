@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "dbJobOffer.h"
+#import "SearchOffer.h"
 
 @interface Offer : UIViewController {
 	dbJobOffer *entOffer;
+	SearchOffer *searchOffer;
 	UIScrollView *scrollView;
 	UIView *contentView;
 	UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
@@ -18,12 +20,14 @@
 }
 
 @property (nonatomic, retain) dbJobOffer *entOffer;
+@property (nonatomic, retain) SearchOffer *searchOffer;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
 @property (nonatomic, retain) IBOutlet UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 @property (nonatomic, retain) IBOutlet UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
 
 - (void)setText:(NSString *)txt control:(UITextView *)txtView;
+- (void)loadContent;
 - (void)doDesign;
 - (void)sendMessage;
 

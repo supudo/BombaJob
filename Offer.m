@@ -12,7 +12,7 @@
 
 @implementation Offer
 
-@synthesize entOffer;
+@synthesize entOffer, searchOffer;
 @synthesize scrollView, contentView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
 @synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
@@ -22,45 +22,67 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.navigationItem.title = entOffer.Title;
+	if (entOffer == nil)
+		self.navigationItem.title = searchOffer.Title;
+	else
+		self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)] autorelease];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-
 	scrollView.contentSize = CGSizeMake(320, 400);
+	[self loadContent];
+	[self doDesign];
+}
 
-	if ([entOffer.HumanYn boolValue])
-		lblFreelance.text = NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance");
-	else
-		lblFreelance.hidden = YES;
-
-	lblDate.text = [[bSettings sharedbSettings] getOfferDate:entOffer.PublishDate];
-	[lblDate setFont:[UIFont fontWithName:@"Ubuntu-Italic" size:14]];
-
-	[self setText:entOffer.CategoryTitle control:txtCategory];
-	[self setText:entOffer.Title control:txtTitle];
-	[txtTitle setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
-
-	if ([entOffer.HumanYn boolValue]) {
-		lblLPositiv.text = NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv");
-		lblLNegativ.text = NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ");
+- (void)loadContent {
+	if (searchOffer == nil) {
+		if ([entOffer.HumanYn boolValue])
+			lblFreelance.text = NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance");
+		else
+			lblFreelance.hidden = YES;
+		
+		lblDate.text = [[bSettings sharedbSettings] getOfferDate:entOffer.PublishDate];
+		
+		[self setText:entOffer.CategoryTitle control:txtCategory];
+		[self setText:entOffer.Title control:txtTitle];
+		
+		if ([entOffer.HumanYn boolValue]) {
+			lblLPositiv.text = NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv");
+			lblLNegativ.text = NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ");
+		}
+		else {
+			lblLPositiv.text = NSLocalizedString(@"Offer_Company_Positiv", @"Offer_Company_Positiv");
+			lblLNegativ.text = NSLocalizedString(@"Offer_Company_Negativ", @"Offer_Company_Negativ");
+		}
+		
+		[self setText:entOffer.Positivism control:txtPositivism];
+		[self setText:entOffer.Negativism control:txtNegativism];
 	}
 	else {
-		lblLPositiv.text = NSLocalizedString(@"Offer_Company_Positiv", @"Offer_Company_Positiv");
-		lblLNegativ.text = NSLocalizedString(@"Offer_Company_Negativ", @"Offer_Company_Negativ");
+		if (searchOffer.HumanYn)
+			lblFreelance.text = NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance");
+		else
+			lblFreelance.hidden = YES;
+		
+		lblDate.text = [[bSettings sharedbSettings] getOfferDate:searchOffer.PublishDate];
+		
+		[self setText:searchOffer.CategoryTitle control:txtCategory];
+		[self setText:searchOffer.Title control:txtTitle];
+		
+		if (searchOffer.HumanYn) {
+			lblLPositiv.text = NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv");
+			lblLNegativ.text = NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ");
+		}
+		else {
+			lblLPositiv.text = NSLocalizedString(@"Offer_Company_Positiv", @"Offer_Company_Positiv");
+			lblLNegativ.text = NSLocalizedString(@"Offer_Company_Negativ", @"Offer_Company_Negativ");
+		}
+		[self setText:searchOffer.Positivism control:txtPositivism];
+		[self setText:searchOffer.Negativism control:txtNegativism];
 	}
-	
-	[lblLPositiv setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
-	[lblLNegativ setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
-	[self setText:entOffer.Positivism control:txtPositivism];
-	[self setText:entOffer.Negativism control:txtNegativism];
-	[txtPositivism setDataDetectorTypes:UIDataDetectorTypeLink];
-	[txtNegativism setDataDetectorTypes:UIDataDetectorTypeLink];
-	
-	[self doDesign];
 }
 
 - (void)sendMessage {
@@ -83,6 +105,13 @@
 }
 
 - (void)doDesign {
+	[lblDate setFont:[UIFont fontWithName:@"Ubuntu-Italic" size:14]];
+	[txtTitle setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
+	[lblLPositiv setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
+	[lblLNegativ setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
+	[txtPositivism setDataDetectorTypes:UIDataDetectorTypeLink];
+	[txtNegativism setDataDetectorTypes:UIDataDetectorTypeLink];
+
 	CGRect frameTemp;
 
 	// Category text
@@ -170,6 +199,8 @@
 - (void)viewDidUnload {
 	entOffer = nil;
 	[entOffer release];
+	searchOffer = nil;
+	[searchOffer release];
 	scrollView = nil;
 	[scrollView release];
 	contentView = nil;
@@ -195,6 +226,7 @@
 
 - (void)dealloc {
 	[entOffer release];
+	[searchOffer release];
 	[scrollView release];
 	[contentView release];
 	[txtCategory release];

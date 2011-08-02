@@ -12,8 +12,8 @@
 
 @implementation Settings
 
-@synthesize lblPrivateData, lblGeo, lblSync;
-@synthesize swPrivateData, swGeo, swSync;
+@synthesize lblPrivateData, lblGeo, lblSync, lblSearch;
+@synthesize swPrivateData, swGeo, swSync, swSearch;
 
 #pragma mark -
 #pragma mark Work
@@ -102,6 +102,10 @@
 	[lblGeo release];
 	lblSync = nil;
 	[lblSync release];
+	lblSearch = nil;
+	[lblSearch release];
+	swSearch = nil;
+	[swSearch release];
 	swPrivateData = nil;
 	[swPrivateData release];
 	swGeo = nil;
@@ -115,6 +119,8 @@
 	[lblPrivateData release];
 	[lblGeo release];
 	[lblSync release];
+	[lblSearch release];
+	[swSearch release];
 	[swPrivateData release];
 	[swGeo release];
 	[swSync release];

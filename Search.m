@@ -7,10 +7,11 @@
 //
 
 #import "Search.h"
+#import "SearchResults.h"
 
 @implementation Search
 
-@synthesize lblFreelance, txtSearch, swFreelance, btnSearch, webService;
+@synthesize lblFreelance, txtSearch, swFreelance, btnSearch;
 
 #pragma mark -
 #pragma mark Workers
@@ -30,13 +31,11 @@
 }
 
 - (IBAction)iboSearch:(id)sender {
-	if (self.webService == nil)
-		self.webService = [[WebService alloc] init];
-	[self.webService setDelegate:self];
-	[self.webService searchOffers:self.txtSearch.text freelance:[swFreelance isOn]];
-}
-
-- (void)searchOffersFinished:(id)sender results:(NSMutableArray *)offers {
+	SearchResults *tvc = [[SearchResults alloc] initWithNibName:@"SearchResults" bundle:nil];
+	tvc.searchTerm = self.txtSearch.text;
+	tvc.freelanceOn = [swFreelance isOn];
+	[[self navigationController] pushViewController:tvc animated:YES];
+	[tvc release];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -60,8 +59,6 @@
 	[swFreelance release];
 	btnSearch = nil;
 	[btnSearch release];
-	webService = nil;
-	[webService release];
     [super viewDidUnload];
 }
 
@@ -70,7 +67,6 @@
 	[txtSearch release];
 	[swFreelance release];
 	[btnSearch release];
-	[webService release];
     [super dealloc];
 }
 

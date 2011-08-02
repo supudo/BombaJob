@@ -221,7 +221,7 @@
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(searchOffersFinished:results:)])
 		[delegate searchOffersFinished:self results:searchResults];
-	
+
 	[postData release];
 }
 
@@ -270,6 +270,8 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
 	if ([elementName isEqualToString:@"sores"]) {
+		if (self.searchResults == nil)
+			self.searchResults = [[NSMutableArray alloc] init];
 		[self.searchResults addObject:searchSingle];
 		[searchSingle release];
 	}
