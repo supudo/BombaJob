@@ -22,5 +22,7 @@
 @dynamic HumanYn;
 @dynamic FreelanceYn;
 @dynamic Email;
+@dynamic ReadYn;
+@dynamic SentMessageYn;
 
 @end

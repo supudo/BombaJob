@@ -97,6 +97,33 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DBManagedObjectContext);
 		return nil;
 }
 
+- (int)getEntitiesCount:(NSString *)entityName {
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+	[fetchRequest setEntity:entity];
+	NSError *error = nil;
+	NSArray *items = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
+	if ([items count] > 0)
+		return [items count];
+	else
+		return 0;
+}
+
+- (int)getEntitiesCount:(NSString *)entityName predicate:(NSPredicate *)predicate {
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+	[fetchRequest setEntity:entity];
+	[fetchRequest setPredicate:predicate];
+	NSError *error = nil;
+	NSArray *items = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
+	if ([items count] > 0)
+		return [items count];
+	else
+		return 0;
+}
+
 - (BOOL) deleteAllObjects: (NSString *) entityName  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];

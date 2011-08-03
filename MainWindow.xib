@@ -349,6 +349,51 @@
               </object>
             </object>
           </object>
+          <object class="IBUINavigationController" id="931946165">
+            <object class="IBUITabBarItem" key="IBUITabBarItem" id="270793430">
+              <string key="IBUITitle">Синхронизация</string>
+              <object class="NSCustomResource" key="IBUIImage">
+                <string key="NSClassName">NSImage</string>
+                <string key="NSResourceName">tb-syncagain.png</string>
+              </object>
+              <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+              <reference key="IBUITabBar"/>
+            </object>
+            <reference key="IBUIToolbarItems" ref="0"/>
+            <reference key="IBUIParentViewController" ref="1034742383"/>
+            <object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+              <int key="interfaceOrientation">1</int>
+            </object>
+            <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+            <bool key="IBUIHorizontal">NO</bool>
+            <object class="IBUINavigationBar" key="IBUINavigationBar" id="879714677">
+              <nil key="NSNextResponder"/>
+              <int key="NSvFlags">256</int>
+              <string key="NSFrameSize">{320, 44}</string>
+              <bool key="IBUIOpaque">NO</bool>
+              <bool key="IBUIClipsSubviews">YES</bool>
+              <bool key="IBUIMultipleTouchEnabled">YES</bool>
+              <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+              <reference key="IBUITintColor" ref="1025789699"/>
+            </object>
+            <object class="NSArray" key="IBUIViewControllers">
+              <bool key="EncodedWithXMLCoder">YES</bool>
+              <object class="IBUIViewController" id="772278256">
+                <reference key="IBUIToolbarItems" ref="0"/>
+                <object class="IBUINavigationItem" key="IBUINavigationItem" id="929552114">
+                  <string key="IBUITitle">Item</string>
+                  <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+                </object>
+                <reference key="IBUIParentViewController" ref="931946165"/>
+                <string key="IBUINibName">SyncAgain</string>
+                <object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+                  <int key="interfaceOrientation">1</int>
+                </object>
+                <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+                <bool key="IBUIHorizontal">NO</bool>
+              </object>
+            </object>
+          </object>
           <object class="IBUINavigationController" id="1024472084">
             <object class="IBUITabBarItem" key="IBUITabBarItem" id="602663730">
               <string key="IBUITitle">За BombaJob</string>
@@ -493,6 +538,7 @@
               <reference ref="567479741"/>
               <reference ref="1024472084"/>
               <reference ref="820858796"/>
+              <reference ref="931946165"/>
             </object>
             <reference key="parent" ref="0"/>
           </object>
@@ -756,6 +802,41 @@
             <reference key="object" ref="899415875"/>
             <reference key="parent" ref="820858796"/>
           </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">185</int>
+            <reference key="object" ref="931946165"/>
+            <object class="NSMutableArray" key="children">
+              <bool key="EncodedWithXMLCoder">YES</bool>
+              <reference ref="270793430"/>
+              <reference ref="772278256"/>
+              <reference ref="879714677"/>
+            </object>
+            <reference key="parent" ref="1034742383"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">186</int>
+            <reference key="object" ref="270793430"/>
+            <reference key="parent" ref="931946165"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">187</int>
+            <reference key="object" ref="772278256"/>
+            <object class="NSMutableArray" key="children">
+              <bool key="EncodedWithXMLCoder">YES</bool>
+              <reference ref="929552114"/>
+            </object>
+            <reference key="parent" ref="931946165"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">188</int>
+            <reference key="object" ref="929552114"/>
+            <reference key="parent" ref="772278256"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">189</int>
+            <reference key="object" ref="879714677"/>
+            <reference key="parent" ref="931946165"/>
+          </object>
         </object>
       </object>
       <object class="NSMutableDictionary" key="flattenedProperties">
@@ -813,6 +894,7 @@
           <string>179.IBPluginDependency</string>
           <string>180.IBPluginDependency</string>
           <string>181.IBPluginDependency</string>
+          <string>187.CustomClassName</string>
           <string>2.IBAttributePlaceholdersKey</string>
           <string>2.IBPluginDependency</string>
           <string>3.CustomClassName</string>
@@ -871,6 +953,7 @@
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <string>SyncAgain</string>
           <object class="NSMutableDictionary">
             <bool key="EncodedWithXMLCoder">YES</bool>
             <reference key="dict.sortedKeys" ref="0"/>
@@ -899,7 +982,7 @@
         </object>
       </object>
       <nil key="sourceID"/>
-      <int key="maxID">182</int>
+      <int key="maxID">189</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1263,12 +1346,24 @@
             <object class="NSArray" key="dict.sortedKeys">
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>iboGeoData:</string>
+              <string>iboHelpGeoData:</string>
+              <string>iboHelpInAppEmail:</string>
+              <string>iboHelpPrivateData:</string>
+              <string>iboHelpSearch:</string>
+              <string>iboHelpSyncData:</string>
+              <string>iboInAppEmail:</string>
               <string>iboPrivateData:</string>
               <string>iboSearch:</string>
               <string>iboSyncData:</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
               <bool key="EncodedWithXMLCoder">YES</bool>
+              <string>id</string>
+              <string>id</string>
+              <string>id</string>
+              <string>id</string>
+              <string>id</string>
+              <string>id</string>
               <string>id</string>
               <string>id</string>
               <string>id</string>
@@ -1280,6 +1375,12 @@
             <object class="NSArray" key="dict.sortedKeys">
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>iboGeoData:</string>
+              <string>iboHelpGeoData:</string>
+              <string>iboHelpInAppEmail:</string>
+              <string>iboHelpPrivateData:</string>
+              <string>iboHelpSearch:</string>
+              <string>iboHelpSyncData:</string>
+              <string>iboInAppEmail:</string>
               <string>iboPrivateData:</string>
               <string>iboSearch:</string>
               <string>iboSyncData:</string>
@@ -1288,6 +1389,30 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <object class="IBActionInfo">
                 <string key="name">iboGeoData:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboHelpGeoData:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboHelpInAppEmail:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboHelpPrivateData:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboHelpSearch:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboHelpSyncData:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
+                <string key="name">iboInAppEmail:</string>
                 <string key="candidateClassName">id</string>
               </object>
               <object class="IBActionInfo">
@@ -1309,10 +1434,12 @@
             <object class="NSArray" key="dict.sortedKeys">
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>lblGeo</string>
+              <string>lblInAppEmail</string>
               <string>lblPrivateData</string>
               <string>lblSearch</string>
               <string>lblSync</string>
               <string>swGeo</string>
+              <string>swInAppEmail</string>
               <string>swPrivateData</string>
               <string>swSearch</string>
               <string>swSync</string>
@@ -1323,6 +1450,8 @@
               <string>UILabel</string>
               <string>UILabel</string>
               <string>UILabel</string>
+              <string>UILabel</string>
+              <string>UISwitch</string>
               <string>UISwitch</string>
               <string>UISwitch</string>
               <string>UISwitch</string>
@@ -1334,10 +1463,12 @@
             <object class="NSArray" key="dict.sortedKeys">
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>lblGeo</string>
+              <string>lblInAppEmail</string>
               <string>lblPrivateData</string>
               <string>lblSearch</string>
               <string>lblSync</string>
               <string>swGeo</string>
+              <string>swInAppEmail</string>
               <string>swPrivateData</string>
               <string>swSearch</string>
               <string>swSync</string>
@@ -1346,6 +1477,10 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <object class="IBToOneOutletInfo">
                 <string key="name">lblGeo</string>
+                <string key="candidateClassName">UILabel</string>
+              </object>
+              <object class="IBToOneOutletInfo">
+                <string key="name">lblInAppEmail</string>
                 <string key="candidateClassName">UILabel</string>
               </object>
               <object class="IBToOneOutletInfo">
@@ -1365,6 +1500,10 @@
                 <string key="candidateClassName">UISwitch</string>
               </object>
               <object class="IBToOneOutletInfo">
+                <string key="name">swInAppEmail</string>
+                <string key="candidateClassName">UISwitch</string>
+              </object>
+              <object class="IBToOneOutletInfo">
                 <string key="name">swPrivateData</string>
                 <string key="candidateClassName">UISwitch</string>
               </object>
@@ -1381,6 +1520,14 @@
           <object class="IBClassDescriptionSource" key="sourceIdentifier">
             <string key="majorKey">IBProjectSource</string>
             <string key="minorKey">Settings.h</string>
+          </object>
+        </object>
+        <object class="IBPartialClassDescription">
+          <string key="className">SyncAgain</string>
+          <string key="superclassName">UIViewController</string>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier">
+            <string key="majorKey">IBProjectSource</string>
+            <string key="minorKey">SyncAgain.h</string>
           </object>
         </object>
       </object>
@@ -1714,6 +1861,7 @@
         <string>tb-postoffer.png</string>
         <string>tb-search.png</string>
         <string>tb-settings.png</string>
+        <string>tb-syncagain.png</string>
       </object>
       <object class="NSMutableArray" key="dict.values">
         <bool key="EncodedWithXMLCoder">YES</bool>
@@ -1724,6 +1872,7 @@
         <string>{26, 26}</string>
         <string>{24, 24}</string>
         <string>{26, 28}</string>
+        <string>{24, 26}</string>
       </object>
     </object>
     <string key="IBCocoaTouchPluginVersion">132</string>

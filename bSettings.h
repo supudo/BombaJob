@@ -16,6 +16,7 @@
 	NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
+	NSMutableArray *latestSearchResults;
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
+@property (nonatomic, retain) NSMutableArray *latestSearchResults;
 
 - (void)LogThis: (NSString *)log;
 - (BOOL)connectedToInternet;

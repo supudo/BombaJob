@@ -42,14 +42,8 @@ static NSString *kCellIdentifier = @"identifJobsCompany";
 			[webService searchJobs];
 		}
 	}
-	else {
-		NSError *error = nil;
-		if (![[self fetchedResultsController] performFetch:&error]) {
-			[[bSettings sharedbSettings] LogThis: [NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
-			abort();
-		}
-		[self.tableView reloadData];
-	}
+	else
+		[self getJobsHumanFinished:nil];
 }
 
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {
@@ -63,6 +57,8 @@ static NSString *kCellIdentifier = @"identifJobsCompany";
 - (void)getJobsHumanFinished:(id)sender {
 	[[bSettings sharedbSettings] stopLoading:self.view];
 	[bSettings sharedbSettings].sdlJobs = TRUE;
+	UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:1];
+	tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0 AND ReadYn = 0"]]];
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		[[bSettings sharedbSettings] LogThis: [NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
@@ -103,7 +99,12 @@ static NSString *kCellIdentifier = @"identifJobsCompany";
 		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 	}
 	dbJobOffer *ento = ((dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath]);
+	cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
 	cell.textLabel.text = ento.Title;
+	if (![ento.ReadYn boolValue])
+		[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
+	else
+		[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
 	cell.detailTextLabel.text = [[bSettings sharedbSettings] getOfferDate:ento.PublishDate];
 	return cell;
 }
@@ -124,8 +125,9 @@ static NSString *kCellIdentifier = @"identifJobsCompany";
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"JobOffer" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
         [fetchRequest setEntity:entity];
         
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"PublishDate" ascending:NO];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSSortDescriptor *sortDescriptorRead = [[NSSortDescriptor alloc] initWithKey:@"ReadYn" ascending:YES];
+        NSSortDescriptor *sortDescriptorDate = [[NSSortDescriptor alloc] initWithKey:@"PublishDate" ascending:NO];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptorRead, sortDescriptorDate, nil];
         [fetchRequest setSortDescriptors:sortDescriptors];
 
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"HumanYn = 0"];
@@ -137,7 +139,8 @@ static NSString *kCellIdentifier = @"identifJobsCompany";
         
         [aFetchedResultsController release];
         [fetchRequest release];
-        [sortDescriptor release];
+        [sortDescriptorRead release];
+        [sortDescriptorDate release];
         [sortDescriptors release];
     }
 	return fetchedResultsController;

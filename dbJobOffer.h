@@ -25,6 +25,8 @@
 @property (nonatomic, retain) NSNumber * HumanYn;
 @property (nonatomic, retain) NSNumber * FreelanceYn;
 @property (nonatomic, retain) NSString * Email;
+@property (nonatomic, retain) NSNumber * ReadYn;
+@property (nonatomic, retain) NSNumber * SentMessageYn;
 
 @end
 

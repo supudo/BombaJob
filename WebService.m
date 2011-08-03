@@ -253,6 +253,8 @@
 		[entOffer setOfferID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"id"] intValue]]];
 		[entOffer setCategoryID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"cid"] intValue]]];
 		[entOffer setHumanYn:[NSNumber numberWithInt:[[attributeDict objectForKey:@"hm"] intValue]]];
+		[entOffer setReadYn:[NSNumber numberWithInt:0]];
+		[entOffer setSentMessageYn:[NSNumber numberWithInt:0]];
 		dbCategory *tc = (dbCategory *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Category" predicateString:[NSString stringWithFormat:@"CategoryID = %@", [attributeDict objectForKey:@"cid"]]];
 		[entOffer setCategory:tc];
 	}
@@ -265,6 +267,8 @@
 		searchSingle.OfferID = [[attributeDict objectForKey:@"id"] intValue];
 		searchSingle.CategoryID = [[attributeDict objectForKey:@"cid"] intValue];
 		searchSingle.HumanYn = [[attributeDict objectForKey:@"hm"] boolValue];
+		searchSingle.ReadYn = NO;
+		searchSingle.SentMessageYn = NO;
 	}
 }
 

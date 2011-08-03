@@ -11,13 +11,12 @@
 #import "dbSettings.h"
 #import "dbTextContent.h"
 #import "DBManagedObjectContext.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation Settings
 
 @synthesize lblPrivateData, lblGeo, lblSync, lblSearch, lblInAppEmail;
 @synthesize swPrivateData, swGeo, swSync, swSearch, swInAppEmail;
-@synthesize helpOnScreen, helpScreen;
+@synthesize helpScreen;
 
 #pragma mark -
 #pragma mark Work
@@ -35,7 +34,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	self.helpOnScreen = FALSE;
 	lblPrivateData.text = NSLocalizedString(@"About.PrivateData", @"");
 	lblGeo.text = NSLocalizedString(@"About.Geo", @"");
 	lblSync.text = NSLocalizedString(@"About.Sync", @"");
@@ -155,15 +153,7 @@
 	}
 	[self.helpScreen showFromTabBar:appDelegate.tabBarController.tabBar];
 	[self.helpScreen setBounds:CGRectMake(0, 0, 320, 350)];
-
-	self.helpOnScreen = TRUE;
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	if (self.helpOnScreen) {
-		[self.helpScreen dismissWithClickedButtonIndex:0 animated:YES];
-		self.helpOnScreen = FALSE;
-	}
+	[self.helpScreen setMultipleTouchEnabled:YES];
 }
 
 #pragma mark -

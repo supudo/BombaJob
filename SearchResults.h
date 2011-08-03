@@ -10,14 +10,13 @@
 #import "WebService.h"
 
 @interface SearchResults : UITableViewController <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
-	NSMutableArray *searchResults;
+	
 	WebService *webService;
 	NSString *searchTerm;
 	BOOL freelanceOn, searchOffline;
 	NSFetchedResultsController *fetchedResultsController;
 }
 
-@property (nonatomic, retain) NSMutableArray *searchResults;
 @property (nonatomic, retain) WebService *webService;
 @property (nonatomic, retain) NSString *searchTerm;
 @property BOOL freelanceOn, searchOffline;

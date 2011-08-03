@@ -30,6 +30,7 @@
 - (void)setText:(NSString *)txt control:(UITextView *)txtView;
 - (void)loadContent;
 - (void)doDesign;
+- (void)markAsRead;
 - (void)sendMessage;
 
 @end

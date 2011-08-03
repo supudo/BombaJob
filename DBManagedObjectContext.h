@@ -26,6 +26,8 @@
 - (NSArray *)getEntities:(NSString *)entityName predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
 - (NSArray *)getEntities:(NSString *)entityName sortDescriptors:(NSArray *)sortDescriptors;
 - (NSArray *)getEntities:(NSString *)entityName;
+- (int)getEntitiesCount:(NSString *)entityName;
+- (int)getEntitiesCount:(NSString *)entityName predicate:(NSPredicate *)predicate;
 - (BOOL) deleteAllObjects:(NSString *)entityName;
 - (BOOL) deleteObjects:(NSString *)entityName predicate:(NSPredicate *)predicate;
 

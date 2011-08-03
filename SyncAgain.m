@@ -1,27 +1,32 @@
 //
-//  Loading.m
+//  SyncAgain.m
 //  BombaJob
 //
-//  Created by supudo on 7/4/11.
+//  Created by supudo on 8/3/11.
 //  Copyright 2011 BombaJob.bg. All rights reserved.
 //
 
-#import "Loading.h"
+#import "SyncAgain.h"
 #import "BlackAlertView.h"
 
-@implementation Loading
+@implementation SyncAgain
 
-@synthesize timer, syncer, lblLoading;
+@synthesize timer, syncer, lblSync;
+
+#pragma mark -
+#pragma mark Work
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.navigationItem.title = NSLocalizedString(@"MainNavTitle", @"MainNavTitle");
+	self.navigationItem.title = NSLocalizedString(@"Sync", @"Sync");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	[self.lblLoading setFont:[UIFont fontWithName:@"Ubuntu" size:30]];
+	[self.lblSync setText:NSLocalizedString(@"SyncInProgress", @"SyncInProgress")];
+	[self.lblSync setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+	self.navigationItem.hidesBackButton = YES;
 	[self loadSync];
 }
 
@@ -52,7 +57,7 @@
 }
 
 - (void)syncFinished:(id)sender {
-	[self startTabApp];
+	[self finishSync];
 }
 
 - (void)syncError:(id)sender error:(NSString *) errorMessage {
@@ -67,28 +72,21 @@
 	if (actionSheet.tag == 1 && buttonIndex == 1)
 		[self loadSync];
 	else
-		[self startTabApp];
+		[self finishSync];
 }
 
-- (void)startTabApp {
-	UIView *tabBarView = [[appDelegate tabBarController] view];
-	[tabBarView setCenter:CGPointMake(tabBarView.center.x, tabBarView.center.y)];
-	tabBarView.alpha = 0;
-	[[appDelegate tabBarController] viewWillAppear:YES];
+- (void)finishSync {
+	[bSettings sharedbSettings].sdlNewJobs = FALSE;
+	[bSettings sharedbSettings].sdlJobs = FALSE;
+	[bSettings sharedbSettings].sdlPeople = FALSE;
+
+	[self.navigationController popToRootViewControllerAnimated:NO];
+	[[[appDelegate tabBarController].viewControllers objectAtIndex:0] viewWillAppear:YES];
 	[appDelegate tabBarController].selectedIndex = 0;
-	[self.view.superview addSubview:tabBarView];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDelay:.2];
-	[UIView setAnimationDuration:.4];
-	tabBarView.alpha = 1;
-	[UIView commitAnimations];
-	
-	UINavigationController *moreController = appDelegate.tabBarController.moreNavigationController;
-	moreController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	appDelegate.tabBarController.customizableViewControllers = nil;
 }
+
+#pragma mark -
+#pragma mark System
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -99,15 +97,15 @@
 	[timer release];
 	syncer = nil;
 	[syncer release];
-	lblLoading = nil;
-	[lblLoading release];
+	lblSync = nil;
+	[lblSync release];
     [super viewDidUnload];
 }
 
 - (void)dealloc {
 	[timer release];
 	[syncer release];
-	[lblLoading release];
+	[lblSync release];
     [super dealloc];
 }
 

@@ -10,6 +10,7 @@
 #import "OfferMessage.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BlackAlertView.h"
+#import "DBManagedObjectContext.h"
 
 @implementation Offer
 
@@ -84,6 +85,39 @@
 		[self setText:searchOffer.Positivism control:txtPositivism];
 		[self setText:searchOffer.Negativism control:txtNegativism];
 	}
+	[self markAsRead];
+}
+
+- (void)markAsRead {
+	if (searchOffer == nil) {
+		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+		dbJobOffer *entPD = (dbJobOffer *)[dbManagedObjectContext getEntity:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"OfferID = %@", entOffer.OfferID]];
+		[entPD setReadYn:[NSNumber numberWithInt:1]];
+		NSError *error = nil;
+		if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+			[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+			abort();
+		}
+
+		UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:0];
+		tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"ReadYn = 0"]]];
+		if ([entOffer.HumanYn boolValue]) {
+			UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:2];
+			tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1 AND ReadYn = 0"]]];
+		}
+		else {
+			UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:1];
+			tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0 AND ReadYn = 0"]]];
+		}
+	}
+	else {
+		for (SearchOffer *off in [bSettings sharedbSettings].latestSearchResults) {
+			if (off.OfferID == searchOffer.OfferID)
+				off.ReadYn = 1;
+		}
+		UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:3];
+		tb.badgeValue = [NSString stringWithFormat:@"%i", ([tb.badgeValue intValue] - 1)];
+	}
 }
 
 - (void)sendMessage {
@@ -111,7 +145,10 @@
 	}
 	else {
 		OfferMessage *tvc = [[OfferMessage alloc] initWithNibName:@"OfferMessage" bundle:nil];
-		tvc.entOffer = entOffer;
+		if (searchOffer == nil)
+			tvc.entOffer = entOffer;
+		else
+			tvc.searchOffer = searchOffer;
 		[[self navigationController] pushViewController:tvc animated:YES];
 		[tvc release];
 	}

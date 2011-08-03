@@ -10,7 +10,7 @@
 
 @implementation SearchOffer
 
-@synthesize OfferID, CategoryID, HumanYn, FreelanceYn;
+@synthesize OfferID, CategoryID, HumanYn, FreelanceYn, ReadYn;
 @synthesize Title, Email, Positivism, Negativism, CategoryTitle, PublishDate;
 
 - (id) init {
@@ -19,6 +19,8 @@
 		self.CategoryID = 0;
 		self.HumanYn = TRUE;
 		self.FreelanceYn = FALSE;
+		self.ReadYn = FALSE;
+		self.SentMessageYn = FALSE;
 		self.Title = @"";
 		self.Email = @"";
 		self.Positivism = @"";

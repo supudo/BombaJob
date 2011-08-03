@@ -15,7 +15,7 @@
 
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
 @synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
-@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer;
+@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
@@ -113,6 +113,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.LocationLatitude = 0.f;
 		self.LocationLongtitude = 0.f;
 		self.currentOffer = [[CurrentOffer alloc] init];
+		self.latestSearchResults = [[NSMutableArray alloc] init];
 	}
 	return self;
 }

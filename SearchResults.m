@@ -15,7 +15,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 
 @implementation SearchResults
 
-@synthesize searchResults, webService, searchTerm, freelanceOn, searchOffline, fetchedResultsController;
+@synthesize webService, searchTerm, freelanceOn, searchOffline, fetchedResultsController;
 
 #pragma mark -
 #pragma mark Work
@@ -25,20 +25,19 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 	self.navigationItem.title = NSLocalizedString(@"Search", @"Search");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)] autorelease];
+	[self reloadContent];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self reloadContent];
+	[self.tableView reloadData];
 }
 
 - (void)reloadContent {
 	[[bSettings sharedbSettings] startLoading:self.view];
 
 	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline) {
-		if (self.searchResults == nil)
-			self.searchResults = [[NSMutableArray alloc] init];
-		[self.searchResults removeAllObjects];
+		[[bSettings sharedbSettings].latestSearchResults removeAllObjects];
 
 		if (self.webService == nil)
 			self.webService = [[WebService alloc] init];
@@ -61,7 +60,9 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 
 - (void)searchOffersFinished:(id)sender results:(NSMutableArray *)offers {
 	[[bSettings sharedbSettings] stopLoading:self.view];
-	self.searchResults = offers;
+	[bSettings sharedbSettings].latestSearchResults = offers;
+	UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:3];
+	tb.badgeValue = [NSString stringWithFormat:@"%i", [[bSettings sharedbSettings].latestSearchResults count]];
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
 	[self.tableView reloadData];
@@ -73,7 +74,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline)
-		return [searchResults count];
+		return [[bSettings sharedbSettings].latestSearchResults count];
 	else {
 		id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
 		return [sectionInfo numberOfObjects];
@@ -90,14 +91,24 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 	}
 	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline) {
-		SearchOffer *offer = ((SearchOffer *)[self.searchResults objectAtIndex:indexPath.row]);
+		SearchOffer *offer = ((SearchOffer *)[[bSettings sharedbSettings].latestSearchResults objectAtIndex:indexPath.row]);
+		cell.imageView.image = ((offer.SentMessageYn) ? [UIImage imageNamed:@"message-sent.png"] : nil);
 		cell.textLabel.text = offer.Title;
+		if (!offer.ReadYn)
+			[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
+		else
+			[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
 		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ // %@", ((offer.HumanYn) ? NSLocalizedString(@"Offer_IShort_Human", @"Offer_IShort_Human") : NSLocalizedString(@"Offer_IShort_Company", @"Offer_IShort_Company")), [[bSettings sharedbSettings] getOfferDate:offer.PublishDate]];
 	}
 	else {
 		dbJobOffer *ento = ((dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath]);
+		cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
 		cell.textLabel.text = ento.Title;
-		cell.detailTextLabel.text = [[bSettings sharedbSettings] getOfferDate:ento.PublishDate];
+		if (![ento.ReadYn boolValue])
+			[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
+		else
+			[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ // %@", ((ento.HumanYn) ? NSLocalizedString(@"Offer_IShort_Human", @"Offer_IShort_Human") : NSLocalizedString(@"Offer_IShort_Company", @"Offer_IShort_Company")), [[bSettings sharedbSettings] getOfferDate:ento.PublishDate]];
 	}
 	return cell;
 }
@@ -105,7 +116,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
 	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline)
-		tvc.searchOffer = ((SearchOffer *)[self.searchResults objectAtIndex:indexPath.row]);
+		tvc.searchOffer = ((SearchOffer *)[[bSettings sharedbSettings].latestSearchResults objectAtIndex:indexPath.row]);
 	else
 		tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];
 	[[self navigationController] pushViewController:tvc animated:YES];
@@ -124,8 +135,9 @@ static NSString *kCellIdentifier = @"identifSearchResults";
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"JobOffer" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
         [fetchRequest setEntity:entity];
         
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"PublishDate" ascending:NO];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSSortDescriptor *sortDescriptorRead = [[NSSortDescriptor alloc] initWithKey:@"ReadYn" ascending:YES];
+        NSSortDescriptor *sortDescriptorDate = [[NSSortDescriptor alloc] initWithKey:@"PublishDate" ascending:NO];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptorRead, sortDescriptorDate, nil];
         [fetchRequest setSortDescriptors:sortDescriptors];
 		
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Title CONTAINS[cd] %@\
@@ -139,8 +151,12 @@ static NSString *kCellIdentifier = @"identifSearchResults";
         
         [aFetchedResultsController release];
         [fetchRequest release];
-        [sortDescriptor release];
+        [sortDescriptorRead release];
+        [sortDescriptorDate release];
         [sortDescriptors release];
+
+		UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:1];
+		tb.badgeValue = [NSString stringWithFormat:@"%i", [[[fetchedResultsController sections] objectAtIndex:1] numberOfObjects]];
     }
 	return fetchedResultsController;
 }
@@ -153,8 +169,6 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 }
 
 - (void)viewDidUnload {
-	searchResults = nil;
-	[searchResults release];
 	webService = nil;
 	[webService release];
 	searchTerm = nil;
@@ -165,7 +179,6 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 }
 
 - (void)dealloc {
-	[searchResults release];
 	[webService release];
 	[searchTerm release];
 	[fetchedResultsController release];
