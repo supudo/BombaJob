@@ -30,11 +30,25 @@ static NSString *kCellIdentifier = @"identifJobsCompany";
 	[super viewWillAppear:animated];
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
-	if (![bSettings sharedbSettings].doSync || [bSettings sharedbSettings].sdlJobs)
-		[self getJobsHumanFinished:nil];
+	[self loadData];
+}
+
+- (void)loadData {
+	if ([[bSettings sharedbSettings] connectedToInternet]) {
+		if (![bSettings sharedbSettings].doSync || [bSettings sharedbSettings].sdlJobs)
+			[self getJobsHumanFinished:nil];
+		else {
+			[webService setDelegate:self];
+			[webService searchJobs];
+		}
+	}
 	else {
-		[webService setDelegate:self];
-		[webService searchJobs];
+		NSError *error = nil;
+		if (![[self fetchedResultsController] performFetch:&error]) {
+			[[bSettings sharedbSettings] LogThis: [NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
+			abort();
+		}
+		[self.tableView reloadData];
 	}
 }
 

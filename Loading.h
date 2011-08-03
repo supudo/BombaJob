@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) IBOutlet UILabel *lblLoading;
 
+- (void)loadSync;
 - (void)startSync;
 - (void)startSyncTimer;
 - (void)startTabApp;

@@ -17,6 +17,7 @@
 @property (nonatomic, retain) WebService *webService;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
+- (void)loadData;
 - (void)reloadContent;
 
 @end

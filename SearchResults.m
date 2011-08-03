@@ -15,7 +15,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 
 @implementation SearchResults
 
-@synthesize searchResults, webService, searchTerm, freelanceOn, fetchedResultsController;
+@synthesize searchResults, webService, searchTerm, freelanceOn, searchOffline, fetchedResultsController;
 
 #pragma mark -
 #pragma mark Work
@@ -35,7 +35,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 - (void)reloadContent {
 	[[bSettings sharedbSettings] startLoading:self.view];
 
-	if ([bSettings sharedbSettings].stOnlineSearch) {
+	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline) {
 		if (self.searchResults == nil)
 			self.searchResults = [[NSMutableArray alloc] init];
 		[self.searchResults removeAllObjects];
@@ -72,7 +72,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if ([bSettings sharedbSettings].stOnlineSearch)
+	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline)
 		return [searchResults count];
 	else {
 		id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
@@ -89,7 +89,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 	}
-	if ([bSettings sharedbSettings].stOnlineSearch) {
+	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline) {
 		SearchOffer *offer = ((SearchOffer *)[self.searchResults objectAtIndex:indexPath.row]);
 		cell.textLabel.text = offer.Title;
 		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ // %@", ((offer.HumanYn) ? NSLocalizedString(@"Offer_IShort_Human", @"Offer_IShort_Human") : NSLocalizedString(@"Offer_IShort_Company", @"Offer_IShort_Company")), [[bSettings sharedbSettings] getOfferDate:offer.PublishDate]];
@@ -104,7 +104,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
-	if ([bSettings sharedbSettings].stOnlineSearch)
+	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline)
 		tvc.searchOffer = ((SearchOffer *)[self.searchResults objectAtIndex:indexPath.row]);
 	else
 		tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];

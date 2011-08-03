@@ -11,10 +11,14 @@
 @interface Settings : UIViewController <UIActionSheetDelegate> {
 	UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch, *lblInAppEmail;
 	UISwitch *swPrivateData, *swGeo, *swSync, *swSearch, *swInAppEmail;
+	BOOL helpOnScreen;
+	UIActionSheet *helpScreen;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch, *lblInAppEmail;
 @property (nonatomic, retain) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync, *swSearch, *swInAppEmail;
+@property BOOL helpOnScreen;
+@property (nonatomic, retain) UIActionSheet *helpScreen;
 
 - (IBAction) iboPrivateData:(id)sender;
 - (IBAction) iboGeoData:(id)sender;

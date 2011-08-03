@@ -13,14 +13,14 @@
 	NSMutableArray *searchResults;
 	WebService *webService;
 	NSString *searchTerm;
-	BOOL freelanceOn;
+	BOOL freelanceOn, searchOffline;
 	NSFetchedResultsController *fetchedResultsController;
 }
 
 @property (nonatomic, retain) NSMutableArray *searchResults;
 @property (nonatomic, retain) WebService *webService;
 @property (nonatomic, retain) NSString *searchTerm;
-@property BOOL freelanceOn;
+@property BOOL freelanceOn, searchOffline;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 - (void)reloadContent;

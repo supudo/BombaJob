@@ -22,7 +22,19 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self performSelector:@selector(startSync) withObject:nil afterDelay:1.0];
+	[self loadSync];
+}
+
+- (void)loadSync {
+	if ([[bSettings sharedbSettings] connectedToInternet])
+		[self performSelector:@selector(startSync) withObject:nil afterDelay:1.0];
+	else {
+		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"OfflineMode", @"OfflineMode") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
+		alert.tag = 1;
+		[alert show];
+		[alert release];
+	}
 }
 
 - (void)startSync {
@@ -46,12 +58,20 @@
 - (void)syncError:(id)sender error:(NSString *) errorMessage {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SyncError", @"SyncError"), errorMessage] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
+	alert.tag = 2;
 	[alert show];
 	[alert release];
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	[self startTabApp];
+	if (actionSheet.tag == 1) {
+		if (buttonIndex == 1)
+			[self loadSync];
+		else
+			[self startTabApp];
+	}
+	else
+		[self startTabApp];
 }
 
 - (void)startTabApp {
