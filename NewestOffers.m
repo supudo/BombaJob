@@ -67,8 +67,18 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 - (void)getNewJobsFinished:(id)sender {
 	[[bSettings sharedbSettings] stopLoading:self.view];
 	[bSettings sharedbSettings].sdlNewJobs = TRUE;
+
 	UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:0];
 	tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"ReadYn = 0"]]];
+
+	tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:1];
+	tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0 AND ReadYn = 0"]]];
+	[bSettings sharedbSettings].sdlJobs = TRUE;
+
+	tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:2];
+	tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1 AND ReadYn = 0"]]];
+	[bSettings sharedbSettings].sdlPeople = TRUE;
+
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		[[bSettings sharedbSettings] LogThis: [NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
