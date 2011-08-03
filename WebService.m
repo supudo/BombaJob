@@ -84,7 +84,7 @@
 - (void)getCategories {
 	self.OperationID = NLOperationGetCategories;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"Category"];
+	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"Category"];
 	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getCategories URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getCategories"]];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
@@ -107,7 +107,7 @@
 - (void)getNewJobs {
 	self.OperationID = NLOperationGetNewJobs;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"JobOffer"];
+	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"JobOffer"];
 	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getNewJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getNewJobs"]];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
@@ -130,7 +130,7 @@
 - (void)searchJobs {
 	self.OperationID = NLOperationGetJobsHuman;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0"]];
+	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0"]];
 	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchJobs"]];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
@@ -153,7 +153,7 @@
 - (void)searchPeople {
 	self.OperationID = NLOperationGetJobsCompany;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1"]];
+	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1"]];
 	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchPeople URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchPeople"]];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
@@ -244,17 +244,22 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
 	currentElement = elementName;
 	if ([elementName isEqualToString:@"cat"]) {
-		entCategory = (dbCategory *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:managedObjectContext];
+		entCategory = (dbCategory *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Category" predicateString:[NSString stringWithFormat:@"CategoryID = %@", [attributeDict objectForKey:@"id"]]];
+		if (entCategory == nil)
+			entCategory = (dbCategory *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:managedObjectContext];
 		[entCategory setCategoryID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"id"] intValue]]];
 		[entCategory setOffersCount:[NSNumber numberWithInt:[[attributeDict objectForKey:@"cnt"] intValue]]];
 	}
 	else if ([elementName isEqualToString:@"job"]) {
-		entOffer = (dbJobOffer *)[NSEntityDescription insertNewObjectForEntityForName:@"JobOffer" inManagedObjectContext:managedObjectContext];
+		entOffer = (dbJobOffer *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"JobOffer" predicateString:[NSString stringWithFormat:@"OfferID = %@", [attributeDict objectForKey:@"id"]]];
+		if (entOffer == nil) {
+			entOffer = (dbJobOffer *)[NSEntityDescription insertNewObjectForEntityForName:@"JobOffer" inManagedObjectContext:managedObjectContext];
+			[entOffer setReadYn:[NSNumber numberWithInt:0]];
+			[entOffer setSentMessageYn:[NSNumber numberWithInt:0]];
+		}
 		[entOffer setOfferID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"id"] intValue]]];
 		[entOffer setCategoryID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"cid"] intValue]]];
 		[entOffer setHumanYn:[NSNumber numberWithInt:[[attributeDict objectForKey:@"hm"] intValue]]];
-		[entOffer setReadYn:[NSNumber numberWithInt:0]];
-		[entOffer setSentMessageYn:[NSNumber numberWithInt:0]];
 		dbCategory *tc = (dbCategory *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Category" predicateString:[NSString stringWithFormat:@"CategoryID = %@", [attributeDict objectForKey:@"cid"]]];
 		[entOffer setCategory:tc];
 	}
