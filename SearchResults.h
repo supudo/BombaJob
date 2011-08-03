@@ -9,17 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "WebService.h"
 
-@interface SearchResults : UITableViewController <WebServiceDelegate> {
+@interface SearchResults : UITableViewController <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
 	NSMutableArray *searchResults;
 	WebService *webService;
 	NSString *searchTerm;
 	BOOL freelanceOn;
+	NSFetchedResultsController *fetchedResultsController;
 }
 
 @property (nonatomic, retain) NSMutableArray *searchResults;
 @property (nonatomic, retain) WebService *webService;
 @property (nonatomic, retain) NSString *searchTerm;
 @property BOOL freelanceOn;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 - (void)reloadContent;
 
