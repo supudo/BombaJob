@@ -10,12 +10,17 @@
 #import "BlackAlertView.h"
 #import "DBManagedObjectContext.h"
 #import "Offer.h"
+#import "CategoriesOffers.h"
 
 static NSString *kCellIdentifier = @"identifJobsPeople";
+static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 
 @implementation SearchPeople
 
-@synthesize webService, fetchedResultsController;
+@synthesize webService, fetchedResultsControllerOffers, fetchedResultsControllerCategories;
+
+#pragma mark -
+#pragma mark Workers
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -60,7 +65,7 @@ static NSString *kCellIdentifier = @"identifJobsPeople";
 	UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:2];
 	tb.badgeValue = [NSString stringWithFormat:@"%i", [[DBManagedObjectContext sharedDBManagedObjectContext] getEntitiesCount:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1 AND ReadYn = 0"]]];
 	NSError *error = nil;
-	if (![[self fetchedResultsController] performFetch:&error]) {
+	if (![[self fetchedResultsControllerOffers] performFetch:&error] || ![[self fetchedResultsControllerCategories] performFetch:&error]) {
 		[[bSettings sharedbSettings] LogThis: [NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
 		abort();
 	}
@@ -81,45 +86,134 @@ static NSString *kCellIdentifier = @"identifJobsPeople";
 #pragma mark Table
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+	if ([bSettings sharedbSettings].stShowCategories)
+		return 2;
+	else
+		return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+	if ([bSettings sharedbSettings].stShowCategories) {
+		if (section == 0)
+			return [[fetchedResultsControllerCategories fetchedObjects] count];
+		else
+			return [[fetchedResultsControllerOffers fetchedObjects] count];
+	}
+	else
+		return [[fetchedResultsControllerOffers fetchedObjects] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
-		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+	UITableViewCell *cell;
+	if ([bSettings sharedbSettings].stShowCategories) {
+		if (indexPath.section == 0) {
+			cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifierCategory];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifierCategory] autorelease];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+				cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+				cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+			}
+			dbCategory *ento = ((dbCategory *)[fetchedResultsControllerCategories objectAtIndexPath:indexPath]);
+			cell.textLabel.text = ento.CategoryTitle;
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@: %i", NSLocalizedString(@"OffersCount", @"OffersCount"), [ento.OffersCount intValue]];
+		}
+		else {
+			cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+				cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+				cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+			}
+			dbJobOffer *ento = ((dbJobOffer *)[fetchedResultsControllerOffers objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]]);
+			cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
+			cell.textLabel.text = ento.Title;
+			if (![ento.ReadYn boolValue])
+				[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
+			else
+				[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+			cell.detailTextLabel.text = [[bSettings sharedbSettings] getOfferDate:ento.PublishDate];
+		}
 	}
-	dbJobOffer *ento = ((dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath]);
-	cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
-	cell.textLabel.text = ento.Title;
-	if (![ento.ReadYn boolValue])
-		[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
-	else
-		[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
-	cell.detailTextLabel.text = [[bSettings sharedbSettings] getOfferDate:ento.PublishDate];
+	else {
+		cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+			cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+			cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
+		}
+		dbJobOffer *ento = ((dbJobOffer *)[fetchedResultsControllerOffers objectAtIndexPath:indexPath]);
+		cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
+		cell.textLabel.text = ento.Title;
+		if (![ento.ReadYn boolValue])
+			[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
+		else
+			[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+		cell.detailTextLabel.text = [[bSettings sharedbSettings] getOfferDate:ento.PublishDate];
+	}
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
-	tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];
-	[[self navigationController] pushViewController:tvc animated:YES];
-	[tvc release];
+	if ([bSettings sharedbSettings].stShowCategories) {
+		if (indexPath.section == 0) {
+			CategoriesOffers *tvc = [[CategoriesOffers alloc] initWithNibName:@"CategoriesOffers" bundle:nil];
+			tvc.entCategory = (dbCategory *)[fetchedResultsControllerCategories objectAtIndexPath:indexPath];
+			[[self navigationController] pushViewController:tvc animated:YES];
+			[tvc release];
+		}
+		else {
+			Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
+			tvc.entOffer = (dbJobOffer *)[fetchedResultsControllerOffers objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+			[[self navigationController] pushViewController:tvc animated:YES];
+			[tvc release];
+		}
+	}
+	else {
+		Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
+		tvc.entOffer = (dbJobOffer *)[fetchedResultsControllerOffers objectAtIndexPath:indexPath];
+		[[self navigationController] pushViewController:tvc animated:YES];
+		[tvc release];
+	}
 }
 
-- (NSFetchedResultsController *)fetchedResultsController {
+- (NSFetchedResultsController *)fetchedResultsControllerCategories {
 	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 	
-    if (fetchedResultsController == nil) {
+    if (fetchedResultsControllerCategories == nil) {
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+		
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+        [fetchRequest setEntity:entity];
+        
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"CategoryTitle" ascending:NO];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        [fetchRequest setSortDescriptors:sortDescriptors];
+		
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"OffersCount > 0"];
+		[fetchRequest setPredicate:predicate];
+		
+        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dbManagedObjectContext managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
+        aFetchedResultsController.delegate = self;
+        self.fetchedResultsControllerCategories = aFetchedResultsController;
+        
+        [aFetchedResultsController release];
+        [fetchRequest release];
+        [sortDescriptor release];
+        [sortDescriptors release];
+    }
+	return fetchedResultsControllerCategories;
+}
+
+- (NSFetchedResultsController *)fetchedResultsControllerOffers {
+	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+	
+    if (fetchedResultsControllerOffers == nil) {
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 		
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"JobOffer" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
@@ -135,7 +229,7 @@ static NSString *kCellIdentifier = @"identifJobsPeople";
 		
         NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dbManagedObjectContext managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
         aFetchedResultsController.delegate = self;
-        self.fetchedResultsController = aFetchedResultsController;
+        self.fetchedResultsControllerOffers = aFetchedResultsController;
         
         [aFetchedResultsController release];
         [fetchRequest release];
@@ -143,7 +237,7 @@ static NSString *kCellIdentifier = @"identifJobsPeople";
         [sortDescriptorDate release];
         [sortDescriptors release];
     }
-	return fetchedResultsController;
+	return fetchedResultsControllerOffers;
 }
 
 #pragma mark -
@@ -156,14 +250,17 @@ static NSString *kCellIdentifier = @"identifJobsPeople";
 - (void)viewDidUnload {
 	webService = nil;
 	[webService release];
-	fetchedResultsController = nil;
-	[fetchedResultsController release];
+	fetchedResultsControllerOffers = nil;
+	[fetchedResultsControllerOffers release];
+	fetchedResultsControllerCategories = nil;
+	[fetchedResultsControllerCategories release];
     [super viewDidUnload];
 }
 
 - (void)dealloc {
 	[webService release];
-	[fetchedResultsController release];
+	[fetchedResultsControllerOffers release];
+	[fetchedResultsControllerCategories release];
     [super dealloc];
 }
 

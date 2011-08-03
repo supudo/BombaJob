@@ -220,6 +220,35 @@
             <int key="IBUIContentVerticalAlignment">0</int>
             <bool key="IBUIOn">YES</bool>
           </object>
+          <object class="IBUILabel" id="230858003">
+            <reference key="NSNextResponder" ref="191373211"/>
+            <int key="NSvFlags">292</int>
+            <string key="NSFrame">{{34, 211}, {164, 21}}</string>
+            <reference key="NSSuperview" ref="191373211"/>
+            <string key="NSReuseIdentifierKey">_NS:173</string>
+            <bool key="IBUIOpaque">NO</bool>
+            <bool key="IBUIClipsSubviews">YES</bool>
+            <int key="IBUIContentMode">7</int>
+            <bool key="IBUIUserInteractionEnabled">NO</bool>
+            <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+            <string key="IBUIText">Label</string>
+            <reference key="IBUITextColor" ref="1002444385"/>
+            <reference key="IBUIHighlightedColor" ref="872297079"/>
+            <int key="IBUIBaselineAdjustment">1</int>
+            <float key="IBUIMinimumFontSize">10</float>
+          </object>
+          <object class="IBUISwitch" id="207800583">
+            <reference key="NSNextResponder" ref="191373211"/>
+            <int key="NSvFlags">292</int>
+            <string key="NSFrame">{{206, 208}, {94, 27}}</string>
+            <reference key="NSSuperview" ref="191373211"/>
+            <string key="NSReuseIdentifierKey">_NS:536</string>
+            <bool key="IBUIOpaque">NO</bool>
+            <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+            <int key="IBUIContentHorizontalAlignment">0</int>
+            <int key="IBUIContentVerticalAlignment">0</int>
+            <bool key="IBUIOn">YES</bool>
+          </object>
           <object class="IBUIButton" id="365235668">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
@@ -284,6 +313,26 @@
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
             <string key="NSFrame">{{8, 39}, {18, 19}}</string>
+            <reference key="NSSuperview" ref="191373211"/>
+            <string key="NSReuseIdentifierKey">_NS:84</string>
+            <bool key="IBUIOpaque">NO</bool>
+            <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+            <int key="IBUIContentHorizontalAlignment">0</int>
+            <int key="IBUIContentVerticalAlignment">0</int>
+            <reference key="IBUIFont" ref="698611500"/>
+            <int key="IBUIButtonType">4</int>
+            <bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
+            <reference key="IBUIHighlightedTitleColor" ref="872297079"/>
+            <object class="NSColor" key="IBUINormalTitleColor">
+              <int key="NSColorSpace">1</int>
+              <bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+            </object>
+            <reference key="IBUINormalTitleShadowColor" ref="959225235"/>
+          </object>
+          <object class="IBUIButton" id="512598659">
+            <reference key="NSNextResponder" ref="191373211"/>
+            <int key="NSvFlags">292</int>
+            <string key="NSFrame">{{8, 211}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -491,6 +540,40 @@
           </object>
           <int key="connectionID">41</int>
         </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchEventConnection" key="connection">
+            <string key="label">iboHelpShowCategories:</string>
+            <reference key="source" ref="512598659"/>
+            <reference key="destination" ref="372490531"/>
+            <int key="IBEventType">7</int>
+          </object>
+          <int key="connectionID">47</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchOutletConnection" key="connection">
+            <string key="label">lblShowCategories</string>
+            <reference key="source" ref="372490531"/>
+            <reference key="destination" ref="230858003"/>
+          </object>
+          <int key="connectionID">48</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchEventConnection" key="connection">
+            <string key="label">iboShowCategories:</string>
+            <reference key="source" ref="207800583"/>
+            <reference key="destination" ref="372490531"/>
+            <int key="IBEventType">7</int>
+          </object>
+          <int key="connectionID">49</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBCocoaTouchOutletConnection" key="connection">
+            <string key="label">swShowCategories</string>
+            <reference key="source" ref="372490531"/>
+            <reference key="destination" ref="207800583"/>
+          </object>
+          <int key="connectionID">50</int>
+        </object>
       </object>
       <object class="IBMutableOrderedSet" key="objectRecords">
         <object class="NSArray" key="orderedObjects">
@@ -521,6 +604,9 @@
               <reference ref="945619548"/>
               <reference ref="81568956"/>
               <reference ref="365235668"/>
+              <reference ref="230858003"/>
+              <reference ref="207800583"/>
+              <reference ref="512598659"/>
             </object>
             <reference key="parent" ref="0"/>
           </object>
@@ -610,6 +696,21 @@
             <reference key="object" ref="365235668"/>
             <reference key="parent" ref="191373211"/>
           </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">42</int>
+            <reference key="object" ref="230858003"/>
+            <reference key="parent" ref="191373211"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">43</int>
+            <reference key="object" ref="207800583"/>
+            <reference key="parent" ref="191373211"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">45</int>
+            <reference key="object" ref="512598659"/>
+            <reference key="parent" ref="191373211"/>
+          </object>
         </object>
       </object>
       <object class="NSMutableDictionary" key="flattenedProperties">
@@ -640,6 +741,12 @@
           <string>35.IBViewBoundsToFrameTransform</string>
           <string>4.IBPluginDependency</string>
           <string>4.IBViewBoundsToFrameTransform</string>
+          <string>42.IBPluginDependency</string>
+          <string>42.IBViewBoundsToFrameTransform</string>
+          <string>43.IBPluginDependency</string>
+          <string>43.IBViewBoundsToFrameTransform</string>
+          <string>45.IBPluginDependency</string>
+          <string>45.IBViewBoundsToFrameTransform</string>
           <string>5.IBPluginDependency</string>
           <string>5.IBViewBoundsToFrameTransform</string>
           <string>6.IBPluginDependency</string>
@@ -683,19 +790,31 @@
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">P4AAAL+AAABCHAAAwygAAA</bytes>
+            <bytes key="NSTransformStruct">AUIIAABDMwAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">P4AAAL+AAABDUwAAwysAAA</bytes>
+            <bytes key="NSTransformStruct">AUNOAABDMAAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">P4AAAL+AAABBUAAAwyYAAA</bytes>
+            <bytes key="NSTransformStruct">AUEAAABDMwAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
             <bytes key="NSTransformStruct">AUGgAABCHAAAA</bytes>
+          </object>
+          <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABCHAAAw0sAAA</bytes>
+          </object>
+          <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABDUwAAw04AAA</bytes>
+          </object>
+          <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABBiAAAw3kAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
@@ -735,7 +854,7 @@
         </object>
       </object>
       <nil key="sourceID"/>
-      <int key="maxID">41</int>
+      <int key="maxID">50</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -752,14 +871,18 @@
               <string>iboHelpInAppEmail:</string>
               <string>iboHelpPrivateData:</string>
               <string>iboHelpSearch:</string>
+              <string>iboHelpShowCategories:</string>
               <string>iboHelpSyncData:</string>
               <string>iboInAppEmail:</string>
               <string>iboPrivateData:</string>
               <string>iboSearch:</string>
+              <string>iboShowCategories:</string>
               <string>iboSyncData:</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
               <bool key="EncodedWithXMLCoder">YES</bool>
+              <string>id</string>
+              <string>id</string>
               <string>id</string>
               <string>id</string>
               <string>id</string>
@@ -781,10 +904,12 @@
               <string>iboHelpInAppEmail:</string>
               <string>iboHelpPrivateData:</string>
               <string>iboHelpSearch:</string>
+              <string>iboHelpShowCategories:</string>
               <string>iboHelpSyncData:</string>
               <string>iboInAppEmail:</string>
               <string>iboPrivateData:</string>
               <string>iboSearch:</string>
+              <string>iboShowCategories:</string>
               <string>iboSyncData:</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
@@ -810,6 +935,10 @@
                 <string key="candidateClassName">id</string>
               </object>
               <object class="IBActionInfo">
+                <string key="name">iboHelpShowCategories:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
                 <string key="name">iboHelpSyncData:</string>
                 <string key="candidateClassName">id</string>
               </object>
@@ -826,6 +955,10 @@
                 <string key="candidateClassName">id</string>
               </object>
               <object class="IBActionInfo">
+                <string key="name">iboShowCategories:</string>
+                <string key="candidateClassName">id</string>
+              </object>
+              <object class="IBActionInfo">
                 <string key="name">iboSyncData:</string>
                 <string key="candidateClassName">id</string>
               </object>
@@ -839,11 +972,13 @@
               <string>lblInAppEmail</string>
               <string>lblPrivateData</string>
               <string>lblSearch</string>
+              <string>lblShowCategories</string>
               <string>lblSync</string>
               <string>swGeo</string>
               <string>swInAppEmail</string>
               <string>swPrivateData</string>
               <string>swSearch</string>
+              <string>swShowCategories</string>
               <string>swSync</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
@@ -853,6 +988,8 @@
               <string>UILabel</string>
               <string>UILabel</string>
               <string>UILabel</string>
+              <string>UILabel</string>
+              <string>UISwitch</string>
               <string>UISwitch</string>
               <string>UISwitch</string>
               <string>UISwitch</string>
@@ -868,11 +1005,13 @@
               <string>lblInAppEmail</string>
               <string>lblPrivateData</string>
               <string>lblSearch</string>
+              <string>lblShowCategories</string>
               <string>lblSync</string>
               <string>swGeo</string>
               <string>swInAppEmail</string>
               <string>swPrivateData</string>
               <string>swSearch</string>
+              <string>swShowCategories</string>
               <string>swSync</string>
             </object>
             <object class="NSMutableArray" key="dict.values">
@@ -894,6 +1033,10 @@
                 <string key="candidateClassName">UILabel</string>
               </object>
               <object class="IBToOneOutletInfo">
+                <string key="name">lblShowCategories</string>
+                <string key="candidateClassName">UILabel</string>
+              </object>
+              <object class="IBToOneOutletInfo">
                 <string key="name">lblSync</string>
                 <string key="candidateClassName">UILabel</string>
               </object>
@@ -911,6 +1054,10 @@
               </object>
               <object class="IBToOneOutletInfo">
                 <string key="name">swSearch</string>
+                <string key="candidateClassName">UISwitch</string>
+              </object>
+              <object class="IBToOneOutletInfo">
+                <string key="name">swShowCategories</string>
                 <string key="candidateClassName">UISwitch</string>
               </object>
               <object class="IBToOneOutletInfo">

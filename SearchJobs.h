@@ -11,11 +11,11 @@
 
 @interface SearchJobs : UITableViewController <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
 	WebService *webService;
-	NSFetchedResultsController *fetchedResultsController;
+	NSFetchedResultsController *fetchedResultsControllerOffers, *fetchedResultsControllerCategories;
 }
 
 @property (nonatomic, retain) WebService *webService;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsControllerOffers, *fetchedResultsControllerCategories;
 
 - (void)loadData;
 - (void)reloadContent;

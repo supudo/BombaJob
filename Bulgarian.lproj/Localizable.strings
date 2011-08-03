@@ -21,6 +21,7 @@
 "OfflineMode" = "В момента нямате Интернет връзка, затова ще работим в офлайн режим.";
 "Sync" = "Синхронизация";
 "SyncInProgress" = "Синхронизиране...";
+"OffersCount" = "Оферти";
 
 "Coordinates_Reason" = "За да можем да търсим подходящи оферти около вас ни трябва местоположението ви. Но, не е задъжлитено.";
 
@@ -58,6 +59,7 @@
 "About.Sync" = "Начална синхронизация";
 "About.Search" = "Онлайн търсене";
 "About.InAppEmail" = "In-App Email";
+"About.ShowCategories" = "Показвай категориите";
 
 "Search.Freelance" = "Проект/Freelance";
 

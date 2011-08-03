@@ -24,6 +24,8 @@
 		8A13113C13E80BD200F0296C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A13113B13E80BD200F0296C /* MessageUI.framework */; };
 		8A3B52FF13E1842B00F9B24E /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B52FD13E1842B00F9B24E /* About.m */; };
 		8A3B530013E1842B00F9B24E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B52FE13E1842B00F9B24E /* About.xib */; };
+		8A40DD3613E97D1C00EBC946 /* CategoriesOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */; };
+		8A40DD3713E97D1C00EBC946 /* CategoriesOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */; };
 		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
 		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
 		8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88F89213E1AAA000CC9108 /* SearchOffer.m */; };
@@ -108,6 +110,9 @@
 		8A3B52FC13E1842B00F9B24E /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = About.h; path = ../About.h; sourceTree = "<group>"; };
 		8A3B52FD13E1842B00F9B24E /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = About.m; path = ../About.m; sourceTree = "<group>"; };
 		8A3B52FE13E1842B00F9B24E /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		8A40DD3313E97D1C00EBC946 /* CategoriesOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesOffers.h; path = ../CategoriesOffers.h; sourceTree = "<group>"; };
+		8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesOffers.m; path = ../CategoriesOffers.m; sourceTree = "<group>"; };
+		8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesOffers.xib; sourceTree = "<group>"; };
 		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
 		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
 		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
@@ -396,6 +401,7 @@
 			children = (
 				8AA691D213C1A3E0004B4687 /* SearchJobs.xib */,
 				8AA691DC13C1A3F9004B4687 /* SearchPeople.xib */,
+				8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */,
 				8A5D8EFD13C3106B005086C1 /* Offer.xib */,
 				8A0F154D13C33C440083E9E4 /* OfferMessage.xib */,
 			);
@@ -440,6 +446,8 @@
 				8AA691D113C1A3E0004B4687 /* SearchJobs.m */,
 				8AA691DA13C1A3F9004B4687 /* SearchPeople.h */,
 				8AA691DB13C1A3F9004B4687 /* SearchPeople.m */,
+				8A40DD3313E97D1C00EBC946 /* CategoriesOffers.h */,
+				8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */,
 				8A5D8EFB13C3106B005086C1 /* Offer.h */,
 				8A5D8EFC13C3106B005086C1 /* Offer.m */,
 				8A0F154B13C33C440083E9E4 /* OfferMessage.h */,
@@ -681,6 +689,7 @@
 				8AA96D2F13E93D8500A4F0B7 /* SyncAgain.xib in Resources */,
 				8AA96D3513E93DF200A4F0B7 /* tb-syncagain.png in Resources */,
 				8AA96E9913E9528E00A4F0B7 /* message-sent.png in Resources */,
+				8A40DD3713E97D1C00EBC946 /* CategoriesOffers.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +730,7 @@
 				8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */,
 				8A130FF613E7F50A00F0296C /* SearchResults.m in Sources */,
 				8AA96D2E13E93D8500A4F0B7 /* SyncAgain.m in Sources */,
+				8A40DD3613E97D1C00EBC946 /* CategoriesOffers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 
 @interface bSettings : NSObject {
 	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
-	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
+	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
 	NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
@@ -20,7 +20,7 @@
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
-@property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
+@property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
 @property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;

@@ -14,8 +14,8 @@
 
 @implementation Settings
 
-@synthesize lblPrivateData, lblGeo, lblSync, lblSearch, lblInAppEmail;
-@synthesize swPrivateData, swGeo, swSync, swSearch, swInAppEmail;
+@synthesize lblPrivateData, lblGeo, lblSync, lblSearch, lblInAppEmail, lblShowCategories;
+@synthesize swPrivateData, swGeo, swSync, swSearch, swInAppEmail, swShowCategories;
 @synthesize helpScreen;
 
 #pragma mark -
@@ -30,6 +30,7 @@
 	[lblSync setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[lblSearch setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[lblInAppEmail setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[lblShowCategories setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,11 +40,13 @@
 	lblSync.text = NSLocalizedString(@"About.Sync", @"");
 	lblSearch.text = NSLocalizedString(@"About.Search", @"");
 	lblInAppEmail.text = NSLocalizedString(@"About.InAppEmail", @"");
+	lblShowCategories.text = NSLocalizedString(@"About.ShowCategories", @"");
 	[swPrivateData setOn:[bSettings sharedbSettings].stPrivateData];
 	[swGeo setOn:[bSettings sharedbSettings].stGeoLocation];
 	[swSync setOn:[bSettings sharedbSettings].stInitSync];
 	[swSearch setOn:[bSettings sharedbSettings].stOnlineSearch];
 	[swInAppEmail setOn:[bSettings sharedbSettings].stInAppEmail];
+	[swShowCategories setOn:[bSettings sharedbSettings].stShowCategories];
 }
 
 - (IBAction) iboPrivateData:(id)sender {
@@ -106,6 +109,18 @@
 	}
 }
 
+- (IBAction) iboShowCategories:(id)sender {
+	[bSettings sharedbSettings].stShowCategories = [swShowCategories isOn];
+	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+	dbSettings *entPD = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"ShowCategories"]];
+	[entPD setSValue:(([swShowCategories isOn]) ? @"TRUE" : @"FALSE")];
+	NSError *error = nil;
+	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		abort();
+	}
+}
+
 #pragma mark -
 #pragma mark Help buttons
 
@@ -132,6 +147,11 @@
 - (IBAction) iboHelpInAppEmail:(id)sender {
 	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"40"]];
 	[self showHelp:NSLocalizedString(@"About.InAppEmail", @"About.InAppEmail") withContent:tc.Content];
+}
+
+- (IBAction) iboHelpShowCategories:(id)sender {
+	dbTextContent *tc = (dbTextContent *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"TextContent" predicate:[NSPredicate predicateWithFormat:@"CID=%@", @"41"]];
+	[self showHelp:NSLocalizedString(@"About.ShowCategories", @"About.ShowCategories") withContent:tc.Content];
 }
 
 - (void)showHelp:(NSString *)helpTitle withContent:(NSString *)helpContent {
@@ -174,6 +194,8 @@
 	[lblSearch release];
 	lblInAppEmail = nil;
 	[lblInAppEmail release];
+	lblShowCategories = nil;
+	[lblShowCategories release];
 	swSearch = nil;
 	[swSearch release];
 	swPrivateData = nil;
@@ -184,6 +206,8 @@
 	[swSync release];
 	swInAppEmail = nil;
 	[swInAppEmail release];
+	swShowCategories = nil;
+	[swShowCategories release];
 	helpScreen = nil;
 	[helpScreen release];
     [super viewDidUnload];
@@ -195,11 +219,13 @@
 	[lblSync release];
 	[lblSearch release];
 	[lblInAppEmail release];
+	[lblShowCategories release];
 	[swSearch release];
 	[swPrivateData release];
 	[swGeo release];
 	[swSync release];
 	[swInAppEmail release];
+	[swShowCategories release];
 	[helpScreen release];
     [super dealloc];
 }

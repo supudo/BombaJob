@@ -14,7 +14,7 @@
 @implementation bSettings
 
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
-@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail;
+@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
 @synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
@@ -45,6 +45,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.stInitSync = TRUE;
 		self.stOnlineSearch = TRUE;
 		self.stInAppEmail = FALSE;
+		self.stShowCategories = TRUE;
 
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;
@@ -97,6 +98,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 			[ent setSName:@"InAppEmail"];
 			[ent setSValue:@"FALSE"];
 			self.stInAppEmail = TRUE;
+		}
+		
+		ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"ShowCategories"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stShowCategories = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"ShowCategories"];
+			[ent setSValue:@"TRUE"];
+			self.stShowCategories = TRUE;
 		}
 
 		NSError *error = nil;
