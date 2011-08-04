@@ -56,7 +56,7 @@
 	[entPD setSValue:(([swPrivateData isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 		abort();
 	}
 }
@@ -68,7 +68,7 @@
 	[entPD setSValue:(([swGeo isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 		abort();
 	}
 }
@@ -80,7 +80,7 @@
 	[entPD setSValue:(([swSync isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 		abort();
 	}
 }
@@ -92,7 +92,7 @@
 	[entPD setSValue:(([swSearch isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 		abort();
 	}
 }
@@ -104,7 +104,7 @@
 	[entPD setSValue:(([swInAppEmail isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 		abort();
 	}
 }
@@ -116,7 +116,7 @@
 	[entPD setSValue:(([swShowCategories isOn]) ? @"TRUE" : @"FALSE")];
 	NSError *error = nil;
 	if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-		[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+		[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 		abort();
 	}
 }

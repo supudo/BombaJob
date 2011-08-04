@@ -16,12 +16,20 @@
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
 @synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
 @synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults;
+@synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
-- (void) LogThis: (NSString *)log {
-	if (self.inDebugMode)
-		NSLog(@"[_____BombaJob-DEBUG] : %@", log);
+- (void)LogThis:(NSString *)log, ... {
+	if (self.inDebugMode) {
+		NSString *output;
+		va_list ap;
+		va_start(ap, log);
+		output = [[NSString alloc] initWithFormat:log arguments:ap];
+		va_end(ap);
+		NSLog(@"[_____BombaJob-DEBUG] : %@", output);
+		[output release];
+	}
 }
 
 - (BOOL)connectedToInternet {
@@ -46,6 +54,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.stOnlineSearch = TRUE;
 		self.stInAppEmail = FALSE;
 		self.stShowCategories = TRUE;
+		
+		self.twitterOAuthConsumerKey = @"OVvHQ1wio8LZklS5mRUuA";
+		self.twitterOAuthConsumerSecret = @"zZm0RsfzkLpF3FYnxcM3BDZdxHA6sPLoPiTcBvohUEo";
 
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;
@@ -112,7 +123,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
 		NSError *error = nil;
 		if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-			[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving the account info: %@", [error userInfo]]];
+			[[bSettings sharedbSettings] LogThis:@"Error while saving the account info: %@", [error userInfo]];
 			abort();
 		}
 

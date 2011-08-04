@@ -17,6 +17,7 @@
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
 	NSMutableArray *latestSearchResults;
+	NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret;
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
@@ -25,8 +26,9 @@
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
 @property (nonatomic, retain) NSMutableArray *latestSearchResults;
+@property (nonatomic, retain) NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret;
 
-- (void)LogThis: (NSString *)log;
+- (void)LogThis:(NSString *)log, ...;
 - (BOOL)connectedToInternet;
 - (NSString *)getOfferDate:(NSDate *)offerDate;
 - (BOOL)validEmail:(NSString *)email sitrictly:(BOOL)stricterFilter;

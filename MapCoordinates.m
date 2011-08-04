@@ -24,11 +24,11 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 	[bSettings sharedbSettings].LocationLatitude = manager.location.coordinate.latitude;
 	[bSettings sharedbSettings].LocationLongtitude = manager.location.coordinate.longitude;
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Map coordinates - %f - %f", [bSettings sharedbSettings].LocationLatitude, [bSettings sharedbSettings].LocationLongtitude]];
+	[[bSettings sharedbSettings] LogThis:@"Map coordinates - %f - %f", [bSettings sharedbSettings].LocationLatitude, [bSettings sharedbSettings].LocationLongtitude];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Getting map coordinates failed: %@", [error localizedDescription]]];
+	[[bSettings sharedbSettings] LogThis:@"Getting map coordinates failed: %@", [error localizedDescription]];
 }
 
 - (void)dealloc {

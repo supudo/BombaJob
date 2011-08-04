@@ -69,7 +69,7 @@
 		[entPD setSentMessageYn:[NSNumber numberWithInt:1]];
 		NSError *error = nil;
 		if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-			[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+			[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 			abort();
 		}
 	}

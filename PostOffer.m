@@ -246,7 +246,7 @@
 
 				NSError *error = nil;
 				if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-					[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving the account info: %@", [error userInfo]]];
+					[[bSettings sharedbSettings] LogThis:@"Error while saving the account info: %@", [error userInfo]];
 					abort();
 				}
 			}

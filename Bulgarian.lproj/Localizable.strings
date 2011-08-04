@@ -83,6 +83,8 @@
 
 "Error.InAppEmailCantSend" = "Нямате конфигуриран email акаунт.";
 
+"Twitter.LoginError" = "Грешно потребителско име и/или парола.";
+
 "UI.OK" = "ОК";
 "UI.Retry" = "Опитай пак";
 "UI.Cancel" = "Откажи";

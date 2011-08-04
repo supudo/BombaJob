@@ -23,7 +23,7 @@
 	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
 	[request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
 	[request setHTTPBody:[pData dataUsingEncoding:NSUTF8StringEncoding]];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getFromURL method = %@, postData = %@", pMethod, pData]];
+	[[bSettings sharedbSettings] LogThis:@"getFromURL method = %@, postData = %@", pMethod, pData];
 	
 	NSError *error = nil;
 	NSURLResponse *response;

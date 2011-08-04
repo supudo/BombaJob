@@ -19,7 +19,7 @@
 
 - (void)postNewJob {
 	self.OperationID = NLOperationPostJob;
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"postNewJob URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postNewJob"]];
+	[[bSettings sharedbSettings] LogThis:@"postNewJob URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postNewJob"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
@@ -36,7 +36,7 @@
 	[postData appendFormat:@"&neg=%@", [bSettings sharedbSettings].currentOffer.Negativism];
 	
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postNewJob"] postData:postData postMethod:@"POST"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"postNewJob response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"postNewJob response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -54,7 +54,7 @@
 
 - (void)postMessage:(int)offerID message:(NSString *)msg {
 	self.OperationID = NLOperationPostMessage;
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"postMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postMessage"]];
+	[[bSettings sharedbSettings] LogThis:@"postMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postMessage"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
@@ -65,7 +65,7 @@
 	[postData appendFormat:@"&message=%@", msg];
 
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postMessage"] postData:postData postMethod:@"POST"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"postMessage response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"postMessage response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -85,12 +85,12 @@
 	self.OperationID = NLOperationGetCategories;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
 	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"Category"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getCategories URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getCategories"]];
+	[[bSettings sharedbSettings] LogThis:@"getCategories URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getCategories"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getCategories"] postData:@"" postMethod:@"GET"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getCategories response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"getCategories response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -108,12 +108,12 @@
 	self.OperationID = NLOperationGetNewJobs;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
 	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"JobOffer"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getNewJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getNewJobs"]];
+	[[bSettings sharedbSettings] LogThis:@"getNewJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getNewJobs"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getNewJobs"] postData:@"" postMethod:@"GET"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getNewJobs response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"getNewJobs response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -131,12 +131,12 @@
 	self.OperationID = NLOperationGetJobsHuman;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
 	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0"]];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchJobs"]];
+	[[bSettings sharedbSettings] LogThis:@"searchJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchJobs"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchJobs"] postData:@"" postMethod:@"GET"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchJobs response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"searchJobs response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -154,12 +154,12 @@
 	self.OperationID = NLOperationGetJobsCompany;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
 	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1"]];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchPeople URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchPeople"]];
+	[[bSettings sharedbSettings] LogThis:@"searchPeople URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchPeople"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchPeople"] postData:@"" postMethod:@"GET"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchPeople response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"searchPeople response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -177,12 +177,12 @@
 	self.OperationID = NLOperationGetTextContents;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
 	[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"TextContent"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getTextContent URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getTextContent"]];
+	[[bSettings sharedbSettings] LogThis:@"getTextContent URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getTextContent"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getTextContent"] postData:@"" postMethod:@"GET"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"getTextContent response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"getTextContent response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -198,7 +198,7 @@
 
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl {
 	self.OperationID = NLOperationSearch;
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchOffers URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchOffers"]];
+	[[bSettings sharedbSettings] LogThis:@"searchOffers URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchOffers"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
@@ -209,7 +209,7 @@
 	[postData appendFormat:@"&freelance=%@", ((frl) ? @"true" : @"false")];
 	
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchOffers"] postData:postData postMethod:@"POST"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"searchOffers response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"searchOffers response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -227,7 +227,7 @@
 
 - (void)sendEmailMessage:(int)offerID withEmail:(NSString *)email {
 	self.OperationID = NLOperationSendEmail;
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"sendEmailMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"]];
+	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"];
 	if (self.urlReader == nil)
 		self.urlReader = [[URLReader alloc] init];
 	[self.urlReader setDelegate:self];
@@ -238,7 +238,7 @@
 	[postData appendFormat:@"&email=%@", email];
 	
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"] postData:postData postMethod:@"POST"];
-	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"sendEmailMessage response = %@", xmlData]];
+	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];

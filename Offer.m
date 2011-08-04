@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "BlackAlertView.h"
 #import "DBManagedObjectContext.h"
+#import "SA_OAuthTwitterEngine.h"
 
 @implementation Offer
 
@@ -98,7 +99,7 @@
 		[entPD setReadYn:[NSNumber numberWithInt:1]];
 		NSError *error = nil;
 		if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
-			[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"Error while saving settings: %@", [error userInfo]]];
+			[[bSettings sharedbSettings] LogThis:@"Error while saving settings: %@", [error userInfo]];
 			abort();
 		}
 
@@ -256,22 +257,6 @@
 		[self showEmailBox];
 }
 
-- (IBAction)sendFacebook:(id)sender {
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"UI.InProgress", @"UI.InProgress")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
-	alert.tag = 990;
-	[alert show];
-	[alert release];
-}
-
-- (IBAction)sendTwitter:(id)sender {
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"UI.InProgress", @"UI.InProgress")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
-	alert.tag = 991;
-	[alert show];
-	[alert release];
-}
-
 - (void)showEmailBox {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@" " delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
@@ -414,6 +399,78 @@
 }
 
 #pragma mark -
+#pragma mark Twitter
+
+- (IBAction)sendTwitter:(id)sender {
+	if (_twitterEngine)
+		return;
+	_twitterEngine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
+	_twitterEngine.consumerKey = [bSettings sharedbSettings].twitterOAuthConsumerKey;
+	_twitterEngine.consumerSecret = [bSettings sharedbSettings].twitterOAuthConsumerSecret;
+	UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_twitterEngine delegate:self];
+	if (controller) 
+		[self presentModalViewController:controller animated:YES];
+	else
+		[self postToTwitter];
+}
+
+- (void)postToTwitter {
+	NSMutableString *twitterMessage = [[NSMutableString alloc] init];
+	[twitterMessage setString:@"BombaJob.bg - "];
+	[twitterMessage appendFormat:@"%@ : ", ((searchOffer == nil) ? entOffer.Title : searchOffer.Title)];
+	[twitterMessage appendFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)];
+	[twitterMessage appendFormat:@" @bombajobbg"];
+	[_twitterEngine sendUpdate:twitterMessage];
+	[NSMutableString release];
+}
+
+- (void)OAuthTwitterController:(SA_OAuthTwitterController *)controller authenticatedWithUsername:(NSString *)username {
+	[[bSettings sharedbSettings] LogThis:@"Authenicated for %@", username];
+	[self postToTwitter];
+}
+
+- (void)OAuthTwitterControllerFailed:(SA_OAuthTwitterController *)controller {
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Twitter.LoginError", @"Twitter.LoginError")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 891;
+	[alert show];
+	[alert release];
+}
+
+- (void)OAuthTwitterControllerCanceled:(SA_OAuthTwitterController *)controller {
+	[[bSettings sharedbSettings] LogThis:@"Twitter Authentication Canceled."];
+}
+
+- (void)storeCachedTwitterOAuthData:(NSString *)data forUsername:(NSString *)username {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject:data forKey:@"twitterAuthData"];
+	[defaults synchronize];
+}
+
+- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterAuthData"];
+}
+
+- (void)requestSucceeded: (NSString *) requestIdentifier {
+	[[bSettings sharedbSettings] LogThis:@"Request %@ succeeded", requestIdentifier];
+}
+
+- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error {
+	[[bSettings sharedbSettings] LogThis:@"Request %@ failed with error: %@", requestIdentifier, error];
+}
+
+#pragma mark -
+#pragma mark Facebook
+
+- (IBAction)sendFacebook:(id)sender {
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"UI.InProgress", @"UI.InProgress")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 990;
+	[alert show];
+	[alert release];
+}
+
+#pragma mark -
 #pragma mark System
 
 - (void)didReceiveMemoryWarning {
@@ -453,6 +510,8 @@
 	[btnTwitter release];
 	webService = nil;
 	[webService release];
+	_twitterEngine = nil;
+	[_twitterEngine release];
     [super viewDidUnload];
 }
 
@@ -473,6 +532,7 @@
 	[btnFacebook release];
 	[btnTwitter release];
 	[webService release];
+	[_twitterEngine release];
     [super dealloc];
 }
 

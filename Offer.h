@@ -11,8 +11,11 @@
 #import "SearchOffer.h"
 #import <MessageUI/MessageUI.h>
 #import "WebService.h"
+#import "SA_OAuthTwitterController.h"
 
-@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate> {
+@class SA_OAuthTwitterEngine;
+
+@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, SA_OAuthTwitterControllerDelegate> {
 	dbJobOffer *entOffer;
 	SearchOffer *searchOffer;
 	UIScrollView *scrollView;
@@ -21,6 +24,7 @@
 	UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
 	UIButton *btnEmail, *btnFacebook, *btnTwitter;
 	WebService *webService;
+	SA_OAuthTwitterEngine *_twitterEngine;
 }
 
 @property (nonatomic, retain) dbJobOffer *entOffer;
@@ -41,5 +45,6 @@
 - (IBAction)sendFacebook:(id)sender;
 - (IBAction)sendTwitter:(id)sender;
 - (void)showEmailBox;
+- (void)postToTwitter;
 
 @end
