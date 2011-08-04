@@ -52,6 +52,8 @@
 "Offer_EmailSent" = "Офертата е изпратена.";
 "Offer_EmailEnterYourEmail" = "Моля, въведете вашият email";
 "Offer_EmailIncorrectEmail" = "Грешен или некоректен email.\nМоля, въведете коректен email.";
+"Offer_SentEmailTo" = "Изпрати на email...";
+"Offer_SentEmailFrom" = "Вашият email...";
 
 "PostNewJobError_BlackListed" = "Email was blacklisted...";
 "PostNewJobError_OneOfferFromHuman" = "Съжаляваме, Може да публикувате само една \"човешка\" обява от един email адрес. Не ни се вярва да имате 2 таланта.Ако искате да осъвремените вашата обява, намерете админ мейла, който сме пратили при публикуването и и щракнете на линка за изтриване на вашата стара обява, за да я изтриете и след това да публикувате вашата нова.";

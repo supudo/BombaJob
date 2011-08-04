@@ -225,7 +225,7 @@
 	[postData release];
 }
 
-- (void)sendEmailMessage:(int)offerID withEmail:(NSString *)email {
+- (void)sendEmailMessage:(int)offerID toEmail:(NSString *)toEmail fromEmail:(NSString *)fromEmail {
 	self.OperationID = NLOperationSendEmail;
 	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"];
 	if (self.urlReader == nil)
@@ -235,7 +235,8 @@
 	NSMutableString *postData = [[NSMutableString alloc] init];
 	[postData setString:@""];
 	[postData appendFormat:@"oid=%i", offerID];
-	[postData appendFormat:@"&email=%@", email];
+	[postData appendFormat:@"&toemail=%@", toEmail];
+	[postData appendFormat:@"&fromemail=%@", fromEmail];
 	
 	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"] postData:postData postMethod:@"POST"];
 	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage response = %@", xmlData];

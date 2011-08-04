@@ -70,6 +70,6 @@ typedef enum NLServiceOperations {
 - (void)searchPeople;
 - (void)getTextContent;
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl;
-- (void)sendEmailMessage:(int)offerID withEmail:(NSString *)email;
+- (void)sendEmailMessage:(int)offerID toEmail:(NSString *)toEmail fromEmail:(NSString *)fromEmail;
 
 @end

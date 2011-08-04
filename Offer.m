@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "BlackAlertView.h"
 #import "DBManagedObjectContext.h"
+#import "dbSettings.h"
 #import "SA_OAuthTwitterEngine.h"
 
 @implementation Offer
@@ -259,15 +260,34 @@
 
 - (void)showEmailBox {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@" " delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
 	alert.tag = 3;
 
 	UITextField *txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 66, 260, 31)];
+	txt.tag = 998;
+	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+	[txt setBorderStyle:UITextBorderStyleRoundedRect];
+	[txt setBackgroundColor:[UIColor clearColor]];
+	[txt setAutocorrectionType:UITextAutocorrectionTypeNo];
+	[txt setPlaceholder:NSLocalizedString(@"Offer_SentEmailTo", @"Offer_SentEmailTo")];
+	[alert addSubview:txt];
+	[txt release];
+	
+	txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 106, 260, 31)];
 	txt.tag = 999;
 	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
 	[txt setBorderStyle:UITextBorderStyleRoundedRect];
 	[txt setBackgroundColor:[UIColor clearColor]];
 	[txt setAutocorrectionType:UITextAutocorrectionTypeNo];
+	if ([bSettings sharedbSettings].stPrivateData) {
+		dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
+		if (ent != nil)
+			txt.text = ent.SValue;
+		else
+			[txt setPlaceholder:NSLocalizedString(@"Offer_SentEmailFrom", @"Offer_SentEmailFrom")];
+	}
+	else
+		[txt setPlaceholder:NSLocalizedString(@"Offer_SentEmailFrom", @"Offer_SentEmailFrom")];
 	[alert addSubview:txt];
 	[txt release];
 
@@ -277,14 +297,35 @@
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (actionSheet.tag == 3 && buttonIndex == 0) {
-		NSString *email = @"";
+		NSString *fromEmail = @"";
+		NSString *toEmail = @"";
 		for (UIView *v in actionSheet.subviews) {
+			if ([v isKindOfClass:[UITextField class]] && v.tag == 998)
+				toEmail = [((UITextField *)v).text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 			if ([v isKindOfClass:[UITextField class]] && v.tag == 999)
-				email = [((UITextField *)v).text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+				fromEmail = [((UITextField *)v).text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 		}
-		if (email != nil && ![email isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:email sitrictly:TRUE]) {
+		if (toEmail != nil && ![toEmail isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:toEmail sitrictly:TRUE] &&
+			fromEmail != nil && ![fromEmail isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:fromEmail sitrictly:TRUE]) {
+			if ([bSettings sharedbSettings].stPrivateData) {
+				DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
+				dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
+				if (ent != nil)
+					ent.SValue = fromEmail;
+				else {
+					ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+					[ent setSName:@"Email"];
+					[ent setSValue:fromEmail];
+					NSError *error = nil;
+					if (![[[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext] save:&error]) {
+						[[bSettings sharedbSettings] LogThis:@"Error while saving the account info: %@", [error userInfo]];
+						abort();
+					}
+				}
+			}
+
 			[self.webService setDelegate:self];
-			[self.webService sendEmailMessage:((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID) withEmail:@""];
+			[self.webService sendEmailMessage:((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID) toEmail:toEmail fromEmail:fromEmail];
 		}
 		else {
 			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
