@@ -20,7 +20,8 @@
 @synthesize scrollView, contentView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
 @synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
-@synthesize btnEmail, btnFacebook, btnTwitter, webService;
+@synthesize btnEmail, btnTwitter, webService;
+@synthesize _facebookEngine;
 
 #pragma mark -
 #pragma mark Work
@@ -35,6 +36,14 @@
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)] autorelease];
 	if (self.webService == nil)
 		self.webService = [[WebService alloc] init];
+
+	_facebookEngine = [[Facebook alloc] initWithAppId:[bSettings sharedbSettings].facebookAppID];
+	//https://developers.facebook.com/docs/guides/mobile/
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        _facebookEngine.accessToken = [defaults objectForKey:@"FacebookAccessTokenKey"];
+        _facebookEngine.expirationDate = [defaults objectForKey:@"FacebookExpirationDateKey"];
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -452,10 +461,10 @@
 	if (controller) 
 		[self presentModalViewController:controller animated:YES];
 	else
-		[self postToTwitter];
+		[self twitterPost];
 }
 
-- (void)postToTwitter {
+- (void)twitterPost {
 	NSMutableString *twitterMessage = [[NSMutableString alloc] init];
 	[twitterMessage setString:@"BombaJob.bg - "];
 	[twitterMessage appendFormat:@"%@ : ", ((searchOffer == nil) ? entOffer.Title : searchOffer.Title)];
@@ -467,7 +476,7 @@
 
 - (void)OAuthTwitterController:(SA_OAuthTwitterController *)controller authenticatedWithUsername:(NSString *)username {
 	[[bSettings sharedbSettings] LogThis:@"Authenicated for %@", username];
-	[self postToTwitter];
+	[self twitterPost];
 }
 
 - (void)OAuthTwitterControllerFailed:(SA_OAuthTwitterController *)controller {
@@ -504,9 +513,60 @@
 #pragma mark Facebook
 
 - (IBAction)sendFacebook:(id)sender {
+	SBJSON *jsonWriter = [[SBJSON new] autorelease];
+	
+	NSDictionary *actionLinks = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
+														   @"BombaJob.bg", @"text", @"http://bombajob.bg/", @"href", nil], nil];
+	NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
+
+	NSDictionary *attachment = [NSDictionary dictionaryWithObjectsAndKeys:
+								((searchOffer == nil) ? entOffer.Title : searchOffer.Title), @"name",
+								((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism), @"caption",
+								((searchOffer == nil) ? entOffer.Negativism : searchOffer.Negativism), @"description",
+								[NSString stringWithFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)], @"href",
+								nil];
+	NSString *attachmentStr = [jsonWriter stringWithObject:attachment];
+
+	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+								   @"Share on Facebook",  @"user_message_prompt",
+								   actionLinksStr, @"action_links",
+								   attachmentStr, @"attachment",
+								   nil];
+
+	[_facebookEngine dialog:@"stream.publish" andParams:params andDelegate:self];
+}
+
+- (void)fbDidLogin {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[_facebookEngine accessToken] forKey:@"FacebookAccessTokenKey"];
+    [defaults setObject:[_facebookEngine expirationDate] forKey:@"FacebookExpirationDateKey"];
+    [defaults synchronize];
+}
+
+- (void)dialogDidComplete:(FBDialog *)dialog {
+	[[bSettings sharedbSettings] LogThis:@"Facebook publish successfull."];
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"UI.InProgress", @"UI.InProgress")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
-	alert.tag = 990;
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Facebook.PublishOK", @"Facebook.PublishOK")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 791;
+	[alert show];
+	[alert release];
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result {
+	if ([result isKindOfClass:[NSArray class]])
+		result = [result objectAtIndex:0];
+
+	if ([result objectForKey:@"owner"])
+		[[bSettings sharedbSettings] LogThis:@"Facebook Photo upload Success"];
+	else
+		[[bSettings sharedbSettings] LogThis:@"Facebook result : %@", [result objectForKey:@"name"]];
+}
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+	[[bSettings sharedbSettings] LogThis:@"Facebook failed ... %@", [error localizedDescription]];
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"Facebook.PublishError", @"Facebook.PublishError"), [error localizedDescription]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 792;
 	[alert show];
 	[alert release];
 }
@@ -574,6 +634,8 @@
 	[btnTwitter release];
 	[webService release];
 	[_twitterEngine release];
+	[_facebookEngine release];
+	[_fbButton release];
     [super dealloc];
 }
 

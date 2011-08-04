@@ -16,7 +16,7 @@
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
 @synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
 @synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults;
-@synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret;
+@synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret, facebookAppID, facebookAppSecret;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
@@ -57,6 +57,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		
 		self.twitterOAuthConsumerKey = @"OVvHQ1wio8LZklS5mRUuA";
 		self.twitterOAuthConsumerSecret = @"zZm0RsfzkLpF3FYnxcM3BDZdxHA6sPLoPiTcBvohUEo";
+		self.facebookAppID = @"162884250446512";
+		self.facebookAppSecret = @"a082d8bbc8e98cf63f8a1711ccbafe82";
 
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;
