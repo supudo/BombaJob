@@ -19,5 +19,7 @@
 
 - (void)loadData;
 - (void)reloadContent;
+- (void)postOffer;
+- (void)designToolbar;
 
 @end

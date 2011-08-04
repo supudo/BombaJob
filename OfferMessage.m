@@ -37,10 +37,21 @@
 
 - (void)sendMessage {
 	[webService setDelegate:self];
-	if (searchOffer == nil)
-		[webService postMessage:[entOffer.OfferID intValue] message:txtMessage.text];
-	else
-		[webService postMessage:searchOffer.OfferID message:txtMessage.text];
+	NSString *msg = txtMessage.text;
+	msg = [msg stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	if ([msg isEqualToString:@""]) {
+		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"OfferMessageError.EmptyMessage", @"OfferMessageError.EmptyMessage")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+		alert.tag = 2;
+		[alert show];
+		[alert release];
+	}
+	else {
+		if (searchOffer == nil)
+			[webService postMessage:[entOffer.OfferID intValue] message:txtMessage.text];
+		else
+			[webService postMessage:searchOffer.OfferID message:txtMessage.text];
+	}
 }
 
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {

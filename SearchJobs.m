@@ -26,7 +26,8 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 	[super viewDidLoad];
 	self.navigationItem.title = NSLocalizedString(@"Jobs", @"Jobs");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)] autorelease];
+	//self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)] autorelease];
+	[self designToolbar];
 	if (self.webService == nil)
 		webService = [[WebService alloc] init];
 }
@@ -75,11 +76,47 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 }
 
+- (void)designToolbar {
+	UIToolbar *tools = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, 80.0, 44.01)];
+	tools.barStyle = -1;
+	tools.clearsContextBeforeDrawing = NO;
+	tools.clipsToBounds = NO;
+	tools.tintColor = [UIColor clearColor];
+	
+	NSMutableArray *buttons = [[NSMutableArray alloc] initWithCapacity:3];
+	
+	UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postOffer)];
+	bi.style = UIBarButtonItemStyleBordered;
+	[buttons addObject:bi];
+	[bi release];
+	
+	bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+	[buttons addObject:bi];
+	[bi release];
+	
+	bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)];
+	bi.style = UIBarButtonItemStyleBordered;
+	[buttons addObject:bi];
+	[bi release];
+	
+	[tools setItems:buttons animated:NO];
+	[buttons release];
+	
+	UIBarButtonItem *rightButtonBar = [[UIBarButtonItem alloc] initWithCustomView:tools];
+	self.navigationItem.rightBarButtonItem = rightButtonBar;
+	[rightButtonBar release];
+	[tools release];
+}
+
 - (void)reloadContent {
 	[[bSettings sharedbSettings] startLoading:self.view];
 	[bSettings sharedbSettings].sdlJobs = FALSE;
 	[webService setDelegate:self];
 	[webService searchJobs];
+}
+
+- (void)postOffer {
+	[appDelegate.tabBarController setSelectedIndex:4];
 }
 
 #pragma mark -

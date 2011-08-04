@@ -24,6 +24,7 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 	[super viewDidLoad];
 	self.navigationItem.title = entCategory.CategoryTitle;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
+	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postOffer)] autorelease];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,6 +37,10 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 		abort();
 	}
 	[self.tableView reloadData];
+}
+
+- (void)postOffer {
+	[appDelegate.tabBarController setSelectedIndex:4];
 }
 
 #pragma mark -

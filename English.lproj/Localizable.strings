@@ -12,6 +12,7 @@
 "NewJobsError" = "Грешка!";
 "SyncError" = "Грешка!";
 "OfferMessageError" = "Грешка!";
+"OfferMessageError.EmptyMessage" = "Съобщението ви е празно.";
 "Search" = "Търсене";
 "PostOffer" = "Нова oферта";
 "Jobs" = "Работа";
