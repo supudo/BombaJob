@@ -24,6 +24,7 @@
 - (void)getJobsCompanyFinished:(id)sender;
 - (void)getTextContentFinished:(id)sender;
 - (void)searchOffersFinished:(id)sender results:(NSMutableArray *)offers;
+- (void)sendEmailMessageFinished:(id)sender;
 @end
 
 @interface WebService : NSObject <NSXMLParserDelegate, URLReaderDelegate> {
@@ -57,7 +58,8 @@ typedef enum NLServiceOperations {
 	NLOperationGetJobsHuman,
 	NLOperationGetJobsCompany,
 	NLOperationGetTextContents,
-	NLOperationSearch
+	NLOperationSearch,
+	NLOperationSendEmail
 } NLServiceOperations;
 
 - (void)postNewJob;
@@ -68,5 +70,6 @@ typedef enum NLServiceOperations {
 - (void)searchPeople;
 - (void)getTextContent;
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl;
+- (void)sendEmailMessage:(int)offerID withEmail:(NSString *)email;
 
 @end

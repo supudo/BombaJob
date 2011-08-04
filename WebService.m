@@ -225,6 +225,35 @@
 	[postData release];
 }
 
+- (void)sendEmailMessage:(int)offerID withEmail:(NSString *)email {
+	self.OperationID = NLOperationSendEmail;
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"sendEmailMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"]];
+	if (self.urlReader == nil)
+		self.urlReader = [[URLReader alloc] init];
+	[self.urlReader setDelegate:self];
+	
+	NSMutableString *postData = [[NSMutableString alloc] init];
+	[postData setString:@""];
+	[postData appendFormat:@"oid=%i", offerID];
+	[postData appendFormat:@"&email=%@", email];
+	
+	NSString *xmlData = [self.urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"] postData:postData postMethod:@"POST"];
+	[[bSettings sharedbSettings] LogThis:[NSString stringWithFormat:@"sendEmailMessage response = %@", xmlData]];
+	if (xmlData.length > 0) {
+		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
+		[myParser setDelegate:self];
+		[myParser setShouldProcessNamespaces:NO];
+		[myParser setShouldReportNamespacePrefixes:NO];
+		[myParser setShouldResolveExternalEntities:NO];
+		[myParser parse];
+		[myParser release];
+	}
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(sendEmailMessageFinished:)])
+		[delegate sendEmailMessageFinished:self];
+	
+	[postData release];
+}
+
 #pragma mark -
 #pragma mark Events
 
@@ -339,7 +368,10 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-	if (self.OperationID != NLOperationPostJob && self.OperationID != NLOperationPostMessage && self.OperationID != NLOperationSearch) {
+	if (self.OperationID != NLOperationPostJob &&
+		self.OperationID != NLOperationPostMessage &&
+		self.OperationID != NLOperationSearch &&
+		self.OperationID != NLOperationSendEmail) {
 		NSError *error = nil;
 		if (![managedObjectContext save:&error])
 			abort();
@@ -383,6 +415,11 @@
 		case NLOperationSearch: {
 			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(searchOffersFinished:results:)])
 				[delegate searchOffersFinished:self results:searchResults];
+			break;
+		}
+		case NLOperationSendEmail: {
+			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(sendEmailMessageFinished:)])
+				[delegate sendEmailMessageFinished:self];
 			break;
 		}
 		default:

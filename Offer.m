@@ -18,6 +18,7 @@
 @synthesize scrollView, contentView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
 @synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
+@synthesize btnEmail, btnFacebook, btnTwitter, webService;
 
 #pragma mark -
 #pragma mark Work
@@ -30,6 +31,8 @@
 		self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)] autorelease];
+	if (self.webService == nil)
+		self.webService = [[WebService alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -188,6 +191,128 @@
 	txtView.frame = frameTemp;
 }
 
+- (IBAction)sendEmail:(id)sender {
+	if ([bSettings sharedbSettings].stInAppEmail) {
+		if ([MFMailComposeViewController canSendMail]) {
+			MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+			[mailController setMailComposeDelegate:self];
+			NSString *subject = [NSString stringWithFormat:@"%@%i", NSLocalizedString(@"Offer_EmailSubjectByUser", @"Offer_EmailSubjectByUser"), ((entOffer == nil) ? searchOffer.OfferID : [entOffer.OfferID intValue])];
+			[mailController setSubject:subject];
+			[mailController setToRecipients:[NSArray arrayWithObjects:((entOffer == nil) ? searchOffer.Email : entOffer.Email), nil]];
+			[mailController setCcRecipients:nil];
+			[mailController setBccRecipients:nil];
+			
+			NSMutableString *eb = [[NSMutableString alloc] init];
+			[eb setString:@""];
+			[eb appendFormat:@"%@<br /><br />", ((entOffer == nil) ? searchOffer.CategoryTitle : entOffer.CategoryTitle)];
+			[eb appendFormat:@"<b>%@</b><br /><br />", ((entOffer == nil) ? searchOffer.Title : entOffer.Title)];
+			[eb appendFormat:@"<i>%@</i><br /><br />", [[bSettings sharedbSettings] getOfferDate:((entOffer == nil) ? searchOffer.PublishDate : entOffer.PublishDate)]];
+			
+			if (entOffer == nil) {
+				if (searchOffer.HumanYn) {
+					if (searchOffer.FreelanceYn)
+						[eb appendFormat:@"%@<br /><br />", NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance")];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv"), searchOffer.Positivism];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ"), searchOffer.Negativism];
+				}
+				else {
+					if (searchOffer.FreelanceYn)
+						[eb appendFormat:@"%@<br /><br />", NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance")];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Company_Positiv", @"Offer_Company_Positiv"), entOffer.Positivism];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Company_Negativ", @"Offer_Company_Negativ"), entOffer.Negativism];
+				}
+			}
+			else {
+				if (entOffer.HumanYn) {
+					if ([entOffer.FreelanceYn boolValue])
+						[eb appendFormat:@"%@<br /><br />", NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance")];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv"), entOffer.Positivism];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ"), entOffer.Negativism];
+				}
+				else {
+					if ([entOffer.FreelanceYn boolValue])
+						[eb appendFormat:@"%@<br /><br />", NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance")];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Company_Positiv", @"Offer_Company_Positiv"), entOffer.Positivism];
+					[eb appendFormat:@"<b>%@</b> %@<br /><br />", NSLocalizedString(@"Offer_Company_Negativ", @"Offer_Company_Negativ"), entOffer.Negativism];
+				}
+			}
+			[eb appendFormat:@"<br /><br /> Sent from BombaJob ..."];
+
+			[mailController setMessageBody:eb isHTML:YES];
+			[mailController.navigationBar setBarStyle:UIBarStyleBlack];
+			[self presentModalViewController:mailController animated:YES];
+			[mailController release];
+			[eb release];
+		}
+		else {
+			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Error.InAppEmailCantSend", @"Error.InAppEmailCantSend")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+			alert.tag = 2;
+			[alert show];
+			[alert release];
+		}
+	}
+	else
+		[self showEmailBox];
+}
+
+- (IBAction)sendFacebook:(id)sender {
+	/// TODO ...
+}
+
+- (IBAction)sendTwitter:(id)sender {
+	/// TODO ...
+}
+
+- (void)showEmailBox {
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@" " delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 3;
+
+	UITextField *txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 66, 260, 31)];
+	txt.tag = 999;
+	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+	[txt setBorderStyle:UITextBorderStyleRoundedRect];
+	[txt setBackgroundColor:[UIColor clearColor]];
+	[txt setAutocorrectionType:UITextAutocorrectionTypeNo];
+	[alert addSubview:txt];
+	[txt release];
+
+	[alert show];
+	[alert release];
+}
+
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (actionSheet.tag == 3 && buttonIndex == 0) {
+		NSString *email = @"";
+		for (UIView *v in actionSheet.subviews) {
+			if ([v isKindOfClass:[UITextField class]] && v.tag == 999)
+				email = [((UITextField *)v).text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+		}
+		if (email != nil && ![email isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:email sitrictly:TRUE]) {
+			[self.webService setDelegate:self];
+			[self.webService sendEmailMessage:((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID) withEmail:@""];
+		}
+		else {
+			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailIncorrectEmail", @"Offer_EmailIncorrectEmail")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+			alert.tag = 4;
+			[alert show];
+			[alert release];
+		}
+	}
+	else if (actionSheet.tag == 4)
+		[self showEmailBox];
+}
+
+- (void)sendEmailMessageFinished:(id)sender {
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailSent", @"Offer_EmailSent")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 5;
+	[alert show];
+	[alert release];
+}
+
 - (void)doDesign {
 	[lblDate setFont:[UIFont fontWithName:@"Ubuntu-Italic" size:14]];
 	[txtTitle setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
@@ -196,12 +321,19 @@
 	[txtPositivism setDataDetectorTypes:UIDataDetectorTypeLink];
 	[txtNegativism setDataDetectorTypes:UIDataDetectorTypeLink];
 
+	[btnEmail.titleLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
+	[[bSettings sharedbSettings] roundButtonCorners:btnEmail withColor:[UIColor blackColor]];
+	[btnFacebook.titleLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
+	[[bSettings sharedbSettings] roundButtonCorners:btnFacebook withColor:[UIColor blackColor]];
+	[btnTwitter.titleLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
+	[[bSettings sharedbSettings] roundButtonCorners:btnTwitter withColor:[UIColor blackColor]];
+
 	CGRect frameTemp;
 
 	// Category text
 	frameTemp = txtCategory.frame;
 	frameTemp.size.height = txtCategory.contentSize.height;
-	frameTemp.origin.y = self.view.frame.origin.y + 6;
+	frameTemp.origin.y = self.view.frame.origin.y + 34 + 6;
 	txtCategory.frame = frameTemp;
 
 	// Title text
@@ -305,6 +437,14 @@
 	[lblLPositiv release];
 	lblLNegativ = nil;
 	[lblLNegativ release];
+	btnEmail = nil;
+	[btnEmail release];
+	btnFacebook = nil;
+	[btnFacebook release];
+	btnTwitter = nil;
+	[btnTwitter release];
+	webService = nil;
+	[webService release];
     [super viewDidUnload];
 }
 
@@ -321,6 +461,10 @@
 	[lblFreelance release];
 	[lblLPositiv release];
 	[lblLNegativ release];
+	[btnEmail release];
+	[btnFacebook release];
+	[btnTwitter release];
+	[webService release];
     [super dealloc];
 }
 
