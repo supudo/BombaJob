@@ -257,11 +257,19 @@
 }
 
 - (IBAction)sendFacebook:(id)sender {
-	/// TODO ...
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"UI.InProgress", @"UI.InProgress")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 990;
+	[alert show];
+	[alert release];
 }
 
 - (IBAction)sendTwitter:(id)sender {
-	/// TODO ...
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"UI.InProgress", @"UI.InProgress")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	alert.tag = 991;
+	[alert show];
+	[alert release];
 }
 
 - (void)showEmailBox {
