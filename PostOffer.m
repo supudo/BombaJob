@@ -228,7 +228,7 @@
 	if (validationError) {
 		NSString *msg = NSLocalizedString(@"Offer_MissingReqFields", @"Offer_MissingReqFields");
 		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles: nil];
+		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles: nil];
 		alert.tag = 3;
 		[alert show];
 		[alert release];
