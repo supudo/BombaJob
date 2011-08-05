@@ -40,7 +40,7 @@
 	_facebookEngine = [[Facebook alloc] initWithAppId:[bSettings sharedbSettings].facebookAppID];
 	//https://developers.facebook.com/docs/guides/mobile/
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
+	if ([defaults objectForKey:@"FacebookAccessTokenKey"] && [defaults objectForKey:@"FacebookExpirationDateKey"]) {
         _facebookEngine.accessToken = [defaults objectForKey:@"FacebookAccessTokenKey"];
         _facebookEngine.expirationDate = [defaults objectForKey:@"FacebookExpirationDateKey"];
 	}
@@ -613,6 +613,8 @@
 	[webService release];
 	_twitterEngine = nil;
 	[_twitterEngine release];
+	_facebookEngine = nil;
+	[_facebookEngine release];
     [super viewDidUnload];
 }
 

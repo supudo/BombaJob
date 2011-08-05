@@ -103,7 +103,6 @@
 		8AE9D9DF13EAB3E200F12EB2 /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9CA13EAB3E200F12EB2 /* SA_OAuthTwitterController.m */; };
 		8AE9D9E013EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9CC13EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m */; };
 		8AE9D9E113EAB3E200F12EB2 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9D9CD13EAB3E200F12EB2 /* twitter_load.png */; };
-		8AE9D9E713EAB40900F12EB2 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9D9E613EAB40900F12EB2 /* libxml2.dylib */; };
 		8AE9DA1513EAB49F00F12EB2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */; };
 		8AE9DB6913EACD2B00F12EB2 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9DB5213EACD2A00F12EB2 /* Facebook.m */; };
 		8AE9DB6A13EACD2B00F12EB2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9DB5413EACD2A00F12EB2 /* FBDialog.bundle */; };
@@ -285,7 +284,6 @@
 		8AE9D9CB13EAB3E200F12EB2 /* SA_OAuthTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterEngine.h; sourceTree = "<group>"; };
 		8AE9D9CC13EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterEngine.m; sourceTree = "<group>"; };
 		8AE9D9CD13EAB3E200F12EB2 /* twitter_load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_load.png; sourceTree = "<group>"; };
-		8AE9D9E613EAB40900F12EB2 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		8AE9DB5113EACD2A00F12EB2 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = FBConnect/Facebook.h; sourceTree = "<group>"; };
 		8AE9DB5213EACD2A00F12EB2 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Facebook.m; path = FBConnect/Facebook.m; sourceTree = "<group>"; };
@@ -328,7 +326,6 @@
 				8A0F139413C31BBA0083E9E4 /* CoreLocation.framework in Frameworks */,
 				8A13113C13E80BD200F0296C /* MessageUI.framework in Frameworks */,
 				8AE9D9D013EAB3E200F12EB2 /* libOAuth.a in Frameworks */,
-				8AE9D9E713EAB40900F12EB2 /* libxml2.dylib in Frameworks */,
 				8AE9DA1513EAB49F00F12EB2 /* libxml2.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,7 +1056,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -1080,15 +1077,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "BombaJob-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1113,6 +1113,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
