@@ -503,10 +503,20 @@
 
 - (void)requestSucceeded: (NSString *) requestIdentifier {
 	[[bSettings sharedbSettings] LogThis:@"Request %@ succeeded", requestIdentifier];
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Twitter.PublishOK", @"Twitter.PublishOK")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+	alert.tag = 899;
+	[alert show];
+	[alert release];
 }
 
 - (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error {
-	[[bSettings sharedbSettings] LogThis:@"Request %@ failed with error: %@", requestIdentifier, error];
+	[[bSettings sharedbSettings] LogThis:@"Request %@ failed with error: %@", requestIdentifier, [error localizedDescription]];
+	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"Twitter.PublishError", @"Twitter.PublishError"), [error localizedDescription]] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+	alert.tag = 898;
+	[alert show];
+	[alert release];
 }
 
 #pragma mark -

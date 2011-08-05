@@ -86,6 +86,8 @@
 "Error.InAppEmailCantSend" = "Нямате конфигуриран email акаунт.";
 
 "Twitter.LoginError" = "Грешно потребителско име и/или парола.";
+"Twitter.PublishOK" = "Чуруликането беше успешно";
+"Twitter.PublishError" = "Възникна проблем при чуруликането.";
 "Facebook.PublishOK" = "Обяват беше публикувана на вашата стена.";
 "Facebook.PublishError" = "Възникна проблем при публикуване на вашата стена.";
 
