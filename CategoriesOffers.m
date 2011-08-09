@@ -82,6 +82,9 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 	[tvc release];
 }
 
+#pragma mark -
+#pragma mark Fetch controllers
+
 - (NSFetchedResultsController *)fetchedResultsController {
 	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 	

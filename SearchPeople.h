@@ -12,10 +12,12 @@
 @interface SearchPeople : UITableViewController <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
 	WebService *webService;
 	NSFetchedResultsController *fetchedResultsControllerOffers, *fetchedResultsControllerCategories;
+	UIView *viewCategories, *viewOffers;
 }
 
 @property (nonatomic, retain) WebService *webService;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsControllerOffers, *fetchedResultsControllerCategories;
+@property (nonatomic, retain) UIView *viewCategories, *viewOffers;
 
 - (void)loadData;
 - (void)reloadContent;

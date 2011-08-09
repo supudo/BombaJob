@@ -49,7 +49,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.sdlPeople = FALSE;
 		
 		self.stPrivateData = TRUE;
-		self.stGeoLocation = TRUE;
+		self.stGeoLocation = FALSE;
 		self.stInitSync = TRUE;
 		self.stOnlineSearch = TRUE;
 		self.stInAppEmail = FALSE;
@@ -79,7 +79,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		else {
 			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
 			[ent setSName:@"SendGeo"];
-			[ent setSValue:@"TRUE"];
+			[ent setSValue:@"FALSE"];
 			self.stGeoLocation = TRUE;
 		}
 		

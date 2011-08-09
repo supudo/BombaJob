@@ -17,7 +17,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 
 @implementation SearchPeople
 
-@synthesize webService, fetchedResultsControllerOffers, fetchedResultsControllerCategories;
+@synthesize webService, fetchedResultsControllerOffers, fetchedResultsControllerCategories, viewCategories, viewOffers;
 
 #pragma mark -
 #pragma mark Workers
@@ -219,6 +219,53 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	}
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	if ([bSettings sharedbSettings].stShowCategories)
+		return 44.0;
+	else
+		return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	if ([bSettings sharedbSettings].stShowCategories) {
+		UILabel *lbl;
+		
+		if (viewCategories == nil) {
+			viewCategories = [[UIView alloc] init];
+			lbl = [[UILabel alloc] init];
+			[lbl setText:NSLocalizedString(@"UI.Categories", @"UI.Categories")];
+			[lbl setBackgroundColor:[UIColor clearColor]];
+			[lbl setTextColor:[UIColor orangeColor]];
+			[lbl setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:18.0]];
+			[lbl setFrame:CGRectMake(20, 4, 280, 40)];
+			[viewCategories addSubview:lbl];
+			[lbl release];
+		}
+		
+		if (viewOffers == nil) {
+			viewOffers = [[UIView alloc] init];
+			lbl = [[UILabel alloc] init];
+			[lbl setText:NSLocalizedString(@"UI.Offers", @"UI.Offers")];
+			[lbl setBackgroundColor:[UIColor clearColor]];
+			[lbl setTextColor:[UIColor orangeColor]];
+			[lbl setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:18.0]];
+			[lbl setFrame:CGRectMake(20, 0, 280, 40)];
+			[viewOffers addSubview:lbl];
+			[lbl release];
+		}
+		
+		if (section == 0)
+			return viewCategories;
+		else
+			return viewOffers;
+	}
+	else
+		return nil;
+}
+
+#pragma mark -
+#pragma mark Fetch controllers
+
 - (NSFetchedResultsController *)fetchedResultsControllerCategories {
 	DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 	
@@ -291,6 +338,10 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	[fetchedResultsControllerOffers release];
 	fetchedResultsControllerCategories = nil;
 	[fetchedResultsControllerCategories release];
+	viewCategories = nil;
+	[viewCategories release];
+	viewOffers = nil;
+	[viewOffers release];
     [super viewDidUnload];
 }
 
@@ -298,6 +349,8 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	[webService release];
 	[fetchedResultsControllerOffers release];
 	[fetchedResultsControllerCategories release];
+	[viewCategories release];
+	[viewOffers release];
     [super dealloc];
 }
 
