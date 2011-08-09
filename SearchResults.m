@@ -39,10 +39,10 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 	if ([bSettings sharedbSettings].stOnlineSearch && !self.searchOffline) {
 		[[bSettings sharedbSettings].latestSearchResults removeAllObjects];
 
-		if (self.webService == nil)
-			self.webService = [[WebService alloc] init];
-		[self.webService setDelegate:self];
-		[self.webService searchOffers:self.searchTerm freelance:freelanceOn];
+		if (webService == nil)
+			webService = [[WebService alloc] init];
+		[webService setDelegate:self];
+		[webService searchOffers:self.searchTerm freelance:freelanceOn];
 	}
 	else {
 		[[bSettings sharedbSettings] stopLoading:self.view];

@@ -136,10 +136,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.currentPostOfferResponse = @"";
 		self.LocationLatitude = 0.f;
 		self.LocationLongtitude = 0.f;
-		self.currentOffer = [[CurrentOffer alloc] init];
-		self.latestSearchResults = [[NSMutableArray alloc] init];
+		currentOffer = [[CurrentOffer alloc] init];
+		latestSearchResults = [[NSMutableArray alloc] init];
 	}
 	return self;
+}
+
+- (void)dealloc {
+    [currentOffer release];
+    [latestSearchResults release];
+    [super dealloc];
 }
 
 #pragma mark -

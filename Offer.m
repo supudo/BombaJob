@@ -34,8 +34,8 @@
 		self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)] autorelease];
-	if (self.webService == nil)
-		self.webService = [[WebService alloc] init];
+	if (webService == nil)
+		webService = [[WebService alloc] init];
 
 	_facebookEngine = [[Facebook alloc] initWithAppId:[bSettings sharedbSettings].facebookAppID];
 	//https://developers.facebook.com/docs/guides/mobile/
@@ -269,10 +269,10 @@
 
 - (void)showEmailBox {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
 	alert.tag = 3;
 
-	UITextField *txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 66, 260, 31)];
+	UITextField *txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 56, 260, 31)];
 	txt.tag = 998;
 	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
 	[txt setBorderStyle:UITextBorderStyleRoundedRect];
@@ -282,7 +282,7 @@
 	[alert addSubview:txt];
 	[txt release];
 	
-	txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 106, 260, 31)];
+	txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 96, 260, 31)];
 	txt.tag = 999;
 	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
 	[txt setBorderStyle:UITextBorderStyleRoundedRect];
@@ -471,7 +471,7 @@
 	[twitterMessage appendFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)];
 	[twitterMessage appendFormat:@" #bombajobbg"];
 	[_twitterEngine sendUpdate:twitterMessage];
-	[NSMutableString release];
+	[twitterMessage release];
 }
 
 - (void)OAuthTwitterController:(SA_OAuthTwitterController *)controller authenticatedWithUsername:(NSString *)username {

@@ -16,10 +16,10 @@
 #pragma mark Init
 
 - (void)startSync {
-	if (self.webService == nil)
-		self.webService = [[WebService alloc] init];
-	[self.webService setDelegate:self];
-	[self.webService getCategories];
+	if (webService == nil)
+		webService = [[WebService alloc] init];
+	[webService setDelegate:self];
+	[webService getCategories];
 }
 
 - (void)finishSync {

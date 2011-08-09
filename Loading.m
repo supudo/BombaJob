@@ -45,10 +45,10 @@
 }
 
 - (void)startSyncTimer {
-	if (self.syncer == nil)
-		self.syncer = [[Sync alloc] init];
-	[self.syncer setDelegate:self];
-	[self.syncer startSync];
+	if (syncer == nil)
+		syncer = [[Sync alloc] init];
+	[syncer setDelegate:self];
+	[syncer startSync];
 }
 
 - (void)syncFinished:(id)sender {

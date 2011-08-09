@@ -23,8 +23,8 @@
 	self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sendMessage)] autorelease];
-	if (self.webService == nil)
-		self.webService = [[WebService alloc] init];
+	if (webService == nil)
+		webService = [[WebService alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

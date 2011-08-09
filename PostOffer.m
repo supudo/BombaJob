@@ -70,15 +70,15 @@
 	else
 		contentView.frame = CGRectMake(0, 0, 480, 700);
 
-	if (self.dataHuman == nil)
-		self.dataHuman = [[NSArray alloc] initWithObjects:NSLocalizedString(@"Offer_HumanCompany_1", @"Offer_HumanCompany_1"), NSLocalizedString(@"Offer_HumanCompany_2", @"Offer_HumanCompany_2"), nil];
-	if (self.dataFreelance == nil)
-		self.dataFreelance = [[NSArray alloc] initWithObjects:NSLocalizedString(@"Offer_Freelance_1", @"Offer_Freelance_1"), NSLocalizedString(@"Offer_Freelance_2", @"Offer_Freelance_2"), nil];
+	if (dataHuman == nil)
+		dataHuman = [[NSArray alloc] initWithObjects:NSLocalizedString(@"Offer_HumanCompany_1", @"Offer_HumanCompany_1"), NSLocalizedString(@"Offer_HumanCompany_2", @"Offer_HumanCompany_2"), nil];
+	if (dataFreelance == nil)
+		dataFreelance = [[NSArray alloc] initWithObjects:NSLocalizedString(@"Offer_Freelance_1", @"Offer_Freelance_1"), NSLocalizedString(@"Offer_Freelance_2", @"Offer_Freelance_2"), nil];
 
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"CategoryTitle" ascending:YES];
 	NSArray *arrSorters = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	[sortDescriptor release];
-	self.dataCategories = [[NSArray alloc] initWithArray:[[DBManagedObjectContext sharedDBManagedObjectContext] getEntities:@"Category" sortDescriptors:arrSorters]];
+	dataCategories = [[NSArray alloc] initWithArray:[[DBManagedObjectContext sharedDBManagedObjectContext] getEntities:@"Category" sortDescriptors:arrSorters]];
 	[arrSorters release];
 
 	txtNeg.text = [bSettings sharedbSettings].currentOffer.Negativism;
@@ -253,10 +253,10 @@
 		}
 
 		[[bSettings sharedbSettings] startLoading:self.view];
-		if (self.webService == nil)
-			self.webService = [[WebService alloc] init];
-		[self.webService setDelegate:self];
-		[self.webService postNewJob];
+		if (webService == nil)
+			webService = [[WebService alloc] init];
+		[webService setDelegate:self];
+		[webService postNewJob];
 	}
 }
 

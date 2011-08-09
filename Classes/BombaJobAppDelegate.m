@@ -22,8 +22,8 @@ BombaJobAppDelegate *appDelegate;
 	appDelegate = self;
 	
 	if (![bSettings sharedbSettings].inDebugMode && [bSettings sharedbSettings].stGeoLocation) {
-		self.mapCoordinates = [[MapCoordinates alloc] init];
-		[self.mapCoordinates startCoor];
+		mapCoordinates = [[MapCoordinates alloc] init];
+		[mapCoordinates startCoor];
 	}
 
 	[self.window addSubview:self.loadingView.view];
