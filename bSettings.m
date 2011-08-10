@@ -47,7 +47,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.sdlNewJobs = FALSE;
 		self.sdlJobs = FALSE;
 		self.sdlPeople = FALSE;
-		self.shouldRotate = FALSE;
+		self.shouldRotate = TRUE;
 		
 		self.stPrivateData = TRUE;
 		self.stGeoLocation = FALSE;
@@ -225,6 +225,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		if (v.tag == 999)
 			[v removeFromSuperview];
 	}
+}
+
+- (NSString *)stripHTMLtags:(NSString *)txt {
+	NSRange r;
+	while ((r = [txt rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+		txt = [txt stringByReplacingCharactersInRange:r withString:@""];
+	return txt;
 }
 
 @end

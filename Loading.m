@@ -55,7 +55,7 @@
 }
 
 - (void)syncFinished:(id)sender {
-	[self startTabApp];
+	[appDelegate loadingFinished];
 }
 
 - (void)syncError:(id)sender error:(NSString *) errorMessage {
@@ -70,31 +70,7 @@
 	if (actionSheet.tag == 1 && buttonIndex == 1)
 		[self loadSync];
 	else
-		[self startTabApp];
-}
-
-- (void)startTabApp {
-	/*
-	UIView *tabBarView = [[appDelegate tabBarController] view];
-	[tabBarView setCenter:CGPointMake(tabBarView.center.x, tabBarView.center.y)];
-	tabBarView.alpha = 0;
-	[[appDelegate tabBarController] viewWillAppear:YES];
-	[appDelegate tabBarController].selectedIndex = 0;
-	[self.view.superview addSubview:tabBarView];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDelay:.2];
-	[UIView setAnimationDuration:.4];
-	tabBarView.alpha = 1;
-	[UIView commitAnimations];
-	 */
-	
-	UINavigationController *moreController = appDelegate.tabBarController.moreNavigationController;
-	moreController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	appDelegate.tabBarController.customizableViewControllers = nil;
-	
-	[appDelegate loadingFinished];
+		[appDelegate loadingFinished];
 }
 
 #pragma mark -

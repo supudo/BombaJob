@@ -198,7 +198,10 @@
 	txtView.clipsToBounds = YES;
 	CGRect frameTemp = txtView.frame;
 	frameTemp.origin.x = 4;
-	frameTemp.size.width = 312;
+	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		frameTemp.size.width = 472;
+	else
+		frameTemp.size.width = 312;
 	txtView.frame = frameTemp;
 }
 
@@ -270,6 +273,7 @@
 - (void)showEmailBox {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
+	//BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
 	alert.tag = 3;
 
 	UITextField *txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 56, 260, 31)];
@@ -531,8 +535,8 @@
 
 	NSDictionary *attachment = [NSDictionary dictionaryWithObjectsAndKeys:
 								((searchOffer == nil) ? entOffer.Title : searchOffer.Title), @"name",
-								((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism), @"caption",
-								((searchOffer == nil) ? entOffer.Negativism : searchOffer.Negativism), @"description",
+								[[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism)], @"caption",
+								[[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Negativism : searchOffer.Negativism)], @"description",
 								[NSString stringWithFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)], @"href",
 								nil];
 	NSString *attachmentStr = [jsonWriter stringWithObject:attachment];

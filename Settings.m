@@ -155,16 +155,21 @@
 }
 
 - (void)showHelp:(NSString *)helpTitle withContent:(NSString *)helpContent {
-	if (helpScreen == nil) {
-		helpScreen = [[UIActionSheet alloc] initWithTitle:@"Help" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:nil otherButtonTitles:nil];
-		UITextView *txt = [[UITextView alloc] initWithFrame:CGRectMake(10, 110, 300, 110)];
-		[txt setEditable:NO];
-		[txt setText:@""];
-		[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
-		[[bSettings sharedbSettings] roundButtonCornersTextView:txt withColor:[UIColor blackColor]];
-		[helpScreen addSubview:txt];
-		[txt release];
-	}
+	if (helpScreen != nil)
+		[helpScreen release];
+	helpScreen = [[UIActionSheet alloc] initWithTitle:@"Help" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:nil otherButtonTitles:nil];
+
+	UITextView *txt;
+	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		txt = [[UITextView alloc] initWithFrame:CGRectMake(10, 110, 460, 110)];
+	else
+		txt = [[UITextView alloc] initWithFrame:CGRectMake(10, 110, 300, 110)];
+	[txt setEditable:NO];
+	[txt setText:@""];
+	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
+	[[bSettings sharedbSettings] roundButtonCornersTextView:txt withColor:[UIColor blackColor]];
+	[helpScreen addSubview:txt];
+	[txt release];
 	
 	[helpScreen setTitle:helpTitle];
 	for (UIView *v in self.helpScreen.subviews) {
@@ -172,7 +177,10 @@
 			[((UITextView *)v) setText:helpContent];
 	}
 	[helpScreen showFromTabBar:appDelegate.tabBarController.tabBar];
-	[helpScreen setBounds:CGRectMake(0, 0, 320, 350)];
+	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		[helpScreen setBounds:CGRectMake(0, 0, 480, 340)];
+	else
+		[helpScreen setBounds:CGRectMake(0, 0, 320, 350)];
 	[helpScreen setMultipleTouchEnabled:YES];
 }
 

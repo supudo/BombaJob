@@ -44,8 +44,8 @@
           <bool key="EncodedWithXMLCoder">YES</bool>
           <object class="IBUILabel" id="72324903">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{34, 39}, {164, 21}}</string>
+            <int key="NSvFlags">294</int>
+            <string key="NSFrame">{{34, 28}, {164, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -67,8 +67,8 @@
           </object>
           <object class="IBUISwitch" id="679583824">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{206, 36}, {94, 27}}</string>
+            <int key="NSvFlags">289</int>
+            <string key="NSFrame">{{206, 25}, {94, 27}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:536</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -79,8 +79,8 @@
           </object>
           <object class="IBUILabel" id="249009448">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{34, 74}, {164, 21}}</string>
+            <int key="NSvFlags">294</int>
+            <string key="NSFrame">{{34, 63}, {164, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -96,8 +96,8 @@
           </object>
           <object class="IBUISwitch" id="407909042">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{206, 71}, {94, 27}}</string>
+            <int key="NSvFlags">289</int>
+            <string key="NSFrame">{{206, 60}, {94, 27}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:536</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -108,8 +108,8 @@
           </object>
           <object class="IBUILabel" id="41972195">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{34, 109}, {164, 21}}</string>
+            <int key="NSvFlags">294</int>
+            <string key="NSFrame">{{34, 98}, {164, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -125,8 +125,8 @@
           </object>
           <object class="IBUISwitch" id="103564181">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{206, 106}, {94, 27}}</string>
+            <int key="NSvFlags">289</int>
+            <string key="NSFrame">{{206, 95}, {94, 27}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:536</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -137,8 +137,8 @@
           </object>
           <object class="IBUILabel" id="770405503">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{34, 144}, {164, 21}}</string>
+            <int key="NSvFlags">294</int>
+            <string key="NSFrame">{{34, 133}, {164, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -154,8 +154,8 @@
           </object>
           <object class="IBUISwitch" id="675676466">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{206, 141}, {94, 27}}</string>
+            <int key="NSvFlags">289</int>
+            <string key="NSFrame">{{206, 130}, {94, 27}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:536</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -167,7 +167,7 @@
           <object class="IBUIButton" id="360025502">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{8, 144}, {18, 19}}</string>
+            <string key="NSFrame">{{8, 133}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -193,8 +193,8 @@
           </object>
           <object class="IBUILabel" id="945619548">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{34, 179}, {164, 21}}</string>
+            <int key="NSvFlags">294</int>
+            <string key="NSFrame">{{34, 168}, {164, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -210,8 +210,8 @@
           </object>
           <object class="IBUISwitch" id="81568956">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{206, 176}, {94, 27}}</string>
+            <int key="NSvFlags">289</int>
+            <string key="NSFrame">{{206, 165}, {94, 27}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:536</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -222,8 +222,8 @@
           </object>
           <object class="IBUILabel" id="230858003">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{34, 211}, {164, 21}}</string>
+            <int key="NSvFlags">294</int>
+            <string key="NSFrame">{{34, 200}, {164, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -239,8 +239,8 @@
           </object>
           <object class="IBUISwitch" id="207800583">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{206, 208}, {94, 27}}</string>
+            <int key="NSvFlags">289</int>
+            <string key="NSFrame">{{206, 197}, {94, 27}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:536</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -252,7 +252,7 @@
           <object class="IBUIButton" id="365235668">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{8, 179}, {18, 19}}</string>
+            <string key="NSFrame">{{8, 168}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -272,7 +272,7 @@
           <object class="IBUIButton" id="510299341">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{8, 109}, {18, 19}}</string>
+            <string key="NSFrame">{{8, 98}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -292,7 +292,7 @@
           <object class="IBUIButton" id="148382084">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{8, 74}, {18, 19}}</string>
+            <string key="NSFrame">{{8, 63}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -312,7 +312,7 @@
           <object class="IBUIButton" id="638126449">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{8, 39}, {18, 19}}</string>
+            <string key="NSFrame">{{8, 28}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -332,7 +332,7 @@
           <object class="IBUIButton" id="512598659">
             <reference key="NSNextResponder" ref="191373211"/>
             <int key="NSvFlags">292</int>
-            <string key="NSFrame">{{8, 211}, {18, 19}}</string>
+            <string key="NSFrame">{{8, 200}, {18, 19}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:84</string>
             <bool key="IBUIOpaque">NO</bool>
@@ -818,7 +818,7 @@
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">AUNOAABCEAAAA</bytes>
+            <bytes key="NSTransformStruct">P4AAAL+AAABDTgAAwnQAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
@@ -859,6 +859,20 @@
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <object class="NSMutableArray" key="referencedPartialClassDescriptions">
         <bool key="EncodedWithXMLCoder">YES</bool>
+        <object class="IBPartialClassDescription">
+          <string key="className">NSObject</string>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier">
+            <string key="majorKey">IBProjectSource</string>
+            <string key="minorKey">FBConnect/JSON/NSObject+SBJSON.h</string>
+          </object>
+        </object>
+        <object class="IBPartialClassDescription">
+          <string key="className">NSObject</string>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier">
+            <string key="majorKey">IBProjectSource</string>
+            <string key="minorKey">FBConnect/JSON/SBJsonWriter.h</string>
+          </object>
+        </object>
         <object class="IBPartialClassDescription">
           <string key="className">Settings</string>
           <string key="superclassName">UIViewController</string>

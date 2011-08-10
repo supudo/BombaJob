@@ -142,61 +142,57 @@
 }
 
 - (IBAction)iboHuman:(id)sender {
-	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Offer_HumanCompany_Choice", @"Offer_HumanCompany_Choice") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 185, 0, 0)];
-	pickerView.delegate = self;
-	pickerView.showsSelectionIndicator = YES;
-	pickerView.tag = 1;
-	menu.tag = 1;
-	[menu addSubview:pickerView];
-	[menu showFromTabBar:appDelegate.tabBarController.tabBar];
-	[menu setBounds:CGRectMake(0, 0, 320, 700)];
-
-	if ([bSettings sharedbSettings].currentOffer.HumanYn)
-		[pickerView selectRow:0 inComponent:0 animated:YES];
-	else
-		[pickerView selectRow:1 inComponent:0 animated:YES];
-
-	[pickerView release];
-	[menu release];
+	[self showActionSheet:NSLocalizedString(@"Offer_HumanCompany_Choice", @"Offer_HumanCompany_Choice") type:1];
 }
 
 - (IBAction)iboFreelance:(id)sender {
-	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 185, 0, 0)];
-	pickerView.delegate = self;
-	pickerView.showsSelectionIndicator = YES;
-	pickerView.tag = 2;
-	menu.tag = 2;
-	[menu addSubview:pickerView];
-	[menu showFromTabBar:appDelegate.tabBarController.tabBar];
-	[menu setBounds:CGRectMake(0, 0, 320, 700)];
-	
-	if ([bSettings sharedbSettings].currentOffer.FreelanceYn)
-		[pickerView selectRow:0 inComponent:0 animated:YES];
-	else
-		[pickerView selectRow:1 inComponent:0 animated:YES];
-	
-	[pickerView release];
-	[menu release];
+	[self showActionSheet:NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance") type:2];
 }
 
 - (IBAction)iboCategory:(id)sender {
-	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Offer_Category", @"Offer_Category") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 185, 0, 0)];
+	[self showActionSheet:NSLocalizedString(@"Offer_Category", @"Offer_Category") type:3];
+}
+
+- (void)showActionSheet:(NSString *)asTitle type:(int)typeID {
+	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:asTitle delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") destructiveButtonTitle:nil otherButtonTitles:nil];
+	UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 100, 0, 0)];
 	pickerView.delegate = self;
 	pickerView.showsSelectionIndicator = YES;
-	pickerView.tag = 3;
-	menu.tag = 3;
+	pickerView.tag = typeID;
+	menu.tag = typeID;
 	[menu addSubview:pickerView];
 	[menu showFromTabBar:appDelegate.tabBarController.tabBar];
-	[menu setBounds:CGRectMake(0, 0, 320, 700)];
-
-	for (int i=0; i<[dataCategories count]; i++) {
-		if ([bSettings sharedbSettings].currentOffer.CategoryID == [[[dataCategories objectAtIndex:i] valueForKey:@"CategoryID"] intValue])
-			[pickerView selectRow:i inComponent:0 animated:YES];
+	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		[menu setBounds:CGRectMake(0, 0, 480, 440)];
+	else
+		[menu setBounds:CGRectMake(0, 0, 320, 580)];
+	
+	switch (typeID) {
+		case 1: {
+			if ([bSettings sharedbSettings].currentOffer.HumanYn)
+				[pickerView selectRow:0 inComponent:0 animated:YES];
+			else
+				[pickerView selectRow:1 inComponent:0 animated:YES];
+			break;
+		}
+		case 2: {
+			if ([bSettings sharedbSettings].currentOffer.FreelanceYn)
+				[pickerView selectRow:0 inComponent:0 animated:YES];
+			else
+				[pickerView selectRow:1 inComponent:0 animated:YES];
+			break;
+		}
+		case 3: {
+			for (int i=0; i<[dataCategories count]; i++) {
+				if ([bSettings sharedbSettings].currentOffer.CategoryID == [[[dataCategories objectAtIndex:i] valueForKey:@"CategoryID"] intValue])
+					[pickerView selectRow:i inComponent:0 animated:YES];
+			}
+			break;
+		}
+		default:
+			break;
 	}
-
+	
 	[pickerView release];
 	[menu release];
 }

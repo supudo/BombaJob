@@ -44,7 +44,7 @@
           <bool key="EncodedWithXMLCoder">YES</bool>
           <object class="IBUILabel" id="299266274">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
+            <int key="NSvFlags">290</int>
             <string key="NSFrame">{{20, 117}, {280, 21}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:173</string>
@@ -68,7 +68,7 @@
           </object>
           <object class="IBUIActivityIndicatorView" id="634129251">
             <reference key="NSNextResponder" ref="191373211"/>
-            <int key="NSvFlags">292</int>
+            <int key="NSvFlags">288</int>
             <string key="NSFrame">{{141, 177}, {37, 37}}</string>
             <reference key="NSSuperview" ref="191373211"/>
             <string key="NSReuseIdentifierKey">_NS:870</string>
@@ -200,6 +200,20 @@
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <object class="NSMutableArray" key="referencedPartialClassDescriptions">
         <bool key="EncodedWithXMLCoder">YES</bool>
+        <object class="IBPartialClassDescription">
+          <string key="className">NSObject</string>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier">
+            <string key="majorKey">IBProjectSource</string>
+            <string key="minorKey">FBConnect/JSON/NSObject+SBJSON.h</string>
+          </object>
+        </object>
+        <object class="IBPartialClassDescription">
+          <string key="className">NSObject</string>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier">
+            <string key="majorKey">IBProjectSource</string>
+            <string key="minorKey">FBConnect/JSON/SBJsonWriter.h</string>
+          </object>
+        </object>
         <object class="IBPartialClassDescription">
           <string key="className">SyncAgain</string>
           <string key="superclassName">UIViewController</string>

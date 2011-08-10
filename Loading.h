@@ -22,6 +22,5 @@
 - (void)loadSync;
 - (void)startSync;
 - (void)startSyncTimer;
-- (void)startTabApp;
 
 @end

@@ -34,6 +34,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *txtTitle, *txtEmail, *txtNeg, *txtPos;
 
 - (void)setUpForm;
+- (void)showActionSheet:(NSString *)asTitle type:(int)typeID;
 - (IBAction)iboHuman:(id)sender;
 - (IBAction)iboCategory:(id)sender;
 - (IBAction)iboFreelance:(id)sender;

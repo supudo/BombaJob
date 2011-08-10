@@ -29,14 +29,17 @@ BombaJobAppDelegate *appDelegate;
 	}
 	
     Loading *lvc = [[Loading alloc] initWithNibName:@"Loading" bundle:nil];
-    [self.tabBarController presentModalViewController:lvc animated:NO];
+    [tabBarController presentModalViewController:lvc animated:NO];
     [lvc release];
 
     return YES;
 }
 
 - (void)loadingFinished {
-    [self.tabBarController dismissModalViewControllerAnimated:YES];
+    [tabBarController dismissModalViewControllerAnimated:YES];
+	tabBarController.moreNavigationController.navigationBarHidden = YES;
+	//tabBarController.moreNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	//tabBarController.customizableViewControllers = nil;
 }
 
 - (void)dealloc {

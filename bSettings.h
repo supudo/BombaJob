@@ -37,6 +37,7 @@
 - (void)clearPostData;
 - (void)startLoading:(UIView *)view;
 - (void)stopLoading:(UIView *)view;
+- (NSString *)stripHTMLtags:(NSString *)txt;
 
 + (bSettings *)sharedbSettings;
 
