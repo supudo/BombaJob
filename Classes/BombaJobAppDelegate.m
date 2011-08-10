@@ -15,26 +15,33 @@ BombaJobAppDelegate *appDelegate;
 
 @synthesize window;
 @synthesize tabBarController;
-@synthesize loadingView;
 @synthesize mapCoordinates;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	appDelegate = self;
 	
+	[self.window addSubview:tabBarController.view];
+    [self.window makeKeyAndVisible];
+	
 	if (![bSettings sharedbSettings].inDebugMode && [bSettings sharedbSettings].stGeoLocation) {
 		mapCoordinates = [[MapCoordinates alloc] init];
 		[mapCoordinates startCoor];
 	}
+	
+    Loading *lvc = [[Loading alloc] initWithNibName:@"Loading" bundle:nil];
+    [self.tabBarController presentModalViewController:lvc animated:NO];
+    [lvc release];
 
-	[self.window addSubview:self.loadingView.view];
-    [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)loadingFinished {
+    [self.tabBarController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc {
     [tabBarController release];
     [window release];
-	[loadingView release];
 	[mapCoordinates release];
     [super dealloc];
 }

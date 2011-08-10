@@ -9,19 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MapCoordinates.h"
 
-@class Loading;
-
 @interface BombaJobAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
-	Loading *loadingView;
 	MapCoordinates *mapCoordinates;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) IBOutlet Loading *loadingView;
 @property (nonatomic, retain) MapCoordinates *mapCoordinates;
+
+- (void)loadingFinished;
 
 @end
 

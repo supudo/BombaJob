@@ -17,7 +17,7 @@
 
 - (void)startSync {
 	if (webService == nil)
-		webService = [[WebService alloc] init];
+		webService = [[[WebService alloc] init] retain];
 	[webService setDelegate:self];
 	[webService getCategories];
 }

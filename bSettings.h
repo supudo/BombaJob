@@ -11,18 +11,18 @@
 #import "CurrentOffer.h"
 
 @interface bSettings : NSObject {
-	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
+	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
 	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
-	NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
+	NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse, *languageCulture;
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
 	NSMutableArray *latestSearchResults;
 	NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret, *facebookAppID, *facebookAppSecret;
 }
 
-@property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult;
+@property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
 @property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
-@property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse;
+@property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse, *languageCulture;
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
 @property (nonatomic, retain) NSMutableArray *latestSearchResults;

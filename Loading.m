@@ -13,6 +13,9 @@
 
 @synthesize timer, syncer, lblLoading;
 
+#pragma mark -
+#pragma mark Workers
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.navigationItem.title = NSLocalizedString(@"MainNavTitle", @"MainNavTitle");
@@ -71,6 +74,7 @@
 }
 
 - (void)startTabApp {
+	/*
 	UIView *tabBarView = [[appDelegate tabBarController] view];
 	[tabBarView setCenter:CGPointMake(tabBarView.center.x, tabBarView.center.y)];
 	tabBarView.alpha = 0;
@@ -84,10 +88,20 @@
 	[UIView setAnimationDuration:.4];
 	tabBarView.alpha = 1;
 	[UIView commitAnimations];
+	 */
 	
 	UINavigationController *moreController = appDelegate.tabBarController.moreNavigationController;
 	moreController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	appDelegate.tabBarController.customizableViewControllers = nil;
+	
+	[appDelegate loadingFinished];
+}
+
+#pragma mark -
+#pragma mark System
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ? NO : [bSettings sharedbSettings].shouldRotate);
 }
 
 - (void)didReceiveMemoryWarning {

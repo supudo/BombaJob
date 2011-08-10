@@ -13,9 +13,9 @@
 
 @implementation bSettings
 
-@synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse;
+@synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse, shouldRotate;
 @synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
-@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults;
+@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults, languageCulture;
 @synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret, facebookAppID, facebookAppSecret;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
@@ -47,6 +47,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.sdlNewJobs = FALSE;
 		self.sdlJobs = FALSE;
 		self.sdlPeople = FALSE;
+		self.shouldRotate = FALSE;
 		
 		self.stPrivateData = TRUE;
 		self.stGeoLocation = FALSE;
@@ -136,6 +137,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.currentPostOfferResponse = @"";
 		self.LocationLatitude = 0.f;
 		self.LocationLongtitude = 0.f;
+        self.languageCulture = [[NSLocale currentLocale] localeIdentifier];
 		currentOffer = [[CurrentOffer alloc] init];
 		latestSearchResults = [[NSMutableArray alloc] init];
 	}

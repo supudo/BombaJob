@@ -24,9 +24,8 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	[super viewDidLoad];
 	self.navigationItem.title = NSLocalizedString(@"NewOffers", @"NewOffers");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	//self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)] autorelease];
 	[self designToolbar];
-	if (self.webService == nil)
+	if (webService == nil)
 		webService = [[WebService alloc] init];
 }
 
@@ -199,6 +198,10 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 
 #pragma mark -
 #pragma mark System
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ? NO : [bSettings sharedbSettings].shouldRotate);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
