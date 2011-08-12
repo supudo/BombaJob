@@ -81,10 +81,11 @@
 	[postData release];
 }
 
-- (void)getCategories {
+- (void)getCategories:(BOOL)doFullSync {
 	self.OperationID = NLOperationGetCategories;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"Category"];
+	if (doFullSync)
+		[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"Category"];
 	[[bSettings sharedbSettings] LogThis:@"getCategories URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getCategories"];
 	if (urlReader == nil)
 		urlReader = [[URLReader alloc] init];
@@ -104,10 +105,11 @@
 		[delegate getCategoriesFinished:self];
 }
 
-- (void)getNewJobs {
+- (void)getNewJobs:(BOOL)doFullSync {
 	self.OperationID = NLOperationGetNewJobs;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"JobOffer"];
+	if (doFullSync)
+		[[DBManagedObjectContext sharedDBManagedObjectContext] deleteAllObjects:@"JobOffer"];
 	[[bSettings sharedbSettings] LogThis:@"getNewJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getNewJobs"];
 	if (urlReader == nil)
 		urlReader = [[URLReader alloc] init];
@@ -127,10 +129,11 @@
 		[delegate getNewJobsFinished:self];
 }
 
-- (void)searchJobs {
+- (void)searchJobs:(BOOL)doFullSync {
 	self.OperationID = NLOperationGetJobsHuman;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0"]];
+	if (doFullSync)
+		[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 0"]];
 	[[bSettings sharedbSettings] LogThis:@"searchJobs URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchJobs"];
 	if (urlReader == nil)
 		urlReader = [[URLReader alloc] init];
@@ -150,10 +153,11 @@
 		[delegate getJobsHumanFinished:self];
 }
 
-- (void)searchPeople {
+- (void)searchPeople:(BOOL)doFullSync {
 	self.OperationID = NLOperationGetJobsCompany;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
-	//[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1"]];
+	if (doFullSync)
+		[[DBManagedObjectContext sharedDBManagedObjectContext] deleteObjects:@"JobOffer" predicate:[NSPredicate predicateWithFormat:@"HumanYn = 1"]];
 	[[bSettings sharedbSettings] LogThis:@"searchPeople URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchPeople"];
 	if (urlReader == nil)
 		urlReader = [[URLReader alloc] init];

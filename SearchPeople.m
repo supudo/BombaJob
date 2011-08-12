@@ -45,7 +45,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 			[self getJobsCompanyFinished:nil];
 		else {
 			[webService setDelegate:self];
-			[webService searchPeople];
+			[webService searchPeople:FALSE];
 		}
 	}
 	else
@@ -112,7 +112,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	[[bSettings sharedbSettings] startLoading:self.view];
 	[bSettings sharedbSettings].sdlPeople = FALSE;
 	[webService setDelegate:self];
-	[webService searchPeople];
+	[webService searchPeople:FALSE];
 }
 
 - (void)postOffer {

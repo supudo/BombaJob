@@ -25,6 +25,7 @@
 "Sync" = "Synchronization";
 "SyncInProgress" = "Synchronizing...";
 "OffersCount" = "Offers";
+"DoFullSync" = "Full data synchronization?";
 
 "Coordinates_Reason" = "For better offer search we need your current location. It's NOT neccessary though.";
 

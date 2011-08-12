@@ -64,10 +64,10 @@ typedef enum NLServiceOperations {
 
 - (void)postNewJob;
 - (void)postMessage:(int)offerID message:(NSString *)msg;
-- (void)getCategories;
-- (void)getNewJobs;
-- (void)searchJobs;
-- (void)searchPeople;
+- (void)getCategories:(BOOL)doFullSync;
+- (void)getNewJobs:(BOOL)doFullSync;
+- (void)searchJobs:(BOOL)doFullSync;
+- (void)searchPeople:(BOOL)doFullSync;
 - (void)getTextContent;
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl;
 - (void)sendEmailMessage:(int)offerID toEmail:(NSString *)toEmail fromEmail:(NSString *)fromEmail;

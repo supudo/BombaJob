@@ -51,7 +51,7 @@
 	if (syncer == nil)
 		syncer = [[Sync alloc] init];
 	[syncer setDelegate:self];
-	[syncer startSync];
+	[syncer startSync:FALSE];
 }
 
 - (void)syncFinished:(id)sender {

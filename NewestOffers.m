@@ -42,7 +42,7 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 			[self getNewJobsFinished:nil];
 		else {
 			[webService setDelegate:self];
-			[webService getNewJobs];
+			[webService getNewJobs:FALSE];
 		}
 	}
 	else
@@ -85,7 +85,7 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	[[bSettings sharedbSettings] startLoading:self.view];
 	[bSettings sharedbSettings].sdlNewJobs = FALSE;
 	[webService setDelegate:self];
-	[webService getNewJobs];
+	[webService getNewJobs:FALSE];
 }
 
 - (void)postOffer {

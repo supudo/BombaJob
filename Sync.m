@@ -15,11 +15,11 @@
 #pragma mark -
 #pragma mark Init
 
-- (void)startSync {
+- (void)startSync:(BOOL)doFullSync {
 	if (webService == nil)
 		webService = [[[WebService alloc] init] retain];
 	[webService setDelegate:self];
-	[webService getCategories];
+	[webService getCategories:doFullSync];
 }
 
 - (void)finishSync {

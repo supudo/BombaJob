@@ -13,11 +13,13 @@
 	Sync *syncer;
 	NSTimer *timer;
 	UILabel *lblSync;
+	BOOL doFullSync;
 }
 
 @property (nonatomic, retain) Sync *syncer;
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) IBOutlet UILabel *lblSync;
+@property BOOL doFullSync;
 
 - (void)loadSync;
 - (void)finishSync;

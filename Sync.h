@@ -23,7 +23,7 @@
 @property (assign) id<SyncDelegate> delegate;
 @property (nonatomic, retain) WebService *webService;
 
-- (void)startSync;
+- (void)startSync:(BOOL)doFullSync;
 - (void)finishSync;
 
 @end

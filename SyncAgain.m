@@ -11,7 +11,7 @@
 
 @implementation SyncAgain
 
-@synthesize timer, syncer, lblSync;
+@synthesize timer, syncer, lblSync, doFullSync;
 
 #pragma mark -
 #pragma mark Work
@@ -27,12 +27,18 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	self.navigationItem.hidesBackButton = YES;
+	self.doFullSync = FALSE;
 	[self loadSync];
 }
 
 - (void)loadSync {
-	if ([[bSettings sharedbSettings] connectedToInternet])
-		[self performSelector:@selector(startSync) withObject:nil afterDelay:1.0];
+	if ([[bSettings sharedbSettings] connectedToInternet]) {
+		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"DoFullSync", @"DoFullSync") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.YES", @"UI.YES") otherButtonTitles:NSLocalizedString(@"UI.NO", @"UI.NO"), nil];
+		alert.tag = 2;
+		[alert show];
+		[alert release];
+	}
 	else {
 		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"OfflineMode", @"OfflineMode") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
@@ -53,7 +59,7 @@
 	if (syncer == nil)
 		syncer = [[Sync alloc] init];
 	[syncer setDelegate:self];
-	[syncer startSync];
+	[syncer startSync:self.doFullSync];
 }
 
 - (void)syncFinished:(id)sender {
@@ -71,6 +77,13 @@
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (actionSheet.tag == 1 && buttonIndex == 1)
 		[self loadSync];
+	else if (actionSheet.tag == 2) {
+		if (buttonIndex == 1)
+			doFullSync = FALSE;
+		else
+			doFullSync = TRUE;
+		[self performSelector:@selector(startSync) withObject:nil afterDelay:1.0];
+	}
 	else
 		[self finishSync];
 }
