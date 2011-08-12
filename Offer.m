@@ -17,9 +17,9 @@
 @implementation Offer
 
 @synthesize entOffer, searchOffer;
-@synthesize scrollView, contentView;
+@synthesize scrollView, contentView, emailsView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
-@synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
+@synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ, txtEmailFrom, txtEmailTo;
 @synthesize btnEmail, btnTwitter, webService;
 @synthesize _facebookEngine;
 
@@ -134,62 +134,6 @@
 	}
 }
 
-- (void)sendMessage {
-	if ([bSettings sharedbSettings].stInAppEmail) {
-		if ([MFMailComposeViewController canSendMail]) {
-			MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-			[mailController setMailComposeDelegate:self];
-			NSString *subject = [NSString stringWithFormat:@"%@%i", NSLocalizedString(@"Offer_EmailSubject", @"Offer_EmailSubject"), ((entOffer == nil) ? searchOffer.OfferID : [entOffer.OfferID intValue])];
-			[mailController setSubject:subject];
-			[mailController setToRecipients:[NSArray arrayWithObjects:((entOffer == nil) ? searchOffer.Email : entOffer.Email), nil]];
-			[mailController setCcRecipients:nil];
-			[mailController setBccRecipients:nil];
-			[mailController setMessageBody:[NSString stringWithFormat:@"<br /><br /> Sent from BombaJob ..."] isHTML:YES];
-			[mailController.navigationBar setBarStyle:UIBarStyleBlack];
-			[self presentModalViewController:mailController animated:YES];
-			[mailController release];
-		}
-		else {
-			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Error.InAppEmailCantSend", @"Error.InAppEmailCantSend")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-			alert.tag = 1;
-			[alert show];
-			[alert release];
-		}
-	}
-	else {
-		OfferMessage *tvc = [[OfferMessage alloc] initWithNibName:@"OfferMessage" bundle:nil];
-		if (searchOffer == nil)
-			tvc.entOffer = entOffer;
-		else
-			tvc.searchOffer = searchOffer;
-		[[self navigationController] pushViewController:tvc animated:YES];
-		[tvc release];
-	}
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-	switch (result) {
-		case MFMailComposeResultCancelled:
-			break;
-		case MFMailComposeResultSaved:
-			break;
-		case MFMailComposeResultSent:
-			break;
-		case MFMailComposeResultFailed:
-			break;
-		default: {
-			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:@"..." delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-			alert.tag = 1;
-			[alert show];
-			[alert release];
-			break;
-		}
-	}
-	[self dismissModalViewControllerAnimated:YES];
-}
-
 - (void)setText:(NSString *)txt control:(UITextView *)txtView {
 	txtView.text = txt;
 	txtView.font = [UIFont fontWithName:@"Ubuntu" size:14];
@@ -302,41 +246,48 @@
 
 - (void)showEmailBox {
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	//BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
-	BlackAlertView *alert;
-	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
-		alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
-	else
-		alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
+	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] message:@"\n\n\n" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitles:NSLocalizedString(@"UI.OK", @"UI.OK"), nil];
 	alert.tag = 3;
 	
-	UITextField *txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 66, 260, 31)];
-	txt.tag = 998;
-	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
-	[txt setBorderStyle:UITextBorderStyleRoundedRect];
-	[txt setBackgroundColor:[UIColor clearColor]];
-	[txt setAutocorrectionType:UITextAutocorrectionTypeNo];
-	[txt setPlaceholder:NSLocalizedString(@"Offer_SentEmailTo", @"Offer_SentEmailTo")];
-	[alert addSubview:txt];
-	[txt release];
-	
-	txt = [[UITextField alloc] initWithFrame:CGRectMake(10, 104, 260, 31)];
-	txt.tag = 999;
-	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
-	[txt setBorderStyle:UITextBorderStyleRoundedRect];
-	[txt setBackgroundColor:[UIColor clearColor]];
-	[txt setAutocorrectionType:UITextAutocorrectionTypeNo];
-	[txt setPlaceholder:NSLocalizedString(@"Offer_SentEmailFrom", @"Offer_SentEmailFrom")];
-	if ([bSettings sharedbSettings].stPrivateData) {
-		dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
-		if (ent != nil)
-			txt.text = ent.SValue;
+	if (emailsView == nil) {
+		emailsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 260, 160)];
+
+		txtEmailTo = [[UITextField alloc] initWithFrame:CGRectMake(10, 66, 260, 31)];
+		txtEmailTo.tag = 998;
+		[txtEmailTo setDelegate:self];
+		[txtEmailTo setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+		[txtEmailTo setBorderStyle:UITextBorderStyleRoundedRect];
+		[txtEmailTo setBackgroundColor:[UIColor clearColor]];
+		[txtEmailTo setAutocorrectionType:UITextAutocorrectionTypeNo];
+		[txtEmailTo setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+		[txtEmailTo setPlaceholder:NSLocalizedString(@"Offer_SentEmailTo", @"Offer_SentEmailTo")];
+		[emailsView addSubview:txtEmailTo];
+		
+		txtEmailFrom = [[UITextField alloc] initWithFrame:CGRectMake(10, 104, 260, 31)];
+		txtEmailFrom.tag = 999;
+		[txtEmailFrom setDelegate:self];
+		[txtEmailFrom setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
+		[txtEmailFrom setBorderStyle:UITextBorderStyleRoundedRect];
+		[txtEmailFrom setBackgroundColor:[UIColor clearColor]];
+		[txtEmailFrom setAutocorrectionType:UITextAutocorrectionTypeNo];
+		[txtEmailFrom setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+		[txtEmailFrom setPlaceholder:NSLocalizedString(@"Offer_SentEmailFrom", @"Offer_SentEmailFrom")];
+		if ([bSettings sharedbSettings].stPrivateData) {
+			dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"Email"]];
+			if (ent != nil)
+				txtEmailFrom.text = ent.SValue;
+		}
+		[emailsView addSubview:txtEmailFrom];
 	}
-	[alert addSubview:txt];
-	[txt release];
 	
+	[alert addSubview:emailsView];
 	[alert show];
 	[alert release];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[textField resignFirstResponder];
+	return YES;
 }
 
 - (IBAction)sendEmail:(id)sender {
@@ -406,14 +357,8 @@
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (actionSheet.tag == 3 && buttonIndex == 1) {
-		NSString *fromEmail = @"";
-		NSString *toEmail = @"";
-		for (UIView *v in actionSheet.subviews) {
-			if ([v isKindOfClass:[UITextField class]] && v.tag == 998)
-				toEmail = [((UITextField *)v).text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-			if ([v isKindOfClass:[UITextField class]] && v.tag == 999)
-				fromEmail = [((UITextField *)v).text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-		}
+		NSString *fromEmail = [txtEmailFrom.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+		NSString *toEmail = [txtEmailTo.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 		if (toEmail != nil && ![toEmail isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:toEmail sitrictly:TRUE] &&
 			fromEmail != nil && ![fromEmail isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:fromEmail sitrictly:TRUE]) {
 			if ([bSettings sharedbSettings].stPrivateData) {
@@ -454,6 +399,62 @@
 	alert.tag = 5;
 	[alert show];
 	[alert release];
+}
+
+- (void)sendMessage {
+	if ([bSettings sharedbSettings].stInAppEmail) {
+		if ([MFMailComposeViewController canSendMail]) {
+			MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+			[mailController setMailComposeDelegate:self];
+			NSString *subject = [NSString stringWithFormat:@"%@%i", NSLocalizedString(@"Offer_EmailSubject", @"Offer_EmailSubject"), ((entOffer == nil) ? searchOffer.OfferID : [entOffer.OfferID intValue])];
+			[mailController setSubject:subject];
+			[mailController setToRecipients:[NSArray arrayWithObjects:((entOffer == nil) ? searchOffer.Email : entOffer.Email), nil]];
+			[mailController setCcRecipients:nil];
+			[mailController setBccRecipients:nil];
+			[mailController setMessageBody:[NSString stringWithFormat:@"<br /><br /> Sent from BombaJob ..."] isHTML:YES];
+			[mailController.navigationBar setBarStyle:UIBarStyleBlack];
+			[self presentModalViewController:mailController animated:YES];
+			[mailController release];
+		}
+		else {
+			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Error.InAppEmailCantSend", @"Error.InAppEmailCantSend")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+			alert.tag = 1;
+			[alert show];
+			[alert release];
+		}
+	}
+	else {
+		OfferMessage *tvc = [[OfferMessage alloc] initWithNibName:@"OfferMessage" bundle:nil];
+		if (searchOffer == nil)
+			tvc.entOffer = entOffer;
+		else
+			tvc.searchOffer = searchOffer;
+		[[self navigationController] pushViewController:tvc animated:YES];
+		[tvc release];
+	}
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+	switch (result) {
+		case MFMailComposeResultCancelled:
+			break;
+		case MFMailComposeResultSaved:
+			break;
+		case MFMailComposeResultSent:
+			break;
+		case MFMailComposeResultFailed:
+			break;
+		default: {
+			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:@"..." delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+			alert.tag = 1;
+			[alert show];
+			[alert release];
+			break;
+		}
+	}
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -637,6 +638,12 @@
 	[_twitterEngine release];
 	_facebookEngine = nil;
 	[_facebookEngine release];
+	txtEmailFrom = nil;
+	[txtEmailFrom release];
+	txtEmailTo = nil;
+	[txtEmailTo release];
+	emailsView = nil;
+	[emailsView release];
     [super viewDidUnload];
 }
 
@@ -660,6 +667,9 @@
 	[_twitterEngine release];
 	[_facebookEngine release];
 	[_fbButton release];
+	[txtEmailFrom release];
+	[txtEmailTo release];
+	[emailsView release];
     [super dealloc];
 }
 

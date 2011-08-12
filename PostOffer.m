@@ -45,23 +45,6 @@
 	[self setUpForm];
 }
 
-- (void)setUpForm {
-	btnHuman.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-	btnFreelance.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-	[btnHuman setTitle:NSLocalizedString(@"Offer_HumanCompany_Choice", @"Offer_HumanCompany_Choice") forState:UIControlStateNormal];
-	[btnFreelance setTitle:NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance") forState:UIControlStateNormal];
-	
-	btnCategory.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-	btnBoom.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-	[btnCategory setTitle:NSLocalizedString(@"Offer_Category_Choice", @"Offer_Category_Choice") forState:UIControlStateNormal];
-	[btnBoom setTitle:NSLocalizedString(@"Offer_Boom", @"Offer_Boom") forState:UIControlStateNormal];
-	
-	lblTitle.text = NSLocalizedString(@"Offer_Title", @"Offer_Title");
-	lblEmail.text = NSLocalizedString(@"Offer_Email", @"Offer_Email");
-	lblNeg.text = NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv");
-	lblPos.text = NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ");
-}
-
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
@@ -111,6 +94,23 @@
 		if (ent != nil && ![ent.SValue isEqualToString:@""])
 			txtEmail.text = ent.SValue;
 	}
+}
+
+- (void)setUpForm {
+	btnHuman.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+	btnFreelance.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+	[btnHuman setTitle:NSLocalizedString(@"Offer_HumanCompany_Choice", @"Offer_HumanCompany_Choice") forState:UIControlStateNormal];
+	[btnFreelance setTitle:NSLocalizedString(@"Offer_Freelance", @"Offer_Freelance") forState:UIControlStateNormal];
+	
+	btnCategory.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+	btnBoom.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+	[btnCategory setTitle:NSLocalizedString(@"Offer_Category_Choice", @"Offer_Category_Choice") forState:UIControlStateNormal];
+	[btnBoom setTitle:NSLocalizedString(@"Offer_Boom", @"Offer_Boom") forState:UIControlStateNormal];
+	
+	lblTitle.text = NSLocalizedString(@"Offer_Title", @"Offer_Title");
+	lblEmail.text = NSLocalizedString(@"Offer_Email", @"Offer_Email");
+	lblNeg.text = NSLocalizedString(@"Offer_Human_Positiv", @"Offer_Human_Positiv");
+	lblPos.text = NSLocalizedString(@"Offer_Human_Negativ", @"Offer_Human_Negativ");
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

@@ -19,16 +19,17 @@
 
 @class SA_OAuthTwitterEngine;
 
-@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate,
+@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, UITextFieldDelegate,
 									SA_OAuthTwitterControllerDelegate,
 									FBRequestDelegate, FBDialogDelegate, FBSessionDelegate> {
 	dbJobOffer *entOffer;
 	SearchOffer *searchOffer;
 	UIScrollView *scrollView;
-	UIView *contentView;
+	UIView *contentView, *emailsView;
 	UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 	UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
 	UIButton *btnEmail, *btnTwitter;
+	UITextField *txtEmailFrom, *txtEmailTo;
 	WebService *webService;
 	SA_OAuthTwitterEngine *_twitterEngine;
 	Facebook *_facebookEngine;
@@ -38,10 +39,11 @@
 @property (nonatomic, retain) dbJobOffer *entOffer;
 @property (nonatomic, retain) SearchOffer *searchOffer;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIView *contentView;
+@property (nonatomic, retain) IBOutlet UIView *contentView, *emailsView;
 @property (nonatomic, retain) IBOutlet UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 @property (nonatomic, retain) IBOutlet UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
 @property (nonatomic, retain) IBOutlet UIButton *btnEmail, *btnTwitter;
+@property (nonatomic, retain) UITextField *txtEmailFrom, *txtEmailTo;
 @property (nonatomic, retain) WebService *webService;
 @property (readonly) Facebook *_facebookEngine;
 
