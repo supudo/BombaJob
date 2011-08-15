@@ -53,7 +53,7 @@
 "Offer_EmailSubject" = "BombaJob.bg - message regardig offer #";
 "Offer_EmailSubjectByUser" = "BombaJob.bg - check this offer";
 "Offer_EmailSent" = "Offer was sent.";
-"Offer_EmailEnterYourEmail" = "Please, enter your email";
+"Offer_EmailEnterYourEmail" = "Your email";
 "Offer_EmailIncorrectEmail" = "Incorrect email.\nPlease, enter correct email.";
 "Offer_SentEmailTo" = "Send to email...";
 "Offer_SentEmailFrom" = "Your email...";

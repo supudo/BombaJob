@@ -65,7 +65,7 @@ static UIColor *borderColor = nil;
 	CGContextDrawPath(context, kCGPathFillStroke);
 	
 	// Clip Context
-	CGRect clipRect = CGRectMake(backRect.origin.x + backOffset-1, backRect.origin.y + backOffset-1, backRect.size.width - (backOffset-1)*2, backRect.size.height - (backOffset-1)*2);
+	CGRect clipRect = CGRectMake(backRect.origin.x + backOffset - 1, backRect.origin.y + backOffset - 1, backRect.size.width - (backOffset - 1) * 2, backRect.size.height - (backOffset - 1) * 2);
 	[self drawRoundedRect:clipRect inContext:context withRadius:8];
 	CGContextClip (context);
 	
@@ -78,10 +78,10 @@ static UIColor *borderColor = nil;
 	rgbColorspace = CGColorSpaceCreateDeviceRGB();
 	glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, components, locations, num_locations);
 	
-	CGRect ovalRect = CGRectMake(-130, -115, (rect.size.width*2), rect.size.width/2);
+	CGRect ovalRect = CGRectMake(-130, -115, (rect.size.width * 2), rect.size.width / 2);
 	
 	CGPoint start = CGPointMake(rect.origin.x, rect.origin.y);
-	CGPoint end = CGPointMake(rect.origin.x, rect.size.height/5);
+	CGPoint end = CGPointMake(rect.origin.x, rect.size.height / 5);
 	
 	CGContextSetAlpha(context, 1.0); 
 	CGContextAddEllipseInRect(context, ovalRect);

@@ -54,7 +54,7 @@
 "Offer_EmailSubject" = "BombaJob.bg - съобщение относно обява #";
 "Offer_EmailSubjectByUser" = "BombaJob.bg - виж тази обява";
 "Offer_EmailSent" = "Офертата е изпратена.";
-"Offer_EmailEnterYourEmail" = "Моля, въведете вашият email";
+"Offer_EmailEnterYourEmail" = "Вашият email";
 "Offer_EmailIncorrectEmail" = "Грешен или некоректен email.\nМоля, въведете коректен email.";
 "Offer_SentEmailTo" = "Изпрати на email...";
 "Offer_SentEmailFrom" = "Вашият email...";

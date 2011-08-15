@@ -234,4 +234,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 	return txt;
 }
 
+- (NSString *)getSetting:(NSString *)name {
+	NSString *val = @"";
+	dbSettings *ent = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", name]];
+	if (ent != nil)
+		val = ent.SValue;
+	return val;
+}
+
 @end

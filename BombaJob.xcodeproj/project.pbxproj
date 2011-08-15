@@ -26,6 +26,7 @@
 		8A3B530013E1842B00F9B24E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B52FE13E1842B00F9B24E /* About.xib */; };
 		8A40DD3613E97D1C00EBC946 /* CategoriesOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */; };
 		8A40DD3713E97D1C00EBC946 /* CategoriesOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */; };
+		8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5018F913F9034A00C4BBE0 /* DDAlertPrompt.m */; };
 		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
 		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
 		8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88F89213E1AAA000CC9108 /* SearchOffer.m */; };
@@ -146,6 +147,8 @@
 		8A40DD3313E97D1C00EBC946 /* CategoriesOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesOffers.h; path = ../CategoriesOffers.h; sourceTree = "<group>"; };
 		8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesOffers.m; path = ../CategoriesOffers.m; sourceTree = "<group>"; };
 		8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesOffers.xib; sourceTree = "<group>"; };
+		8A5018F813F9034A00C4BBE0 /* DDAlertPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAlertPrompt.h; sourceTree = "<group>"; };
+		8A5018F913F9034A00C4BBE0 /* DDAlertPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAlertPrompt.m; sourceTree = "<group>"; };
 		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
 		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
 		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
@@ -599,6 +602,8 @@
 			children = (
 				8AA6921713C1A609004B4687 /* BlackAlertView.h */,
 				8AA6921813C1A609004B4687 /* BlackAlertView.m */,
+				8A5018F813F9034A00C4BBE0 /* DDAlertPrompt.h */,
+				8A5018F913F9034A00C4BBE0 /* DDAlertPrompt.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1032,6 +1037,7 @@
 				8AE9DB7213EACD2B00F12EB2 /* SBJsonParser.m in Sources */,
 				8AE9DB7313EACD2B00F12EB2 /* SBJsonWriter.m in Sources */,
 				8AE9DBA913EAD23900F12EB2 /* FBLoginButton.m in Sources */,
+				8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
