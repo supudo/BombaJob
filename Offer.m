@@ -267,7 +267,6 @@
 		DDAlertPrompt *emailAlert = (DDAlertPrompt *)actionSheet;
 		NSString *fromEmail = [emailAlert.plainTextField1.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 		NSString *toEmail = [emailAlert.plainTextField2.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-		NSLog(@"-%@- : -%@-", fromEmail, toEmail);
 		if (toEmail != nil && ![toEmail isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:toEmail sitrictly:TRUE] &&
 			fromEmail != nil && ![fromEmail isEqualToString:@""] && [[bSettings sharedbSettings] validEmail:fromEmail sitrictly:TRUE]) {
 			if ([bSettings sharedbSettings].stPrivateData) {
