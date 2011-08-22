@@ -10,7 +10,7 @@
 
 @implementation MapCoordinates
 
-@synthesize locationManager;
+@synthesize delegate, locationManager;
 
 - (void)startCoor {
 	self.locationManager = [[[CLLocationManager alloc] init] autorelease];
@@ -25,6 +25,8 @@
 	[bSettings sharedbSettings].LocationLatitude = manager.location.coordinate.latitude;
 	[bSettings sharedbSettings].LocationLongtitude = manager.location.coordinate.longitude;
 	[[bSettings sharedbSettings] LogThis:@"Map coordinates - %f - %f", [bSettings sharedbSettings].LocationLatitude, [bSettings sharedbSettings].LocationLongtitude];
+	if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(coordinatesUpdate:latitude:)])
+		[delegate coordinatesUpdate:manager.location.coordinate.longitude latitude:manager.location.coordinate.latitude];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

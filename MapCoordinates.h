@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+@protocol MapCoordinatesDelegate <NSObject>
+@optional
+- (void)coordinatesUpdate:(float)longitude latitude:(float)latitude;
+@end
+
 @interface MapCoordinates : NSObject<CLLocationManagerDelegate> {
+	id<MapCoordinatesDelegate> delegate;
 	CLLocationManager *locationManager;
 }
 
+@property (assign) id<MapCoordinatesDelegate> delegate;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
 - (void)startCoor;

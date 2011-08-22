@@ -17,7 +17,9 @@
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
 	NSMutableArray *latestSearchResults;
-	NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret, *facebookAppID, *facebookAppSecret;
+	NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret;
+	NSString *facebookAppID, *facebookAppSecret;
+	NSString *linkedInOAuthConsumerKey, *linkedInOAuthConsumerSecret;
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
@@ -26,7 +28,9 @@
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
 @property (nonatomic, retain) NSMutableArray *latestSearchResults;
-@property (nonatomic, retain) NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret, *facebookAppID, *facebookAppSecret;
+@property (nonatomic, retain) NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret;
+@property (nonatomic, retain) NSString *facebookAppID, *facebookAppSecret;
+@property (nonatomic, retain) NSString *linkedInOAuthConsumerKey, *linkedInOAuthConsumerSecret;
 
 - (void)LogThis:(NSString *)log, ...;
 - (BOOL)connectedToInternet;

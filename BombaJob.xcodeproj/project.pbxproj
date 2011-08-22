@@ -27,6 +27,9 @@
 		8A40DD3613E97D1C00EBC946 /* CategoriesOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */; };
 		8A40DD3713E97D1C00EBC946 /* CategoriesOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */; };
 		8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5018F913F9034A00C4BBE0 /* DDAlertPrompt.m */; };
+		8A5019E913F93A8400C4BBE0 /* SearchGeo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5019E713F93A8400C4BBE0 /* SearchGeo.m */; };
+		8A5019EA13F93A8400C4BBE0 /* SearchGeo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5019E813F93A8400C4BBE0 /* SearchGeo.xib */; };
+		8A501A6913F9419300C4BBE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A501A6813F9419300C4BBE0 /* MapKit.framework */; };
 		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
 		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
 		8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88F89213E1AAA000CC9108 /* SearchOffer.m */; };
@@ -84,6 +87,7 @@
 		8AB9652113CF6DE1009252C4 /* PostOfferText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9651F13CF6DE1009252C4 /* PostOfferText.xib */; };
 		8AB965D513CF8054009252C4 /* btn-boom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB965D413CF8054009252C4 /* btn-boom.png */; };
 		8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9660813CF8A27009252C4 /* dbSettings.m */; };
+		8AD4051813FA7A2C00F0C351 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4051713FA7A2C00F0C351 /* Security.framework */; };
 		8AE9D9CE13EAB3E200F12EB2 /* jQueryInject.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9D99413EAB3E200F12EB2 /* jQueryInject.txt */; };
 		8AE9D9CF13EAB3E200F12EB2 /* jQueryInjectLandscape.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9D99513EAB3E200F12EB2 /* jQueryInjectLandscape.txt */; };
 		8AE9D9D013EAB3E200F12EB2 /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9D99613EAB3E200F12EB2 /* libOAuth.a */; };
@@ -149,6 +153,10 @@
 		8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesOffers.xib; sourceTree = "<group>"; };
 		8A5018F813F9034A00C4BBE0 /* DDAlertPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAlertPrompt.h; sourceTree = "<group>"; };
 		8A5018F913F9034A00C4BBE0 /* DDAlertPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAlertPrompt.m; sourceTree = "<group>"; };
+		8A5019E613F93A8400C4BBE0 /* SearchGeo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchGeo.h; path = ../SearchGeo.h; sourceTree = "<group>"; };
+		8A5019E713F93A8400C4BBE0 /* SearchGeo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchGeo.m; path = ../SearchGeo.m; sourceTree = "<group>"; };
+		8A5019E813F93A8400C4BBE0 /* SearchGeo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchGeo.xib; sourceTree = "<group>"; };
+		8A501A6813F9419300C4BBE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
 		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
 		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 		8AB965D413CF8054009252C4 /* btn-boom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-boom.png"; sourceTree = "<group>"; };
 		8AB9660713CF8A27009252C4 /* dbSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbSettings.h; sourceTree = "<group>"; };
 		8AB9660813CF8A27009252C4 /* dbSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbSettings.m; sourceTree = "<group>"; };
+		8AD4051713FA7A2C00F0C351 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8AE9D99413EAB3E200F12EB2 /* jQueryInject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jQueryInject.txt; sourceTree = "<group>"; };
 		8AE9D99513EAB3E200F12EB2 /* jQueryInjectLandscape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jQueryInjectLandscape.txt; sourceTree = "<group>"; };
 		8AE9D99613EAB3E200F12EB2 /* libOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOAuth.a; sourceTree = "<group>"; };
@@ -330,6 +339,8 @@
 				8A13113C13E80BD200F0296C /* MessageUI.framework in Frameworks */,
 				8AE9D9D013EAB3E200F12EB2 /* libOAuth.a in Frameworks */,
 				8AE9DA1513EAB49F00F12EB2 /* libxml2.2.dylib in Frameworks */,
+				8A501A6913F9419300C4BBE0 /* MapKit.framework in Frameworks */,
+				8AD4051813FA7A2C00F0C351 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +401,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A501A6813F9419300C4BBE0 /* MapKit.framework */,
 				8A13113B13E80BD200F0296C /* MessageUI.framework */,
 				8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -398,6 +410,7 @@
 				8AA6922513C1A650004B4687 /* SystemConfiguration.framework */,
 				8AA6924213C1A7E6004B4687 /* CoreData.framework */,
 				8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */,
+				8AD4051713FA7A2C00F0C351 /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -512,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA691FC13C1A47F004B4687 /* Search.xib */,
+				8A5019E813F93A8400C4BBE0 /* SearchGeo.xib */,
 				8A130FF513E7F50A00F0296C /* SearchResults.xib */,
 			);
 			name = Search;
@@ -543,6 +557,8 @@
 			children = (
 				8AA691FA13C1A47F004B4687 /* Search.h */,
 				8AA691FB13C1A47F004B4687 /* Search.m */,
+				8A5019E613F93A8400C4BBE0 /* SearchGeo.h */,
+				8A5019E713F93A8400C4BBE0 /* SearchGeo.m */,
 				8A130FF313E7F50A00F0296C /* SearchResults.h */,
 				8A130FF413E7F50A00F0296C /* SearchResults.m */,
 			);
@@ -969,6 +985,7 @@
 				8AE9D9CF13EAB3E200F12EB2 /* jQueryInjectLandscape.txt in Resources */,
 				8AE9D9E113EAB3E200F12EB2 /* twitter_load.png in Resources */,
 				8AE9DB6A13EACD2B00F12EB2 /* FBDialog.bundle in Resources */,
+				8A5019EA13F93A8400C4BBE0 /* SearchGeo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1038,6 +1055,7 @@
 				8AE9DB7313EACD2B00F12EB2 /* SBJsonWriter.m in Sources */,
 				8AE9DBA913EAD23900F12EB2 /* FBLoginButton.m in Sources */,
 				8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */,
+				8A5019E913F93A8400C4BBE0 /* SearchGeo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

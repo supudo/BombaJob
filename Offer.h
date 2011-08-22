@@ -17,8 +17,10 @@
 // Facebook
 #import "FBConnect.h"
 #import "FBLoginButton.h"
+// LinkedIn
 
 @class SA_OAuthTwitterEngine;
+@class MPOAuthAPI;
 
 @interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate,
 									SA_OAuthTwitterControllerDelegate,
@@ -34,6 +36,7 @@
 	SA_OAuthTwitterEngine *_twitterEngine;
 	Facebook *_facebookEngine;
 	FBLoginButton *_fbButton, *btnFacebook;
+	MPOAuthAPI *_oauthAPI;
 }
 
 @property (nonatomic, retain) dbJobOffer *entOffer;

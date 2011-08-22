@@ -12,14 +12,15 @@
 	UILabel *lblFreelance;
 	UITextField *txtSearch;
 	UISwitch *swFreelance;
-	UIButton *btnSearch;
+	UIButton *btnSearch, *btnSearchGeo;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *lblFreelance;
 @property (nonatomic, retain) IBOutlet UITextField *txtSearch;
 @property (nonatomic, retain) IBOutlet UISwitch *swFreelance;
-@property (nonatomic, retain) IBOutlet UIButton *btnSearch;
+@property (nonatomic, retain) IBOutlet UIButton *btnSearch, *btnSearchGeo;
 
 - (IBAction)iboSearch:(id)sender;
+- (IBAction)iboSearchGeo:(id)sender;
 
 @end

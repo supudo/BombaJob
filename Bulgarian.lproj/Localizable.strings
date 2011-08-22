@@ -22,6 +22,7 @@
 "Offer_IShort_Human" = "H";
 "Offer_IShort_Company" = "C";
 "OfflineMode" = "There is no Internet connection at the moment, entering offline mode.";
+"OfflineMode_NoGeoSearch" = "There is no Internet connection at the moment.";
 "Sync" = "Synchronization";
 "SyncInProgress" = "Synchronizing...";
 "OffersCount" = "Offers";
@@ -70,6 +71,9 @@
 "About.Search" = "Online search";
 "About.InAppEmail" = "In-App Email";
 "About.ShowCategories" = "Show categories";
+
+"Search.Search" = "Search";
+"Search.SearchGeo" = "Search around me";
 
 "Search.Freelance" = "Project/Freelance";
 

@@ -16,6 +16,7 @@ BombaJobAppDelegate *appDelegate;
 @synthesize window;
 @synthesize tabBarController;
 @synthesize mapCoordinates;
+@synthesize oauthVerifier = oauthVerifier_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	appDelegate = self;
@@ -37,9 +38,12 @@ BombaJobAppDelegate *appDelegate;
 
 - (void)loadingFinished {
     [tabBarController dismissModalViewControllerAnimated:YES];
-	tabBarController.moreNavigationController.navigationBarHidden = YES;
-	//tabBarController.moreNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	//tabBarController.customizableViewControllers = nil;
+	tabBarController.moreNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	[tabBarController.moreNavigationController setDelegate:self];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    navigationController.navigationBar.topItem.rightBarButtonItem = nil;
 }
 
 - (void)dealloc {

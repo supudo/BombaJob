@@ -46,6 +46,7 @@
         _facebookEngine.accessToken = [defaults objectForKey:@"FacebookAccessTokenKey"];
         _facebookEngine.expirationDate = [defaults objectForKey:@"FacebookExpirationDateKey"];
 	}
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,6 +55,9 @@
 
 	[self loadContent];
 	[self doDesign];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
 }
 
 - (void)loadContent {
@@ -562,6 +566,9 @@
 	[alert show];
 	[alert release];
 }
+
+#pragma mark -
+#pragma mark LinkedIn
 
 #pragma mark -
 #pragma mark System

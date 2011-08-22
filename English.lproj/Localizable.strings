@@ -23,6 +23,7 @@
 "Offer_IShort_Human" = "Ч";
 "Offer_IShort_Company" = "Ф";
 "OfflineMode" = "В момента нямате Интернет връзка, затова ще работим в офлайн режим.";
+"OfflineMode_NoGeoSearch" = "В момента нямате Интернет връзка.";
 "Sync" = "Синхронизация";
 "SyncInProgress" = "Синхронизиране...";
 "OffersCount" = "Оферти";
@@ -72,6 +73,9 @@
 "About.InAppEmail" = "In-App Email";
 "About.ShowCategories" = "Показвай категориите";
 
+"Search.Search" = "Търси";
+"Search.SearchGeo" = "Търси в околноста";
+
 "Search.Freelance" = "Проект/Freelance";
 
 "Months_Short_1" = "Яну";
@@ -94,6 +98,7 @@
 "Twitter.PublishError" = "Възникна проблем при чуруликането.";
 "Facebook.PublishOK" = "Обявата беше публикувана на вашата стена.";
 "Facebook.PublishError" = "Възникна проблем при публикуване на вашата стена.";
+"LinkedIn.Authorization" = "LinkedIn";
 
 "UI.OK" = "ОК";
 "UI.Retry" = "Опитай пак";
