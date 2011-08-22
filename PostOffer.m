@@ -27,9 +27,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.navigationItem.title = NSLocalizedString(@"PostOffer", @"PostOffer");
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
+	self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 
-	scrollView.contentSize = CGSizeMake(320, 700);
+	scrollView.contentSize = CGSizeMake(320, 550);
 	[btnHuman.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
 	[btnCategory.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
 	[btnFreelance.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
@@ -48,10 +48,10 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
-	if (self.interfaceOrientation == UIInterfaceOrientationPortrait || self.interfaceOrientation == UIDeviceOrientationPortraitUpsideDown)
-		contentView.frame = CGRectMake(0, 0, 320, 700);
+	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		contentView.frame = CGRectMake(0, 0, 480, 550);
 	else
-		contentView.frame = CGRectMake(0, 0, 480, 700);
+		contentView.frame = CGRectMake(0, 0, 320, 550);
 
 	if (dataHuman == nil)
 		dataHuman = [[NSArray alloc] initWithObjects:NSLocalizedString(@"Offer_HumanCompany_1", @"Offer_HumanCompany_1"), NSLocalizedString(@"Offer_HumanCompany_2", @"Offer_HumanCompany_2"), nil];
@@ -138,6 +138,28 @@
 			tvc.descID = 2;
 		[[self navigationController] pushViewController:tvc animated:YES];
 		[tvc release];
+	}
+	else {
+		int kbHeight = 0;
+		if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+			kbHeight = 162;
+		else
+			kbHeight = 216;
+		
+		UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbHeight, 0.0);
+		scrollView.contentInset = contentInsets;
+		scrollView.scrollIndicatorInsets = contentInsets;
+		
+		CGRect aRect = self.view.frame;
+		aRect.size.height -= kbHeight;
+		if (!CGRectContainsPoint(aRect, textField.frame.origin) ) {
+			CGPoint scrollPoint;
+			if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+				scrollPoint = CGPointMake(0.0, textField.frame.origin.y - kbHeight + 88);
+			else
+				scrollPoint = CGPointMake(0.0, textField.frame.origin.y - kbHeight + 44);
+			[scrollView setContentOffset:scrollPoint animated:YES];
+		}
 	}
 }
 
