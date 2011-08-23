@@ -121,6 +121,7 @@
 		8AE9DB7213EACD2B00F12EB2 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9DB6613EACD2B00F12EB2 /* SBJsonParser.m */; };
 		8AE9DB7313EACD2B00F12EB2 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9DB6813EACD2B00F12EB2 /* SBJsonWriter.m */; };
 		8AE9DBA913EAD23900F12EB2 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9DBA813EAD23900F12EB2 /* FBLoginButton.m */; };
+		8AEBC2D21403B0C100031D3D /* BMMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -322,6 +323,8 @@
 		8AE9DB6813EACD2B00F12EB2 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		8AE9DBA713EAD23900F12EB2 /* FBLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginButton.h; sourceTree = "<group>"; };
 		8AE9DBA813EAD23900F12EB2 /* FBLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginButton.m; sourceTree = "<group>"; };
+		8AEBC2D01403B0C100031D3D /* BMMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMapAnnotation.h; sourceTree = "<group>"; };
+		8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMapAnnotation.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BombaJob-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BombaJob-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -420,6 +423,8 @@
 			children = (
 				8A0F137A13C31B730083E9E4 /* MapCoordinates.h */,
 				8A0F137B13C31B730083E9E4 /* MapCoordinates.m */,
+				8AEBC2D01403B0C100031D3D /* BMMapAnnotation.h */,
+				8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */,
 			);
 			name = Extended;
 			sourceTree = "<group>";
@@ -525,8 +530,8 @@
 			isa = PBXGroup;
 			children = (
 				8AA691FC13C1A47F004B4687 /* Search.xib */,
-				8A5019E813F93A8400C4BBE0 /* SearchGeo.xib */,
 				8A130FF513E7F50A00F0296C /* SearchResults.xib */,
+				8A5019E813F93A8400C4BBE0 /* SearchGeo.xib */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -557,10 +562,10 @@
 			children = (
 				8AA691FA13C1A47F004B4687 /* Search.h */,
 				8AA691FB13C1A47F004B4687 /* Search.m */,
-				8A5019E613F93A8400C4BBE0 /* SearchGeo.h */,
-				8A5019E713F93A8400C4BBE0 /* SearchGeo.m */,
 				8A130FF313E7F50A00F0296C /* SearchResults.h */,
 				8A130FF413E7F50A00F0296C /* SearchResults.m */,
+				8A5019E613F93A8400C4BBE0 /* SearchGeo.h */,
+				8A5019E713F93A8400C4BBE0 /* SearchGeo.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1056,6 +1061,7 @@
 				8AE9DBA913EAD23900F12EB2 /* FBLoginButton.m in Sources */,
 				8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */,
 				8A5019E913F93A8400C4BBE0 /* SearchGeo.m in Sources */,
+				8AEBC2D21403B0C100031D3D /* BMMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

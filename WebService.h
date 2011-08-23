@@ -24,6 +24,7 @@
 - (void)getJobsCompanyFinished:(id)sender;
 - (void)getTextContentFinished:(id)sender;
 - (void)searchOffersFinished:(id)sender results:(NSMutableArray *)offers;
+- (void)geoSearchOffersFinished:(id)sender results:(NSMutableArray *)offers;
 - (void)sendEmailMessageFinished:(id)sender;
 @end
 
@@ -59,6 +60,7 @@ typedef enum NLServiceOperations {
 	NLOperationGetJobsCompany,
 	NLOperationGetTextContents,
 	NLOperationSearch,
+	NLOperationSearchGeo,
 	NLOperationSendEmail
 } NLServiceOperations;
 
@@ -70,6 +72,7 @@ typedef enum NLServiceOperations {
 - (void)searchPeople:(BOOL)doFullSync;
 - (void)getTextContent;
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl;
+- (void)geoSearchOffers:(NSString *)searchTerm freelance:(BOOL)frl latitude:(float)lat longitude:(float)lon;
 - (void)sendEmailMessage:(int)offerID toEmail:(NSString *)toEmail fromEmail:(NSString *)fromEmail;
 
 @end

@@ -200,6 +200,36 @@
 		[delegate getTextContentFinished:self];
 }
 
+- (void)sendEmailMessage:(int)offerID toEmail:(NSString *)toEmail fromEmail:(NSString *)fromEmail {
+	self.OperationID = NLOperationSendEmail;
+	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"];
+	if (urlReader == nil)
+		urlReader = [[URLReader alloc] init];
+	[urlReader setDelegate:self];
+	
+	NSMutableString *postData = [[NSMutableString alloc] init];
+	[postData setString:@""];
+	[postData appendFormat:@"oid=%i", offerID];
+	[postData appendFormat:@"&toemail=%@", toEmail];
+	[postData appendFormat:@"&fromemail=%@", fromEmail];
+	
+	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"] postData:postData postMethod:@"POST"];
+	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage response = %@", xmlData];
+	if (xmlData.length > 0) {
+		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
+		[myParser setDelegate:self];
+		[myParser setShouldProcessNamespaces:NO];
+		[myParser setShouldReportNamespacePrefixes:NO];
+		[myParser setShouldResolveExternalEntities:NO];
+		[myParser parse];
+		[myParser release];
+	}
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(sendEmailMessageFinished:)])
+		[delegate sendEmailMessageFinished:self];
+	
+	[postData release];
+}
+
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl {
 	self.OperationID = NLOperationSearch;
 	[[bSettings sharedbSettings] LogThis:@"searchOffers URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=searchOffers"];
@@ -229,21 +259,22 @@
 	[postData release];
 }
 
-- (void)sendEmailMessage:(int)offerID toEmail:(NSString *)toEmail fromEmail:(NSString *)fromEmail {
-	self.OperationID = NLOperationSendEmail;
-	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"];
+- (void)geoSearchOffers:(NSString *)searchTerm freelance:(BOOL)frl latitude:(float)lat longitude:(float)lon {
+	self.OperationID = NLOperationSearchGeo;
+	[[bSettings sharedbSettings] LogThis:@"geoSearchOffers URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=geoSearchOffers"];
 	if (urlReader == nil)
 		urlReader = [[URLReader alloc] init];
 	[urlReader setDelegate:self];
 	
 	NSMutableString *postData = [[NSMutableString alloc] init];
 	[postData setString:@""];
-	[postData appendFormat:@"oid=%i", offerID];
-	[postData appendFormat:@"&toemail=%@", toEmail];
-	[postData appendFormat:@"&fromemail=%@", fromEmail];
+	[postData appendFormat:@"keyword=%@", searchTerm];
+	[postData appendFormat:@"&freelance=%@", ((frl) ? @"true" : @"false")];
+	[postData appendFormat:@"&x=%1.6f", lat];
+	[postData appendFormat:@"&y=%1.6f", lon];
 	
-	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=sendEmailMessage"] postData:postData postMethod:@"POST"];
-	[[bSettings sharedbSettings] LogThis:@"sendEmailMessage response = %@", xmlData];
+	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=geoSearchOffers"] postData:postData postMethod:@"POST"];
+	[[bSettings sharedbSettings] LogThis:@"geoSearchOffers response = %@", xmlData];
 	if (xmlData.length > 0) {
 		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
 		[myParser setDelegate:self];
@@ -253,8 +284,8 @@
 		[myParser parse];
 		[myParser release];
 	}
-	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(sendEmailMessageFinished:)])
-		[delegate sendEmailMessageFinished:self];
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(geoSearchOffersFinished:results:)])
+		[delegate geoSearchOffersFinished:self results:searchResults];
 	
 	[postData release];
 }
@@ -306,6 +337,8 @@
 		searchSingle.OfferID = [[attributeDict objectForKey:@"id"] intValue];
 		searchSingle.CategoryID = [[attributeDict objectForKey:@"cid"] intValue];
 		searchSingle.HumanYn = [[attributeDict objectForKey:@"hm"] boolValue];
+		searchSingle.gLatitude = [[attributeDict objectForKey:@"glat"] floatValue];
+		searchSingle.gLongitude = [[attributeDict objectForKey:@"glong"] floatValue];
 		searchSingle.ReadYn = NO;
 		searchSingle.SentMessageYn = NO;
 	}
@@ -376,6 +409,7 @@
 	if (self.OperationID != NLOperationPostJob &&
 		self.OperationID != NLOperationPostMessage &&
 		self.OperationID != NLOperationSearch &&
+		self.OperationID != NLOperationSearchGeo &&
 		self.OperationID != NLOperationSendEmail) {
 		NSError *error = nil;
 		if (![managedObjectContext save:&error])
@@ -420,6 +454,11 @@
 		case NLOperationSearch: {
 			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(searchOffersFinished:results:)])
 				[delegate searchOffersFinished:self results:searchResults];
+			break;
+		}
+		case NLOperationSearchGeo: {
+			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(geoSearchOffersFinished:results:)])
+				[delegate geoSearchOffersFinished:self results:searchResults];
 			break;
 		}
 		case NLOperationSendEmail: {

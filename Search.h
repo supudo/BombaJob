@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Search : UIViewController <UITextFieldDelegate> {
+@interface Search : UIViewController <UITextFieldDelegate, MapCoordinatesDelegate> {
 	UILabel *lblFreelance;
 	UITextField *txtSearch;
 	UISwitch *swFreelance;
@@ -22,5 +22,6 @@
 
 - (IBAction)iboSearch:(id)sender;
 - (IBAction)iboSearchGeo:(id)sender;
+- (void)doGeoSearch;
 
 @end

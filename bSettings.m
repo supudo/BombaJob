@@ -134,7 +134,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		}
 
 		self.doSync = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"BMDoSync"] boolValue];
+#if TARGET_IPHONE_SIMULATOR
+		self.ServicesURL = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"BMServicesURL_Local"];
+#else
 		self.ServicesURL = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"BMServicesURL"];
+#endif
 		self.BuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 		self.currentPostOfferResult = FALSE;
 		self.currentPostOfferResponse = @"";

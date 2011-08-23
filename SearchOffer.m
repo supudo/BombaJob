@@ -10,13 +10,15 @@
 
 @implementation SearchOffer
 
-@synthesize OfferID, CategoryID, HumanYn, FreelanceYn, ReadYn, SentMessageYn;
+@synthesize OfferID, CategoryID, gLatitude, gLongitude, HumanYn, FreelanceYn, ReadYn, SentMessageYn;
 @synthesize Title, Email, Positivism, Negativism, CategoryTitle, PublishDate;
 
 - (id) init {
 	if (self = [super init]) {
 		self.OfferID = 0;
 		self.CategoryID = 0;
+		self.gLatitude = 0;
+		self.gLongitude = 0;
 		self.HumanYn = TRUE;
 		self.FreelanceYn = FALSE;
 		self.ReadYn = FALSE;

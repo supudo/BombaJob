@@ -16,19 +16,23 @@ BombaJobAppDelegate *appDelegate;
 @synthesize window;
 @synthesize tabBarController;
 @synthesize mapCoordinates;
-@synthesize oauthVerifier = oauthVerifier_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	appDelegate = self;
 	
 	[self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
-	
+
+#if TARGET_IPHONE_SIMULATOR
+	if ([bSettings sharedbSettings].stGeoLocation)
+		mapCoordinates = [[MapCoordinates alloc] init];
+#else
 	if (![bSettings sharedbSettings].inDebugMode && [bSettings sharedbSettings].stGeoLocation) {
 		mapCoordinates = [[MapCoordinates alloc] init];
 		[mapCoordinates startCoor];
 	}
-	
+#endif
+
     Loading *lvc = [[Loading alloc] initWithNibName:@"Loading" bundle:nil];
     [tabBarController presentModalViewController:lvc animated:NO];
     [lvc release];

@@ -10,7 +10,6 @@
 #import "WebService.h"
 
 @interface SearchResults : UITableViewController <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
-	
 	WebService *webService;
 	NSString *searchTerm;
 	BOOL freelanceOn, searchOffline;
