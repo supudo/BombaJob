@@ -59,9 +59,9 @@ static NSString *kMapAnnonIdentifier = @"identifMapAnnon";
 - (void)drawPins {
 	pinsDropped = YES;
 #if TARGET_IPHONE_SIMULATOR
-	CLLocationCoordinate2D coord = {latitude:42.688019, longitude:23.32891};
+	CLLocationCoordinate2D coord = {.latitude = 42.688019, longitude:23.32891};
 #else
-	CLLocationCoordinate2D coord = {latitude:[bSettings sharedbSettings].LocationLatitude, longitude:[bSettings sharedbSettings].LocationLongtitude};
+	CLLocationCoordinate2D coord = {.latitude = [bSettings sharedbSettings].LocationLatitude, longitude:[bSettings sharedbSettings].LocationLongtitude};
 #endif
 	MKCoordinateSpan span = {latitudeDelta: 0.010, longitudeDelta: 0.010};
 	MKCoordinateRegion region = {coord, span};

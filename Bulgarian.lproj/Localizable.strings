@@ -109,3 +109,6 @@
 "UI.InProgress" = "In progress.";
 "UI.Categories" = "Categories";
 "UI.Offers" = "Offers";
+"UI.RefreshPullDown" = "Pull down to refresh...";
+"UI.RefreshRelease" = "Release to refresh...";
+"UI.RefreshLoading" = "Loading...";

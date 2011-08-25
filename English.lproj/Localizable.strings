@@ -111,3 +111,6 @@
 "UI.InProgress" = "Незавършена функционалност.";
 "UI.Categories" = "Категории";
 "UI.Offers" = "Оферти";
+"UI.RefreshPullDown" = "Надолу, за презареждане...";
+"UI.RefreshRelease" = "Пусни за презареждане...";
+"UI.RefreshLoading" = "Зареждане...";

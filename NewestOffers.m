@@ -93,6 +93,7 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 }
 
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {
+	[self contentRefreshed];
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@.", NSLocalizedString(@"NewJobsError", @"NewJobsError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 1;
@@ -101,6 +102,7 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 }
 
 - (void)getNewJobsFinished:(id)sender {
+	[self contentRefreshed];
 	[[bSettings sharedbSettings] stopLoading:self.view];
 	[bSettings sharedbSettings].sdlNewJobs = TRUE;
 
@@ -163,6 +165,15 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];
 	[[self navigationController] pushViewController:tvc animated:YES];
 	[tvc release];
+}
+
+- (void)refresh {
+	[self performSelector:@selector(reloadContent) withObject:nil afterDelay:2.0];
+}
+
+- (void)contentRefreshed {
+	[self.tableView reloadData];
+    [self stopLoading];
 }
 
 #pragma mark -

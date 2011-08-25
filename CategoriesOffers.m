@@ -82,6 +82,15 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 	[tvc release];
 }
 
+- (void)refresh {
+	[self performSelector:@selector(reloadContent) withObject:nil afterDelay:2.0];
+}
+
+- (void)contentRefreshed {
+	[self.tableView reloadData];
+    [self stopLoading];
+}
+
 #pragma mark -
 #pragma mark Fetch controllers
 

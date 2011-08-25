@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "WebService.h"
+#import "BMTableView.h"
 
-@interface NewestOffers : UITableViewController <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
+@interface NewestOffers : BMTableView <WebServiceDelegate, NSFetchedResultsControllerDelegate> {
 	WebService *webService;
 	NSFetchedResultsController *fetchedResultsController;
 }
@@ -21,5 +22,6 @@
 - (void)reloadContent;
 - (void)postOffer;
 - (void)designToolbar;
+- (void)contentRefreshed;
 
 @end

@@ -53,6 +53,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 }
 
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {
+	[self contentRefreshed];
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@.", NSLocalizedString(@"NewJobsError", @"NewJobsError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 1;
@@ -61,6 +62,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 }
 
 - (void)getJobsCompanyFinished:(id)sender {
+	[self contentRefreshed];
 	[[bSettings sharedbSettings] stopLoading:self.view];
 	[bSettings sharedbSettings].sdlPeople = TRUE;
 	UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:2];
@@ -261,6 +263,15 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	}
 	else
 		return nil;
+}
+
+- (void)refresh {
+	[self performSelector:@selector(reloadContent) withObject:nil afterDelay:2.0];
+}
+
+- (void)contentRefreshed {
+	[self.tableView reloadData];
+    [self stopLoading];
 }
 
 #pragma mark -

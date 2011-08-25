@@ -53,6 +53,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 }
 
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {
+	[self contentRefreshed];
 	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@.", NSLocalizedString(@"NewJobsError", @"NewJobsError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 1;
@@ -61,6 +62,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 }
 
 - (void)getJobsHumanFinished:(id)sender {
+	[self contentRefreshed];
 	[[bSettings sharedbSettings] stopLoading:self.view];
 	[bSettings sharedbSettings].sdlJobs = TRUE;
 	UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:1];
@@ -155,6 +157,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 			dbCategory *ento = ((dbCategory *)[fetchedResultsControllerCategories objectAtIndexPath:indexPath]);
 			cell.textLabel.text = ento.CategoryTitle;
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@: %i", NSLocalizedString(@"OffersCount", @"OffersCount"), [ento.OffersCount intValue]];
+			cell.
 		}
 		else {
 			cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
@@ -261,6 +264,15 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 	}
 	else
 		return nil;
+}
+
+- (void)refresh {
+	[self performSelector:@selector(reloadContent) withObject:nil afterDelay:2.0];
+}
+
+- (void)contentRefreshed {
+	[self.tableView reloadData];
+    [self stopLoading];
 }
 
 #pragma mark -
