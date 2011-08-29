@@ -157,7 +157,6 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 			dbCategory *ento = ((dbCategory *)[fetchedResultsControllerCategories objectAtIndexPath:indexPath]);
 			cell.textLabel.text = ento.CategoryTitle;
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@: %i", NSLocalizedString(@"OffersCount", @"OffersCount"), [ento.OffersCount intValue]];
-			cell.
 		}
 		else {
 			cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
