@@ -9,7 +9,8 @@ Official iPhone/iPod application for BombaJob.bg
  - OAuth Test Application // Isaiah Carew // http://github.com/yourhead/OAuth_ObjC_Test_App/tree/master
  
 ![Offers List](http://bombajob.bg/desc/toffers-list.jpg "Offers")
-  ![Offer Details](http://bombajob.bg/desc/toffer-details.jpg "Offer Details")<br>
+![Offer Details](http://bombajob.bg/desc/toffer-details.jpg "Offer Details")
+  
 ![Post Offer](http://bombajob.bg/desc/tpost-offer.jpg "Post Offer")
-  ![Settings](http://bombajob.bg/desc/tsettings.jpg "Settings")<br>
+![Settings](http://bombajob.bg/desc/tsettings.jpg "Settings")
  
