@@ -26,6 +26,7 @@
 	[txtSearch setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[btnSearch.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
 	[btnSearchGeo.titleLabel setFont:[UIFont fontWithName:@"Ubuntu" size:18]];
+    btnSearchGeo.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

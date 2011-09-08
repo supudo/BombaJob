@@ -1098,6 +1098,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1106,6 +1108,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "BombaJob-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1113,6 +1116,8 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
+				PROVISIONING_PROFILE = "58B6394C-3392-4B7F-A667-05097F33570F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Debug;
 		};
@@ -1120,6 +1125,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1127,6 +1133,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "BombaJob-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1134,6 +1141,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
+				PROVISIONING_PROFILE = "58B6394C-3392-4B7F-A667-05097F33570F";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

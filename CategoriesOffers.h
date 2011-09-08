@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "dbCategory.h"
 
-@interface CategoriesOffers : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface CategoriesOffers : BMTableView <NSFetchedResultsControllerDelegate> {
 	dbCategory *entCategory;
 	NSFetchedResultsController *fetchedResultsController;
 }
