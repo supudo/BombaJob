@@ -12,8 +12,8 @@
 
 @interface bSettings : NSObject {
 	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
-	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
-	NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse, *languageCulture;
+	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
+	NSString *ServicesURL, *BuildVersion, *NewAppVersion, *currentPostOfferResponse, *languageCulture;
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
 	NSMutableArray *latestSearchResults;
@@ -23,8 +23,8 @@
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
-@property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
-@property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *currentPostOfferResponse, *languageCulture;
+@property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
+@property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *NewAppVersion, *currentPostOfferResponse, *languageCulture;
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
 @property (nonatomic, retain) NSMutableArray *latestSearchResults;

@@ -12,6 +12,7 @@
 #import <MessageUI/MessageUI.h>
 #import "WebService.h"
 #import "BlackAlertView.h"
+#import <iAd/iAd.h>
 // Twitter
 #import "SA_OAuthTwitterController.h"
 // Facebook
@@ -22,7 +23,7 @@
 @class SA_OAuthTwitterEngine;
 @class MPOAuthAPI;
 
-@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate,
+@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, ADBannerViewDelegate,
 									SA_OAuthTwitterControllerDelegate,
 									FBRequestDelegate, FBDialogDelegate, FBSessionDelegate> {
 	dbJobOffer *entOffer;
@@ -31,7 +32,8 @@
 	UIView *contentView;
 	UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 	UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
-	UIButton *btnEmail, *btnTwitter;
+    UIButton *btnEmail, *btnTwitter;
+    ADBannerView *bannerView;
 	WebService *webService;
 	SA_OAuthTwitterEngine *_twitterEngine;
 	Facebook *_facebookEngine;
@@ -46,6 +48,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 @property (nonatomic, retain) IBOutlet UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
 @property (nonatomic, retain) IBOutlet UIButton *btnEmail, *btnTwitter;
+@property(nonatomic, retain) IBOutlet ADBannerView *bannerView;
 @property (nonatomic, retain) WebService *webService;
 @property (readonly) Facebook *_facebookEngine;
 
@@ -59,5 +62,7 @@
 - (IBAction)sendTwitter:(id)sender;
 - (void)showEmailBox;
 - (void)twitterPost;
+- (void)showBanner;
+- (void)layoutForCurrentOrientation:(BOOL)animated;
 
 @end

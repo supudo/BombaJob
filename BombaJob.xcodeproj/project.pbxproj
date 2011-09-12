@@ -125,6 +125,7 @@
 		8AE9DB7313EACD2B00F12EB2 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9DB6813EACD2B00F12EB2 /* SBJsonWriter.m */; };
 		8AE9DBA913EAD23900F12EB2 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9DBA813EAD23900F12EB2 /* FBLoginButton.m */; };
 		8AEBC2D21403B0C100031D3D /* BMMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */; };
+		8AF27217141E021300117DBC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF27216141E021300117DBC /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -332,6 +333,7 @@
 		8AE9DBA813EAD23900F12EB2 /* FBLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginButton.m; sourceTree = "<group>"; };
 		8AEBC2D01403B0C100031D3D /* BMMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMapAnnotation.h; sourceTree = "<group>"; };
 		8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMapAnnotation.m; sourceTree = "<group>"; };
+		8AF27216141E021300117DBC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* BombaJob-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BombaJob-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -340,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF27217141E021300117DBC /* iAd.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -379,6 +382,7 @@
 		29B97314FDCFA39411CA2CEA /* BombaJob */ = {
 			isa = PBXGroup;
 			children = (
+				8AF27216141E021300117DBC /* iAd.framework */,
 				8AA691B613C1A2B7004B4687 /* Utils */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,

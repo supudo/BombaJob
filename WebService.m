@@ -12,10 +12,32 @@
 @implementation WebService
 
 @synthesize delegate, urlReader, managedObjectContext, OperationID;
-@synthesize entCategory, entOffer, entTextContent, searchResults, searchSingle;
+@synthesize entCategory, entOffer, entTextContent, searchResults, searchSingle, entSetting;
 
 #pragma mark -
 #pragma mark Services
+
+- (void)getConfiguration {
+	self.OperationID = NLOperationConfigs;
+	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
+	[[bSettings sharedbSettings] LogThis:@"getConfig URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getConfig"];
+	if (urlReader == nil)
+		urlReader = [[URLReader alloc] init];
+	[urlReader setDelegate:self];
+	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=getConfig"] postData:@"" postMethod:@"GET"];
+	[[bSettings sharedbSettings] LogThis:@"getConfig response = %@", xmlData];
+	if (xmlData.length > 0) {
+		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
+		[myParser setDelegate:self];
+		[myParser setShouldProcessNamespaces:NO];
+		[myParser setShouldReportNamespacePrefixes:NO];
+		[myParser setShouldResolveExternalEntities:NO];
+		[myParser parse];
+		[myParser release];
+	}
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(configFinshed:)])
+		[delegate configFinshed:self];
+}
 
 - (void)postNewJob {
 	self.OperationID = NLOperationPostJob;
@@ -342,6 +364,30 @@
 		searchSingle.ReadYn = NO;
 		searchSingle.SentMessageYn = NO;
 	}
+	else if ([elementName isEqualToString:@"getConfig"]) {
+        NSString *sVersion = [attributeDict objectForKey:@"version"];
+        BOOL sShowBanners = [[attributeDict objectForKey:@"showBanners"] boolValue];
+        [bSettings sharedbSettings].NewAppVersion = sVersion;
+        [bSettings sharedbSettings].stShowBanners = sShowBanners;
+
+        entSetting = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"NewAppVersion"]];
+		if (entSetting != nil && ![entSetting.SValue isEqualToString:@""])
+			entSetting.SValue = sVersion;
+		else {
+			entSetting = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:managedObjectContext];
+			[entSetting setSName:@"NewAppVersion"];
+			[entSetting setSValue:sVersion];
+		}
+        
+        entSetting = (dbSettings *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"ShowBanners"]];
+		if (entSetting != nil && ![entSetting.SValue isEqualToString:@""])
+			entSetting.SValue = ((sShowBanners) ? @"TRUE" : @"FALSE");
+		else {
+			entSetting = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:managedObjectContext];
+			[entSetting setSName:@"ShowBanners"];
+			[entSetting setSValue:@"TRUE"];
+		}
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
@@ -466,6 +512,11 @@
 				[delegate sendEmailMessageFinished:self];
 			break;
 		}
+		case NLOperationConfigs: {
+			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(configFinshed:)])
+				[delegate configFinshed:self];
+			break;
+		}
 		default:
 			break;
 	}
@@ -482,6 +533,7 @@
 	[entTextContent release];
 	[searchResults release];
 	[searchSingle release];
+    [entSetting release];
 	[super dealloc];
 }
 

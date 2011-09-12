@@ -19,7 +19,7 @@
 @implementation Offer
 
 @synthesize entOffer, searchOffer;
-@synthesize scrollView, contentView;
+@synthesize scrollView, contentView, bannerView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
 @synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
 @synthesize btnEmail, btnTwitter, webService;
@@ -46,18 +46,15 @@
         _facebookEngine.accessToken = [defaults objectForKey:@"FacebookAccessTokenKey"];
         _facebookEngine.expirationDate = [defaults objectForKey:@"FacebookExpirationDateKey"];
 	}
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	scrollView.contentSize = CGSizeMake(320, 400);
+	scrollView.contentSize = CGSizeMake(320, 450);
 
 	[self loadContent];
 	[self doDesign];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
+    [self showBanner];
 }
 
 - (void)loadContent {
@@ -239,13 +236,24 @@
 	
 	// Scroll view
 	frameTemp = scrollView.frame;
-	scrollView.contentSize = CGSizeMake(contentView.frame.size.width, contentView.frame.size.height);
+	scrollView.contentSize = CGSizeMake(contentView.frame.size.width, contentView.frame.size.height + 50);
 	scrollView.frame = frameTemp;
 	
 	// self
 	frameTemp = self.view.frame;
-	frameTemp.size.height = scrollView.frame.size.height;
+	frameTemp.size.height = scrollView.frame.size.height + 50;
 	self.view.frame = frameTemp;
+}
+
+- (void)showBanner {
+    if ([bSettings sharedbSettings].stShowBanners) {
+        self.bannerView.requiredContentSizeIdentifiers = (&ADBannerContentSizeIdentifierPortrait != nil) ?
+        [NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil] : 
+        [NSSet setWithObjects:ADBannerContentSizeIdentifier320x50, ADBannerContentSizeIdentifier480x32, nil];
+        [self layoutForCurrentOrientation:NO];
+    }
+    else
+        self.bannerView.hidden = YES;
 }
 
 #pragma mark -
@@ -570,6 +578,56 @@
 #pragma mark -
 #pragma mark LinkedIn
 
+
+
+#pragma mark -
+#pragma mark Banners
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    [self layoutForCurrentOrientation:YES];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [self layoutForCurrentOrientation:YES];
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    // While the banner is visible, we don't need to tie up Core Location to track the user location
+    // so we turn off the map's display of the user location. We'll turn it back on when the ad is dismissed.
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+    // Now that the banner is dismissed, we track the user's location again.
+}
+
+- (void)layoutForCurrentOrientation:(BOOL)animated {
+    CGFloat animationDuration = animated ? 0.2f : 0.0f;
+    CGRect contentFrame = self.contentView.bounds;
+	CGPoint bannerOrigin = CGPointMake(CGRectGetMinX(contentFrame), CGRectGetMaxY(contentFrame));
+    CGFloat bannerHeight = 0.0f;
+    
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		self.bannerView.currentContentSizeIdentifier = (&ADBannerContentSizeIdentifierLandscape != nil) ? ADBannerContentSizeIdentifierLandscape : ADBannerContentSizeIdentifier480x32;
+    else
+        self.bannerView.currentContentSizeIdentifier = (&ADBannerContentSizeIdentifierPortrait != nil) ? ADBannerContentSizeIdentifierPortrait : ADBannerContentSizeIdentifier320x50; 
+    bannerHeight = self.bannerView.bounds.size.height;
+
+    if (self.bannerView.bannerLoaded) {
+        contentFrame.size.height -= bannerHeight;
+		bannerOrigin.y -= bannerHeight;
+    }
+    else
+		bannerOrigin.y += bannerHeight;
+    
+    [UIView animateWithDuration:animationDuration
+                     animations:^{
+                         self.contentView.frame = contentFrame;
+                         [contentView layoutIfNeeded];
+                         self.bannerView.frame = CGRectMake(bannerOrigin.x, bannerOrigin.y + 50, self.bannerView.frame.size.width, self.bannerView.frame.size.height);
+                     }];
+}
+
 #pragma mark -
 #pragma mark System
 
@@ -618,6 +676,9 @@
 	[_twitterEngine release];
 	_facebookEngine = nil;
 	[_facebookEngine release];
+    bannerView.delegate = nil;
+    bannerView = nil;
+    [bannerView release];
     [super viewDidUnload];
 }
 
@@ -641,6 +702,8 @@
 	[_twitterEngine release];
 	[_facebookEngine release];
 	[_fbButton release];
+    bannerView.delegate = nil;
+    [bannerView release];
     [super dealloc];
 }
 

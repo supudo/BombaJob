@@ -10,16 +10,17 @@
 
 @implementation Sync
 
-@synthesize delegate, webService;
+@synthesize delegate, webService, doFullSync;
 
 #pragma mark -
 #pragma mark Init
 
-- (void)startSync:(BOOL)doFullSync {
+- (void)startSync:(BOOL)fullSync {
+    self.doFullSync = fullSync;
 	if (webService == nil)
 		webService = [[[WebService alloc] init] retain];
 	[webService setDelegate:self];
-	[webService getCategories:doFullSync];
+	[webService getConfiguration];
 }
 
 - (void)finishSync {
@@ -33,6 +34,10 @@
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {
 	if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(syncError:error:)])
 		[delegate syncError:self error:errorMessage];
+}
+
+- (void)configFinshed:(id)sender {
+	[self.webService getCategories:doFullSync];
 }
 
 - (void)getCategoriesFinished:(id)sender {

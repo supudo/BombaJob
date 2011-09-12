@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "dbCategory.h"
+#import "BMTableView.h"
 
 @interface CategoriesOffers : BMTableView <NSFetchedResultsControllerDelegate> {
 	dbCategory *entCategory;

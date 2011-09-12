@@ -14,8 +14,8 @@
 @implementation bSettings
 
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse, shouldRotate;
-@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories;
-@synthesize ServicesURL, BuildVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults, languageCulture;
+@synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
+@synthesize ServicesURL, BuildVersion, NewAppVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults, languageCulture;
 @synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret, facebookAppID, facebookAppSecret;
 @synthesize linkedInOAuthConsumerKey, linkedInOAuthConsumerSecret;
 
@@ -56,6 +56,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		self.stOnlineSearch = TRUE;
 		self.stInAppEmail = FALSE;
 		self.stShowCategories = TRUE;
+        self.stShowBanners = TRUE;
+        self.NewAppVersion = @"";
 		
 		self.twitterOAuthConsumerKey = @"OVvHQ1wio8LZklS5mRUuA";
 		self.twitterOAuthConsumerSecret = @"zZm0RsfzkLpF3FYnxcM3BDZdxHA6sPLoPiTcBvohUEo";
@@ -125,6 +127,26 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 			[ent setSName:@"ShowCategories"];
 			[ent setSValue:@"TRUE"];
 			self.stShowCategories = TRUE;
+		}
+
+        ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"NewAppVersion"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.NewAppVersion = ent.SValue;
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"NewAppVersion"];
+			[ent setSValue:@""];
+            self.NewAppVersion = @"";
+		}
+        
+        ent = (dbSettings *)[dbManagedObjectContext getEntity:@"Settings" predicate:[NSPredicate predicateWithFormat:@"SName = %@", @"ShowBanners"]];
+		if (ent != nil && ![ent.SValue isEqualToString:@""])
+			self.stShowBanners = [ent.SValue boolValue];
+		else {
+			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
+			[ent setSName:@"ShowBanners"];
+			[ent setSValue:@"FALSE"];
+            self.stShowBanners = TRUE;
 		}
 
 		NSError *error = nil;

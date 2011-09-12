@@ -12,6 +12,7 @@
 #import "dbJobOffer.h"
 #import "dbTextContent.h"
 #import "SearchOffer.h"
+#import "dbSettings.h"
 
 @protocol WebServiceDelegate <NSObject>
 @optional
@@ -26,6 +27,7 @@
 - (void)searchOffersFinished:(id)sender results:(NSMutableArray *)offers;
 - (void)geoSearchOffersFinished:(id)sender results:(NSMutableArray *)offers;
 - (void)sendEmailMessageFinished:(id)sender;
+- (void)configFinshed:(id)sender;
 @end
 
 @interface WebService : NSObject <NSXMLParserDelegate, URLReaderDelegate> {
@@ -39,6 +41,7 @@
 	dbTextContent *entTextContent;
 	NSMutableArray *searchResults;
 	SearchOffer *searchSingle;
+    dbSettings *entSetting;
 }
 
 @property (assign) id<WebServiceDelegate> delegate;
@@ -50,6 +53,7 @@
 @property (nonatomic, retain) dbTextContent *entTextContent;
 @property (nonatomic, retain) NSMutableArray *searchResults;
 @property (nonatomic, retain) SearchOffer *searchSingle;
+@property (nonatomic, retain) dbSettings *entSetting;
 
 typedef enum NLServiceOperations {
 	NLOperationPostJob = 0,
@@ -61,9 +65,11 @@ typedef enum NLServiceOperations {
 	NLOperationGetTextContents,
 	NLOperationSearch,
 	NLOperationSearchGeo,
-	NLOperationSendEmail
+	NLOperationSendEmail,
+	NLOperationConfigs
 } NLServiceOperations;
 
+- (void)getConfiguration;
 - (void)postNewJob;
 - (void)postMessage:(int)offerID message:(NSString *)msg;
 - (void)getCategories:(BOOL)doFullSync;
