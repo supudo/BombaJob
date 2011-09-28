@@ -18,12 +18,12 @@
 @interface Sync : NSObject <WebServiceDelegate> {
 	id<SyncDelegate> delegate;
 	WebService *webService;
-    BOOL doFullSync;
+    BOOL doFullSync, xmlErrorOccured;
 }
 
 @property (assign) id<SyncDelegate> delegate;
 @property (nonatomic, retain) WebService *webService;
-@property BOOL doFullSync;
+@property BOOL doFullSync, xmlErrorOccured;
 
 - (void)startSync:(BOOL)fullSync;
 - (void)finishSync;

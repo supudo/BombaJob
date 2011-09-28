@@ -382,7 +382,6 @@
 		29B97314FDCFA39411CA2CEA /* BombaJob */ = {
 			isa = PBXGroup;
 			children = (
-				8AF27216141E021300117DBC /* iAd.framework */,
 				8AA691B613C1A2B7004B4687 /* Utils */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -416,6 +415,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AF27216141E021300117DBC /* iAd.framework */,
 				8A501A6813F9419300C4BBE0 /* MapKit.framework */,
 				8A13113B13E80BD200F0296C /* MessageUI.framework */,
 				8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */,

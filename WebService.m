@@ -322,7 +322,8 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
 	if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(serviceError:error:)])
-		[delegate serviceError:self error:[parseError localizedDescription]];
+        [delegate serviceError:self error:NSLocalizedString(@"SyncError.XMLError", @"SyncError.XMLError")];
+		//[delegate serviceError:self error:[parseError localizedDescription]];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {

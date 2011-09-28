@@ -10,13 +10,14 @@
 
 @implementation Sync
 
-@synthesize delegate, webService, doFullSync;
+@synthesize delegate, webService, doFullSync, xmlErrorOccured;
 
 #pragma mark -
 #pragma mark Init
 
 - (void)startSync:(BOOL)fullSync {
     self.doFullSync = fullSync;
+    self.xmlErrorOccured = FALSE;
 	if (webService == nil)
 		webService = [[[WebService alloc] init] retain];
 	[webService setDelegate:self];
@@ -32,20 +33,24 @@
 #pragma mark Workers
 
 - (void)serviceError:(id)sender error:(NSString *)errorMessage {
+    self.xmlErrorOccured = TRUE;
 	if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(syncError:error:)])
 		[delegate syncError:self error:errorMessage];
 }
 
 - (void)configFinshed:(id)sender {
-	[self.webService getCategories:doFullSync];
+    if (!self.xmlErrorOccured)
+        [self.webService getCategories:doFullSync];
 }
 
 - (void)getCategoriesFinished:(id)sender {
-	[self.webService getTextContent];
+    if (!self.xmlErrorOccured)
+        [self.webService getTextContent];
 }
 
 - (void)getTextContentFinished:(id)sender {
-	[self finishSync];
+    if (!self.xmlErrorOccured)
+        [self finishSync];
 }
 
 #pragma mark -

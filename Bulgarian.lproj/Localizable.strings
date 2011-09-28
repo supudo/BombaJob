@@ -13,6 +13,7 @@
 "NewOffers" = "New";
 "NewJobsError" = "Error!";
 "SyncError" = "Error!";
+"SyncError.XMLError" = "Problem with the site...";
 "OfferMessageError" = "Error!";
 "OfferMessageError.EmptyMessage" = "Your message is empty.";
 "Search" = "Search";
