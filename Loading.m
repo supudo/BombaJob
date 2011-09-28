@@ -67,7 +67,7 @@
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (actionSheet.tag == 1 && buttonIndex == 1)
+	if (actionSheet.tag == 2 && buttonIndex == 1)
 		[self loadSync];
 	else
 		[appDelegate loadingFinished];
