@@ -44,7 +44,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
 - (id) init {
 	if (self = [super init]) {
+#if TARGET_IPHONE_SIMULATOR
 		self.inDebugMode = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"BMInDebugMode"] boolValue];
+#else
+		self.inDebugMode = FALSE;
+#endif
 		self.sdlNewJobs = FALSE;
 		self.sdlJobs = FALSE;
 		self.sdlPeople = FALSE;
@@ -146,7 +150,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 			ent = (dbSettings *)[NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[dbManagedObjectContext managedObjectContext]];
 			[ent setSName:@"ShowBanners"];
 			[ent setSValue:@"FALSE"];
-            self.stShowBanners = TRUE;
+            self.stShowBanners = FALSE;
 		}
 
 		NSError *error = nil;
