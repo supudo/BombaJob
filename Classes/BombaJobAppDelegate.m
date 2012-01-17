@@ -50,6 +50,14 @@ BombaJobAppDelegate *appDelegate;
     navigationController.navigationBar.topItem.rightBarButtonItem = nil;
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [[bSettings sharedbSettings]._facebookEngine handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[bSettings sharedbSettings]._facebookEngine handleOpenURL:url];
+}
+
 - (void)dealloc {
     [tabBarController release];
     [window release];

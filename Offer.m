@@ -22,8 +22,7 @@
 @synthesize scrollView, contentView, bannerView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
 @synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
-@synthesize btnEmail, btnTwitter, webService;
-@synthesize _facebookEngine;
+@synthesize btnEmail, btnTwitter, btnFacebook, webService, facebookPostSuccess;
 
 #pragma mark -
 #pragma mark Work
@@ -39,13 +38,13 @@
 	if (webService == nil)
 		webService = [[WebService alloc] init];
 
-	_facebookEngine = [[Facebook alloc] initWithAppId:[bSettings sharedbSettings].facebookAppID];
+	[bSettings sharedbSettings]._facebookEngine = [[Facebook alloc] initWithAppId:[bSettings sharedbSettings].facebookAppID urlSchemeSuffix:@"iphone" andDelegate:self];
 	//https://developers.facebook.com/docs/guides/mobile/
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	if ([defaults objectForKey:@"FacebookAccessTokenKey"] && [defaults objectForKey:@"FacebookExpirationDateKey"]) {
-        _facebookEngine.accessToken = [defaults objectForKey:@"FacebookAccessTokenKey"];
-        _facebookEngine.expirationDate = [defaults objectForKey:@"FacebookExpirationDateKey"];
-	}
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        [bSettings sharedbSettings]._facebookEngine.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        [bSettings sharedbSettings]._facebookEngine.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -318,7 +317,7 @@
 		if ([MFMailComposeViewController canSendMail]) {
 			MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 			[mailController setMailComposeDelegate:self];
-			NSString *subject = [NSString stringWithFormat:@"%@%i", NSLocalizedString(@"Offer_EmailSubjectByUser", @"Offer_EmailSubjectByUser"), ((entOffer == nil) ? searchOffer.OfferID : [entOffer.OfferID intValue])];
+			NSString *subject = [NSString stringWithFormat:@"%@ #%i", NSLocalizedString(@"Offer_EmailSubjectByUser", @"Offer_EmailSubjectByUser"), ((entOffer == nil) ? searchOffer.OfferID : [entOffer.OfferID intValue])];
 			[mailController setSubject:subject];
 			[mailController setToRecipients:[NSArray arrayWithObjects:((entOffer == nil) ? searchOffer.Email : entOffer.Email), nil]];
 			[mailController setCcRecipients:nil];
@@ -517,68 +516,77 @@
 #pragma mark Facebook
 
 - (IBAction)sendFacebook:(id)sender {
-	SBJSON *jsonWriter = [[SBJSON new] autorelease];
-	
-	NSDictionary *actionLinks = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
-														   @"BombaJob.bg", @"text", @"http://bombajob.bg/", @"href", nil], nil];
-	NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
+    facebookPostSuccess = FALSE;
+    if (![[bSettings sharedbSettings]._facebookEngine isSessionValid]) {
+        NSArray *permissions = [[NSArray alloc] initWithObjects:@"publish_stream", nil];
+        [[bSettings sharedbSettings]._facebookEngine authorize:permissions];
+        [permissions release];
+    }
+    else {
+        SBJSON *jsonWriter = [[SBJSON new] autorelease];
 
-	NSDictionary *attachment = [NSDictionary dictionaryWithObjectsAndKeys:
-								((searchOffer == nil) ? entOffer.Title : searchOffer.Title), @"name",
-								[[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism)], @"caption",
-								[[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Negativism : searchOffer.Negativism)], @"description",
-								[NSString stringWithFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)], @"href",
-								nil];
-	NSString *attachmentStr = [jsonWriter stringWithObject:attachment];
+        NSArray* actionLinks = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          @"BombaJob.bg",@"name",@"http://www.bombajob.bg/", @"link", nil], nil];
+        NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
 
-	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-								   @"Share on Facebook",  @"user_message_prompt",
-								   actionLinksStr, @"action_links",
-								   attachmentStr, @"attachment",
-								   nil];
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       ((searchOffer == nil) ? entOffer.Title : searchOffer.Title), @"name",
+                                       [[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism)], @"caption",
+                                       [[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Negativism : searchOffer.Negativism)], @"description",
+                                       [NSString stringWithFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)], @"link",
+                                       actionLinksStr, @"actions",
+                                       nil];
 
-	[_facebookEngine dialog:@"stream.publish" andParams:params andDelegate:self];
+        [[bSettings sharedbSettings]._facebookEngine dialog:@"feed" andParams:params andDelegate:self];
+    }
 }
 
 - (void)fbDidLogin {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[_facebookEngine accessToken] forKey:@"FacebookAccessTokenKey"];
-    [defaults setObject:[_facebookEngine expirationDate] forKey:@"FacebookExpirationDateKey"];
+    [defaults setObject:[[bSettings sharedbSettings]._facebookEngine accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[[bSettings sharedbSettings]._facebookEngine expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
 }
 
-- (void)dialogDidComplete:(FBDialog *)dialog {
-	[[bSettings sharedbSettings] LogThis:@"Facebook publish successfull."];
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Facebook.PublishOK", @"Facebook.PublishOK")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	alert.tag = 791;
-	[alert show];
-	[alert release];
+- (void)dialog:(FBDialog*)dialog didFailWithError:(NSError *)error {
+    [[bSettings sharedbSettings] LogThis:@"Facebook error %@", [[error userInfo] objectForKey:@"error_msg"]];
+    if (!facebookPostSuccess) {
+        [BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+        BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"Facebook.PublishError", @"Facebook.PublishError"), [error localizedDescription]] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+        alert.tag = 792;
+        [alert show];
+        [alert release];
+    }
 }
 
-- (void)request:(FBRequest *)request didLoad:(id)result {
-	if ([result isKindOfClass:[NSArray class]])
-		result = [result objectAtIndex:0];
+- (void)dialogCompleteWithUrl:(NSURL *)url {
+    if (![url query]) {
+        [[bSettings sharedbSettings] LogThis:@"Facebook - User canceled dialog or there was an error"];
+        return;
+    }
 
-	if ([result objectForKey:@"owner"])
-		[[bSettings sharedbSettings] LogThis:@"Facebook Photo upload Success"];
-	else
-		[[bSettings sharedbSettings] LogThis:@"Facebook result : %@", [result objectForKey:@"name"]];
+    NSDictionary *params = [self parseFacebookURL:[url query]];
+    if ([params valueForKey:@"post_id"]) {
+        facebookPostSuccess = TRUE;
+        [[bSettings sharedbSettings] LogThis:@"Facebook - Published feed successfully. Post ID = %@", [params valueForKey:@"post_id"]];
+        [BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+        BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Facebook.PublishOK", @"Facebook.PublishOK")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+        alert.tag = 791;
+        [alert show];
+        [alert release];
+    }
 }
 
-- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
-	[[bSettings sharedbSettings] LogThis:@"Facebook failed ... %@", [error localizedDescription]];
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"Facebook.PublishError", @"Facebook.PublishError"), [error localizedDescription]] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	alert.tag = 792;
-	[alert show];
-	[alert release];
+- (NSDictionary *)parseFacebookURL:(NSString *)query {
+	NSArray *pairs = [query componentsSeparatedByString:@"&"];
+	NSMutableDictionary *params = [[[NSMutableDictionary alloc] init] autorelease];
+	for (NSString *pair in pairs) {
+		NSArray *kv = [pair componentsSeparatedByString:@"="];
+		NSString *val = [[kv objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		[params setObject:val forKey:[kv objectAtIndex:0]];
+	}
+    return params;
 }
-
-#pragma mark -
-#pragma mark LinkedIn
-
-
 
 #pragma mark -
 #pragma mark Banners
@@ -674,8 +682,6 @@
 	[webService release];
 	_twitterEngine = nil;
 	[_twitterEngine release];
-	_facebookEngine = nil;
-	[_facebookEngine release];
     bannerView.delegate = nil;
     bannerView = nil;
     [bannerView release];
@@ -698,10 +704,9 @@
 	[btnEmail release];
 	[btnFacebook release];
 	[btnTwitter release];
+    [btnFacebook release];
 	[webService release];
 	[_twitterEngine release];
-	[_facebookEngine release];
-	[_fbButton release];
     bannerView.delegate = nil;
     [bannerView release];
     [super dealloc];

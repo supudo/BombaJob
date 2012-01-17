@@ -150,13 +150,14 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 	}
 	dbJobOffer *ento = ((dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath]);
-	cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
+	//cell.imageView.image = (([ento.SentMessageYn boolValue]) ? [UIImage imageNamed:@"message-sent.png"] : nil);
+    cell.imageView.image = (([ento.HumanYn boolValue]) ? [UIImage imageNamed:@"icon_person.png"] : [UIImage imageNamed:@"icon_company.png"]);
 	cell.textLabel.text = ento.Title;
 	if (![ento.ReadYn boolValue])
 		[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14.0]];
 	else
 		[cell.textLabel setFont:[UIFont fontWithName:@"Ubuntu" size:14.0]];
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ // %@", (([ento.HumanYn boolValue]) ? NSLocalizedString(@"Offer_IShort_Human", @"Offer_IShort_Human") : NSLocalizedString(@"Offer_IShort_Company", @"Offer_IShort_Company")), [[bSettings sharedbSettings] getOfferDate:ento.PublishDate]];
+	cell.detailTextLabel.text = [[bSettings sharedbSettings] getOfferDate:ento.PublishDate];
 	return cell;
 }
 

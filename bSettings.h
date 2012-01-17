@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SynthesizeSingleton.h"
 #import "CurrentOffer.h"
+#import "FBConnect.h"
 
 @interface bSettings : NSObject {
 	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
@@ -20,6 +21,7 @@
 	NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret;
 	NSString *facebookAppID, *facebookAppSecret;
 	NSString *linkedInOAuthConsumerKey, *linkedInOAuthConsumerSecret;
+	Facebook *_facebookEngine;
 }
 
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) NSString *twitterOAuthConsumerKey, *twitterOAuthConsumerSecret;
 @property (nonatomic, retain) NSString *facebookAppID, *facebookAppSecret;
 @property (nonatomic, retain) NSString *linkedInOAuthConsumerKey, *linkedInOAuthConsumerSecret;
+@property (nonatomic, retain) Facebook *_facebookEngine;
 
 - (void)LogThis:(NSString *)log, ...;
 - (BOOL)connectedToInternet;

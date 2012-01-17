@@ -16,29 +16,24 @@
 // Twitter
 #import "SA_OAuthTwitterController.h"
 // Facebook
-#import "FBConnect.h"
-#import "FBLoginButton.h"
-// LinkedIn
 
 @class SA_OAuthTwitterEngine;
 @class MPOAuthAPI;
 
 @interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, ADBannerViewDelegate,
 									SA_OAuthTwitterControllerDelegate,
-									FBRequestDelegate, FBDialogDelegate, FBSessionDelegate> {
+									FBDialogDelegate, FBSessionDelegate> {
 	dbJobOffer *entOffer;
 	SearchOffer *searchOffer;
 	UIScrollView *scrollView;
 	UIView *contentView;
 	UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 	UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
-    UIButton *btnEmail, *btnTwitter;
+    UIButton *btnEmail, *btnTwitter, *btnFacebook;
     ADBannerView *bannerView;
 	WebService *webService;
 	SA_OAuthTwitterEngine *_twitterEngine;
-	Facebook *_facebookEngine;
-	FBLoginButton *_fbButton, *btnFacebook;
-	MPOAuthAPI *_oauthAPI;
+    BOOL facebookPostSuccess;
 }
 
 @property (nonatomic, retain) dbJobOffer *entOffer;
@@ -47,10 +42,10 @@
 @property (nonatomic, retain) IBOutlet UIView *contentView;
 @property (nonatomic, retain) IBOutlet UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
 @property (nonatomic, retain) IBOutlet UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
-@property (nonatomic, retain) IBOutlet UIButton *btnEmail, *btnTwitter;
-@property(nonatomic, retain) IBOutlet ADBannerView *bannerView;
+@property (nonatomic, retain) IBOutlet UIButton *btnEmail, *btnTwitter, *btnFacebook;
+@property (nonatomic, retain) IBOutlet ADBannerView *bannerView;
 @property (nonatomic, retain) WebService *webService;
-@property (readonly) Facebook *_facebookEngine;
+@property BOOL facebookPostSuccess;
 
 - (void)setText:(NSString *)txt control:(UITextView *)txtView;
 - (void)loadContent;
@@ -64,5 +59,6 @@
 - (void)twitterPost;
 - (void)showBanner;
 - (void)layoutForCurrentOrientation:(BOOL)animated;
+- (NSDictionary *)parseFacebookURL:(NSString *)query;
 
 @end

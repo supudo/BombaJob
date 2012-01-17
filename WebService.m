@@ -348,6 +348,7 @@
 		[entOffer setOfferID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"id"] intValue]]];
 		[entOffer setCategoryID:[NSNumber numberWithInt:[[attributeDict objectForKey:@"cid"] intValue]]];
 		[entOffer setHumanYn:[NSNumber numberWithInt:[[attributeDict objectForKey:@"hm"] intValue]]];
+		[entOffer setFreelanceYn:[NSNumber numberWithInt:[[attributeDict objectForKey:@"fyn"] intValue]]];
 		dbCategory *tc = (dbCategory *)[[DBManagedObjectContext sharedDBManagedObjectContext] getEntity:@"Category" predicateString:[NSString stringWithFormat:@"CategoryID = %@", [attributeDict objectForKey:@"cid"]]];
 		[entOffer setCategory:tc];
 	}
@@ -360,6 +361,7 @@
 		searchSingle.OfferID = [[attributeDict objectForKey:@"id"] intValue];
 		searchSingle.CategoryID = [[attributeDict objectForKey:@"cid"] intValue];
 		searchSingle.HumanYn = [[attributeDict objectForKey:@"hm"] boolValue];
+        searchSingle.FreelanceYn = [[attributeDict objectForKey:@"fyn"] boolValue];
 		searchSingle.gLatitude = [[attributeDict objectForKey:@"glat"] floatValue];
 		searchSingle.gLongitude = [[attributeDict objectForKey:@"glong"] floatValue];
 		searchSingle.ReadYn = NO;
