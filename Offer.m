@@ -13,6 +13,8 @@
 #import "dbSettings.h"
 #import "SA_OAuthTwitterEngine.h"
 #import "DDAlertPrompt.h"
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
 
 #define kOFFSET_FOR_KEYBOARD 60.0
 
@@ -444,17 +446,54 @@
 #pragma mark -
 #pragma mark Twitter
 
+- (BOOL)isTwitterSDKAvailable {
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+    BOOL twitterSDKAvailable = tweetViewController != nil;
+    if (tweetViewController != nil)
+        [tweetViewController release];
+    return twitterSDKAvailable;
+}
+
 - (IBAction)sendTwitter:(id)sender {
-	if (_twitterEngine)
-		return;
-	_twitterEngine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
-	_twitterEngine.consumerKey = [bSettings sharedbSettings].twitterOAuthConsumerKey;
-	_twitterEngine.consumerSecret = [bSettings sharedbSettings].twitterOAuthConsumerSecret;
-	UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_twitterEngine delegate:self];
-	if (controller) 
-		[self presentModalViewController:controller animated:YES];
-	else
-		[self twitterPost];
+    if ([self isTwitterSDKAvailable]) {
+        NSMutableString *twitterMessage = [[NSMutableString alloc] init];
+        [twitterMessage setString:@"BombaJob.bg - "];
+        [twitterMessage appendFormat:@"%@ : ", ((searchOffer == nil) ? entOffer.Title : searchOffer.Title)];
+        [twitterMessage appendFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)];
+        [twitterMessage appendFormat:@" #bombajobbg"];
+
+        TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+        [tweetViewController setInitialText:twitterMessage];
+        [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+            switch (result) {
+                case TWTweetComposeViewControllerResultCancelled:
+                    [[bSettings sharedbSettings] LogThis:@"Twitting cancelled."];
+                    break;
+                case TWTweetComposeViewControllerResultDone:
+                    [[bSettings sharedbSettings] LogThis:@"Twitting successfull."];
+                    [self performSelectorOnMainThread:@selector(requestSucceeded:) withObject:@"" waitUntilDone:NO];
+                    break;
+                default:
+                    break;
+            }
+            [self dismissModalViewControllerAnimated:YES];
+        }];
+        
+        [self presentModalViewController:tweetViewController animated:YES];
+        [twitterMessage release];
+    }
+    else {
+        if (_twitterEngine)
+            return;
+        _twitterEngine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
+        _twitterEngine.consumerKey = [bSettings sharedbSettings].twitterOAuthConsumerKey;
+        _twitterEngine.consumerSecret = [bSettings sharedbSettings].twitterOAuthConsumerSecret;
+        UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_twitterEngine delegate:self];
+        if (controller) 
+            [self presentModalViewController:controller animated:YES];
+        else
+            [self twitterPost];
+    }
 }
 
 - (void)twitterPost {

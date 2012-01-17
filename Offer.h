@@ -15,7 +15,6 @@
 #import <iAd/iAd.h>
 // Twitter
 #import "SA_OAuthTwitterController.h"
-// Facebook
 
 @class SA_OAuthTwitterEngine;
 @class MPOAuthAPI;
@@ -60,5 +59,6 @@
 - (void)showBanner;
 - (void)layoutForCurrentOrientation:(BOOL)animated;
 - (NSDictionary *)parseFacebookURL:(NSString *)query;
+- (BOOL)isTwitterSDKAvailable;
 
 @end

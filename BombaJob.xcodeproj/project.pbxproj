@@ -114,6 +114,10 @@
 		8AB965D513CF8054009252C4 /* btn-boom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB965D413CF8054009252C4 /* btn-boom.png */; };
 		8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9660813CF8A27009252C4 /* dbSettings.m */; };
 		8AD4051813FA7A2C00F0C351 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4051713FA7A2C00F0C351 /* Security.framework */; };
+		8AD65C7214C5AB4F00143043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7114C5AB4F00143043 /* Twitter.framework */; };
+		8AD65C7314C5AB5500143043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7114C5AB4F00143043 /* Twitter.framework */; };
+		8AD65C7814C5B2DE00143043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7714C5B2DE00143043 /* Accounts.framework */; };
+		8AD65C7914C5B2E200143043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7714C5B2DE00143043 /* Accounts.framework */; };
 		8ADEC115140681FF00E6EFF3 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ADEC114140681FF00E6EFF3 /* arrow.png */; };
 		8ADEC1381406838A00E6EFF3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADEC1371406838A00E6EFF3 /* QuartzCore.framework */; };
 		8ADEC13D140683A000E6EFF3 /* BMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEC13C140683A000E6EFF3 /* BMTableView.m */; };
@@ -396,6 +400,8 @@
 		8AB9660713CF8A27009252C4 /* dbSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbSettings.h; sourceTree = "<group>"; };
 		8AB9660813CF8A27009252C4 /* dbSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbSettings.m; sourceTree = "<group>"; };
 		8AD4051713FA7A2C00F0C351 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8AD65C7114C5AB4F00143043 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		8AD65C7714C5B2DE00143043 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8ADEC114140681FF00E6EFF3 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		8ADEC1371406838A00E6EFF3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8ADEC13B140683A000E6EFF3 /* BMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMTableView.h; sourceTree = "<group>"; };
@@ -471,6 +477,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD65C7914C5B2E200143043 /* Accounts.framework in Frameworks */,
+				8AD65C7214C5AB4F00143043 /* Twitter.framework in Frameworks */,
 				8AF27217141E021300117DBC /* iAd.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -491,6 +499,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD65C7814C5B2DE00143043 /* Accounts.framework in Frameworks */,
+				8AD65C7314C5AB5500143043 /* Twitter.framework in Frameworks */,
 				8AF0481314331D8000D0ECB8 /* iAd.framework in Frameworks */,
 				8AF0481414331D8000D0ECB8 /* Foundation.framework in Frameworks */,
 				8AF0481514331D8000D0ECB8 /* UIKit.framework in Frameworks */,
@@ -565,6 +575,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AD65C7714C5B2DE00143043 /* Accounts.framework */,
+				8AD65C7114C5AB4F00143043 /* Twitter.framework */,
 				8AF27216141E021300117DBC /* iAd.framework */,
 				8A501A6813F9419300C4BBE0 /* MapKit.framework */,
 				8A13113B13E80BD200F0296C /* MessageUI.framework */,
@@ -1391,7 +1403,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1406,10 +1418,10 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = DevBombaJob;
-				PROVISIONING_PROFILE = "78A74EC9-D1C9-4874-ADEE-A865AF489C6F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "D3742529-8A85-4C47-9691-6F17717C7E26";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3742529-8A85-4C47-9691-6F17717C7E26";
 				TEST_RIG = DevBombaJob;
 				VERSION_INFO_FILE = DevBombaJob;
 			};
@@ -1420,6 +1432,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1433,9 +1446,10 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = DevBombaJob;
-				PROVISIONING_PROFILE = "78A74EC9-D1C9-4874-ADEE-A865AF489C6F";
+				PROVISIONING_PROFILE = "D3742529-8A85-4C47-9691-6F17717C7E26";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3742529-8A85-4C47-9691-6F17717C7E26";
 				TEST_RIG = DevBombaJob;
 				VALIDATE_PRODUCT = YES;
 				VERSION_INFO_FILE = DevBombaJob;
@@ -1466,7 +1480,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = BombaJob;
 				PROVISIONING_PROFILE = "EE635E66-8473-4DD7-925F-ACEB19BF6BCA";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1495,7 +1509,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = BombaJob;
 				PROVISIONING_PROFILE = "EE635E66-8473-4DD7-925F-ACEB19BF6BCA";
 				VALIDATE_PRODUCT = YES;
