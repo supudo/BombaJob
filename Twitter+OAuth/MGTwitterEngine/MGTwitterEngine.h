@@ -159,7 +159,9 @@
 
 - (NSString *)getFavoriteUpdatesFor:(NSString *)username startingAtPage:(int)pageNum; // favorites
 
-- (NSString *)markUpdate:(unsigned long)updateID asFavorite:(BOOL)flag; // favorites/create, favorites/destroy
+///~ iOS 5
+//- (NSString *)markUpdate:(unsigned long)updateID asFavorite:(BOOL)flag; // favorites/create, favorites/destroy
+- (NSString *)markUpdate:(NSString *)updateID asFavorite:(BOOL)flag; // favorites/create, favorites/destroy
 
 
 // Notification methods

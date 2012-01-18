@@ -496,6 +496,17 @@
     }
 }
 
+- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)connectionIdentifier {
+    if ([statuses count] > 0) {
+        NSDictionary *status = (NSDictionary *)[statuses objectAtIndex:0];
+        NSString *stringId = (NSString *)[status objectForKey:@"id"];
+        NSNumber *requestType = (NSNumber *)[status objectForKey:@"source_api_request_type"];
+        [[bSettings sharedbSettings] LogThis:@"Tweet ID String - %@ and Request Type: %@.", stringId, requestType];
+        if ([requestType isEqualToNumber: [NSNumber numberWithInt: 5]])
+            [_twitterEngine markUpdate:stringId asFavorite:YES];
+    }
+}
+
 - (void)twitterPost {
 	NSMutableString *twitterMessage = [[NSMutableString alloc] init];
 	[twitterMessage setString:@"BombaJob.bg - "];
