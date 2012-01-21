@@ -321,6 +321,7 @@
 		8A819A6214C58BCE00F0DC28 /* twitter-button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "twitter-button.jpg"; sourceTree = "<group>"; };
 		8A88F89113E1AAA000CC9108 /* SearchOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOffer.h; sourceTree = "<group>"; };
 		8A88F89213E1AAA000CC9108 /* SearchOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOffer.m; sourceTree = "<group>"; };
+		8A9FDD9E14C8296600028749 /* DevBombaJob.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DevBombaJob.entitlements; sourceTree = "<group>"; };
 		8AA1CBFE13E04114009B882B /* bg-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-pattern.png"; sourceTree = "<group>"; };
 		8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -556,6 +557,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8A9FDD9E14C8296600028749 /* DevBombaJob.entitlements */,
 				28A0AB4B0D9B1048005BE974 /* BombaJob_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -1402,6 +1404,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				COPY_PHASE_STRIP = NO;
@@ -1420,8 +1426,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = DevBombaJob;
-				PROVISIONING_PROFILE = "D3742529-8A85-4C47-9691-6F17717C7E26";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3742529-8A85-4C47-9691-6F17717C7E26";
+				PROVISIONING_PROFILE = "34864196-57A2-42B9-ACB7-7A81F483791D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "34864196-57A2-42B9-ACB7-7A81F483791D";
 				TEST_RIG = DevBombaJob;
 				VERSION_INFO_FILE = DevBombaJob;
 			};
@@ -1431,6 +1437,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
 				COPY_PHASE_STRIP = YES;
@@ -1448,8 +1458,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = DevBombaJob;
-				PROVISIONING_PROFILE = "D3742529-8A85-4C47-9691-6F17717C7E26";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3742529-8A85-4C47-9691-6F17717C7E26";
+				PROVISIONING_PROFILE = "34864196-57A2-42B9-ACB7-7A81F483791D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "34864196-57A2-42B9-ACB7-7A81F483791D";
 				TEST_RIG = DevBombaJob;
 				VALIDATE_PRODUCT = YES;
 				VERSION_INFO_FILE = DevBombaJob;

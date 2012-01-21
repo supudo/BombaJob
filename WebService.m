@@ -17,6 +17,29 @@
 #pragma mark -
 #pragma mark Services
 
+- (void)sendDeviceToken:(NSData *)token {
+	self.OperationID = NLOperationAPNS;
+	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
+	[[bSettings sharedbSettings] LogThis:@"sendDeviceToken URL call = %@?%@", [bSettings sharedbSettings].ServicesURL, @"action=apns"];
+	if (urlReader == nil)
+		urlReader = [[URLReader alloc] init];
+	[urlReader setDelegate:self];
+    NSString *postData = [NSString stringWithFormat:@"token=%@", token];
+	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=apns"] postData:postData postMethod:@"POST"];
+	[[bSettings sharedbSettings] LogThis:@"sendDeviceToken response = %@", xmlData];
+	if (xmlData.length > 0) {
+		NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:[xmlData dataUsingEncoding:NSUTF8StringEncoding]];
+		[myParser setDelegate:self];
+		[myParser setShouldProcessNamespaces:NO];
+		[myParser setShouldReportNamespacePrefixes:NO];
+		[myParser setShouldResolveExternalEntities:NO];
+		[myParser parse];
+		[myParser release];
+	}
+	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(tokenSent:)])
+		[delegate tokenSent:self];
+}
+
 - (void)getConfiguration {
 	self.OperationID = NLOperationConfigs;
 	self.managedObjectContext = [[DBManagedObjectContext sharedDBManagedObjectContext] managedObjectContext];
@@ -56,6 +79,7 @@
 	[postData appendFormat:@"&em=%@", [bSettings sharedbSettings].currentOffer.Email];
 	[postData appendFormat:@"&pos=%@", [bSettings sharedbSettings].currentOffer.Positivism];
 	[postData appendFormat:@"&neg=%@", [bSettings sharedbSettings].currentOffer.Negativism];
+    [postData appendFormat:@"&dtoken=%@", [bSettings sharedbSettings].apnsToken];
 	
 	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postNewJob"] postData:postData postMethod:@"POST"];
 	[[bSettings sharedbSettings] LogThis:@"postNewJob response = %@", xmlData];
@@ -465,6 +489,11 @@
 			abort();
 	}
 	switch (self.OperationID) {
+		case NLOperationAPNS: {
+			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(tokenSent:)])
+				[delegate tokenSent:self];
+			break;
+		}
 		case NLOperationPostJob: {
 			if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(postJobFinished:)])
 				[delegate postJobFinished:self];

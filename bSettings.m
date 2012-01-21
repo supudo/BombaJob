@@ -16,7 +16,7 @@
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse, shouldRotate;
 @synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
 @synthesize ServicesURL, BuildVersion, NewAppVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults, languageCulture;
-@synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret, facebookAppID, facebookAppSecret;
+@synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret, facebookAppID, facebookAppSecret, apnsToken;
 @synthesize linkedInOAuthConsumerKey, linkedInOAuthConsumerSecret;
 @synthesize _facebookEngine;
 
@@ -64,12 +64,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
         self.stShowBanners = TRUE;
         self.NewAppVersion = @"";
 		
-		self.twitterOAuthConsumerKey = @"OVvHQ1wio8LZklS5mRUuA";
-		self.twitterOAuthConsumerSecret = @"zZm0RsfzkLpF3FYnxcM3BDZdxHA6sPLoPiTcBvohUEo";
-		self.facebookAppID = @"162884250446512";
-		self.facebookAppSecret = @"a082d8bbc8e98cf63f8a1711ccbafe82";
-		self.linkedInOAuthConsumerKey = @"5nshmi3qvnmp";
-		self.linkedInOAuthConsumerSecret = @"z8Ksb7x6wqxoH788";
+		self.twitterOAuthConsumerKey = @"";
+		self.twitterOAuthConsumerSecret = @"";
+		self.facebookAppID = @"";
+		self.facebookAppSecret = @"";
+		self.linkedInOAuthConsumerKey = @"";
+		self.linkedInOAuthConsumerSecret = @"";
+
+        self.apnsToken = nil;
 
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;

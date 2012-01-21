@@ -7,7 +7,7 @@
 	<key>BMInDebugMode</key>
 	<true/>
 	<key>BMServicesURL</key>
-	<string>http://bombajob.bg/_mob_service.php</string>
+	<string>http://www.bombajob.bg/_mob_service.php</string>
 	<key>BMServicesURL_Local</key>
 	<string>http://bombajob.kom:8080/_mob_service.php</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -40,7 +40,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<false/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>UIAppFonts</key>
@@ -73,5 +73,18 @@
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon.png</string>
+				<string>Icon@2x.png</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+	</dict>
 </dict>
 </plist>

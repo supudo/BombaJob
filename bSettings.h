@@ -15,6 +15,7 @@
 	BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
 	BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
 	NSString *ServicesURL, *BuildVersion, *NewAppVersion, *currentPostOfferResponse, *languageCulture;
+    NSData *apnsToken;
 	float LocationLatitude, LocationLongtitude;
 	CurrentOffer *currentOffer;
 	NSMutableArray *latestSearchResults;
@@ -27,6 +28,7 @@
 @property BOOL inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, shouldRotate;
 @property BOOL stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
 @property (nonatomic, retain) NSString *ServicesURL, *BuildVersion, *NewAppVersion, *currentPostOfferResponse, *languageCulture;
+@property (nonatomic, retain) NSData *apnsToken;
 @property float LocationLatitude, LocationLongtitude;
 @property (nonatomic, retain) CurrentOffer *currentOffer;
 @property (nonatomic, retain) NSMutableArray *latestSearchResults;

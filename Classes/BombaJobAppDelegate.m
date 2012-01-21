@@ -23,6 +23,7 @@ BombaJobAppDelegate *appDelegate;
 	[self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 
+    
 #if TARGET_IPHONE_SIMULATOR
 	if ([bSettings sharedbSettings].stGeoLocation)
 		mapCoordinates = [[MapCoordinates alloc] init];
@@ -31,6 +32,8 @@ BombaJobAppDelegate *appDelegate;
 		mapCoordinates = [[MapCoordinates alloc] init];
 		[mapCoordinates startCoor];
 	}
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    application.applicationIconBadgeNumber = 0;
 #endif
 
     Loading *lvc = [[Loading alloc] initWithNibName:@"Loading" bundle:nil];
@@ -57,6 +60,38 @@ BombaJobAppDelegate *appDelegate;
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [[bSettings sharedbSettings]._facebookEngine handleOpenURL:url];
 }
+
+#pragma mark -
+#pragma mark Notifications
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    application.applicationIconBadgeNumber = 0;
+    [[bSettings sharedbSettings] LogThis:@"Notification received: %@", [userInfo description]];
+
+    if (application.applicationState == UIApplicationStateActive) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Did receive a Remote Notification"
+                                                            message:[NSString stringWithFormat:@"The application received this remote notification while it was running:\n%@",
+                                                                     [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]]
+                                                           delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        [alertView show];
+        [alertView release];
+    }
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    application.applicationIconBadgeNumber = 0;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[bSettings sharedbSettings] LogThis:@"Registered for remote notifications: %@", deviceToken];
+    [bSettings sharedbSettings].apnsToken = deviceToken;
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    [[bSettings sharedbSettings] LogThis:@"Fail to register for remote notifications: %@", error];
+}
+
+#pragma mark -
 
 - (void)dealloc {
     [tabBarController release];

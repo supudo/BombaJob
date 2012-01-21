@@ -5,9 +5,9 @@
 	<key>BMDoSync</key>
 	<true/>
 	<key>BMInDebugMode</key>
-	<true/>
+	<false/>
 	<key>BMServicesURL</key>
-	<string>http://bombajob.bg/_mob_service.php</string>
+	<string>http://www.bombajob.bg/_mob_service.php</string>
 	<key>BMServicesURL_Local</key>
 	<string>http://bombajob.kom:8080/_mob_service.php</string>
 	<key>CFBundleDevelopmentRegion</key>

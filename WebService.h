@@ -17,6 +17,7 @@
 @protocol WebServiceDelegate <NSObject>
 @optional
 - (void)serviceError:(id)sender error:(NSString *)errorMessage;
+- (void)tokenSent:(id)sender;
 - (void)postJobFinished:(id)sender;
 - (void)postMessageFinished:(id)sender;
 - (void)getCategoriesFinished:(id)sender;
@@ -56,7 +57,8 @@
 @property (nonatomic, retain) dbSettings *entSetting;
 
 typedef enum NLServiceOperations {
-	NLOperationPostJob = 0,
+    NLOperationAPNS = 0,
+	NLOperationPostJob,
 	NLOperationPostMessage,
 	NLOperationGetCategories,
 	NLOperationGetNewJobs,
@@ -69,6 +71,7 @@ typedef enum NLServiceOperations {
 	NLOperationConfigs
 } NLServiceOperations;
 
+- (void)sendDeviceToken:(NSData *)token;
 - (void)getConfiguration;
 - (void)postNewJob;
 - (void)postMessage:(int)offerID message:(NSString *)msg;
