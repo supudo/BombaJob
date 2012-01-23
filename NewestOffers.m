@@ -22,15 +22,16 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.navigationItem.title = NSLocalizedString(@"NewOffers", @"NewOffers");
+	self.navigationItem.title = NSLocalizedString(@"NewOffersNew", @"NewOffersNew");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	[self designToolbar];
+	//[self designToolbar];
 	if (webService == nil)
 		webService = [[WebService alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
 	[self loadData];
@@ -145,7 +146,7 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 	}

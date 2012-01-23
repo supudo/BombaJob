@@ -10,7 +10,8 @@
 
 "MainNavTitle" = "BombaJob";
 
-"NewOffers" = "New";
+"NewOffers" = "New Offers";
+"NewOffersNew" = "New";
 "NewJobsError" = "Error!";
 "SyncError" = "Error!";
 "SyncError.XMLError" = "Problem with the site...";

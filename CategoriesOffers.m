@@ -60,7 +60,7 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 		cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 	}

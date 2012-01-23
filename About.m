@@ -29,6 +29,7 @@
 	[txt setString:@""];
 	[txt appendString:[NSString stringWithFormat:@"<html><style>html,body {font-family: Ubuntu; font-size: 16px; color: #000000; margin: 0px; padding: 0px;} a {color: #000000; text-decoration: underline;} </style><body><div style=\"padding: 10px; width: 295px;\">"]];
 	[txt appendString:tc.Content];
+    [txt appendString:@"<br /><br /><br /><a href=\"http://m.bombajob.bg/\">BombaJob.bg</a>"];
 	[txt appendString:@"</div></body></html>"];
 	[txtAboutText loadHTMLString:txt baseURL:nil];
 	[txt release];

@@ -12,6 +12,7 @@
 "MainNavTitle" = "BombaJob";
 
 "NewOffers" = "Нови оферти";
+"NewOffersNew" = "Нови";
 "NewJobsError" = "Грешка!";
 "SyncError" = "Грешка!";
 "SyncError.XMLError" = "Проблем със сайта...";

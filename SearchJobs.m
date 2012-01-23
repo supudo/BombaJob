@@ -27,7 +27,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 	self.navigationItem.title = NSLocalizedString(@"Jobs", @"Jobs");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
 	//self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)] autorelease];
-	[self designToolbar];
+	//[self designToolbar];
 	if (self.webService == nil)
 		webService = [[WebService alloc] init];
 }
@@ -150,7 +150,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifierCategory] autorelease];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 				cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 				cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 			}
@@ -163,7 +163,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 				cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 				cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 			}
@@ -182,7 +182,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesCompany";
 		if (cell == nil) {
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+			cell.selectionStyle = UITableViewCellSelectionStyleGray;
 			cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 			cell.detailTextLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
 		}

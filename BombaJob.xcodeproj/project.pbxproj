@@ -1475,7 +1475,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SERGEY PETROV";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SERGEY PETROV";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1490,10 +1490,10 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
-				PROVISIONING_PROFILE = "EE635E66-8473-4DD7-925F-ACEB19BF6BCA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
 			};
 			name = Debug;
 		};
@@ -1506,6 +1506,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SERGEY PETROV";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SERGEY PETROV";
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1519,9 +1520,10 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
-				PROVISIONING_PROFILE = "EE635E66-8473-4DD7-925F-ACEB19BF6BCA";
+				PROVISIONING_PROFILE = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
