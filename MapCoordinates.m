@@ -13,11 +13,10 @@
 @synthesize delegate, locationManager;
 
 - (void)startCoor {
-	self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+	self.locationManager = [[CLLocationManager alloc] init];
 	[self.locationManager setDelegate:self];
 	[self.locationManager setDistanceFilter:kCLDistanceFilterNone];
 	[self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-	[self.locationManager setPurpose:NSLocalizedString(@"Coordinates_Reason", @"")];
 	[self.locationManager startUpdatingLocation];
 }
 
@@ -33,8 +32,5 @@
 	[[bSettings sharedbSettings] LogThis:@"Getting map coordinates failed: %@", [error localizedDescription]];
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 @end

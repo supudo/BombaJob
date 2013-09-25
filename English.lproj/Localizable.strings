@@ -95,12 +95,8 @@
 
 "Error.InAppEmailCantSend" = "Нямате конфигуриран email акаунт.";
 
-"Twitter.LoginError" = "Грешно потребителско име и/или парола.";
-"Twitter.PublishOK" = "Чуруликането беше успешно";
-"Twitter.PublishError" = "Възникна проблем при чуруликането.";
-"Facebook.PublishOK" = "Обявата беше публикувана на вашата стена.";
-"Facebook.PublishError" = "Възникна проблем при публикуване на вашата стена.";
-"LinkedIn.Authorization" = "LinkedIn";
+"SocNet.Message.Twitter.Error" = "Нямате настроен Twitter акаунт.";
+"SocNet.Message.Facebook.Error" = "Нямате настроен Facebook акаунт.";
 
 "UI.OK" = "ОК";
 "UI.Retry" = "Опитай пак";

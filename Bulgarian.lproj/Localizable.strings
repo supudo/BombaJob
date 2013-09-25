@@ -94,11 +94,8 @@
 
 "Error.InAppEmailCantSend" = "There is no email account configured on this device.";
 
-"Twitter.LoginError" = "Wrong username and/or password.";
-"Twitter.PublishOK" = "Tweeting was successful.";
-"Twitter.PublishError" = "Error occured while tweeting.";
-"Facebook.PublishOK" = "The offer was posted on your wall.";
-"Facebook.PublishError" = "Error occured while posting on your wall.";
+"SocNet.Message.Twitter.Error" = "No Twitter account setup.\nPlease, configure your Settings.";
+"SocNet.Message.Facebook.Error" = "No Facebook account setup.\nPlease, configure your Settings.";
 
 "UI.OK" = "OK";
 "UI.Retry" = "Try again";

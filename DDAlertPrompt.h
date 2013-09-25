@@ -34,7 +34,7 @@
 	UITextField *plainTextField1_, *plainTextField2_;
 }
 
-@property(nonatomic, retain, readonly) UITextField *plainTextField1, *plainTextField2;
+@property(nonatomic, strong, readonly) UITextField *plainTextField1, *plainTextField2;
 
 - (id)initWithTitle:(NSString *)title delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitle:(NSString *)otherButtonTitles;
 + (void) setBackgroundColor:(UIColor *) background withStrokeColor:(UIColor *) stroke;

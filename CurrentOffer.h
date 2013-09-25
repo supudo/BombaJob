@@ -17,8 +17,8 @@
 
 @property int OfferID, CategoryID;
 @property BOOL HumanYn, FreelanceYn;
-@property (nonatomic, retain) NSString *Title, *Email, *Positivism, *Negativism, *CategoryTitle;
-@property (nonatomic, retain) NSDate *PublishDate;
+@property (nonatomic, strong) NSString *Title, *Email, *Positivism, *Negativism, *CategoryTitle;
+@property (nonatomic, strong) NSDate *PublishDate;
 
 - (void)clearAll;
 

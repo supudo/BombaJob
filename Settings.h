@@ -14,9 +14,9 @@
 	UIActionSheet *helpScreen;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch, *lblInAppEmail, *lblShowCategories;
-@property (nonatomic, retain) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync, *swSearch, *swInAppEmail, *swShowCategories;
-@property (nonatomic, retain) UIActionSheet *helpScreen;
+@property (nonatomic, strong) IBOutlet UILabel *lblPrivateData, *lblGeo, *lblSync, *lblSearch, *lblInAppEmail, *lblShowCategories;
+@property (nonatomic, strong) IBOutlet UISwitch *swPrivateData, *swGeo, *swSync, *swSearch, *swInAppEmail, *swShowCategories;
+@property (nonatomic, strong) UIActionSheet *helpScreen;
 
 - (IBAction) iboPrivateData:(id)sender;
 - (IBAction) iboGeoData:(id)sender;

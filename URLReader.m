@@ -16,7 +16,7 @@
 	NSData *postData = [pData dataUsingEncoding:NSASCIIStringEncoding];
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 	
-	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 	[request setURL:[NSURL URLWithString:URL]];
 	[request setHTTPMethod:pMethod];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -28,7 +28,7 @@
 	NSError *error = nil;
 	NSURLResponse *response;
 	NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-	NSString *data = [[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
+	NSString *data = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 	
 	if (error != nil && [error localizedDescription] != nil) {
 		data = @"";
@@ -40,13 +40,13 @@
 }
 
 - (NSString *)urlCryptedEncode:(NSString *)stringToEncrypt {
-	NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(
+	NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
 																		   NULL,
 																		   (CFStringRef)stringToEncrypt,
 																		   NULL,
 																		   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-																		   kCFStringEncodingUTF8);
-	return [result autorelease];
+																		   kCFStringEncodingUTF8));
+	return result;
 }
 
 @end

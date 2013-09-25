@@ -22,16 +22,16 @@
 	UITextField *txtTitle, *txtEmail, *txtNeg, *txtPos;
 }
 
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIView *contentView;
-@property (nonatomic, retain) WebService *webService;
-@property (nonatomic, retain) IBOutlet UIButton *btnHuman, *btnCategory, *btnFreelance, *btnBoom;
-@property (nonatomic, retain) IBOutlet UISwitch *swFreelance;
-@property (nonatomic, retain) NSArray *dataHuman, *dataCategories, *dataFreelance;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UIView *contentView;
+@property (nonatomic, strong) WebService *webService;
+@property (nonatomic, strong) IBOutlet UIButton *btnHuman, *btnCategory, *btnFreelance, *btnBoom;
+@property (nonatomic, strong) IBOutlet UISwitch *swFreelance;
+@property (nonatomic, strong) NSArray *dataHuman, *dataCategories, *dataFreelance;
 @property BOOL poHumanYn, poFreelanceYn;
 @property int poCategoryID;
-@property (nonatomic, retain) IBOutlet UILabel *lblTitle, *lblEmail, *lblNeg, *lblPos;
-@property (nonatomic, retain) IBOutlet UITextField *txtTitle, *txtEmail, *txtNeg, *txtPos;
+@property (nonatomic, strong) IBOutlet UILabel *lblTitle, *lblEmail, *lblNeg, *lblPos;
+@property (nonatomic, strong) IBOutlet UITextField *txtTitle, *txtEmail, *txtNeg, *txtPos;
 
 - (void)setUpForm;
 - (void)showActionSheet:(NSString *)asTitle type:(int)typeID;

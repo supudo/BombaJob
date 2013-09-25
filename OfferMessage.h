@@ -18,10 +18,10 @@
 	UITextView *txtMessage;
 }
 
-@property (nonatomic, retain) dbJobOffer *entOffer;
-@property (nonatomic, retain) SearchOffer *searchOffer;
-@property (nonatomic, retain) WebService *webService;
-@property (nonatomic, retain) IBOutlet UITextView *txtMessage;
+@property (nonatomic, strong) dbJobOffer *entOffer;
+@property (nonatomic, strong) SearchOffer *searchOffer;
+@property (nonatomic, strong) WebService *webService;
+@property (nonatomic, strong) IBOutlet UITextView *txtMessage;
 
 - (void)sendMessage;
 

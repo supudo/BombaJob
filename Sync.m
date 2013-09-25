@@ -19,7 +19,7 @@
     self.doFullSync = fullSync;
     self.xmlErrorOccured = FALSE;
 	if (webService == nil)
-		webService = [[[WebService alloc] init] retain];
+		webService = [[WebService alloc] init];
 	[webService setDelegate:self];
 	[webService getConfiguration];
 }
@@ -56,9 +56,5 @@
 #pragma mark -
 #pragma mark System
 
-- (void)dealloc {
-	[webService release];
-	[super dealloc];
-}
 
 @end

@@ -29,8 +29,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface DDAlertPrompt () 
-@property(nonatomic, retain) UITableView *tableView;
-@property(nonatomic, retain) UITextField *plainTextField1, *plainTextField2;
+@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UITextField *plainTextField1, *plainTextField2;
 - (void)orientationDidChange:(NSNotification *)notification;
 - (void) drawRoundedRect:(CGRect) rect inContext:(CGContextRef) context withRadius:(CGFloat) radius;
 @end
@@ -46,12 +46,8 @@ static UIColor *borderColor = nil;
 @synthesize plainTextField2 = plainTextField2_;
 
 + (void) setBackgroundColor:(UIColor *) background withStrokeColor:(UIColor *) stroke {
-	if (fillColor != nil) {
-		[fillColor release];
-		[borderColor release];
-	}
-	fillColor = [background retain];
-	borderColor = [stroke retain];
+	fillColor = background;
+	borderColor = stroke;
 }
 
 - (id)initWithTitle:(NSString *)title delegate:(id /*<UIAlertViewDelegate>*/)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitle:(NSString *)otherButtonTitles {
@@ -74,8 +70,8 @@ static UIColor *borderColor = nil;
 		[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 		
         if (fillColor == nil) {
-			fillColor = [[UIColor blackColor] retain];
-			borderColor = [[UIColor colorWithHue:0.625 saturation:0.0 brightness:0.8 alpha:0.8] retain];
+			fillColor = [UIColor blackColor];
+			borderColor = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.8 alpha:0.8];
 		}
 	}
 	return self;
@@ -86,8 +82,6 @@ static UIColor *borderColor = nil;
 	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 	[tableView_ setDataSource:nil];
 	[tableView_ setDelegate:nil];
-	[tableView_ release];
-    [super dealloc];
 }
 
 #pragma mark -
@@ -172,7 +166,7 @@ static UIColor *borderColor = nil;
 	static NSString *AlertPromptCellIdentifier = @"DDAlertPromptCell";
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:AlertPromptCellIdentifier];
     if (cell == nil)
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:AlertPromptCellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:AlertPromptCellIdentifier];
 	if (![cell.contentView.subviews count]) {
 		if (indexPath.row)
 			[cell.contentView addSubview:self.plainTextField2];			

@@ -25,7 +25,7 @@ typedef enum {
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate annotationType:(BMMapAnnotationType)annotationType title:(NSString *)title;
 
 @property BMMapAnnotationType annotationType;
-@property (nonatomic, retain) NSString *userData;
-@property (nonatomic, retain) NSString *url;
+@property (nonatomic, strong) NSString *userData;
+@property (nonatomic, strong) NSString *url;
 
 @end

@@ -32,7 +32,6 @@
     [txt appendString:@"<br /><br /><br /><a href=\"http://m.bombajob.bg/\">BombaJob.bg</a>"];
 	[txt appendString:@"</div></body></html>"];
 	[txtAboutText loadHTMLString:txt baseURL:nil];
-	[txt release];
 	[txtAboutText setBackgroundColor:[UIColor clearColor]];
 	[txtAboutText setOpaque:NO];
 }
@@ -43,7 +42,6 @@
 		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"ExternalURLWarning", @"ExternalURLWarning") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.NO", @"UI.NO") otherButtonTitles:NSLocalizedString(@"UI.YES", @"UI.YES"), nil];
 		[alert show];
-		[alert release];
 		return NO;
 	}
 	else {
@@ -70,16 +68,9 @@
 
 - (void)viewDidUnload {
 	txtAboutText = nil;
-	[txtAboutText release];
 	clickedURL = nil;
-	[clickedURL release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[txtAboutText release];
-	[clickedURL release];
-    [super dealloc];
-}
 
 @end

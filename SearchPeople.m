@@ -58,7 +58,6 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@.", NSLocalizedString(@"NewJobsError", @"NewJobsError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 1;
 	[alert show];
-	[alert release];
 }
 
 - (void)getJobsCompanyFinished:(id)sender {
@@ -90,24 +89,18 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postOffer)];
 	bi.style = UIBarButtonItemStyleBordered;
 	[buttons addObject:bi];
-	[bi release];
 	
 	bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 	[buttons addObject:bi];
-	[bi release];
 	
 	bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)];
 	bi.style = UIBarButtonItemStyleBordered;
 	[buttons addObject:bi];
-	[bi release];
 	
 	[tools setItems:buttons animated:NO];
-	[buttons release];
 	
 	UIBarButtonItem *rightButtonBar = [[UIBarButtonItem alloc] initWithCustomView:tools];
 	self.navigationItem.rightBarButtonItem = rightButtonBar;
-	[rightButtonBar release];
-	[tools release];
 }
 
 - (void)reloadContent {
@@ -148,7 +141,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 		if (indexPath.section == 0) {
 			cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifierCategory];
 			if (cell == nil) {
-				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifierCategory] autorelease];
+				cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifierCategory];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 				cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
@@ -161,7 +154,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 		else {
 			cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
 			if (cell == nil) {
-				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+				cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 				cell.selectionStyle = UITableViewCellSelectionStyleGray;
 				cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
@@ -180,7 +173,7 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 	else {
 		cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			cell.selectionStyle = UITableViewCellSelectionStyleGray;
 			cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
@@ -204,20 +197,17 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 			CategoriesOffers *tvc = [[CategoriesOffers alloc] initWithNibName:@"CategoriesOffers" bundle:nil];
 			tvc.entCategory = (dbCategory *)[fetchedResultsControllerCategories objectAtIndexPath:indexPath];
 			[[self navigationController] pushViewController:tvc animated:YES];
-			[tvc release];
 		}
 		else {
 			Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
 			tvc.entOffer = (dbJobOffer *)[fetchedResultsControllerOffers objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
 			[[self navigationController] pushViewController:tvc animated:YES];
-			[tvc release];
 		}
 	}
 	else {
 		Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
 		tvc.entOffer = (dbJobOffer *)[fetchedResultsControllerOffers objectAtIndexPath:indexPath];
 		[[self navigationController] pushViewController:tvc animated:YES];
-		[tvc release];
 	}
 }
 
@@ -241,7 +231,6 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 			[lbl setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:18.0]];
 			[lbl setFrame:CGRectMake(20, 4, 280, 40)];
 			[viewCategories addSubview:lbl];
-			[lbl release];
 		}
 		
 		if (viewOffers == nil) {
@@ -253,7 +242,6 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 			[lbl setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:18.0]];
 			[lbl setFrame:CGRectMake(20, 0, 280, 40)];
 			[viewOffers addSubview:lbl];
-			[lbl release];
 		}
 		
 		if (section == 0)
@@ -297,10 +285,6 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
         aFetchedResultsController.delegate = self;
         self.fetchedResultsControllerCategories = aFetchedResultsController;
         
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptor release];
-        [sortDescriptors release];
     }
 	return fetchedResultsControllerCategories;
 }
@@ -326,11 +310,6 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
         aFetchedResultsController.delegate = self;
         self.fetchedResultsControllerOffers = aFetchedResultsController;
         
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptorRead release];
-        [sortDescriptorDate release];
-        [sortDescriptors release];
     }
 	return fetchedResultsControllerOffers;
 }
@@ -348,25 +327,12 @@ static NSString *kCellIdentifierCategory = @"identifCategoriesPeople";
 
 - (void)viewDidUnload {
 	webService = nil;
-	[webService release];
 	fetchedResultsControllerOffers = nil;
-	[fetchedResultsControllerOffers release];
 	fetchedResultsControllerCategories = nil;
-	[fetchedResultsControllerCategories release];
 	viewCategories = nil;
-	[viewCategories release];
 	viewOffers = nil;
-	[viewOffers release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[webService release];
-	[fetchedResultsControllerOffers release];
-	[fetchedResultsControllerCategories release];
-	[viewCategories release];
-	[viewOffers release];
-    [super dealloc];
-}
 
 @end

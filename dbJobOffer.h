@@ -14,19 +14,19 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * OfferID;
-@property (nonatomic, retain) NSString * Positivism;
-@property (nonatomic, retain) NSNumber * CategoryID;
-@property (nonatomic, retain) NSString * Title;
-@property (nonatomic, retain) NSString * Negativism;
-@property (nonatomic, retain) NSString * CategoryTitle;
-@property (nonatomic, retain) NSDate * PublishDate;
-@property (nonatomic, retain) dbCategory * category;
-@property (nonatomic, retain) NSNumber * HumanYn;
-@property (nonatomic, retain) NSNumber * FreelanceYn;
-@property (nonatomic, retain) NSString * Email;
-@property (nonatomic, retain) NSNumber * ReadYn;
-@property (nonatomic, retain) NSNumber * SentMessageYn;
+@property (nonatomic, strong) NSNumber * OfferID;
+@property (nonatomic, strong) NSString * Positivism;
+@property (nonatomic, strong) NSNumber * CategoryID;
+@property (nonatomic, strong) NSString * Title;
+@property (nonatomic, strong) NSString * Negativism;
+@property (nonatomic, strong) NSString * CategoryTitle;
+@property (nonatomic, strong) NSDate * PublishDate;
+@property (nonatomic, strong) dbCategory * category;
+@property (nonatomic, strong) NSNumber * HumanYn;
+@property (nonatomic, strong) NSNumber * FreelanceYn;
+@property (nonatomic, strong) NSString * Email;
+@property (nonatomic, strong) NSNumber * ReadYn;
+@property (nonatomic, strong) NSNumber * SentMessageYn;
 
 @end
 

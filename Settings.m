@@ -155,8 +155,6 @@
 }
 
 - (void)showHelp:(NSString *)helpTitle withContent:(NSString *)helpContent {
-	if (helpScreen != nil)
-		[helpScreen release];
 	helpScreen = [[UIActionSheet alloc] initWithTitle:@"Help" delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Close", @"UI.Close") destructiveButtonTitle:nil otherButtonTitles:nil];
 
 	UITextView *txt;
@@ -169,7 +167,6 @@
 	[txt setFont:[UIFont fontWithName:@"Ubuntu" size:14]];
 	[[bSettings sharedbSettings] roundButtonCornersTextView:txt withColor:[UIColor blackColor]];
 	[helpScreen addSubview:txt];
-	[txt release];
 	
 	[helpScreen setTitle:helpTitle];
 	for (UIView *v in self.helpScreen.subviews) {
@@ -197,49 +194,20 @@
 
 - (void)viewDidUnload {
 	lblPrivateData = nil;
-	[lblPrivateData release];
 	lblGeo = nil;
-	[lblGeo release];
 	lblSync = nil;
-	[lblSync release];
 	lblSearch = nil;
-	[lblSearch release];
 	lblInAppEmail = nil;
-	[lblInAppEmail release];
 	lblShowCategories = nil;
-	[lblShowCategories release];
 	swSearch = nil;
-	[swSearch release];
 	swPrivateData = nil;
-	[swPrivateData release];
 	swGeo = nil;
-	[swGeo release];
 	swSync = nil;
-	[swSync release];
 	swInAppEmail = nil;
-	[swInAppEmail release];
 	swShowCategories = nil;
-	[swShowCategories release];
 	helpScreen = nil;
-	[helpScreen release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[lblPrivateData release];
-	[lblGeo release];
-	[lblSync release];
-	[lblSearch release];
-	[lblInAppEmail release];
-	[lblShowCategories release];
-	[swSearch release];
-	[swPrivateData release];
-	[swGeo release];
-	[swSync release];
-	[swInAppEmail release];
-	[swShowCategories release];
-	[helpScreen release];
-    [super dealloc];
-}
 
 @end

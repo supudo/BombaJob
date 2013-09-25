@@ -11,7 +11,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "DBManagedObjectContext.h"
 #import "dbSettings.h"
-#import "SA_OAuthTwitterEngine.h"
 #import "DDAlertPrompt.h"
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
@@ -24,7 +23,7 @@
 @synthesize scrollView, contentView, bannerView;
 @synthesize txtCategory, txtTitle, txtPositivism, txtNegativism;
 @synthesize lblDate, lblFreelance, lblLPositiv, lblLNegativ;
-@synthesize btnEmail, btnTwitter, btnFacebook, webService, facebookPostSuccess;
+@synthesize btnEmail, btnTwitter, btnFacebook, webService;
 
 #pragma mark -
 #pragma mark Work
@@ -36,17 +35,9 @@
 	else
 		self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)];
 	if (webService == nil)
 		webService = [[WebService alloc] init];
-
-	[bSettings sharedbSettings]._facebookEngine = [[Facebook alloc] initWithAppId:[bSettings sharedbSettings].facebookAppID urlSchemeSuffix:@"iphone" andDelegate:self];
-	//https://developers.facebook.com/docs/guides/mobile/
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
-        [bSettings sharedbSettings]._facebookEngine.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-        [bSettings sharedbSettings]._facebookEngine.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -247,12 +238,8 @@
 }
 
 - (void)showBanner {
-    if ([bSettings sharedbSettings].stShowBanners) {
-        self.bannerView.requiredContentSizeIdentifiers = (&ADBannerContentSizeIdentifierPortrait != nil) ?
-        [NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil] : 
-        [NSSet setWithObjects:ADBannerContentSizeIdentifier320x50, ADBannerContentSizeIdentifier480x32, nil];
+    if ([bSettings sharedbSettings].stShowBanners)
         [self layoutForCurrentOrientation:NO];
-    }
     else
         self.bannerView.hidden = YES;
 }
@@ -264,7 +251,6 @@
 	DDAlertPrompt *emailAlert = [[DDAlertPrompt alloc] initWithTitle:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailEnterYourEmail", @"Offer_EmailEnterYourEmail")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.Cancel", @"UI.Cancel") otherButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK")];	
 	emailAlert.tag = 3;
 	[emailAlert show];
-	[emailAlert release];	
 }
 
 - (void)didPresentAlertView:(UIAlertView *)alertView {
@@ -307,7 +293,6 @@
 			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailIncorrectEmail", @"Offer_EmailIncorrectEmail")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 			alert.tag = 4;
 			[alert show];
-			[alert release];
 		}
 	}
 	else if (actionSheet.tag == 4)
@@ -363,16 +348,13 @@
 			
 			[mailController setMessageBody:eb isHTML:YES];
 			[mailController.navigationBar setBarStyle:UIBarStyleBlack];
-			[self presentModalViewController:mailController animated:YES];
-			[mailController release];
-			[eb release];
+			[self presentViewController:mailController animated:YES completion:nil];
 		}
 		else {
 			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Error.InAppEmailCantSend", @"Error.InAppEmailCantSend")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 			alert.tag = 2;
 			[alert show];
-			[alert release];
 		}
 	}
 	else
@@ -384,7 +366,6 @@
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Offer_EmailSent", @"Offer_EmailSent")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 5;
 	[alert show];
-	[alert release];
 }
 
 - (void)sendMessage {
@@ -399,15 +380,13 @@
 			[mailController setBccRecipients:nil];
 			[mailController setMessageBody:[NSString stringWithFormat:@"<br /><br /> Sent from BombaJob ..."] isHTML:YES];
 			[mailController.navigationBar setBarStyle:UIBarStyleBlack];
-			[self presentModalViewController:mailController animated:YES];
-			[mailController release];
+			[self presentViewController:mailController animated:YES completion:nil];
 		}
 		else {
 			[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Error.InAppEmailCantSend", @"Error.InAppEmailCantSend")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 			alert.tag = 1;
 			[alert show];
-			[alert release];
 		}
 	}
 	else {
@@ -417,7 +396,6 @@
 		else
 			tvc.searchOffer = searchOffer;
 		[[self navigationController] pushViewController:tvc animated:YES];
-		[tvc release];
 	}
 }
 
@@ -436,206 +414,55 @@
 			BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:@"..." delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 			alert.tag = 1;
 			[alert show];
-			[alert release];
 			break;
 		}
 	}
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
 #pragma mark Twitter
 
-- (BOOL)isTwitterSDKAvailable {
-    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
-    BOOL twitterSDKAvailable = tweetViewController != nil;
-    if (tweetViewController != nil)
-        [tweetViewController release];
-    return twitterSDKAvailable;
-}
-
 - (IBAction)sendTwitter:(id)sender {
-    if ([self isTwitterSDKAvailable]) {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         NSMutableString *twitterMessage = [[NSMutableString alloc] init];
         [twitterMessage setString:@"BombaJob.bg - "];
         [twitterMessage appendFormat:@"%@ : ", ((searchOffer == nil) ? entOffer.Title : searchOffer.Title)];
         [twitterMessage appendFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)];
         [twitterMessage appendFormat:@" #bombajobbg"];
 
-        TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
-        [tweetViewController setInitialText:twitterMessage];
-        [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
-            switch (result) {
-                case TWTweetComposeViewControllerResultCancelled:
-                    [[bSettings sharedbSettings] LogThis:@"Twitting cancelled."];
-                    break;
-                case TWTweetComposeViewControllerResultDone:
-                    [[bSettings sharedbSettings] LogThis:@"Twitting successfull."];
-                    [self performSelectorOnMainThread:@selector(requestSucceeded:) withObject:@"" waitUntilDone:NO];
-                    break;
-                default:
-                    break;
-            }
-            [self dismissModalViewControllerAnimated:YES];
-        }];
-        
-        [self presentModalViewController:tweetViewController animated:YES];
-        [twitterMessage release];
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:twitterMessage];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else {
-        if (_twitterEngine)
-            return;
-        _twitterEngine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
-        _twitterEngine.consumerKey = [bSettings sharedbSettings].twitterOAuthConsumerKey;
-        _twitterEngine.consumerSecret = [bSettings sharedbSettings].twitterOAuthConsumerSecret;
-        UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_twitterEngine delegate:self];
-        if (controller) 
-            [self presentModalViewController:controller animated:YES];
-        else
-            [self twitterPost];
+        [BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
+        BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"SocNet.Message.Twitter.Error", @"SocNet.Message.Twitter.Error") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+        alert.tag = 0;
+        [alert show];
     }
-}
-
-- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)connectionIdentifier {
-    if ([statuses count] > 0) {
-        NSDictionary *status = (NSDictionary *)[statuses objectAtIndex:0];
-        NSString *stringId = (NSString *)[status objectForKey:@"id"];
-        NSNumber *requestType = (NSNumber *)[status objectForKey:@"source_api_request_type"];
-        [[bSettings sharedbSettings] LogThis:@"Tweet ID String - %@ and Request Type: %@.", stringId, requestType];
-        if ([requestType isEqualToNumber: [NSNumber numberWithInt: 5]])
-            [_twitterEngine markUpdate:stringId asFavorite:YES];
-    }
-}
-
-- (void)twitterPost {
-	NSMutableString *twitterMessage = [[NSMutableString alloc] init];
-	[twitterMessage setString:@"BombaJob.bg - "];
-	[twitterMessage appendFormat:@"%@ : ", ((searchOffer == nil) ? entOffer.Title : searchOffer.Title)];
-	[twitterMessage appendFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)];
-	[twitterMessage appendFormat:@" #bombajobbg"];
-	[_twitterEngine sendUpdate:twitterMessage];
-	[twitterMessage release];
-}
-
-- (void)OAuthTwitterController:(SA_OAuthTwitterController *)controller authenticatedWithUsername:(NSString *)username {
-	[[bSettings sharedbSettings] LogThis:@"Authenicated for %@", username];
-	[self twitterPost];
-}
-
-- (void)OAuthTwitterControllerFailed:(SA_OAuthTwitterController *)controller {
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Twitter.LoginError", @"Twitter.LoginError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	alert.tag = 891;
-	[alert show];
-	[alert release];
-}
-
-- (void)OAuthTwitterControllerCanceled:(SA_OAuthTwitterController *)controller {
-	[[bSettings sharedbSettings] LogThis:@"Twitter Authentication Canceled."];
-}
-
-- (void)storeCachedTwitterOAuthData:(NSString *)data forUsername:(NSString *)username {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setObject:data forKey:@"twitterAuthData"];
-	[defaults synchronize];
-}
-
-- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterAuthData"];
-}
-
-- (void)requestSucceeded: (NSString *) requestIdentifier {
-	[[bSettings sharedbSettings] LogThis:@"Request %@ succeeded", requestIdentifier];
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Twitter.PublishOK", @"Twitter.PublishOK")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	alert.tag = 899;
-	[alert show];
-	[alert release];
-}
-
-- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error {
-	[[bSettings sharedbSettings] LogThis:@"Request %@ failed with error: %@", requestIdentifier, [error localizedDescription]];
-	[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"Twitter.PublishError", @"Twitter.PublishError"), [error localizedDescription]] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-	alert.tag = 898;
-	[alert show];
-	[alert release];
 }
 
 #pragma mark -
 #pragma mark Facebook
 
 - (IBAction)sendFacebook:(id)sender {
-    facebookPostSuccess = FALSE;
-    if (![[bSettings sharedbSettings]._facebookEngine isSessionValid]) {
-        NSArray *permissions = [[NSArray alloc] initWithObjects:@"publish_stream", nil];
-        [[bSettings sharedbSettings]._facebookEngine authorize:permissions];
-        [permissions release];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        NSMutableString *facebookMessage = [[NSMutableString alloc] init];
+        [facebookMessage setString:@"BombaJob.bg\n"];
+        [facebookMessage appendFormat:@"%@\n", ((searchOffer == nil) ? entOffer.Title : searchOffer.Title)];
+        [facebookMessage appendFormat:@"http://bombajob.bg/offer/%i\n", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)];
+        [facebookMessage appendFormat:@"%@", ((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism)];
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [controller setInitialText:facebookMessage];
+        [self presentViewController:controller animated:YES completion:Nil];
     }
     else {
-        SBJSON *jsonWriter = [[SBJSON new] autorelease];
-
-        NSArray* actionLinks = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                          @"BombaJob.bg",@"name",@"http://www.bombajob.bg/", @"link", nil], nil];
-        NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
-
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       ((searchOffer == nil) ? entOffer.Title : searchOffer.Title), @"name",
-                                       [[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Positivism : searchOffer.Positivism)], @"caption",
-                                       [[bSettings sharedbSettings] stripHTMLtags:((searchOffer == nil) ? entOffer.Negativism : searchOffer.Negativism)], @"description",
-                                       [NSString stringWithFormat:@"http://bombajob.bg/offer/%i", ((searchOffer == nil) ? [entOffer.OfferID intValue] : searchOffer.OfferID)], @"link",
-                                       actionLinksStr, @"actions",
-                                       nil];
-
-        [[bSettings sharedbSettings]._facebookEngine dialog:@"feed" andParams:params andDelegate:self];
-    }
-}
-
-- (void)fbDidLogin {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[[bSettings sharedbSettings]._facebookEngine accessToken] forKey:@"FBAccessTokenKey"];
-    [defaults setObject:[[bSettings sharedbSettings]._facebookEngine expirationDate] forKey:@"FBExpirationDateKey"];
-    [defaults synchronize];
-}
-
-- (void)dialog:(FBDialog*)dialog didFailWithError:(NSError *)error {
-    [[bSettings sharedbSettings] LogThis:@"Facebook error %@", [[error userInfo] objectForKey:@"error_msg"]];
-    if (!facebookPostSuccess) {
         [BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-        BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"Facebook.PublishError", @"Facebook.PublishError"), [error localizedDescription]] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-        alert.tag = 792;
+        BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"SocNet.Message.Facebook.Error", @"SocNet.Message.Twitter.Error") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
+        alert.tag = 0;
         [alert show];
-        [alert release];
     }
-}
-
-- (void)dialogCompleteWithUrl:(NSURL *)url {
-    if (![url query]) {
-        [[bSettings sharedbSettings] LogThis:@"Facebook - User canceled dialog or there was an error"];
-        return;
-    }
-
-    NSDictionary *params = [self parseFacebookURL:[url query]];
-    if ([params valueForKey:@"post_id"]) {
-        facebookPostSuccess = TRUE;
-        [[bSettings sharedbSettings] LogThis:@"Facebook - Published feed successfully. Post ID = %@", [params valueForKey:@"post_id"]];
-        [BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
-        BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"Facebook.PublishOK", @"Facebook.PublishOK")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
-        alert.tag = 791;
-        [alert show];
-        [alert release];
-    }
-}
-
-- (NSDictionary *)parseFacebookURL:(NSString *)query {
-	NSArray *pairs = [query componentsSeparatedByString:@"&"];
-	NSMutableDictionary *params = [[[NSMutableDictionary alloc] init] autorelease];
-	for (NSString *pair in pairs) {
-		NSArray *kv = [pair componentsSeparatedByString:@"="];
-		NSString *val = [[kv objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-		[params setObject:val forKey:[kv objectAtIndex:0]];
-	}
-    return params;
 }
 
 #pragma mark -
@@ -665,10 +492,6 @@
 	CGPoint bannerOrigin = CGPointMake(CGRectGetMinX(contentFrame), CGRectGetMaxY(contentFrame));
     CGFloat bannerHeight = 0.0f;
     
-    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
-		self.bannerView.currentContentSizeIdentifier = (&ADBannerContentSizeIdentifierLandscape != nil) ? ADBannerContentSizeIdentifierLandscape : ADBannerContentSizeIdentifier480x32;
-    else
-        self.bannerView.currentContentSizeIdentifier = (&ADBannerContentSizeIdentifierPortrait != nil) ? ADBannerContentSizeIdentifierPortrait : ADBannerContentSizeIdentifier320x50; 
     bannerHeight = self.bannerView.bounds.size.height;
 
     if (self.bannerView.bannerLoaded) {
@@ -699,67 +522,28 @@
 
 - (void)viewDidUnload {
 	entOffer = nil;
-	[entOffer release];
 	searchOffer = nil;
-	[searchOffer release];
 	scrollView = nil;
-	[scrollView release];
 	contentView = nil;
-	[contentView release];
 	txtCategory = nil;
-	[txtCategory release];
 	txtTitle = nil;
-	[txtTitle release];
 	txtPositivism = nil;
-	[txtPositivism release];
 	txtNegativism = nil;
-	[txtNegativism release];
 	lblDate = nil;
-	[lblDate release];
 	lblFreelance = nil;
-	[lblFreelance release];
 	lblLPositiv = nil;
-	[lblLPositiv release];
 	lblLNegativ = nil;
-	[lblLNegativ release];
 	btnEmail = nil;
-	[btnEmail release];
 	btnFacebook = nil;
-	[btnFacebook release];
 	btnTwitter = nil;
-	[btnTwitter release];
 	webService = nil;
-	[webService release];
-	_twitterEngine = nil;
-	[_twitterEngine release];
     bannerView.delegate = nil;
     bannerView = nil;
-    [bannerView release];
     [super viewDidUnload];
 }
 
 - (void)dealloc {
-	[entOffer release];
-	[searchOffer release];
-	[scrollView release];
-	[contentView release];
-	[txtCategory release];
-	[txtTitle release];
-	[txtPositivism release];
-	[txtNegativism release];
-	[lblDate release];
-	[lblFreelance release];
-	[lblLPositiv release];
-	[lblLNegativ release];
-	[btnEmail release];
-	[btnFacebook release];
-	[btnTwitter release];
-    [btnFacebook release];
-	[webService release];
-	[_twitterEngine release];
     bannerView.delegate = nil;
-    [bannerView release];
-    [super dealloc];
 }
 
 @end

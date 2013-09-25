@@ -19,7 +19,7 @@
 @property int OfferID, CategoryID;
 @property float gLatitude, gLongitude;
 @property BOOL HumanYn, FreelanceYn, ReadYn, SentMessageYn;
-@property (nonatomic, retain) NSString *Title, *Email, *Positivism, *Negativism, *CategoryTitle;
-@property (nonatomic, retain) NSDate *PublishDate;
+@property (nonatomic, strong) NSString *Title, *Email, *Positivism, *Negativism, *CategoryTitle;
+@property (nonatomic, strong) NSDate *PublishDate;
 
 @end

@@ -32,33 +32,23 @@ BombaJobAppDelegate *appDelegate;
 		mapCoordinates = [[MapCoordinates alloc] init];
 		[mapCoordinates startCoor];
 	}
-    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     application.applicationIconBadgeNumber = 0;
 #endif
 
     Loading *lvc = [[Loading alloc] initWithNibName:@"Loading" bundle:nil];
-    [tabBarController presentModalViewController:lvc animated:NO];
-    [lvc release];
+    [tabBarController presentViewController:lvc animated:YES completion:nil];
 
     return YES;
 }
 
 - (void)loadingFinished {
-    [tabBarController dismissModalViewControllerAnimated:YES];
+    [tabBarController dismissViewControllerAnimated:YES completion:nil];
 	tabBarController.moreNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[tabBarController.moreNavigationController setDelegate:self];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     navigationController.navigationBar.topItem.rightBarButtonItem = nil;
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [[bSettings sharedbSettings]._facebookEngine handleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [[bSettings sharedbSettings]._facebookEngine handleOpenURL:url];
 }
 
 #pragma mark -
@@ -74,7 +64,6 @@ BombaJobAppDelegate *appDelegate;
                                                                      [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]]
                                                            delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
         [alertView show];
-        [alertView release];
     }
 }
 
@@ -82,22 +71,7 @@ BombaJobAppDelegate *appDelegate;
     application.applicationIconBadgeNumber = 0;
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[bSettings sharedbSettings] LogThis:@"Registered for remote notifications: %@", deviceToken];
-    [bSettings sharedbSettings].apnsToken = deviceToken;
-}
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    [[bSettings sharedbSettings] LogThis:@"Fail to register for remote notifications: %@", error];
-}
-
 #pragma mark -
 
-- (void)dealloc {
-    [tabBarController release];
-    [window release];
-	[mapCoordinates release];
-    [super dealloc];
-}
 
 @end

@@ -20,19 +20,15 @@ static UIColor *fillColor = nil;
 static UIColor *borderColor = nil;
 
 + (void) setBackgroundColor:(UIColor *) background withStrokeColor:(UIColor *) stroke {
-	if (fillColor != nil) {
-		[fillColor release];
-		[borderColor release];
-	}
-	fillColor = [background retain];
-	borderColor = [stroke retain];
+	fillColor = background;
+	borderColor = stroke;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         if (fillColor == nil) {
-			fillColor = [[UIColor blackColor] retain];
-			borderColor = [[UIColor colorWithHue:0.625 saturation:0.0 brightness:0.8 alpha:0.8] retain];
+			fillColor = [UIColor blackColor];
+			borderColor = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.8 alpha:0.8];
 		}
     }
     return self;
@@ -107,8 +103,5 @@ static UIColor *borderColor = nil;
 	CGContextClosePath(context);
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 @end

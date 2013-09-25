@@ -60,9 +60,7 @@
 
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"CategoryTitle" ascending:YES];
 	NSArray *arrSorters = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-	[sortDescriptor release];
 	dataCategories = [[NSArray alloc] initWithArray:[[DBManagedObjectContext sharedDBManagedObjectContext] getEntities:@"Category" sortDescriptors:arrSorters]];
-	[arrSorters release];
 
 	txtNeg.text = [bSettings sharedbSettings].currentOffer.Negativism;
 	txtPos.text = [bSettings sharedbSettings].currentOffer.Positivism;
@@ -137,7 +135,6 @@
 		else
 			tvc.descID = 2;
 		[[self navigationController] pushViewController:tvc animated:YES];
-		[tvc release];
 	}
 	else {
 		int kbHeight = 0;
@@ -215,8 +212,6 @@
 			break;
 	}
 	
-	[pickerView release];
-	[menu release];
 }
 
 - (IBAction)iboBoom:(id)sender {
@@ -249,7 +244,6 @@
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles: nil];
 		alert.tag = 3;
 		[alert show];
-		[alert release];
 	}
 	else {
 		if ([bSettings sharedbSettings].stPrivateData) {
@@ -289,7 +283,6 @@
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles: nil];
 	alert.tag = 2;
 	[alert show];
-	[alert release];
 }
 
 - (void)serviceError:(id)sender error:(NSString *) errorMessage {
@@ -297,7 +290,6 @@
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Error", @"Error"), errorMessage] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles: nil];
 	alert.tag = 1;
 	[alert show];
-	[alert release];
 }
 
 #pragma mark -
@@ -326,7 +318,7 @@
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
 	UILabel *retval = (id)view;
 	if (!retval)
-		retval = [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)] autorelease];
+		retval = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
 	NSString *lbl;
 	if (pickerView.tag == 1) {
 		lbl = [NSString stringWithFormat:@"Offer_HumanCompany_%i", (row + 1)];
@@ -398,68 +390,26 @@
 
 - (void)viewDidUnload {
 	scrollView = nil;
-	[scrollView release];
 	contentView = nil;
-	[contentView release];
 	webService = nil;
-	[webService release];
 	btnHuman = nil;
-	[btnHuman release];
 	btnCategory = nil;
-	[btnCategory release];
 	btnFreelance = nil;
-	[btnFreelance release];
 	btnBoom = nil;
-	[btnBoom release];
 	swFreelance = nil;
-	[swFreelance release];
 	dataHuman = nil;
-	[dataHuman release];
 	dataCategories = nil;
-	[dataCategories release];
 	dataFreelance = nil;
-	[dataFreelance release];
 	lblTitle = nil;
-	[lblTitle release];
 	lblEmail = nil;
-	[lblEmail release];
 	lblNeg = nil;
-	[lblNeg release];
 	lblPos = nil;
-	[lblPos release];
 	txtTitle = nil;
-	[txtTitle release];
 	txtEmail = nil;
-	[txtEmail release];
 	txtNeg = nil;
-	[txtNeg release];
 	txtPos = nil;
-	[txtPos release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[scrollView release];
-	[contentView release];
-	[webService release];
-	[btnHuman release];
-	[btnCategory release];
-	[btnFreelance release];
-	[btnFreelance release];
-	[btnBoom release];
-	[swFreelance release];
-	[dataHuman release];
-	[dataCategories release];
-	[dataFreelance release];
-	[lblTitle release];
-	[lblEmail release];
-	[lblNeg release];
-	[lblPos release];
-	[txtTitle release];
-	[txtEmail release];
-	[txtNeg release];
-	[txtPos release];
-    [super dealloc];
-}
 
 @end

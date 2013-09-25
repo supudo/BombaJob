@@ -13,15 +13,8 @@
 #import "WebService.h"
 #import "BlackAlertView.h"
 #import <iAd/iAd.h>
-// Twitter
-#import "SA_OAuthTwitterController.h"
 
-@class SA_OAuthTwitterEngine;
-@class MPOAuthAPI;
-
-@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, ADBannerViewDelegate,
-									SA_OAuthTwitterControllerDelegate,
-									FBDialogDelegate, FBSessionDelegate> {
+@interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, ADBannerViewDelegate> {
 	dbJobOffer *entOffer;
 	SearchOffer *searchOffer;
 	UIScrollView *scrollView;
@@ -31,20 +24,17 @@
     UIButton *btnEmail, *btnTwitter, *btnFacebook;
     ADBannerView *bannerView;
 	WebService *webService;
-	SA_OAuthTwitterEngine *_twitterEngine;
-    BOOL facebookPostSuccess;
 }
 
-@property (nonatomic, retain) dbJobOffer *entOffer;
-@property (nonatomic, retain) SearchOffer *searchOffer;
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIView *contentView;
-@property (nonatomic, retain) IBOutlet UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
-@property (nonatomic, retain) IBOutlet UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
-@property (nonatomic, retain) IBOutlet UIButton *btnEmail, *btnTwitter, *btnFacebook;
-@property (nonatomic, retain) IBOutlet ADBannerView *bannerView;
-@property (nonatomic, retain) WebService *webService;
-@property BOOL facebookPostSuccess;
+@property (nonatomic, strong) dbJobOffer *entOffer;
+@property (nonatomic, strong) SearchOffer *searchOffer;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UIView *contentView;
+@property (nonatomic, strong) IBOutlet UITextView *txtCategory, *txtTitle, *txtPositivism, *txtNegativism;
+@property (nonatomic, strong) IBOutlet UILabel *lblDate, *lblFreelance, *lblLPositiv, *lblLNegativ;
+@property (nonatomic, strong) IBOutlet UIButton *btnEmail, *btnTwitter, *btnFacebook;
+@property (nonatomic, strong) IBOutlet ADBannerView *bannerView;
+@property (nonatomic, strong) WebService *webService;
 
 - (void)setText:(NSString *)txt control:(UITextView *)txtView;
 - (void)loadContent;
@@ -55,10 +45,7 @@
 - (IBAction)sendFacebook:(id)sender;
 - (IBAction)sendTwitter:(id)sender;
 - (void)showEmailBox;
-- (void)twitterPost;
 - (void)showBanner;
 - (void)layoutForCurrentOrientation:(BOOL)animated;
-- (NSDictionary *)parseFacebookURL:(NSString *)query;
-- (BOOL)isTwitterSDKAvailable;
 
 @end

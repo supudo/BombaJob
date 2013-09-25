@@ -45,14 +45,12 @@
 		tvc.freelanceOn = [swFreelance isOn];
 		tvc.searchOffline = NO;
 		[[self navigationController] pushViewController:tvc animated:YES];
-		[tvc release];
 	}
 	else {
 		[BlackAlertView setBackgroundColor:[UIColor blackColor] withStrokeColor:[UIColor whiteColor]];
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"OfflineMode", @"OfflineMode") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
 		alert.tag = 1;
 		[alert show];
-		[alert release];
 	}
 }
 
@@ -64,7 +62,6 @@
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"OfflineMode_NoGeoSearch", @"OfflineMode_NoGeoSearch") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
 		alert.tag = 2;
 		[alert show];
-		[alert release];
 	}
 }
 
@@ -78,7 +75,6 @@
 			tvc.freelanceOn = [swFreelance isOn];
 			tvc.searchOffline = YES;
 			[[self navigationController] pushViewController:tvc animated:YES];
-			[tvc release];
 		}
 	}
 }
@@ -111,7 +107,6 @@
 	tvc.freelanceOn = [swFreelance isOn];
 	tvc.searchOffline = NO;
 	[[self navigationController] pushViewController:tvc animated:YES];
-	[tvc release];
 }
 
 #pragma mark -
@@ -127,25 +122,12 @@
 
 - (void)viewDidUnload {
 	lblFreelance = nil;
-	[lblFreelance release];
 	txtSearch = nil;
-	[txtSearch release];
 	swFreelance = nil;
-	[swFreelance release];
 	btnSearch = nil;
-	[btnSearch release];
 	btnSearchGeo = nil;
-	[btnSearchGeo release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[lblFreelance release];
-	[txtSearch release];
-	[swFreelance release];
-	[btnSearch release];
-	[btnSearchGeo release];
-    [super dealloc];
-}
 
 @end

@@ -32,7 +32,7 @@
 @end
 
 @interface WebService : NSObject <NSXMLParserDelegate, URLReaderDelegate> {
-	id<WebServiceDelegate> delegate;
+	id<WebServiceDelegate> __weak delegate;
 	URLReader *urlReader;
 	NSManagedObjectContext *managedObjectContext;
 	NSString *currentElement;
@@ -45,16 +45,16 @@
     dbSettings *entSetting;
 }
 
-@property (assign) id<WebServiceDelegate> delegate;
-@property (nonatomic, retain) URLReader *urlReader;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (weak) id<WebServiceDelegate> delegate;
+@property (nonatomic, strong) URLReader *urlReader;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property int OperationID;
-@property (nonatomic, retain) dbCategory *entCategory;
-@property (nonatomic, retain) dbJobOffer *entOffer;
-@property (nonatomic, retain) dbTextContent *entTextContent;
-@property (nonatomic, retain) NSMutableArray *searchResults;
-@property (nonatomic, retain) SearchOffer *searchSingle;
-@property (nonatomic, retain) dbSettings *entSetting;
+@property (nonatomic, strong) dbCategory *entCategory;
+@property (nonatomic, strong) dbJobOffer *entOffer;
+@property (nonatomic, strong) dbTextContent *entTextContent;
+@property (nonatomic, strong) NSMutableArray *searchResults;
+@property (nonatomic, strong) SearchOffer *searchSingle;
+@property (nonatomic, strong) dbSettings *entSetting;
 
 typedef enum NLServiceOperations {
     NLOperationAPNS = 0,

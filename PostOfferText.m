@@ -67,13 +67,8 @@
 
 - (void)viewDidUnload {
 	txtDesc = nil;
-	[txtDesc release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[txtDesc release];
-    [super dealloc];
-}
 
 @end

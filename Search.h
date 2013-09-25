@@ -15,10 +15,10 @@
 	UIButton *btnSearch, *btnSearchGeo;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *lblFreelance;
-@property (nonatomic, retain) IBOutlet UITextField *txtSearch;
-@property (nonatomic, retain) IBOutlet UISwitch *swFreelance;
-@property (nonatomic, retain) IBOutlet UIButton *btnSearch, *btnSearchGeo;
+@property (nonatomic, strong) IBOutlet UILabel *lblFreelance;
+@property (nonatomic, strong) IBOutlet UITextField *txtSearch;
+@property (nonatomic, strong) IBOutlet UISwitch *swFreelance;
+@property (nonatomic, strong) IBOutlet UIButton *btnSearch, *btnSearchGeo;
 
 - (IBAction)iboSearch:(id)sender;
 - (IBAction)iboSearchGeo:(id)sender;

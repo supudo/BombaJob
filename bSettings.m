@@ -16,9 +16,6 @@
 @synthesize inDebugMode, sdlNewJobs, sdlJobs, sdlPeople, doSync, currentPostOfferResult, currentPostOfferResponse, shouldRotate;
 @synthesize stPrivateData, stGeoLocation, stInitSync, stOnlineSearch, stInAppEmail, stShowCategories, stShowBanners;
 @synthesize ServicesURL, BuildVersion, NewAppVersion, LocationLatitude, LocationLongtitude, currentOffer, latestSearchResults, languageCulture;
-@synthesize twitterOAuthConsumerKey, twitterOAuthConsumerSecret, facebookAppID, facebookAppSecret, apnsToken;
-@synthesize linkedInOAuthConsumerKey, linkedInOAuthConsumerSecret;
-@synthesize _facebookEngine;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 
@@ -30,7 +27,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 		output = [[NSString alloc] initWithFormat:log arguments:ap];
 		va_end(ap);
 		NSLog(@"[_____BombaJob-DEBUG] : %@", output);
-		[output release];
 	}
 }
 
@@ -64,15 +60,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
         self.stShowBanners = TRUE;
         self.NewAppVersion = @"";
 		
-		self.twitterOAuthConsumerKey = @"OVvHQ1wio8LZklS5mRUuA";
-		self.twitterOAuthConsumerSecret = @"zZm0RsfzkLpF3FYnxcM3BDZdxHA6sPLoPiTcBvohUEo";
-		self.facebookAppID = @"162884250446512";
-		self.facebookAppSecret = @"a082d8bbc8e98cf63f8a1711ccbafe82";
-		self.linkedInOAuthConsumerKey = @"5nshmi3qvnmp";
-		self.linkedInOAuthConsumerSecret = @"z8Ksb7x6wqxoH788";
-
-        self.apnsToken = nil;
-
 		DBManagedObjectContext *dbManagedObjectContext = [DBManagedObjectContext sharedDBManagedObjectContext];
 		dbSettings *ent;
 		
@@ -180,12 +167,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 	return self;
 }
 
-- (void)dealloc {
-    [currentOffer release];
-    [latestSearchResults release];
-    [_facebookEngine release];
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Helpers
@@ -200,7 +181,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 	dtString = [NSString stringWithFormat:@"%@ %@", dtString, NSLocalizedString(monthLabel, monthLabel)];
 	[df setDateFormat:@"yyyy"];
 	dtString = [NSString stringWithFormat:@"%@ %@", dtString, [df stringFromDate:offerDate]];
-	[df release];
 	return dtString;
 }
 
@@ -250,10 +230,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(bSettings);
 	[loading setFrame:CGRectMake(overlayView.frame.size.width / 2 - 17, overlayView.frame.size.height / 2 - 17, 37, 37)];
 	[loading startAnimating];
 	[overlayView addSubview:loading];
-	[loading release];
 
 	[view addSubview:overlayView];
-	[overlayView release];
 }
 
 - (void)stopLoading:(UIView *)view {

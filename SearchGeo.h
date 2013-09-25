@@ -20,11 +20,11 @@
 	WebService *webService;
 }
 
-@property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property BOOL pinsDropped;
-@property (nonatomic, retain) NSString *searchTerm;
+@property (nonatomic, strong) NSString *searchTerm;
 @property BOOL freelanceOn, searchOffline;
-@property (nonatomic, retain) WebService *webService;
+@property (nonatomic, strong) WebService *webService;
 
 - (void)getOffers;
 - (void)drawPins;

@@ -19,7 +19,7 @@
 	self = [super init];
 	_coordinate = coordinate;
 	_annotationType = annotationType;
-	_title = [title retain];
+	_title = title;
 	return self;
 }
 
@@ -31,11 +31,5 @@
 	return _userData;
 }
 
-- (void)dealloc {
-	[_title release];
-	[_userData release];
-	[_url release];
-	[super dealloc];
-}
 
 @end

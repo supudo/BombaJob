@@ -15,12 +15,12 @@
 @end
 
 @interface MapCoordinates : NSObject<CLLocationManagerDelegate> {
-	id<MapCoordinatesDelegate> delegate;
+	id<MapCoordinatesDelegate> __weak delegate;
 	CLLocationManager *locationManager;
 }
 
-@property (assign) id<MapCoordinatesDelegate> delegate;
-@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (weak) id<MapCoordinatesDelegate> delegate;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 - (void)startCoor;
 

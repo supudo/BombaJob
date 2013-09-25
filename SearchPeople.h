@@ -16,9 +16,9 @@
 	UIView *viewCategories, *viewOffers;
 }
 
-@property (nonatomic, retain) WebService *webService;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsControllerOffers, *fetchedResultsControllerCategories;
-@property (nonatomic, retain) UIView *viewCategories, *viewOffers;
+@property (nonatomic, strong) WebService *webService;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsControllerOffers, *fetchedResultsControllerCategories;
+@property (nonatomic, strong) UIView *viewCategories, *viewOffers;
 
 - (void)loadData;
 - (void)reloadContent;

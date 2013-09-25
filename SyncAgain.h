@@ -16,9 +16,9 @@
 	BOOL doFullSync;
 }
 
-@property (nonatomic, retain) Sync *syncer;
-@property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic, retain) IBOutlet UILabel *lblSync;
+@property (nonatomic, strong) Sync *syncer;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) IBOutlet UILabel *lblSync;
 @property BOOL doFullSync;
 
 - (void)loadSync;

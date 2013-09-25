@@ -13,9 +13,9 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * CID;
-@property (nonatomic, retain) NSString * Title;
-@property (nonatomic, retain) NSString * Content;
+@property (nonatomic, strong) NSNumber * CID;
+@property (nonatomic, strong) NSString * Title;
+@property (nonatomic, strong) NSString * Content;
 
 @end
 

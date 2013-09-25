@@ -24,7 +24,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 	[super viewDidLoad];
 	self.navigationItem.title = NSLocalizedString(@"Search", @"Search");
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)];
 	[self reloadContent];
 }
 
@@ -84,7 +84,7 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
@@ -120,7 +120,6 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 	else
 		tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];
 	[[self navigationController] pushViewController:tvc animated:YES];
-	[tvc release];
 }
 
 #pragma mark -
@@ -149,11 +148,6 @@ static NSString *kCellIdentifier = @"identifSearchResults";
         aFetchedResultsController.delegate = self;
         self.fetchedResultsController = aFetchedResultsController;
         
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptorRead release];
-        [sortDescriptorDate release];
-        [sortDescriptors release];
 
 		UITabBarItem *tb = (UITabBarItem *)[[appDelegate tabBarController].tabBar.items objectAtIndex:1];
 		tb.badgeValue = [NSString stringWithFormat:@"%i", [[[fetchedResultsController sections] objectAtIndex:1] numberOfObjects]];
@@ -174,20 +168,11 @@ static NSString *kCellIdentifier = @"identifSearchResults";
 
 - (void)viewDidUnload {
 	webService = nil;
-	[webService release];
 	searchTerm = nil;
-	[searchTerm release];
 	fetchedResultsController = nil;
-	[fetchedResultsController release];
 	[super viewDidUnload];
 }
 
-- (void)dealloc {
-	[webService release];
-	[searchTerm release];
-	[fetchedResultsController release];
-    [super dealloc];
-}
 
 @end
 

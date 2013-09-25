@@ -62,24 +62,18 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postOffer)];
 	bi.style = UIBarButtonItemStyleBordered;
 	[buttons addObject:bi];
-	[bi release];
 	
 	bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 	[buttons addObject:bi];
-	[bi release];
 	
 	bi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadContent)];
 	bi.style = UIBarButtonItemStyleBordered;
 	[buttons addObject:bi];
-	[bi release];
 	
 	[tools setItems:buttons animated:NO];
-	[buttons release];
 	
 	UIBarButtonItem *rightButtonBar = [[UIBarButtonItem alloc] initWithCustomView:tools];
 	self.navigationItem.rightBarButtonItem = rightButtonBar;
-	[rightButtonBar release];
-	[tools release];
 }
 
 - (void)reloadContent {
@@ -99,7 +93,6 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@.", NSLocalizedString(@"NewJobsError", @"NewJobsError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 1;
 	[alert show];
-	[alert release];
 }
 
 - (void)getNewJobsFinished:(id)sender {
@@ -144,7 +137,7 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
@@ -166,7 +159,6 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 	Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
 	tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];
 	[[self navigationController] pushViewController:tvc animated:YES];
-	[tvc release];
 }
 
 - (void)refresh {
@@ -200,11 +192,6 @@ static NSString *kCellIdentifier = @"identifNewJobs";
         aFetchedResultsController.delegate = self;
         self.fetchedResultsController = aFetchedResultsController;
 
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptorRead release];
-        [sortDescriptorDate release];
-        [sortDescriptors release];
     }
 	return fetchedResultsController;
 }
@@ -222,16 +209,9 @@ static NSString *kCellIdentifier = @"identifNewJobs";
 
 - (void)viewDidUnload {
 	webService = nil;
-	[webService release];
 	fetchedResultsController = nil;
-	[fetchedResultsController release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[webService release];
-	[fetchedResultsController release];
-    [super dealloc];
-}
 
 @end

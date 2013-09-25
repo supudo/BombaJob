@@ -13,7 +13,7 @@
 	int descID;
 }
 
-@property (nonatomic, retain) IBOutlet UITextView *txtDesc;
+@property (nonatomic, strong) IBOutlet UITextView *txtDesc;
 @property int descID;
 
 @end

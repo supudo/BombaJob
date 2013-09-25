@@ -15,8 +15,8 @@
 	NSFetchedResultsController *fetchedResultsController;
 }
 
-@property (nonatomic, retain) WebService *webService;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) WebService *webService;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 - (void)loadData;
 - (void)reloadContent;

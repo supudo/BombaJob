@@ -14,10 +14,10 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * CategoryID;
-@property (nonatomic, retain) NSString * CategoryTitle;
-@property (nonatomic, retain) NSSet* offers;
-@property (nonatomic, retain) NSNumber * OffersCount;
+@property (nonatomic, strong) NSNumber * CategoryID;
+@property (nonatomic, strong) NSString * CategoryTitle;
+@property (nonatomic, strong) NSSet* offers;
+@property (nonatomic, strong) NSNumber * OffersCount;
 
 @end
 

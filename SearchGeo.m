@@ -72,15 +72,13 @@ static NSString *kMapAnnonIdentifier = @"identifMapAnnon";
 	BMMapAnnotation *annotation;
 	for (int i=0; i<[[bSettings sharedbSettings].latestSearchResults count]; i++) {
 		off = [[bSettings sharedbSettings].latestSearchResults objectAtIndex:i];
-		CLLocation *offPoint = [[[CLLocation alloc] initWithLatitude:off.gLatitude longitude:off.gLongitude] autorelease];
+		CLLocation *offPoint = [[CLLocation alloc] initWithLatitude:off.gLatitude longitude:off.gLongitude];
 		annotation = [[BMMapAnnotation alloc] initWithCoordinate:[offPoint coordinate] annotationType:((off.HumanYn) ? BMMapAnnotationTypeCompany : BMMapAnnotationTypeHuman) title:off.Title];
 		[annotation setUserData:off.Positivism];
 		[annotation setUrl:[NSString stringWithFormat:@"%i", off.OfferID]];
 		[arrPoints addObject:annotation];
-		[annotation release];
 	}
 	[mapView addAnnotations:arrPoints];
-	[arrPoints release];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -88,7 +86,7 @@ static NSString *kMapAnnonIdentifier = @"identifMapAnnon";
 	BMMapAnnotation *bmAnnotation = (BMMapAnnotation *)annotation;
 	MKPinAnnotationView *pin = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:kMapAnnonIdentifier];
 	if (pin == nil) {
-		pin = [[[MKPinAnnotationView alloc] initWithAnnotation:bmAnnotation reuseIdentifier:kMapAnnonIdentifier] autorelease];
+		pin = [[MKPinAnnotationView alloc] initWithAnnotation:bmAnnotation reuseIdentifier:kMapAnnonIdentifier];
 		[pin setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeDetailDisclosure]];
 		[pin setAnimatesDrop:YES];
 	}
@@ -115,7 +113,6 @@ static NSString *kMapAnnonIdentifier = @"identifMapAnnon";
 				tvc.searchOffer = off;
 		}
 		[[self navigationController] pushViewController:tvc animated:YES];
-		[tvc release];
 	}
 }
 
@@ -132,19 +129,10 @@ static NSString *kMapAnnonIdentifier = @"identifMapAnnon";
 
 - (void)viewDidUnload {
 	mapView = nil;
-	[mapView release];
 	searchTerm = nil;
-	[searchTerm release];
 	webService = nil;
-	[webService release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[mapView release];
-	[searchTerm release];
-	[webService release];
-    [super dealloc];
-}
 
 @end

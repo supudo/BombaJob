@@ -15,8 +15,8 @@
 	NSFetchedResultsController *fetchedResultsController;
 }
 
-@property (nonatomic, retain) dbCategory *entCategory;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) dbCategory *entCategory;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 - (void)postOffer;
 

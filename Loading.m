@@ -36,7 +36,6 @@
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"OfflineMode", @"OfflineMode") delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
 		alert.tag = 1;
 		[alert show];
-		[alert release];
 	}
 }
 
@@ -63,7 +62,6 @@
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n%@", NSLocalizedString(@"SyncError", @"SyncError"), errorMessage] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:NSLocalizedString(@"UI.Retry", @"UI.Retry"), nil];
 	alert.tag = 2;
 	[alert show];
-	[alert release];
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -86,19 +84,10 @@
 
 - (void)viewDidUnload {
 	timer = nil;
-	[timer release];
 	syncer = nil;
-	[syncer release];
 	lblLoading = nil;
-	[lblLoading release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[timer release];
-	[syncer release];
-	[lblLoading release];
-    [super dealloc];
-}
 
 @end

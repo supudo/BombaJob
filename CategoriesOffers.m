@@ -24,7 +24,7 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 	[super viewDidLoad];
 	self.navigationItem.title = entCategory.CategoryTitle;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postOffer)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postOffer)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,7 +58,7 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.textLabel.font = [UIFont fontWithName:@"Ubuntu" size:14.0];
@@ -79,7 +79,6 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 	Offer *tvc = [[Offer alloc] initWithNibName:@"Offer" bundle:nil];
 	tvc.entOffer = (dbJobOffer *)[fetchedResultsController objectAtIndexPath:indexPath];
 	[[self navigationController] pushViewController:tvc animated:YES];
-	[tvc release];
 }
 
 - (void)refresh {
@@ -115,11 +114,6 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
         aFetchedResultsController.delegate = self;
         self.fetchedResultsController = aFetchedResultsController;
         
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptorRead release];
-        [sortDescriptorDate release];
-        [sortDescriptors release];
     }
 	return fetchedResultsController;
 }
@@ -137,17 +131,10 @@ static NSString *kCellIdentifier = @"identifJobsCategories";
 
 - (void)viewDidUnload {
 	entCategory = nil;
-	[entCategory release];
 	fetchedResultsController = nil;
-	[fetchedResultsController release];
 	[super viewDidUnload];
 }
 
-- (void)dealloc {
-	[entCategory release];
-	[fetchedResultsController release];
-    [super dealloc];
-}
 
 @end
 

@@ -34,7 +34,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(tokenSent:)])
 		[delegate tokenSent:self];
@@ -56,7 +55,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(configFinshed:)])
 		[delegate configFinshed:self];
@@ -79,7 +77,7 @@
 	[postData appendFormat:@"&em=%@", [bSettings sharedbSettings].currentOffer.Email];
 	[postData appendFormat:@"&pos=%@", [bSettings sharedbSettings].currentOffer.Positivism];
 	[postData appendFormat:@"&neg=%@", [bSettings sharedbSettings].currentOffer.Negativism];
-    [postData appendFormat:@"&dtoken=%@", [bSettings sharedbSettings].apnsToken];
+    [postData appendFormat:@"&dtoken="];
 	
 	NSString *xmlData = [urlReader getFromURL:[NSString stringWithFormat:@"%@?%@", [bSettings sharedbSettings].ServicesURL, @"action=postNewJob"] postData:postData postMethod:@"POST"];
 	[[bSettings sharedbSettings] LogThis:@"postNewJob response = %@", xmlData];
@@ -90,12 +88,10 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(postJobFinished:)])
 		[delegate postJobFinished:self];
 	
-	[postData release];
 }
 
 - (void)postMessage:(int)offerID message:(NSString *)msg {
@@ -119,12 +115,10 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(postMessageFinished:)])
 		[delegate postMessageFinished:self];
 
-	[postData release];
 }
 
 - (void)getCategories:(BOOL)doFullSync {
@@ -145,7 +139,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getCategoriesFinished:)])
 		[delegate getCategoriesFinished:self];
@@ -169,7 +162,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getNewJobsFinished:)])
 		[delegate getNewJobsFinished:self];
@@ -193,7 +185,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getJobsHumanFinished:)])
 		[delegate getJobsHumanFinished:self];
@@ -217,7 +208,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getJobsCompanyFinished:)])
 		[delegate getJobsCompanyFinished:self];
@@ -240,7 +230,6 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(getTextContentFinished:)])
 		[delegate getTextContentFinished:self];
@@ -268,12 +257,10 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(sendEmailMessageFinished:)])
 		[delegate sendEmailMessageFinished:self];
 	
-	[postData release];
 }
 
 - (void)searchOffers:(NSString *)searchTerm freelance:(BOOL)frl {
@@ -297,12 +284,10 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(searchOffersFinished:results:)])
 		[delegate searchOffersFinished:self results:searchResults];
 
-	[postData release];
 }
 
 - (void)geoSearchOffers:(NSString *)searchTerm freelance:(BOOL)frl latitude:(float)lat longitude:(float)lon {
@@ -328,12 +313,10 @@
 		[myParser setShouldReportNamespacePrefixes:NO];
 		[myParser setShouldResolveExternalEntities:NO];
 		[myParser parse];
-		[myParser release];
 	}
 	else if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(geoSearchOffersFinished:results:)])
 		[delegate geoSearchOffersFinished:self results:searchResults];
 	
-	[postData release];
 }
 
 #pragma mark -
@@ -422,7 +405,6 @@
 		if (searchResults == nil)
 			searchResults = [[NSMutableArray alloc] init];
 		[searchResults addObject:searchSingle];
-		[searchSingle release];
 	}
 }
 
@@ -446,7 +428,6 @@
 			NSDateFormatter *df = [[NSDateFormatter alloc] init];
 			[df setDateFormat:@"dd-mm-yyyy HH:mm:ss"];
 			[entOffer setPublishDate:[df dateFromString:string]];
-			[df release];
 		}
 		// Post new job offer
 		else if ([currentElement isEqualToString:@"postNewJob"]) {
@@ -473,7 +454,6 @@
 			NSDateFormatter *df = [[NSDateFormatter alloc] init];
 			[df setDateFormat:@"dd-mm-yyyy HH:mm:ss"];
 			searchSingle.PublishDate = [df dateFromString:string];
-			[df release];
 		}
 	}
 }
@@ -557,16 +537,5 @@
 #pragma mark -
 #pragma mark dealloc
 
-- (void)dealloc {
-	[currentElement release];
-	[managedObjectContext release];
-	[entCategory release];
-	[entOffer release];
-	[entTextContent release];
-	[searchResults release];
-	[searchSingle release];
-    [entSetting release];
-	[super dealloc];
-}
 
 @end

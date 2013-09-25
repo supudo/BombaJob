@@ -16,10 +16,10 @@
 	NSFetchedResultsController *fetchedResultsController;
 }
 
-@property (nonatomic, retain) WebService *webService;
-@property (nonatomic, retain) NSString *searchTerm;
+@property (nonatomic, strong) WebService *webService;
+@property (nonatomic, strong) NSString *searchTerm;
 @property BOOL freelanceOn, searchOffline;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 - (void)reloadContent;
 

@@ -14,10 +14,10 @@
 @end
 
 @interface URLReader : NSObject {
-	id<URLReaderDelegate> delegate;
+	id<URLReaderDelegate> __weak delegate;
 }
 
-@property (assign) id<URLReaderDelegate> delegate;
+@property (weak) id<URLReaderDelegate> delegate;
 
 - (NSString *)getFromURL:(NSString *)URL postData:(NSString *)pData postMethod:(NSString *)pMethod;
 - (NSString *)urlCryptedEncode:(NSString *)stringToEncrypt;

@@ -22,7 +22,7 @@
 	[super viewDidLoad];
 	self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sendMessage)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sendMessage)];
 	if (webService == nil)
 		webService = [[WebService alloc] init];
 }
@@ -44,7 +44,6 @@
 		BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"OfferMessageError.EmptyMessage", @"OfferMessageError.EmptyMessage")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 		alert.tag = 2;
 		[alert show];
-		[alert release];
 	}
 	else {
 		if (searchOffer == nil)
@@ -59,7 +58,6 @@
 	BlackAlertView *alert = [[BlackAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@", NSLocalizedString(@"OfferMessageError", @"OfferMessageError")] delegate:self cancelButtonTitle:NSLocalizedString(@"UI.OK", @"UI.OK") otherButtonTitles:nil];
 	alert.tag = 1;
 	[alert show];
-	[alert release];
 }
 
 - (void)postMessageFinished:(id)sender {
@@ -99,22 +97,11 @@
 
 - (void)viewDidUnload {
 	entOffer = nil;
-	[entOffer release];
 	searchOffer = nil;
-	[searchOffer release];
 	webService = nil;
-	[webService release];
 	txtMessage = nil;
-	[txtMessage release];
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	[entOffer release];
-	[searchOffer release];
-	[webService release];
-	[txtMessage release];
-    [super dealloc];
-}
 
 @end

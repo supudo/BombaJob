@@ -15,9 +15,9 @@
 	UILabel *lblLoading;
 }
 
-@property (nonatomic, retain) Sync *syncer;
-@property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic, retain) IBOutlet UILabel *lblLoading;
+@property (nonatomic, strong) Sync *syncer;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) IBOutlet UILabel *lblLoading;
 
 - (void)loadSync;
 - (void)startSync;
