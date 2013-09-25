@@ -22,6 +22,7 @@
 		8A589FD117F321A00010B640 /* btn-email~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A589FC817F321A00010B640 /* btn-email~ipad.png */; };
 		8A589FD417F3231A0010B640 /* btn-message.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A589FD217F3231A0010B640 /* btn-message.png */; };
 		8A589FD517F3231A0010B640 /* btn-message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A589FD317F3231A0010B640 /* btn-message@2x.png */; };
+		8A589FD717F337F40010B640 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A589FD617F337F40010B640 /* Images.xcassets */; };
 		8AD65C7314C5AB5500143043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7114C5AB4F00143043 /* Twitter.framework */; };
 		8AD65C7814C5B2DE00143043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7714C5B2DE00143043 /* Accounts.framework */; };
 		8AF047A714331D8000D0ECB8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
@@ -37,8 +38,6 @@
 		8AF047B114331D8000D0ECB8 /* tb-newest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926413C1ABA3004B4687 /* tb-newest.png */; };
 		8AF047B214331D8000D0ECB8 /* tb-jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926613C1ABD5004B4687 /* tb-jobs.png */; };
 		8AF047B314331D8000D0ECB8 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
-		8AF047B414331D8000D0ECB8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152A13C33B350083E9E4 /* Icon.png */; };
-		8AF047B514331D8000D0ECB8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152B13C33B350083E9E4 /* Icon@2x.png */; };
 		8AF047B614331D8000D0ECB8 /* OfferMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F154D13C33C440083E9E4 /* OfferMessage.xib */; };
 		8AF047B714331D8000D0ECB8 /* PostOfferText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9651F13CF6DE1009252C4 /* PostOfferText.xib */; };
 		8AF047B814331D8000D0ECB8 /* btn-boom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB965D413CF8054009252C4 /* btn-boom.png */; };
@@ -126,8 +125,6 @@
 		8A0F137A13C31B730083E9E4 /* MapCoordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCoordinates.h; sourceTree = "<group>"; };
 		8A0F137B13C31B730083E9E4 /* MapCoordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCoordinates.m; sourceTree = "<group>"; };
 		8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8A0F152A13C33B350083E9E4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		8A0F152B13C33B350083E9E4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8A0F154B13C33C440083E9E4 /* OfferMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferMessage.h; path = ../OfferMessage.h; sourceTree = "<group>"; };
 		8A0F154C13C33C440083E9E4 /* OfferMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferMessage.m; path = ../OfferMessage.m; sourceTree = "<group>"; };
 		8A0F154D13C33C440083E9E4 /* OfferMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferMessage.xib; sourceTree = "<group>"; };
@@ -165,6 +162,7 @@
 		8A589FC817F321A00010B640 /* btn-email~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-email~ipad.png"; sourceTree = "<group>"; };
 		8A589FD217F3231A0010B640 /* btn-message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-message.png"; sourceTree = "<group>"; };
 		8A589FD317F3231A0010B640 /* btn-message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-message@2x.png"; sourceTree = "<group>"; };
+		8A589FD617F337F40010B640 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BombaJob/Images.xcassets; sourceTree = "<group>"; };
 		8A5D8EFB13C3106B005086C1 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = ../Offer.h; sourceTree = "<group>"; };
 		8A5D8EFC13C3106B005086C1 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = ../Offer.m; sourceTree = "<group>"; };
 		8A5D8EFD13C3106B005086C1 /* Offer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Offer.xib; sourceTree = "<group>"; };
@@ -333,6 +331,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A589FD617F337F40010B640 /* Images.xcassets */,
 				8AA6924A13C1A872004B4687 /* Assets */,
 				8AA691B913C1A2EE004B4687 /* Controlers */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -628,8 +627,6 @@
 			children = (
 				8AA6925E13C1AA4A004B4687 /* TabBar */,
 				8AA1CBFE13E04114009B882B /* bg-pattern.png */,
-				8A0F152A13C33B350083E9E4 /* Icon.png */,
-				8A0F152B13C33B350083E9E4 /* Icon@2x.png */,
 				8AB965D413CF8054009252C4 /* btn-boom.png */,
 				8AA96E9813E9528E00A4F0B7 /* message-sent.png */,
 				8ADEC114140681FF00E6EFF3 /* arrow.png */,
@@ -773,6 +770,7 @@
 				8AF047AA14331D8000D0ECB8 /* SearchPeople.xib in Resources */,
 				8AF047AB14331D8000D0ECB8 /* PostOffer.xib in Resources */,
 				8AF047AC14331D8000D0ECB8 /* Search.xib in Resources */,
+				8A589FD717F337F40010B640 /* Images.xcassets in Resources */,
 				8A589FCE17F321A00010B640 /* btn-twitter~ipad.png in Resources */,
 				8AF047AD14331D8000D0ECB8 /* Loading.xib in Resources */,
 				8A589FD117F321A00010B640 /* btn-email~ipad.png in Resources */,
@@ -783,9 +781,7 @@
 				8AF047B114331D8000D0ECB8 /* tb-newest.png in Resources */,
 				8AF047B214331D8000D0ECB8 /* tb-jobs.png in Resources */,
 				8AF047B314331D8000D0ECB8 /* Offer.xib in Resources */,
-				8AF047B414331D8000D0ECB8 /* Icon.png in Resources */,
 				8A589FCA17F321A00010B640 /* btn-facebook@2x.png in Resources */,
-				8AF047B514331D8000D0ECB8 /* Icon@2x.png in Resources */,
 				8AF047B614331D8000D0ECB8 /* OfferMessage.xib in Resources */,
 				8AF047B714331D8000D0ECB8 /* PostOfferText.xib in Resources */,
 				8AF047B814331D8000D0ECB8 /* btn-boom.png in Resources */,
@@ -887,6 +883,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -913,6 +911,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
