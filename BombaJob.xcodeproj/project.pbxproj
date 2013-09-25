@@ -7,142 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* BombaJobAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BombaJobAppDelegate.m */; };
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
-		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
-		8A0F137C13C31B730083E9E4 /* MapCoordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F137B13C31B730083E9E4 /* MapCoordinates.m */; };
-		8A0F139413C31BBA0083E9E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */; };
-		8A0F152C13C33B350083E9E4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152A13C33B350083E9E4 /* Icon.png */; };
-		8A0F152D13C33B350083E9E4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F152B13C33B350083E9E4 /* Icon@2x.png */; };
-		8A0F154E13C33C440083E9E4 /* OfferMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F154C13C33C440083E9E4 /* OfferMessage.m */; };
-		8A0F154F13C33C440083E9E4 /* OfferMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F154D13C33C440083E9E4 /* OfferMessage.xib */; };
-		8A130FF613E7F50A00F0296C /* SearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A130FF413E7F50A00F0296C /* SearchResults.m */; };
-		8A130FF713E7F50A00F0296C /* SearchResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A130FF513E7F50A00F0296C /* SearchResults.xib */; };
-		8A13113C13E80BD200F0296C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A13113B13E80BD200F0296C /* MessageUI.framework */; };
-		8A3B52FF13E1842B00F9B24E /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B52FD13E1842B00F9B24E /* About.m */; };
-		8A3B530013E1842B00F9B24E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B52FE13E1842B00F9B24E /* About.xib */; };
-		8A40DD3613E97D1C00EBC946 /* CategoriesOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A40DD3413E97D1C00EBC946 /* CategoriesOffers.m */; };
-		8A40DD3713E97D1C00EBC946 /* CategoriesOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A40DD3513E97D1C00EBC946 /* CategoriesOffers.xib */; };
-		8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5018F913F9034A00C4BBE0 /* DDAlertPrompt.m */; };
-		8A5019E913F93A8400C4BBE0 /* SearchGeo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5019E713F93A8400C4BBE0 /* SearchGeo.m */; };
-		8A5019EA13F93A8400C4BBE0 /* SearchGeo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5019E813F93A8400C4BBE0 /* SearchGeo.xib */; };
-		8A501A6913F9419300C4BBE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A501A6813F9419300C4BBE0 /* MapKit.framework */; };
-		8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFC13C3106B005086C1 /* Offer.m */; };
-		8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D8EFD13C3106B005086C1 /* Offer.xib */; };
-		8A819A3914C4863B00F0DC28 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A2F14C4863B00F0DC28 /* Facebook.m */; };
 		8A819A3A14C4863B00F0DC28 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A2F14C4863B00F0DC28 /* Facebook.m */; };
-		8A819A3B14C4863B00F0DC28 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A819A3114C4863B00F0DC28 /* FBDialog.bundle */; };
 		8A819A3C14C4863B00F0DC28 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A819A3114C4863B00F0DC28 /* FBDialog.bundle */; };
-		8A819A3D14C4863B00F0DC28 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A3314C4863B00F0DC28 /* FBDialog.m */; };
 		8A819A3E14C4863B00F0DC28 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A3314C4863B00F0DC28 /* FBDialog.m */; };
-		8A819A3F14C4863B00F0DC28 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A3514C4863B00F0DC28 /* FBLoginDialog.m */; };
 		8A819A4014C4863B00F0DC28 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A3514C4863B00F0DC28 /* FBLoginDialog.m */; };
-		8A819A4114C4863B00F0DC28 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A3714C4863B00F0DC28 /* FBRequest.m */; };
 		8A819A4214C4863B00F0DC28 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A3714C4863B00F0DC28 /* FBRequest.m */; };
-		8A819A5314C57A1100F0DC28 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4814C57A1100F0DC28 /* NSObject+SBJSON.m */; };
 		8A819A5414C57A1100F0DC28 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4814C57A1100F0DC28 /* NSObject+SBJSON.m */; };
-		8A819A5514C57A1100F0DC28 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4A14C57A1100F0DC28 /* NSString+SBJSON.m */; };
 		8A819A5614C57A1100F0DC28 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4A14C57A1100F0DC28 /* NSString+SBJSON.m */; };
-		8A819A5714C57A1100F0DC28 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4C14C57A1100F0DC28 /* SBJSON.m */; };
 		8A819A5814C57A1100F0DC28 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4C14C57A1100F0DC28 /* SBJSON.m */; };
-		8A819A5914C57A1100F0DC28 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4E14C57A1100F0DC28 /* SBJsonBase.m */; };
 		8A819A5A14C57A1100F0DC28 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A4E14C57A1100F0DC28 /* SBJsonBase.m */; };
-		8A819A5B14C57A1100F0DC28 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A5014C57A1100F0DC28 /* SBJsonParser.m */; };
 		8A819A5C14C57A1100F0DC28 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A5014C57A1100F0DC28 /* SBJsonParser.m */; };
-		8A819A5D14C57A1100F0DC28 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A5214C57A1100F0DC28 /* SBJsonWriter.m */; };
 		8A819A5E14C57A1100F0DC28 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A819A5214C57A1100F0DC28 /* SBJsonWriter.m */; };
-		8A819A6014C58B6D00F0DC28 /* facebook-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A819A5F14C58B6D00F0DC28 /* facebook-button.jpg */; };
 		8A819A6114C58B6D00F0DC28 /* facebook-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A819A5F14C58B6D00F0DC28 /* facebook-button.jpg */; };
-		8A819A6314C58BCE00F0DC28 /* twitter-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A819A6214C58BCE00F0DC28 /* twitter-button.jpg */; };
 		8A819A6414C58BCE00F0DC28 /* twitter-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A819A6214C58BCE00F0DC28 /* twitter-button.jpg */; };
-		8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88F89213E1AAA000CC9108 /* SearchOffer.m */; };
-		8AA1CBFF13E04114009B882B /* bg-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CBFE13E04114009B882B /* bg-pattern.png */; };
-		8AA1CC2113E0428C009B882B /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */; };
-		8AA1CC2213E0428C009B882B /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */; };
-		8AA1CC2313E0428C009B882B /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1A13E0428C009B882B /* Ubuntu-Italic.ttf */; };
-		8AA1CC2413E0428C009B882B /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1B13E0428C009B882B /* Ubuntu-Light.ttf */; };
-		8AA1CC2513E0428C009B882B /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1C13E0428C009B882B /* Ubuntu-LightItalic.ttf */; };
-		8AA1CC2613E0428C009B882B /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1D13E0428C009B882B /* Ubuntu-Medium.ttf */; };
-		8AA1CC2713E0428C009B882B /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1E13E0428C009B882B /* Ubuntu-MediumItalic.ttf */; };
-		8AA1CC2813E0428C009B882B /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC1F13E0428C009B882B /* Ubuntu-Regular.ttf */; };
-		8AA1CC2913E0428C009B882B /* UFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CC2013E0428C009B882B /* UFL.txt */; };
-		8AA1CCE113E04A61009B882B /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CCDF13E04A61009B882B /* Settings.m */; };
-		8AA1CCE213E04A61009B882B /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CCE013E04A61009B882B /* Settings.xib */; };
-		8AA1CCEE13E04C83009B882B /* Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CCED13E04C83009B882B /* Sync.m */; };
-		8AA1CD0C13E17C95009B882B /* tb-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CD0B13E17C95009B882B /* tb-settings.png */; };
-		8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA1CD0D13E17D0B009B882B /* tb-about.png */; };
-		8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1CD4313E17F82009B882B /* dbTextContent.m */; };
-		8AA4FDBA13E19E2900CE8C09 /* tb-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4FDB913E19E2900CE8C09 /* tb-search.png */; };
-		8AA691CE13C1A3CB004B4687 /* NewestOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691CC13C1A3CB004B4687 /* NewestOffers.m */; };
-		8AA691CF13C1A3CB004B4687 /* NewestOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */; };
-		8AA691D313C1A3E0004B4687 /* SearchJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691D113C1A3E0004B4687 /* SearchJobs.m */; };
-		8AA691D413C1A3E0004B4687 /* SearchJobs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691D213C1A3E0004B4687 /* SearchJobs.xib */; };
-		8AA691DD13C1A3F9004B4687 /* SearchPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691DB13C1A3F9004B4687 /* SearchPeople.m */; };
-		8AA691DE13C1A3F9004B4687 /* SearchPeople.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691DC13C1A3F9004B4687 /* SearchPeople.xib */; };
-		8AA691E613C1A409004B4687 /* PostOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691E413C1A409004B4687 /* PostOffer.m */; };
-		8AA691E713C1A409004B4687 /* PostOffer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691E513C1A409004B4687 /* PostOffer.xib */; };
-		8AA691FD13C1A47F004B4687 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA691FB13C1A47F004B4687 /* Search.m */; };
-		8AA691FE13C1A47F004B4687 /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691FC13C1A47F004B4687 /* Search.xib */; };
-		8AA6920C13C1A599004B4687 /* bSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6920B13C1A599004B4687 /* bSettings.m */; };
-		8AA6921213C1A5F8004B4687 /* URLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6920F13C1A5F8004B4687 /* URLReader.m */; };
-		8AA6921313C1A5F8004B4687 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6921113C1A5F8004B4687 /* Reachability.m */; };
-		8AA6921913C1A609004B4687 /* BlackAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6921813C1A609004B4687 /* BlackAlertView.m */; };
-		8AA6922613C1A650004B4687 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6922513C1A650004B4687 /* SystemConfiguration.framework */; };
-		8AA6924313C1A7E6004B4687 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6924213C1A7E6004B4687 /* CoreData.framework */; };
-		8AA6925013C1A88E004B4687 /* Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6924E13C1A88E004B4687 /* Loading.m */; };
-		8AA6925113C1A88E004B4687 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6924F13C1A88E004B4687 /* Loading.xib */; };
-		8AA6925913C1A8D6004B4687 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6925813C1A8D6004B4687 /* Localizable.strings */; };
-		8AA6925D13C1AA2D004B4687 /* BombaJob.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6925C13C1AA2D004B4687 /* BombaJob.xcdatamodel */; };
-		8AA6926013C1AA52004B4687 /* tb-postoffer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6925F13C1AA52004B4687 /* tb-postoffer.png */; };
-		8AA6926313C1AB68004B4687 /* tb-people.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926213C1AB68004B4687 /* tb-people.png */; };
-		8AA6926513C1ABA3004B4687 /* tb-newest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926413C1ABA3004B4687 /* tb-newest.png */; };
-		8AA6926713C1ABD5004B4687 /* tb-jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6926613C1ABD5004B4687 /* tb-jobs.png */; };
-		8AA6926B13C1AC47004B4687 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6926A13C1AC47004B4687 /* WebService.m */; };
-		8AA6927713C1AC81004B4687 /* DBManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6927613C1AC81004B4687 /* DBManagedObjectContext.m */; };
-		8AA6936F13C1BB63004B4687 /* dbJobOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6936C13C1BB63004B4687 /* dbJobOffer.m */; };
-		8AA6937013C1BB63004B4687 /* dbCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6936E13C1BB63004B4687 /* dbCategory.m */; };
-		8AA96D2E13E93D8500A4F0B7 /* SyncAgain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA96D2C13E93D8500A4F0B7 /* SyncAgain.m */; };
-		8AA96D2F13E93D8500A4F0B7 /* SyncAgain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA96D2D13E93D8500A4F0B7 /* SyncAgain.xib */; };
-		8AA96D3513E93DF200A4F0B7 /* tb-syncagain.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA96D3413E93DF200A4F0B7 /* tb-syncagain.png */; };
-		8AA96E9913E9528E00A4F0B7 /* message-sent.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA96E9813E9528E00A4F0B7 /* message-sent.png */; };
-		8AB9646E13CF59A1009252C4 /* CurrentOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9646D13CF59A1009252C4 /* CurrentOffer.m */; };
-		8AB9652013CF6DE1009252C4 /* PostOfferText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9651E13CF6DE1009252C4 /* PostOfferText.m */; };
-		8AB9652113CF6DE1009252C4 /* PostOfferText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9651F13CF6DE1009252C4 /* PostOfferText.xib */; };
-		8AB965D513CF8054009252C4 /* btn-boom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB965D413CF8054009252C4 /* btn-boom.png */; };
-		8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9660813CF8A27009252C4 /* dbSettings.m */; };
-		8AD4051813FA7A2C00F0C351 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4051713FA7A2C00F0C351 /* Security.framework */; };
-		8AD65C7214C5AB4F00143043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7114C5AB4F00143043 /* Twitter.framework */; };
 		8AD65C7314C5AB5500143043 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7114C5AB4F00143043 /* Twitter.framework */; };
 		8AD65C7814C5B2DE00143043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7714C5B2DE00143043 /* Accounts.framework */; };
-		8AD65C7914C5B2E200143043 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD65C7714C5B2DE00143043 /* Accounts.framework */; };
-		8ADEC115140681FF00E6EFF3 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ADEC114140681FF00E6EFF3 /* arrow.png */; };
-		8ADEC1381406838A00E6EFF3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADEC1371406838A00E6EFF3 /* QuartzCore.framework */; };
-		8ADEC13D140683A000E6EFF3 /* BMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEC13C140683A000E6EFF3 /* BMTableView.m */; };
-		8AE9D9CE13EAB3E200F12EB2 /* jQueryInject.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9D99413EAB3E200F12EB2 /* jQueryInject.txt */; };
-		8AE9D9CF13EAB3E200F12EB2 /* jQueryInjectLandscape.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9D99513EAB3E200F12EB2 /* jQueryInjectLandscape.txt */; };
-		8AE9D9D013EAB3E200F12EB2 /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9D99613EAB3E200F12EB2 /* libOAuth.a */; };
-		8AE9D9D113EAB3E200F12EB2 /* MGTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9A913EAB3E200F12EB2 /* MGTwitterEngine.m */; };
-		8AE9D9D213EAB3E200F12EB2 /* MGTwitterHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9AD13EAB3E200F12EB2 /* MGTwitterHTTPURLConnection.m */; };
-		8AE9D9D313EAB3E200F12EB2 /* MGTwitterLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9AF13EAB3E200F12EB2 /* MGTwitterLibXMLParser.m */; };
-		8AE9D9D413EAB3E200F12EB2 /* MGTwitterMessagesLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9B113EAB3E200F12EB2 /* MGTwitterMessagesLibXMLParser.m */; };
-		8AE9D9D513EAB3E200F12EB2 /* MGTwitterMessagesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9B313EAB3E200F12EB2 /* MGTwitterMessagesParser.m */; };
-		8AE9D9D613EAB3E200F12EB2 /* MGTwitterMiscLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9B513EAB3E200F12EB2 /* MGTwitterMiscLibXMLParser.m */; };
-		8AE9D9D713EAB3E200F12EB2 /* MGTwitterMiscParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9B713EAB3E200F12EB2 /* MGTwitterMiscParser.m */; };
-		8AE9D9D813EAB3E200F12EB2 /* MGTwitterStatusesLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9BB13EAB3E200F12EB2 /* MGTwitterStatusesLibXMLParser.m */; };
-		8AE9D9D913EAB3E200F12EB2 /* MGTwitterStatusesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9BD13EAB3E200F12EB2 /* MGTwitterStatusesParser.m */; };
-		8AE9D9DA13EAB3E200F12EB2 /* MGTwitterUsersLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9BF13EAB3E200F12EB2 /* MGTwitterUsersLibXMLParser.m */; };
-		8AE9D9DB13EAB3E200F12EB2 /* MGTwitterUsersParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9C113EAB3E200F12EB2 /* MGTwitterUsersParser.m */; };
-		8AE9D9DC13EAB3E200F12EB2 /* MGTwitterXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9C313EAB3E200F12EB2 /* MGTwitterXMLParser.m */; };
-		8AE9D9DD13EAB3E200F12EB2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9C513EAB3E200F12EB2 /* NSData+Base64.m */; };
-		8AE9D9DE13EAB3E200F12EB2 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9C713EAB3E200F12EB2 /* NSString+UUID.m */; };
-		8AE9D9DF13EAB3E200F12EB2 /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9CA13EAB3E200F12EB2 /* SA_OAuthTwitterController.m */; };
-		8AE9D9E013EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D9CC13EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m */; };
-		8AE9D9E113EAB3E200F12EB2 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9D9CD13EAB3E200F12EB2 /* twitter_load.png */; };
-		8AE9DA1513EAB49F00F12EB2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */; };
-		8AEBC2D21403B0C100031D3D /* BMMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */; };
 		8AF047A714331D8000D0ECB8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		8AF047A814331D8000D0ECB8 /* NewestOffers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691CD13C1A3CB004B4687 /* NewestOffers.xib */; };
 		8AF047A914331D8000D0ECB8 /* SearchJobs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA691D213C1A3E0004B4687 /* SearchJobs.xib */; };
@@ -245,15 +124,10 @@
 		8AF0481814331D8000D0ECB8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6924213C1A7E6004B4687 /* CoreData.framework */; };
 		8AF0481914331D8000D0ECB8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0F139313C31BBA0083E9E4 /* CoreLocation.framework */; };
 		8AF0481A14331D8000D0ECB8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A13113B13E80BD200F0296C /* MessageUI.framework */; };
-		8AF0481B14331D8000D0ECB8 /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9D99613EAB3E200F12EB2 /* libOAuth.a */; };
-		8AF0481C14331D8000D0ECB8 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */; };
 		8AF0481D14331D8000D0ECB8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A501A6813F9419300C4BBE0 /* MapKit.framework */; };
 		8AF0481E14331D8000D0ECB8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4051713FA7A2C00F0C351 /* Security.framework */; };
 		8AF0481F14331D8000D0ECB8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADEC1371406838A00E6EFF3 /* QuartzCore.framework */; };
-		8AF27217141E021300117DBC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF27216141E021300117DBC /* iAd.framework */; };
-		8AF5525E14698D0900C6A496 /* icon_company.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF5525C14698D0900C6A496 /* icon_company.png */; };
 		8AF5525F14698D0900C6A496 /* icon_company.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF5525C14698D0900C6A496 /* icon_company.png */; };
-		8AF5526014698D0900C6A496 /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF5525D14698D0900C6A496 /* icon_person.png */; };
 		8AF5526114698D0900C6A496 /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF5525D14698D0900C6A496 /* icon_person.png */; };
 /* End PBXBuildFile section */
 
@@ -261,7 +135,6 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* BombaJobAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombaJobAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* BombaJobAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombaJobAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* DevBombaJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevBombaJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* BombaJob_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombaJob_Prefix.pch; sourceTree = "<group>"; };
@@ -321,7 +194,6 @@
 		8A819A6214C58BCE00F0DC28 /* twitter-button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "twitter-button.jpg"; sourceTree = "<group>"; };
 		8A88F89113E1AAA000CC9108 /* SearchOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOffer.h; sourceTree = "<group>"; };
 		8A88F89213E1AAA000CC9108 /* SearchOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOffer.m; sourceTree = "<group>"; };
-		8A9FDD9E14C8296600028749 /* DevBombaJob.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DevBombaJob.entitlements; sourceTree = "<group>"; };
 		8AA1CBFE13E04114009B882B /* bg-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-pattern.png"; sourceTree = "<group>"; };
 		8AA1CC1813E0428C009B882B /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		8AA1CC1913E0428C009B882B /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -462,7 +334,6 @@
 		8AE9D9CB13EAB3E200F12EB2 /* SA_OAuthTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterEngine.h; sourceTree = "<group>"; };
 		8AE9D9CC13EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterEngine.m; sourceTree = "<group>"; };
 		8AE9D9CD13EAB3E200F12EB2 /* twitter_load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_load.png; sourceTree = "<group>"; };
-		8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		8AEBC2D01403B0C100031D3D /* BMMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMapAnnotation.h; sourceTree = "<group>"; };
 		8AEBC2D11403B0C100031D3D /* BMMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMapAnnotation.m; sourceTree = "<group>"; };
 		8AF0482314331D8000D0ECB8 /* BombaJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BombaJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -470,32 +341,9 @@
 		8AF27216141E021300117DBC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		8AF5525C14698D0900C6A496 /* icon_company.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_company.png; sourceTree = "<group>"; };
 		8AF5525D14698D0900C6A496 /* icon_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_person.png; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* DevBombaJob-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevBombaJob-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AD65C7914C5B2E200143043 /* Accounts.framework in Frameworks */,
-				8AD65C7214C5AB4F00143043 /* Twitter.framework in Frameworks */,
-				8AF27217141E021300117DBC /* iAd.framework in Frameworks */,
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
-				8AA6922613C1A650004B4687 /* SystemConfiguration.framework in Frameworks */,
-				8AA6924313C1A7E6004B4687 /* CoreData.framework in Frameworks */,
-				8A0F139413C31BBA0083E9E4 /* CoreLocation.framework in Frameworks */,
-				8A13113C13E80BD200F0296C /* MessageUI.framework in Frameworks */,
-				8AE9D9D013EAB3E200F12EB2 /* libOAuth.a in Frameworks */,
-				8AE9DA1513EAB49F00F12EB2 /* libxml2.2.dylib in Frameworks */,
-				8A501A6913F9419300C4BBE0 /* MapKit.framework in Frameworks */,
-				8AD4051813FA7A2C00F0C351 /* Security.framework in Frameworks */,
-				8ADEC1381406838A00E6EFF3 /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8AF0481214331D8000D0ECB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,8 +358,6 @@
 				8AF0481814331D8000D0ECB8 /* CoreData.framework in Frameworks */,
 				8AF0481914331D8000D0ECB8 /* CoreLocation.framework in Frameworks */,
 				8AF0481A14331D8000D0ECB8 /* MessageUI.framework in Frameworks */,
-				8AF0481B14331D8000D0ECB8 /* libOAuth.a in Frameworks */,
-				8AF0481C14331D8000D0ECB8 /* libxml2.2.dylib in Frameworks */,
 				8AF0481D14331D8000D0ECB8 /* MapKit.framework in Frameworks */,
 				8AF0481E14331D8000D0ECB8 /* Security.framework in Frameworks */,
 				8AF0481F14331D8000D0ECB8 /* QuartzCore.framework in Frameworks */,
@@ -534,7 +380,6 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* DevBombaJob.app */,
 				8AF0482314331D8000D0ECB8 /* BombaJob.app */,
 			);
 			name = Products;
@@ -557,7 +402,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8A9FDD9E14C8296600028749 /* DevBombaJob.entitlements */,
 				28A0AB4B0D9B1048005BE974 /* BombaJob_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -588,7 +432,6 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				8AA6922513C1A650004B4687 /* SystemConfiguration.framework */,
 				8AA6924213C1A7E6004B4687 /* CoreData.framework */,
-				8AE9DA1413EAB49F00F12EB2 /* libxml2.2.dylib */,
 				8AD4051713FA7A2C00F0C351 /* Security.framework */,
 				8ADEC1371406838A00E6EFF3 /* QuartzCore.framework */,
 			);
@@ -684,7 +527,6 @@
 		8AA691B713C1A2BD004B4687 /* PLists */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107310486CEB800E47090 /* DevBombaJob-Info.plist */,
 				8AF0482514331D8100D0ECB8 /* BombaJob-Info.plist */,
 			);
 			name = PLists;
@@ -1071,23 +913,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* DevBombaJob */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "DevBombaJob" */;
-			buildPhases = (
-				1D60588D0D05DD3D006BFB54 /* Resources */,
-				1D60588E0D05DD3D006BFB54 /* Sources */,
-				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DevBombaJob;
-			productName = BombaJob;
-			productReference = 1D6058910D05DD3D006BFB54 /* DevBombaJob.app */;
-			productType = "com.apple.product-type.application";
-		};
 		8AF047A514331D8000D0ECB8 /* BombaJob */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AF0482014331D8000D0ECB8 /* Build configuration list for PBXNativeTarget "BombaJob" */;
@@ -1113,6 +938,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = BombaJob.bg;
+				TargetAttributes = {
+					8AF047A514331D8000D0ECB8 = {
+						DevelopmentTeam = LG4UH4M6Y9;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BombaJob" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1129,68 +959,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* DevBombaJob */,
 				8AF047A514331D8000D0ECB8 /* BombaJob */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D60588D0D05DD3D006BFB54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
-				8AA691CF13C1A3CB004B4687 /* NewestOffers.xib in Resources */,
-				8AA691D413C1A3E0004B4687 /* SearchJobs.xib in Resources */,
-				8AA691DE13C1A3F9004B4687 /* SearchPeople.xib in Resources */,
-				8AA691E713C1A409004B4687 /* PostOffer.xib in Resources */,
-				8AA691FE13C1A47F004B4687 /* Search.xib in Resources */,
-				8AA6925113C1A88E004B4687 /* Loading.xib in Resources */,
-				8AA6925913C1A8D6004B4687 /* Localizable.strings in Resources */,
-				8AA6926013C1AA52004B4687 /* tb-postoffer.png in Resources */,
-				8AA6926313C1AB68004B4687 /* tb-people.png in Resources */,
-				8AA6926513C1ABA3004B4687 /* tb-newest.png in Resources */,
-				8AA6926713C1ABD5004B4687 /* tb-jobs.png in Resources */,
-				8A5D8EFF13C3106B005086C1 /* Offer.xib in Resources */,
-				8A0F152C13C33B350083E9E4 /* Icon.png in Resources */,
-				8A0F152D13C33B350083E9E4 /* Icon@2x.png in Resources */,
-				8A0F154F13C33C440083E9E4 /* OfferMessage.xib in Resources */,
-				8AB9652113CF6DE1009252C4 /* PostOfferText.xib in Resources */,
-				8AB965D513CF8054009252C4 /* btn-boom.png in Resources */,
-				8AA1CBFF13E04114009B882B /* bg-pattern.png in Resources */,
-				8AA1CC2113E0428C009B882B /* Ubuntu-Bold.ttf in Resources */,
-				8AA1CC2213E0428C009B882B /* Ubuntu-BoldItalic.ttf in Resources */,
-				8AA1CC2313E0428C009B882B /* Ubuntu-Italic.ttf in Resources */,
-				8AA1CC2413E0428C009B882B /* Ubuntu-Light.ttf in Resources */,
-				8AA1CC2513E0428C009B882B /* Ubuntu-LightItalic.ttf in Resources */,
-				8AA1CC2613E0428C009B882B /* Ubuntu-Medium.ttf in Resources */,
-				8AA1CC2713E0428C009B882B /* Ubuntu-MediumItalic.ttf in Resources */,
-				8AA1CC2813E0428C009B882B /* Ubuntu-Regular.ttf in Resources */,
-				8AA1CC2913E0428C009B882B /* UFL.txt in Resources */,
-				8AA1CCE213E04A61009B882B /* Settings.xib in Resources */,
-				8AA1CD0C13E17C95009B882B /* tb-settings.png in Resources */,
-				8AA1CD0E13E17D0B009B882B /* tb-about.png in Resources */,
-				8A3B530013E1842B00F9B24E /* About.xib in Resources */,
-				8AA4FDBA13E19E2900CE8C09 /* tb-search.png in Resources */,
-				8A130FF713E7F50A00F0296C /* SearchResults.xib in Resources */,
-				8AA96D2F13E93D8500A4F0B7 /* SyncAgain.xib in Resources */,
-				8AA96D3513E93DF200A4F0B7 /* tb-syncagain.png in Resources */,
-				8AA96E9913E9528E00A4F0B7 /* message-sent.png in Resources */,
-				8A40DD3713E97D1C00EBC946 /* CategoriesOffers.xib in Resources */,
-				8AE9D9CE13EAB3E200F12EB2 /* jQueryInject.txt in Resources */,
-				8AE9D9CF13EAB3E200F12EB2 /* jQueryInjectLandscape.txt in Resources */,
-				8AE9D9E113EAB3E200F12EB2 /* twitter_load.png in Resources */,
-				8A5019EA13F93A8400C4BBE0 /* SearchGeo.xib in Resources */,
-				8ADEC115140681FF00E6EFF3 /* arrow.png in Resources */,
-				8AF5525E14698D0900C6A496 /* icon_company.png in Resources */,
-				8AF5526014698D0900C6A496 /* icon_person.png in Resources */,
-				8A819A3B14C4863B00F0DC28 /* FBDialog.bundle in Resources */,
-				8A819A6014C58B6D00F0DC28 /* facebook-button.jpg in Resources */,
-				8A819A6314C58BCE00F0DC28 /* twitter-button.jpg in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8AF047A614331D8000D0ECB8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1249,74 +1023,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D60588E0D05DD3D006BFB54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* BombaJobAppDelegate.m in Sources */,
-				8AA691CE13C1A3CB004B4687 /* NewestOffers.m in Sources */,
-				8AA691D313C1A3E0004B4687 /* SearchJobs.m in Sources */,
-				8AA691DD13C1A3F9004B4687 /* SearchPeople.m in Sources */,
-				8AA691E613C1A409004B4687 /* PostOffer.m in Sources */,
-				8AA691FD13C1A47F004B4687 /* Search.m in Sources */,
-				8AA6920C13C1A599004B4687 /* bSettings.m in Sources */,
-				8AA6921213C1A5F8004B4687 /* URLReader.m in Sources */,
-				8AA6921313C1A5F8004B4687 /* Reachability.m in Sources */,
-				8AA6921913C1A609004B4687 /* BlackAlertView.m in Sources */,
-				8AA6925013C1A88E004B4687 /* Loading.m in Sources */,
-				8AA6925D13C1AA2D004B4687 /* BombaJob.xcdatamodel in Sources */,
-				8AA6926B13C1AC47004B4687 /* WebService.m in Sources */,
-				8AA6927713C1AC81004B4687 /* DBManagedObjectContext.m in Sources */,
-				8AA6936F13C1BB63004B4687 /* dbJobOffer.m in Sources */,
-				8AA6937013C1BB63004B4687 /* dbCategory.m in Sources */,
-				8A5D8EFE13C3106B005086C1 /* Offer.m in Sources */,
-				8A0F137C13C31B730083E9E4 /* MapCoordinates.m in Sources */,
-				8A0F154E13C33C440083E9E4 /* OfferMessage.m in Sources */,
-				8AB9646E13CF59A1009252C4 /* CurrentOffer.m in Sources */,
-				8AB9652013CF6DE1009252C4 /* PostOfferText.m in Sources */,
-				8AB9660913CF8A27009252C4 /* dbSettings.m in Sources */,
-				8AA1CCE113E04A61009B882B /* Settings.m in Sources */,
-				8AA1CCEE13E04C83009B882B /* Sync.m in Sources */,
-				8AA1CD4413E17F82009B882B /* dbTextContent.m in Sources */,
-				8A3B52FF13E1842B00F9B24E /* About.m in Sources */,
-				8A88F89313E1AAA000CC9108 /* SearchOffer.m in Sources */,
-				8A130FF613E7F50A00F0296C /* SearchResults.m in Sources */,
-				8AA96D2E13E93D8500A4F0B7 /* SyncAgain.m in Sources */,
-				8A40DD3613E97D1C00EBC946 /* CategoriesOffers.m in Sources */,
-				8AE9D9D113EAB3E200F12EB2 /* MGTwitterEngine.m in Sources */,
-				8AE9D9D213EAB3E200F12EB2 /* MGTwitterHTTPURLConnection.m in Sources */,
-				8AE9D9D313EAB3E200F12EB2 /* MGTwitterLibXMLParser.m in Sources */,
-				8AE9D9D413EAB3E200F12EB2 /* MGTwitterMessagesLibXMLParser.m in Sources */,
-				8AE9D9D513EAB3E200F12EB2 /* MGTwitterMessagesParser.m in Sources */,
-				8AE9D9D613EAB3E200F12EB2 /* MGTwitterMiscLibXMLParser.m in Sources */,
-				8AE9D9D713EAB3E200F12EB2 /* MGTwitterMiscParser.m in Sources */,
-				8AE9D9D813EAB3E200F12EB2 /* MGTwitterStatusesLibXMLParser.m in Sources */,
-				8AE9D9D913EAB3E200F12EB2 /* MGTwitterStatusesParser.m in Sources */,
-				8AE9D9DA13EAB3E200F12EB2 /* MGTwitterUsersLibXMLParser.m in Sources */,
-				8AE9D9DB13EAB3E200F12EB2 /* MGTwitterUsersParser.m in Sources */,
-				8AE9D9DC13EAB3E200F12EB2 /* MGTwitterXMLParser.m in Sources */,
-				8AE9D9DD13EAB3E200F12EB2 /* NSData+Base64.m in Sources */,
-				8AE9D9DE13EAB3E200F12EB2 /* NSString+UUID.m in Sources */,
-				8AE9D9DF13EAB3E200F12EB2 /* SA_OAuthTwitterController.m in Sources */,
-				8AE9D9E013EAB3E200F12EB2 /* SA_OAuthTwitterEngine.m in Sources */,
-				8A5018FA13F9034B00C4BBE0 /* DDAlertPrompt.m in Sources */,
-				8A5019E913F93A8400C4BBE0 /* SearchGeo.m in Sources */,
-				8AEBC2D21403B0C100031D3D /* BMMapAnnotation.m in Sources */,
-				8ADEC13D140683A000E6EFF3 /* BMTableView.m in Sources */,
-				8A819A3914C4863B00F0DC28 /* Facebook.m in Sources */,
-				8A819A3D14C4863B00F0DC28 /* FBDialog.m in Sources */,
-				8A819A3F14C4863B00F0DC28 /* FBLoginDialog.m in Sources */,
-				8A819A4114C4863B00F0DC28 /* FBRequest.m in Sources */,
-				8A819A5314C57A1100F0DC28 /* NSObject+SBJSON.m in Sources */,
-				8A819A5514C57A1100F0DC28 /* NSString+SBJSON.m in Sources */,
-				8A819A5714C57A1100F0DC28 /* SBJSON.m in Sources */,
-				8A819A5914C57A1100F0DC28 /* SBJsonBase.m in Sources */,
-				8A819A5B14C57A1100F0DC28 /* SBJsonParser.m in Sources */,
-				8A819A5D14C57A1100F0DC28 /* SBJsonWriter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8AF047D314331D8000D0ECB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1400,72 +1106,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1D6058940D05DD3E006BFB54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
-				INFOPLIST_FILE = "DevBombaJob-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
-					"\"$(SRCROOT)\"",
-				);
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = DevBombaJob;
-				PROVISIONING_PROFILE = "34864196-57A2-42B9-ACB7-7A81F483791D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "34864196-57A2-42B9-ACB7-7A81F483791D";
-				TEST_RIG = DevBombaJob;
-				VERSION_INFO_FILE = DevBombaJob;
-			};
-			name = Debug;
-		};
-		1D6058950D05DD3E006BFB54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SERGEY PETROV (J2EY2ENVV4)";
-				COPY_PHASE_STRIP = YES;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BombaJob_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
-				INFOPLIST_FILE = "DevBombaJob-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
-					"\"$(SRCROOT)\"",
-				);
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = DevBombaJob;
-				PROVISIONING_PROFILE = "34864196-57A2-42B9-ACB7-7A81F483791D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "34864196-57A2-42B9-ACB7-7A81F483791D";
-				TEST_RIG = DevBombaJob;
-				VALIDATE_PRODUCT = YES;
-				VERSION_INFO_FILE = DevBombaJob;
-			};
-			name = Release;
-		};
 		8AF0482114331D8000D0ECB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1474,8 +1114,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SERGEY PETROV";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SERGEY PETROV";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1484,7 +1124,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "BombaJob-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1492,8 +1132,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
-				PROVISIONING_PROFILE = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1505,8 +1146,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SERGEY PETROV";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SERGEY PETROV";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1514,7 +1155,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "BombaJob-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1522,8 +1163,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BombaJob;
-				PROVISIONING_PROFILE = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2558E33A-377F-4C37-97BD-8DAB13FBDBC8";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1558,15 +1200,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "DevBombaJob" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1D6058940D05DD3E006BFB54 /* Debug */,
-				1D6058950D05DD3E006BFB54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8AF0482014331D8000D0ECB8 /* Build configuration list for PBXNativeTarget "BombaJob" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
