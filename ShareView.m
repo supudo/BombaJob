@@ -160,8 +160,7 @@ static ShareView *currentSharingView = nil;
     float titleY = bgY + 15;
     CGRect titleRect = CGRectMake(screenMargin + 10, titleY, rect.size.width - 2 * (screenMargin + 10), 30);
 
-    float sepY = screenMargin + SV_HEADER_HEIGHT - 2;
-    sepY = bgY + SV_HEADER_HEIGHT - 2;
+    float sepY = bgY + screenMargin + (SV_HEADER_HEIGHT * 2) - 4;
     CGRect separatorRect = CGRectMake(screenMargin, sepY, rect.size.width - 2 * screenMargin, 2);
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();
