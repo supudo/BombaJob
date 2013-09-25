@@ -95,8 +95,13 @@
 
 "Error.InAppEmailCantSend" = "Нямате конфигуриран email акаунт.";
 
+"SocNet.ShareThis" = "Сподели в...";
 "SocNet.Message.Twitter.Error" = "Нямате настроен Twitter акаунт.";
 "SocNet.Message.Facebook.Error" = "Нямате настроен Facebook акаунт.";
+"SocNet.Nets.Facebook" = "Facebook";
+"SocNet.Nets.Twitter" = "Twitter";
+"SocNet.Nets.Email" = "Email";
+"SocNet.Nets.Message" = "Изпрати съобщение";
 
 "UI.OK" = "ОК";
 "UI.Retry" = "Опитай пак";

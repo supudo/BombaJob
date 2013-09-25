@@ -13,6 +13,7 @@
 #import "WebService.h"
 #import "BlackAlertView.h"
 #import <iAd/iAd.h>
+#import "ShareView.h"
 
 @interface Offer : UIViewController <MFMailComposeViewControllerDelegate, WebServiceDelegate, ADBannerViewDelegate> {
 	dbJobOffer *entOffer;
@@ -47,5 +48,6 @@
 - (void)showEmailBox;
 - (void)showBanner;
 - (void)layoutForCurrentOrientation:(BOOL)animated;
+- (void)openSharingView;
 
 @end

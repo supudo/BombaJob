@@ -35,8 +35,8 @@
 	else
 		self.navigationItem.title = entOffer.Title;
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern.png"]];
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendMessage)];
-	if (webService == nil)
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openSharingView)];
+    if (webService == nil)
 		webService = [[WebService alloc] init];
 }
 
@@ -242,6 +242,39 @@
         [self layoutForCurrentOrientation:NO];
     else
         self.bannerView.hidden = YES;
+}
+
+#pragma mark -
+#pragma mark Sharing
+
+- (void)openSharingView {
+    NSArray *sharingOptions = [NSArray arrayWithObjects:
+                              [NSArray arrayWithObjects:[UIImage imageNamed:@"btn-facebook.png"], @"SocNet.Nets.Facebook", [NSNumber numberWithInt:0], nil],
+                              [NSArray arrayWithObjects:[UIImage imageNamed:@"btn-twitter.png"], @"SocNet.Nets.Twitter", [NSNumber numberWithInt:1], nil],
+                              [NSArray arrayWithObjects:[UIImage imageNamed:@"btn-email.png"], @"SocNet.Nets.Email", [NSNumber numberWithInt:2], nil],
+                              [NSArray arrayWithObjects:[UIImage imageNamed:@"btn-message.png"], @"SocNet.Nets.Message", [NSNumber numberWithInt:3], nil],
+                              nil];
+
+    [ShareView showWithTitle:NSLocalizedString(@"SocNet.ShareThis", @"SocNet.ShareThis") withDelegate:self options:sharingOptions inView:self.view animated:YES];
+}
+
+- (void)sharingSelected:(ShareView *)sharingView didSelectedIndex:(NSInteger)sIndex {
+    switch (sIndex) {
+        case 0:
+            [self sendFacebook:nil];
+            break;
+        case 1:
+            [self sendTwitter:nil];
+            break;
+        case 2:
+            [self sendEmail:nil];
+            break;
+        case 3:
+            [self sendMessage];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark -

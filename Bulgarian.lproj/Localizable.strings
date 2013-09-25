@@ -94,8 +94,13 @@
 
 "Error.InAppEmailCantSend" = "There is no email account configured on this device.";
 
+"SocNet.ShareThis" = "Share with...";
 "SocNet.Message.Twitter.Error" = "No Twitter account setup.\nPlease, configure your Settings.";
 "SocNet.Message.Facebook.Error" = "No Facebook account setup.\nPlease, configure your Settings.";
+"SocNet.Nets.Facebook" = "Facebook";
+"SocNet.Nets.Twitter" = "Twitter";
+"SocNet.Nets.Email" = "Email";
+"SocNet.Nets.Message" = "Send message";
 
 "UI.OK" = "OK";
 "UI.Retry" = "Try again";
