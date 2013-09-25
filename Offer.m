@@ -95,6 +95,7 @@
 		[self setText:searchOffer.Positivism control:txtPositivism];
 		[self setText:searchOffer.Negativism control:txtNegativism];
 	}
+
 	[self markAsRead];
 }
 
@@ -133,16 +134,11 @@
 - (void)setText:(NSString *)txt control:(UITextView *)txtView {
 	txtView.text = txt;
 	txtView.font = [UIFont fontWithName:@"Ubuntu" size:14];
-	txtView.contentInset = UIEdgeInsetsMake(-4, -4, 0, 0);
-	txtView.layer.cornerRadius = 5;
-	txtView.clipsToBounds = YES;
-	CGRect frameTemp = txtView.frame;
-	frameTemp.origin.x = 4;
-	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
-		frameTemp.size.width = 472;
-	else
-		frameTemp.size.width = 312;
-	txtView.frame = frameTemp;
+	txtView.contentInset = UIEdgeInsetsZero;
+
+    CGSize maximumSize = CGSizeMake(self.view.frame.size.width - 20, MAXFLOAT);
+    CGSize s = [txt sizeWithFont:txtView.font constrainedToSize:maximumSize lineBreakMode:NSLineBreakByWordWrapping];
+	[txtView setFrame:(CGRect){txtView.frame.origin, maximumSize.width, s.height + 20}];
 }
 
 - (void)doDesign {
@@ -150,8 +146,8 @@
 	[txtTitle setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
 	[lblLPositiv setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
 	[lblLNegativ setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
-	[txtPositivism setDataDetectorTypes:UIDataDetectorTypeLink];
-	[txtNegativism setDataDetectorTypes:UIDataDetectorTypeLink];
+	[txtPositivism setDataDetectorTypes:UIDataDetectorTypeLink | UIDataDetectorTypePhoneNumber];
+	[txtNegativism setDataDetectorTypes:UIDataDetectorTypeLink | UIDataDetectorTypePhoneNumber];
 
 	[btnEmail.titleLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
 	[[bSettings sharedbSettings] roundButtonCorners:btnEmail withColor:[UIColor blackColor]];
@@ -160,81 +156,36 @@
 	[btnTwitter.titleLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:14]];
 	[[bSettings sharedbSettings] roundButtonCorners:btnTwitter withColor:[UIColor blackColor]];
 
-	CGRect frameTemp;
+    float x = 10;
+    float y = 10;
+    [txtCategory setFrame:(CGRect){x, y, txtCategory.frame.size}];
+    
+    y = txtCategory.frame.origin.y + txtCategory.frame.size.height + 10;
+    [txtTitle setFrame:(CGRect){x, y, txtTitle.frame.size}];
+    
+    y = txtTitle.frame.origin.y + txtTitle.frame.size.height + 10;
+    [lblDate setFrame:(CGRect){x, y, lblDate.frame.size}];
+    
+    y = lblDate.frame.origin.y + lblDate.frame.size.height + 10;
+    if (!lblFreelance.hidden) {
+        [lblFreelance setFrame:(CGRect){x, y, lblFreelance.frame.size}];
+        y = lblFreelance.frame.origin.y + lblFreelance.frame.size.height + 10;
+    }
+    
+    [lblLPositiv setFrame:(CGRect){x, y, lblLPositiv.frame.size}];
+    
+    y = lblLPositiv.frame.origin.y + lblLPositiv.frame.size.height + 10;
+    [txtPositivism setFrame:(CGRect){x, y, txtPositivism.frame.size}];
+    
+    y = txtPositivism.frame.origin.y + txtPositivism.frame.size.height + 10;
+    [lblLNegativ setFrame:(CGRect){x, y, lblLNegativ.frame.size}];
+    
+    y = lblLNegativ.frame.origin.y + lblLNegativ.frame.size.height + 10;
+    [txtNegativism setFrame:(CGRect){x, y, txtNegativism.frame.size}];
 
-	// Category text
-	frameTemp = txtCategory.frame;
-	frameTemp.size.height = txtCategory.contentSize.height;
-	frameTemp.origin.y = self.view.frame.origin.y + 34 + 6;
-	txtCategory.frame = frameTemp;
-
-	// Title text
-	frameTemp = txtTitle.frame;
-	frameTemp.size.height = txtTitle.contentSize.height;
-	frameTemp.origin.y = txtCategory.frame.origin.y + txtCategory.frame.size.height + 4;
-	txtTitle.frame = frameTemp;
-
-	// Date label
-	frameTemp = lblDate.frame;
-	frameTemp.origin.y = txtTitle.frame.origin.y + txtTitle.frame.size.height + 4;
-	frameTemp.origin.x = 6;
-	frameTemp.size.width = 312;
-	lblDate.frame = frameTemp;
-
-	// Freelance label
-	if (lblFreelance.hidden) {
-		frameTemp = lblFreelance.frame;
-		frameTemp.size.height = 0;
-		lblFreelance.frame = frameTemp;
-	}
-	else {
-		frameTemp = lblFreelance.frame;
-		frameTemp.origin.y = lblDate.frame.origin.y + lblDate.frame.size.height + 4;
-		frameTemp.origin.x = 6;
-		frameTemp.size.width = 312;
-		lblFreelance.frame = frameTemp;
-	}
-
-	// Positiv label
-	frameTemp = lblLPositiv.frame;
-	frameTemp.origin.y = lblFreelance.frame.origin.y + lblFreelance.frame.size.height + 4;
-	frameTemp.origin.x = 6;
-	frameTemp.size.width = 312;
-	lblLPositiv.frame = frameTemp;
-
-	// Positiv text
-	frameTemp = txtPositivism.frame;
-	frameTemp.size.height = txtPositivism.contentSize.height;
-	frameTemp.origin.y = lblLPositiv.frame.origin.y + lblLPositiv.frame.size.height + 4;
-	txtPositivism.frame = frameTemp;
-	
-	// Negativ label
-	frameTemp = lblLNegativ.frame;
-	frameTemp.origin.y = txtPositivism.frame.origin.y + txtPositivism.frame.size.height + 4;
-	frameTemp.origin.x = 6;
-	frameTemp.size.width = 312;
-	lblLNegativ.frame = frameTemp;
-	
-	// Negativ text
-	frameTemp = txtNegativism.frame;
-	frameTemp.size.height = txtNegativism.contentSize.height;
-	frameTemp.origin.y = lblLNegativ.frame.origin.y + lblLNegativ.frame.size.height + 4;
-	txtNegativism.frame = frameTemp;
-
-	// Content view
-	frameTemp = contentView.frame;
-	frameTemp.size.height = txtNegativism.frame.origin.y + txtNegativism.frame.size.height + 4;
-	contentView.frame = frameTemp;
-	
-	// Scroll view
-	frameTemp = scrollView.frame;
-	scrollView.contentSize = CGSizeMake(contentView.frame.size.width, contentView.frame.size.height + 50);
-	scrollView.frame = frameTemp;
-	
-	// self
-	frameTemp = self.view.frame;
-	frameTemp.size.height = scrollView.frame.size.height + 50;
-	self.view.frame = frameTemp;
+    float h = txtNegativism.frame.origin.y + txtNegativism.frame.size.height + 10;
+	[contentView setFrame:(CGRect){contentView.frame.origin, self.view.frame.size.width, h}];
+	[scrollView setContentSize:(CGSize){self.view.frame.size.width, h}];
 }
 
 - (void)showBanner {
