@@ -47,6 +47,7 @@
 	[self loadContent];
 	[self doDesign];
     [self showBanner];
+    self.bannerView.hidden = YES;
 }
 
 - (void)loadContent {

@@ -48,11 +48,6 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
-	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
-		contentView.frame = CGRectMake(0, 0, 480, 550);
-	else
-		contentView.frame = CGRectMake(0, 0, 320, 550);
-
 	if (dataHuman == nil)
 		dataHuman = [[NSArray alloc] initWithObjects:NSLocalizedString(@"Offer_HumanCompany_1", @"Offer_HumanCompany_1"), NSLocalizedString(@"Offer_HumanCompany_2", @"Offer_HumanCompany_2"), nil];
 	if (dataFreelance == nil)
