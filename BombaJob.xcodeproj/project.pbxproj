@@ -552,6 +552,7 @@
 		8AA6920D13C1A5F0004B4687 /* NET */ = {
 			isa = PBXGroup;
 			children = (
+				8AED308217F580910083920C /* AFNetworking */,
 				8AA6920E13C1A5F8004B4687 /* URLReader.h */,
 				8AA6920F13C1A5F8004B4687 /* URLReader.m */,
 				8AA6921013C1A5F8004B4687 /* Reachability.h */,
@@ -700,6 +701,13 @@
 				8AA1CD4313E17F82009B882B /* dbTextContent.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		8AED308217F580910083920C /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

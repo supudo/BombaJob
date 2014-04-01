@@ -7,9 +7,9 @@
 	<key>BMInDebugMode</key>
 	<true/>
 	<key>BMServicesURL</key>
-	<string>http://www.bombajob.bg/_mob_service.php</string>
+	<string>http://bombajob.supudo.net/_mob_service.php</string>
 	<key>BMServicesURL_Local</key>
-	<string>http://www.bombajob.bg/_mob_service.php</string>
+	<string>http://bombajob.supudo.net/_mob_service.php</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
